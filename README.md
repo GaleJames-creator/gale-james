@@ -1,7 +1,7 @@
 # Gale James - Senior Technical Writer
 
 ## About me
-Senior Technical Writer with 15+ years experience specializing in API documentation, developer portals, and payment systems.
+Senior Technical Writer with 15+ years of experience specializing in API documentation, developer portals, and payment systems.
 
 ## Documentation experience
 
