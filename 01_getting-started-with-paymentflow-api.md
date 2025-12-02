@@ -218,13 +218,7 @@ During payment processing, you may encounter the following common errors:
 | 429 | `rate_limit_error` | Too many requests | Implement retry logic with backoff |
 | 500 | `api_error` | Server error | Retry the request |
 
-### Best Practices for error handling
-
-1. **Check HTTP status codes** before parsing responses to ensure errors are handled correctly.
-2. **Display clear error messages** to customers.
-3. **Log detailed error information** for debugging and support.
-4. **Implement retry logic** for network failures and server-side (`5xx`) errors.
-5. **Do not retry payment errors**. These indicate declined transactions. Ask users to update their payment details.
+If you get an error, see [Best practices for API error codes](/03_status-codes.md#best-practices-for-api-error-codes) for instructions.
 
 ---
 
