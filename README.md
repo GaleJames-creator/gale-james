@@ -27,5 +27,5 @@ My contributions included:
 - **AI Tools**: Google Gemini, Atlassian Intelligence, GitBook AI.
 
 ## Portfolio
-[Full portfolio and writing samples]([https://github.com/GaleJames-creator/gale-james](https://github.com/GaleJames-creator/gale-james)
+[Full portfolio and writing samples](https://github.com/GaleJames-creator/gale-james)
 
