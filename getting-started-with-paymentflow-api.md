@@ -392,7 +392,7 @@ curl https://sandbox-api.paymentflow.com/v1/webhooks \
   ],
   "status": "enabled",
   "description": "Production webhook endpoint",
-  "secret": "whsec_1234567890abcdefghijklmnop",
+  "secret": "{secret}",
   "created": 1699564800
 }
 ```
