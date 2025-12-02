@@ -65,10 +65,11 @@ PaymentFlow provides two environments: sandbox (for development and testing) and
 
 The following table lists sample test card numbers, each demonstrating a different transaction behavior for testing in the sandbox environment.
 
-|-------------|-------|----------|
-| 4242 4242 4242 4242 | Visa | Payment succeeds |
-| 4000 0000 0000 0002 | Visa | Card declined (generic) |
-| 4000 0000 0000 9995 | Visa | Card declined (insufficient funds) |
+| Test Card           | Card Type  | Behavior |
+|---------------------|------------|----------|
+| 4242 4242 4242 4242 | Visa       | Payment succeeds |
+| 4000 0000 0000 0002 | Visa       | Card declined (generic) |
+| 4000 0000 0000 9995 | Visa       | Card declined (insufficient funds) |
 | 5555 5555 5555 4444 | Mastercard | Payment succeeds |
 
 For test cards, use any future expiration date, a 3-digit CVC, and any ZIP code.
