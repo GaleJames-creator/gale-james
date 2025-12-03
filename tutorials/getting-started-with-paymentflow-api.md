@@ -1,10 +1,13 @@
 # Getting started with PaymentFlow API
 
-This guide describes how to integrate PaymentFlow payment processing into your application. By following these steps, you will process a test payment.
+This tutorial shows you how to integrate PaymentFlow payment processing into an application. By following these steps, you will process a test payment.
 
 ## Prerequisites
 
-Ensure you have a PaymentFlow account, know REST APIs and JSON, have a development environment with command-line access, and a cURL or HTTP client.
+* Ensure you have a PaymentFlow account
+* Know REST APIs and JSON
+* Have a development environment with command-line access
+* A cURL or HTTP client.
 
 **Estimated time to complete:** 10 minutes
 
