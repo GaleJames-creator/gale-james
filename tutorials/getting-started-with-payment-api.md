@@ -1,10 +1,10 @@
 # Getting started with Payment API
 
-This tutorial shows you how to integrate PaymentFlow payment processing into an application. By following these steps, you will process a test payment.
+This tutorial shows you how to integrate Payment payment processing into an application. By following these steps, you will process a test payment.
 
 ## Prerequisites
 
-* Ensure you have a PaymentFlow account
+* Ensure you have a Payment account
 * Know REST APIs and JSON
 * Have a development environment with command-line access
 * A cURL or HTTP client.
@@ -13,11 +13,11 @@ This tutorial shows you how to integrate PaymentFlow payment processing into an 
 
 ## Step 1: Get your API keys
 
-API keys authenticate your requests to PaymentFlow. You'll need different keys for testing and production.
+API keys authenticate your requests to Payment. You'll need different keys for testing and production.
 
 ### Obtain your keys
 
-1. Sign in to the PaymentFlow Dashboard.
+1. Sign in to the Payment Dashboard.
 2. Navigate to **Developers** → **API Keys**.
 3. You will find two types of API keys:
    - **Test keys** (prefix: `sk_test_`): Use these for development and testing purposes.
@@ -145,7 +145,7 @@ If the payment succeeds, the response is similar to the following:
   },
   "description": "Test payment for order #12345",
   "created": 1699564800,
-  "receipt_url": "https://paymentflow.com/receipts/pay_1234567890abcdef"
+  "receipt_url": "https://payment.com/receipts/pay_1234567890abcdef"
 }
 ```
 
@@ -164,7 +164,7 @@ Payments may fail for various reasons. The following describes how to respond to
 The following example demonstrates a declined card. Use declined card tests to verify your system handles failures and displays error messages to users.
 
 ```bash
-curl https://sandbox-api.paymentflow.com/v1/payments \
+curl https://sandbox-api.payment.com/v1/payments \
   -X POST \
   -H "Authorization: Bearer sk_test_1234567890abcdef" \
   -H "Content-Type: application/json" \
@@ -223,7 +223,7 @@ Retrieve payment details using the payment ID.
 ### Request example
 
 ```bash
-curl https://sandbox-api.paymentflow.com/v1/payments/pay_1234567890abcdef \
+curl https://sandbox-api.payment.com/v1/payments/pay_1234567890abcdef \
   -H "Authorization: Bearer sk_test_1234567890abcdef"
 ```
 
@@ -253,7 +253,7 @@ A successful request returns transaction details, including payment status, amou
   },
   "description": "Test payment for order #12345",
   "created": 1699564800,
-  "receipt_url": "https://paymentflow.com/receipts/pay_1234567890abcdef"
+  "receipt_url": "https://payment.com/receipts/pay_1234567890abcdef"
 }
 ```
 
@@ -269,7 +269,7 @@ The GET endpoint supports caching to improve performance. The response includes 
 Use the `If-None-Match` header to return data only if the resource has changed. This reduces unnecessary API requests and bandwidth.
 
 ```bash
-curl https://sandbox-api.paymentflow.com/v1/payments/pay_1234567890abcdef \
+curl https://sandbox-api.payment.com/v1/payments/pay_1234567890abcdef \
   -H "Authorization: Bearer sk_test_1234567890abcdef" \
   -H 'If-None-Match: "33a64df551425fcc55e4d42a148795d9f25f89d4"'
 ```
@@ -283,7 +283,7 @@ You can refund all or part of a payment. Refunds may take several days to appear
 ### Full refund example
 
 ```bash
-curl https://sandbox-api.paymentflow.com/v1/refunds \
+curl https://sandbox-api.payment.com/v1/refunds \
   -X POST \
   -H "Authorization: Bearer sk_test_1234567890abcdef" \
   -H "Content-Type: application/json" \
@@ -296,7 +296,7 @@ curl https://sandbox-api.paymentflow.com/v1/refunds \
 ### Partial refund example
 
 ```bash
-curl https://sandbox-api.paymentflow.com/v1/refunds \
+curl https://sandbox-api.payment.com/v1/refunds \
   -X POST \
   -H "Authorization: Bearer sk_test_1234567890abcdef" \
   -H "Content-Type: application/json" \
@@ -341,18 +341,18 @@ Webhooks notify your application of events such as successful payments or refund
 ### Why use webhooks?
 
 - **Real-time updates**: Receive notifications immediately when events occur
-- **Reliable** - PaymentFlow retries failed webhook deliveries automatically
+- **Reliable** - payment retries failed webhook deliveries automatically
 - **Asynchronous** - Handle long-running processes without blocking API requests
 
 ### Register a webhook endpoint
 
 ```bash
-curl https://sandbox-api.paymentflow.com/v1/webhooks \
+curl https://sandbox-api.payment.com/v1/webhooks \
   -X POST \
   -H "Authorization: Bearer sk_test_1234567890abcdef" \
   -H "Content-Type: application/json" \
   -d '{
-    "url": "https://example.com/webhooks/paymentflow",
+    "url": "https://example.com/webhooks/payment",
     "enabled_events": [
       "payment.succeeded",
       "payment.failed",
@@ -368,7 +368,7 @@ curl https://sandbox-api.paymentflow.com/v1/webhooks \
 {
   "id": "we_1234567890abcdef",
   "object": "webhook_endpoint",
-  "url": "https://example.com/webhooks/paymentflow",
+  "url": "https://example.com/webhooks/payment",
   "enabled_events": [
     "payment.succeeded",
     "payment.failed",
@@ -381,7 +381,7 @@ curl https://sandbox-api.paymentflow.com/v1/webhooks \
 }
 ```
 
-Save the `secret` to verify incoming webhook signatures and confirm requests are from PaymentFlow. Register your webhook endpoint and test event delivery to ensure your setup is correct.
+Save the `secret` to verify incoming webhook signatures and confirm requests are from payment. Register your webhook endpoint and test event delivery to ensure your setup is correct.
 
 ### Webhook payload example
 To test your integration, make a payment to trigger a payment event. Check your webhook URL for the POST request with event details. Review the payload to confirm correct event delivery.
@@ -408,7 +408,7 @@ To test your integration, make a payment to trigger a payment event. Check your 
 
 ### Verify webhook signatures
 
-Verify the webhook signature on each incoming request to confirm it is from PaymentFlow. This protects your application from unauthorized events.
+Verify the webhook signature on each incoming request to confirm it is from payment. This protects your application from unauthorized events.
 
 **Node.js Example:**
 
@@ -428,8 +428,8 @@ function verifyWebhookSignature(payload, signature, secret) {
 }
 
 // In your webhook handler
-app.post('/webhooks/paymentflow', (req, res) => {
-  const signature = req.headers['paymentflow-signature'];
+app.post('/webhooks/payment', (req, res) => {
+  const signature = req.headers['payment-signature'];
   const payload = JSON.stringify(req.body);
   
   if (!verifyWebhookSignature(payload, signature, process.env.WEBHOOK_SECRET)) {
@@ -446,7 +446,7 @@ app.post('/webhooks/paymentflow', (req, res) => {
 
 ## Understanding rate limits
 
-PaymentFlow uses rate limits to maintain API stability and ensure fair usage.
+payment uses rate limits to maintain API stability and ensure fair usage.
 
 ### Rate limit tiers
 
@@ -531,7 +531,7 @@ Use idempotent requests in the following situations:
 Add an `Idempotency-Key` header with a unique value, such as a UUID:
 
 ```bash
-curl https://sandbox-api.paymentflow.com/v1/payments \
+curl https://sandbox-api.payment.com/v1/payments \
   -X POST \
   -H "Authorization: Bearer sk_test_1234567890abcdef" \
   -H "Content-Type: application/json" \
@@ -568,10 +568,10 @@ const { v4: uuidv4 } = require('uuid');
 async function createPayment(paymentData) {
   const idempotencyKey = uuidv4();
   
-  const response = await fetch('https://sandbox-api.paymentflow.com/v1/payments', {
+  const response = await fetch('https://sandbox-api.payment.com/v1/payments', {
     method: 'POST',
     headers: {
-      'Authorization': `Bearer ${process.env.PAYMENTFLOW_API_KEY}`,
+      'Authorization': `Bearer ${process.env.PAYMENT_API_KEY}`,
       'Content-Type': 'application/json',
       'Idempotency-Key': idempotencyKey
     },
@@ -586,7 +586,7 @@ async function createPayment(paymentData) {
 
 You have completed the following steps:
 
-✅ Set up your PaymentFlow account and API keys  
+✅ Set up your  account and API keys  
 ✅ Processed your first test payment  
 ✅ Handled errors gracefully  
 ✅ Retrieved payment details  
@@ -599,7 +599,7 @@ To process live payments, complete the following steps:
 
 1. **Complete your account verification** in the Dashboard
 2. **Switch to live API keys** (prefix: `sk_live_`)
-3. **Update your base URL** to `https://api.paymentflow.com/v1`
+3. **Update your base URL** to `https://api..com/v1`
 4. **Review security practices** - Ensure keys are stored securely
 5. **Set up monitoring** - Track payment success rates and errors
 6. **Configure webhooks** for production URLs
@@ -611,7 +611,7 @@ To process live payments, complete the following steps:
 
 **Create a payment:**
 ```bash
-curl https://sandbox-api.paymentflow.com/v1/payments \
+curl https://sandbox-api..com/v1/payments \
   -X POST \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
@@ -620,13 +620,13 @@ curl https://sandbox-api.paymentflow.com/v1/payments \
 
 **Retrieve a payment:**
 ```bash
-curl https://sandbox-api.paymentflow.com/v1/payments/PAYMENT_ID \
+curl https://sandbox-api..com/v1/payments/PAYMENT_ID \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
 **Create a refund:**
 ```bash
-curl https://sandbox-api.paymentflow.com/v1/refunds \
+curl https://sandbox-api..com/v1/refunds \
   -X POST \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
@@ -635,7 +635,7 @@ curl https://sandbox-api.paymentflow.com/v1/refunds \
 
 **List webhooks:**
 ```bash
-curl https://sandbox-api.paymentflow.com/v1/webhooks \
+curl https://sandbox-api..com/v1/webhooks \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
