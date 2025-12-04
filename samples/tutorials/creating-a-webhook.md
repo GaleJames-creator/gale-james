@@ -1,4 +1,4 @@
-# Your first webhook
+# Creating a webhook
 
 Webhooks send a POST request to your URL when an event occurs, such as a payment or refund. This keeps your system updated without the need for polling.
 
