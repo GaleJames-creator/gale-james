@@ -6,8 +6,6 @@ Failed payments can lead to revenue loss and erode user trust. Use this guide to
 
 Before you proceed, ensure you have an integrated payment system, are familiar with the Payment API, and understand HTTP status codes.
 
----
-
 ## When to retry
 
 Retry payments only when you encounter these error codes: 429 (rate limits), 500, 502, 503, and 504 (server errors), or network timeouts.
@@ -17,8 +15,6 @@ Retry payments only when you encounter these error codes: 429 (rate limits), 500
 - `400`: Invalid request. Fix the request instead and notify the user about the issue.
 - `401`: Authentication error. Check your API key and inform the user about the unsuccessful authentication attempt.
 - `402`: Card declined. User action required; surface this error to the user so they can resolve it directly with their bank or card provider.
-
----
 
 ## Implement exponential backoff
 
@@ -62,8 +58,6 @@ def create_payment_with_retry(payment_data, max_retries=3):
     raise Exception("Max retries exceeded")
 ```
 
----
-
 ## Add idempotency
 
 Use idempotency keys to prevent duplicate charges.
@@ -80,8 +74,6 @@ payment_data = {
 
 **Important**: Always use the same idempotency key for each retry of the same payment. Save and reuse this key to prevent duplicate charges.
 
----
-
 ## Log retry attempts
 
 Track each retry attempt for monitoring.
@@ -91,8 +83,6 @@ import logging
 
 logging.info(f"Payment retry attempt {attempt + 1}/{max_retries}")
 ```
-
----
 
 ## Related guides
 - How to handle card declines
