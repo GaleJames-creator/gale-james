@@ -113,8 +113,8 @@ The request includes the following:
 - `Content-Type: application/json` - Indicates the request body is JSON
 
 **Request body parameters:**
-- `amount` - Payment amount in cents (2999 = $29.99)
-- `currency` - Three-letter ISO lowercase currency code (e.g., usd)
+- `amount` - Payment amount in cents (`2999` = $29.99)
+- `currency` - Three-letter ISO lowercase currency code (e.g., `usd`)
 - `payment_method` - Card information
 - `customer` - Customer information for receipts and records
 - `description` - Optional note that appears on statements
@@ -188,7 +188,7 @@ curl https://sandbox-api.payment.com/v1/payments \
 
 ### Error response (HTTP 402)
 
-A payment failure due to a declined card returns an HTTP 402 error. The following is a typical error response:
+A payment failure due to a declined card returns an HTTP `402` error. The following is a typical error response:
 
 ```json
 {
@@ -207,12 +207,12 @@ During payment processing, you may encounter the following common errors:
 
 | HTTP Status | Error Type | Description | Action |
 |-------------|-----------|-------------|---------|
-| 400 | `invalid_request_error` | Invalid parameters | Check your request format |
-| 401 | `authentication_error` | Invalid API key | Verify your API key |
-| 402 | `payment_error` | Payment failed | Display error to customer |
-| 404 | `invalid_request_error` | Resource not found | Check the ID in your request |
-| 429 | `rate_limit_error` | Too many requests | Implement retry logic with backoff |
-| 500 | `api_error` | Server error | Retry the request |
+| `400` | `invalid_request_error` | Invalid parameters | Check your request format |
+| `401` | `authentication_error` | Invalid API key | Verify your API key |
+| `402` | `payment_error` | Payment failed | Display error to customer |
+| `404` | `invalid_request_error` | Resource not found | Check the ID in your request |
+| `429` | `rate_limit_error` | Too many requests | Implement retry logic with backoff |
+| `500` | `api_error` | Server error | Retry the request |
 
 If you get an error, see [Best practices for API error codes](/03_status-codes.md#best-practices-for-api-error-codes) for instructions.
 
