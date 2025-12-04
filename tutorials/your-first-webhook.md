@@ -8,17 +8,17 @@ Webhooks notify you about events as soon as they happen, automatically retry if 
 
 ## Register a webhook endpoint
 
-To receive real-time event notifications, register a webhook endpoint. Provide a publicly accessible URL, such as `https://example.com/webhooks/paymentflow`. The service sends event data to this URL when an event occurs. Use HTTPS to encrypt data in transit. Protect your endpoint with authentication to prevent unauthorized access. Registering your endpoint allows your app to update immediately when a payment or refund happens.
+To receive real-time event notifications, register a webhook endpoint. Provide a publicly accessible URL, such as `https://example.com/webhooks/payment`. The service sends event data to this URL when an event occurs. Use HTTPS to encrypt data in transit. Protect your endpoint with authentication to prevent unauthorized access. Registering your endpoint allows your app to update immediately when a payment or refund happens.
 
 In the following example, an event is triggered when a payment succeeds (`payment.succeeded`), a payment fails (`payment.failed`), or a refund is issued (`refund.created`).
 
 ```bash
-curl https://sandbox-api.paymentflow.com/v1/webhooks \
+curl https://sandbox-api.payment.com/v1/webhooks \
   -X POST \
   -H "Authorization: Bearer sk_test_1234567890abcdef" \
   -H "Content-Type: application/json" \
   -d '{
-    "url": "https://example.com/webhooks/paymentflow",
+    "url": "https://example.com/webhooks/payment",
     "enabled_events": [
       "payment.succeeded",
       "payment.failed",
@@ -34,7 +34,7 @@ curl https://sandbox-api.paymentflow.com/v1/webhooks \
 {
   "id": "we_1234567890abcdef",
   "object": "webhook_endpoint",
-  "url": "https://example.com/webhooks/paymentflow",
+  "url": "https://example.com/webhooks/payment",
   "enabled_events": [
     "payment.succeeded",
     "payment.failed",
@@ -95,8 +95,8 @@ function verifyWebhookSignature(payload, signature, secret) {
 }
 
 // In your webhook handler
-app.post('/webhooks/paymentflow', (req, res) => {
-  const signature = req.headers['paymentflow-signature'];
+app.post('/webhooks/payment', (req, res) => {
+  const signature = req.headers['payment-signature'];
   const payload = JSON.stringify(req.body);
   
   if (!verifyWebhookSignature(payload, signature, process.env.WEBHOOK_SECRET)) {
