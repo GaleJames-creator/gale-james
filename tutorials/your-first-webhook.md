@@ -47,11 +47,11 @@ curl https://sandbox-api.payment.com/v1/webhooks \
 }
 ```
 
-The 'secret' is a unique key used to sign webhook payloads and verify that data comes from PaymentFlow. The signature is included in the 'PaymentFlow-Signature' header. Store secrets securely, such as in environment variables or a secrets manager. Rotate secrets regularly and revoke old ones to keep your integration secure.
+The 'secret' is a unique key used to sign webhook payloads and verify that data comes from the Payment API. The signature is included in the 'Payment-Signature' header. Store secrets securely, such as in environment variables or a secrets manager. Rotate secrets regularly and revoke old ones to keep your integration secure.
 
 ### Webhook payload example
 
-Test your webhook by making a payment and checking the POST request data at your endpoint. For local testing, use a tool like ngrok to expose your server. Use the PaymentFlow sandbox to safely simulate different scenarios before deploying.
+Test your webhook by making a payment and checking the POST request data at your endpoint. For local testing, use a tool like ngrok to expose your server. Use the Payment sandbox to safely simulate different scenarios before deploying.
 
 ```json
 {
@@ -75,7 +75,7 @@ Test your webhook by making a payment and checking the POST request data at your
 
 ### Verify webhook signatures
 
-Always verify webhook signatures to confirm requests are from PaymentFlow. If verification fails, log the attempt, return a 401 status, and set up alerts for repeated failures. You can temporarily disable the endpoint if needed to maintain security.
+Always verify webhook signatures to confirm requests are from Payment. If verification fails, log the attempt, return a 401 status, and set up alerts for repeated failures. You can temporarily disable the endpoint if needed to maintain security.
 
 **Node.js Example:**
 
