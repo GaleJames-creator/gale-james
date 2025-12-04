@@ -88,4 +88,4 @@ Error response (JSON)
 }
 ```
 
-If you get an error, see [Best practices for API error codes](/03_status-codes.md#best-practices-for-api-error-codes) for instructions.
+If you get an error, see [Best practices for API error codes](/best-practices-for-handling-payment-api-errors.md) for instructions.
