@@ -5,7 +5,7 @@ You can refund all or part of a payment. Refunds may take several days to appear
 ## Full refund example
 
 ```bash
-curl https://sandbox-api.paymentflow.com/v1/refunds \
+curl https://sandbox-api..com/v1/refunds \
   -X POST \
   -H "Authorization: Bearer sk_test_1234567890abcdef" \
   -H "Content-Type: application/json" \
@@ -18,7 +18,7 @@ curl https://sandbox-api.paymentflow.com/v1/refunds \
 ## Partial refund example
 
 ```bash
-curl https://sandbox-api.paymentflow.com/v1/refunds \
+curl https://sandbox-api..com/v1/refunds \
   -X POST \
   -H "Authorization: Bearer sk_test_1234567890abcdef" \
   -H "Content-Type: application/json" \
