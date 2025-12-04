@@ -1,4 +1,4 @@
-# Getting started with PaymentFlow API
+# Getting started with Payment API
 
 This tutorial shows you how to integrate PaymentFlow payment processing into an application. By following these steps, you will process a test payment.
 
@@ -40,23 +40,23 @@ To set your API key, choose one of the commands below:
 
 ```bash
 # Linux/macOS
-export PAYMENTFLOW_API_KEY="sk_test_1234567890abcdef"
+export PAYMENT_API_KEY="sk_test_1234567890abcdef"
 
 # Windows (Command Prompt)
-set PAYMENTFLOW_API_KEY=sk_test_1234567890abcdef
+set PAYMENT_API_KEY=sk_test_1234567890abcdef
 
 # Windows (PowerShell)
-$env:PAYMENTFLOW_API_KEY="sk_test_1234567890abcdef"
+$env:PAYMENT_API_KEY="sk_test_1234567890abcdef"
 ```
 
 ## Step 2: Choose your environment
 
-PaymentFlow provides two environments: sandbox (for development and testing) and production environment (for live payments).
+The Payment API provides two environments: sandbox (for development and testing) and production environment (for live payments).
 
 | Environment | Base URL | Purpose |
 |-------------|----------|---------|
-| **Sandbox** | `https://sandbox-api.paymentflow.com/v1` | Testing and development |
-| **Production** | `https://api.paymentflow.com/v1` | Live payment processing |
+| **Sandbox** | `https://sandbox-api.payment.com/v1` | Testing and development |
+| **Production** | `https://api.payment.com/v1` | Live payment processing |
 
 **Note**: This guide uses the sandbox environment and test API keys.
 
@@ -80,7 +80,7 @@ Use cURL to make a test payment. The example charges $29.99 with the payments AP
 ### Request Example
 
 ```bash
-curl https://sandbox-api.paymentflow.com/v1/payments \
+curl https://sandbox-api.payment.com/v1/payments \
   -X POST \
   -H "Authorization: Bearer sk_test_1234567890abcdef" \
   -H "Content-Type: application/json" \
