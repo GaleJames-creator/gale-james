@@ -11,8 +11,6 @@ This tutorial shows you how to integrate PaymentFlow payment processing into an 
 
 **Estimated time to complete:** 10 minutes
 
----
-
 ## Step 1: Get your API keys
 
 API keys authenticate your requests to PaymentFlow. You'll need different keys for testing and production.
@@ -51,8 +49,6 @@ set PAYMENTFLOW_API_KEY=sk_test_1234567890abcdef
 $env:PAYMENTFLOW_API_KEY="sk_test_1234567890abcdef"
 ```
 
----
-
 ## Step 2: Choose your environment
 
 PaymentFlow provides two environments: sandbox (for development and testing) and production environment (for live payments).
@@ -76,8 +72,6 @@ The following table lists sample test card numbers, each demonstrating a differe
 | 5555 5555 5555 4444 | Mastercard | Payment succeeds |
 
 For test cards, use any future expiration date, a 3-digit CVC, and any ZIP code.
-
----
 
 ## Step 3: Send your first API request
 
@@ -160,7 +154,6 @@ If the payment succeeds, the response is similar to the following:
 - `status` - Payment result. Possible values: `succeeded`, `failed`, `pending`, or `canceled`.
 - `receipt_url` - URL to the customer receipt.
 
----
 
 ## Step 4: Handle errors
 
@@ -223,8 +216,6 @@ During payment processing, you may encounter the following common errors:
 
 If you get an error, see [Best practices for API error codes](/03_status-codes.md#best-practices-for-api-error-codes) for instructions.
 
----
-
 ## Step 5: Retrieve a payment
 
 Retrieve payment details using the payment ID.
@@ -285,8 +276,6 @@ curl https://sandbox-api.paymentflow.com/v1/payments/pay_1234567890abcdef \
 
 If the resource is unchanged, the server returns `304 Not Modified` with no response body.
 
----
-
 ## Step 6: Process a refund
 
 You can refund all or part of a payment. Refunds may take several days to appear on the customer's statement.
@@ -344,8 +333,6 @@ Specify a reason when issuing a refund in the request body. Possible values are:
   "metadata": {}
 }
 ```
-
----
 
 ## Step 7: Set up webhooks (optional)
 
@@ -457,8 +444,6 @@ app.post('/webhooks/paymentflow', (req, res) => {
 });
 ```
 
----
-
 ## Understanding rate limits
 
 PaymentFlow uses rate limits to maintain API stability and ensure fair usage.
@@ -529,8 +514,6 @@ async function makeRequestWithRetry(url, options, maxRetries = 3) {
 }
 ```
 
----
-
 ## Idempotency
 
 Idempotency ensures you do not incur duplicate charges when retrying a request.
@@ -599,8 +582,6 @@ async function createPayment(paymentData) {
 }
 ```
 
----
-
 ## Next steps
 
 You have completed the following steps:
@@ -623,8 +604,6 @@ To process live payments, complete the following steps:
 5. **Set up monitoring** - Track payment success rates and errors
 6. **Configure webhooks** for production URLs
 7. **Test with small amounts** before processing larger transactions
-
----
 
 ## Quick reference
 
@@ -671,6 +650,3 @@ curl https://sandbox-api.paymentflow.com/v1/webhooks \
 - [ ] Log payment IDs so you can reconcile later
 - [ ] Try different test cards to check both successful and declined payments
 
----
-
-**Last updated:** December 2024 | **API Version:** 1.0.0
