@@ -1,8 +1,9 @@
-# Status codes  
-Web services use status codes to tell you what happened. A`2xx` means success, `4xx` implies a problem with your request, and `5xx` means a server problem. You might also see an error code with more details. Knowing these codes helps you quickly resolve issues with your API requests.
+# Best practices for handling Payment API errors
 
-## Best practices for API error codes
+Web services use status codes to tell you what happened. A`2xx` means success, `4xx` implies a problem with your request, and `5xx`  means a server problem. You might also see an error code with more details. Knowing these codes helps you quickly resolve issues with your API requests.
+
 Follow these simple steps if you get an error code:
+
 1. Check response headers for extra details such as rate limits or warnings.  
 2. Retry after waiting if a `5xx` error occurs. This helps your app recover from server issues.  
 3. Use the correct HTTP method—GET, POST, PUT, or DELETE—based on your action.
