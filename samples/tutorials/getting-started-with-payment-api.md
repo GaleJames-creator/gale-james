@@ -2,6 +2,12 @@
 
 This tutorial shows you how to integrate Payment payment processing into an application. By following these steps, you will process a test payment.
 
+## What you'll learn
+
+* How to authenticate with an API
+* How to process your first test payment
+* How to check payment status
+
 ## Prerequisites
 
 * Ensure you have a Payment account
