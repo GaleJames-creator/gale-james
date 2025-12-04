@@ -8,7 +8,7 @@ Before you proceed, ensure you have an integrated payment system, are familiar w
 
 ## When to retry
 
-Retry payments only when you encounter these error codes: 429 (rate limits), 500, 502, 503, and 504 (server errors), or network timeouts.
+Retry payments only when you encounter these error codes: `429` (rate limits), `500`, `502`, `503`, and `504` (server errors), or network timeouts.
   
 **Don't retry:**
   
