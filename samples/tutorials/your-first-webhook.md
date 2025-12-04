@@ -47,7 +47,7 @@ curl https://sandbox-api.payment.com/v1/webhooks \
 }
 ```
 
-The 'secret' is a unique key used to sign webhook payloads and verify that data comes from the Payment API. The signature is included in the 'Payment-Signature' header. Store secrets securely, such as in environment variables or a secrets manager. Rotate secrets regularly and revoke old ones to keep your integration secure.
+The `secret` is a unique key used to sign webhook payloads and verify that data comes from the Payment API. The signature is included in the 'Payment-Signature' header. Store secrets securely, such as in environment variables or a secrets manager. Rotate secrets regularly and revoke old ones to keep your integration secure.
 
 ### Webhook payload example
 
