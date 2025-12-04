@@ -1,4 +1,4 @@
-# Rate limits
+# Managing API rate limits
 
 The Payment API uses rate limits to maintain API stability and ensure fair usage.
 
