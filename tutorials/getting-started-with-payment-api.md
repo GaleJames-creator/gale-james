@@ -354,42 +354,8 @@ To process live payments, complete the following steps:
 3. **Update your base URL** to `https://api..com/v1`
 4. **Review security practices** - Ensure keys are stored securely
 5. **Set up monitoring** - Track payment success rates and errors
-6. **Configure webhooks** for production URLs
+6. **[Configure webhooks](.your-first-webhook.md)** for production URLs
 7. **Test with small amounts** before processing larger transactions
-
-## Quick reference
-
-### Essential cURL commands
-
-**Create a payment:**
-```bash
-curl https://sandbox-api..com/v1/payments \
-  -X POST \
-  -H "Authorization: Bearer YOUR_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"amount": 2999, "currency": "usd", "payment_method": {...}}'
-```
-
-**Retrieve a payment:**
-```bash
-curl https://sandbox-api..com/v1/payments/PAYMENT_ID \
-  -H "Authorization: Bearer YOUR_API_KEY"
-```
-
-**Create a refund:**
-```bash
-curl https://sandbox-api..com/v1/refunds \
-  -X POST \
-  -H "Authorization: Bearer YOUR_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"payment_id": "PAYMENT_ID", "reason": "requested_by_customer"}'
-```
-
-**List webhooks:**
-```bash
-curl https://sandbox-api..com/v1/webhooks \
-  -H "Authorization: Bearer YOUR_API_KEY"
-```
 
 ### Key concepts checklist
 
