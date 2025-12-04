@@ -32,13 +32,3 @@ curl https://sandbox-api..com/v1/webhooks \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
-### Key concepts checklist
-
-- [ ] Verify API keys are stored securely in environment variables
-- [ ] Use the Sandbox environment for testing
-- [ ] Handle errors using the correct HTTP status codes
-- [ ] Set up idempotency for payment requests
-- [ ] Keep an eye on rate limit headers
-- [ ] Check webhook signatures
-- [ ] Log payment IDs so you can reconcile later
-- [ ] Try different test cards to check both successful and declined payments
