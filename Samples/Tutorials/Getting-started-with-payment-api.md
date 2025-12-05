@@ -5,8 +5,12 @@ This tutorial shows you how to integrate payment processing into an application 
 ## What you'll learn
 
 * How to authenticate with an API
+* How to choose an environment
 * How to send your first test payment
 * How to check payment status
+* How to handle a simple error
+* How to retrieve the payment details
+* How to process a refund
 
 ## Prerequisites
 
@@ -226,7 +230,7 @@ During payment processing, you may encounter the following common errors:
 
 If you get an error, see [Best practices for handling API errors](../Reference/Best-practices-for-handling-payment-api-errors.md) for instructions.
 
-## Step 6: Retrieve a payment
+## Step 6: Retrieve the payment details
 
 Retrieve payment details using the payment ID.
 
