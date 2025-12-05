@@ -220,7 +220,7 @@ During payment processing, you may encounter the following common errors:
 | `429` | `rate_limit_error` | Too many requests | Implement retry logic with backoff |
 | `500` | `api_error` | Server error | Retry the request |
 
-If you get an error, see [Best practices for handling API errors](../reference/Best-practices-for-handling-payment-api-errors.md) for instructions.
+If you get an error, see [Best practices for handling API errors](../Reference/Best-practices-for-handling-payment-api-errors.md) for instructions.
 
 ## Step 5: Retrieve a payment
 
