@@ -1,11 +1,11 @@
-# Getting started with Payment API
+# Getting started with Payments API
 
-This tutorial shows you how to integrate Payment payment processing into an application. By following these steps, you will process a test payment.
+This tutorial shows you how to integrate payment processing into an application using the Payments API. By following these steps, you will process a test payment.
 
 ## What you'll learn
 
 * How to authenticate with an API
-* How to process your first test payment
+* How to send your first test payment
 * How to check payment status
 
 ## Prerequisites
@@ -57,7 +57,7 @@ $env:PAYMENT_API_KEY="sk_test_1234567890abcdef"
 
 ## Step 2: Choose your environment
 
-The Payment API provides two environments: sandbox (for development and testing) and production environment (for live payments).
+The Payments API provides two environments: sandbox (for development and testing) and production environment (for live payments).
 
 | Environment | Base URL | Purpose |
 |-------------|----------|---------|
@@ -81,7 +81,7 @@ For test cards, use any future expiration date, a 3-digit CVC, and any ZIP code.
 
 ## Step 3: Send your first Payments API request
 
-Use cURL to make a test payment. The example charges $29.99 with the payments API.
+Use cURL to make a test payment. The example charges $29.99 with the Payments API.
 
 ### Request Example
 
@@ -125,6 +125,10 @@ The request includes the following:
 - `customer` - Customer information for receipts and records
 - `description` - Optional note that appears on statements
 
+## Step 4: Check the payment status
+
+When you receive the response your Payments API request, verify `status` field displays `succeeded`. If the requests fails, see [Step 5: Handle a simple error](#tep-5-handle-a-simple-error) for details.
+
 ### Successful response
 
 If the payment succeeds, the response is similar to the following:
@@ -161,7 +165,7 @@ If the payment succeeds, the response is similar to the following:
 - `receipt_url` - URL to the customer receipt.
 
 
-## Step 4: Handle a simple error
+## Step 5: Handle a simple error
 
 Payments may fail for various reasons. The following describes how to respond to common issues:
 
@@ -222,7 +226,7 @@ During payment processing, you may encounter the following common errors:
 
 If you get an error, see [Best practices for handling API errors](../Reference/Best-practices-for-handling-payment-api-errors.md) for instructions.
 
-## Step 5: Retrieve a payment
+## Step 6: Retrieve a payment
 
 Retrieve payment details using the payment ID.
 
@@ -282,7 +286,7 @@ curl https://sandbox-api.payment.com/v1/payments/pay_1234567890abcdef \
 
 If the resource is unchanged, the server returns `304 Not Modified` with no response body.
 
-## Step 6: Process a refund
+## Step 7: Process a refund
 
 You can refund all or part of a payment. Refunds may take several days to appear on the customer's statement.
 
