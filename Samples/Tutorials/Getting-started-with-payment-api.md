@@ -220,7 +220,7 @@ During payment processing, you may encounter the following common errors:
 | `429` | `rate_limit_error` | Too many requests | Implement retry logic with backoff |
 | `500` | `api_error` | Server error | Retry the request |
 
-If you get an error, see [Best practices for handling API errors](../reference/best-practices-for-handling-payment-api-errors.md) for instructions.
+If you get an error, see [Best practices for handling API errors](../reference/Best-practices-for-handling-payment-api-errors.md) for instructions.
 
 ## Step 5: Retrieve a payment
 
@@ -360,7 +360,7 @@ To process live payments, complete the following steps:
 3. **Update your base URL** to `https://api..com/v1`
 4. **Review security practices** - Ensure keys are stored securely
 5. **Set up monitoring** - Track payment success rates and errors
-6. **[Configure webhooks](./creating-a-webhook.md)** for production URLs
+6. **[Configure webhooks](./Creating-a-webhook.md)** for production URLs
 7. **Test with small amounts** before processing larger transactions
 
 ### Key concepts checklist
