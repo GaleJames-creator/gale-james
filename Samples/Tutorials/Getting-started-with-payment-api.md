@@ -79,7 +79,7 @@ The following table lists sample test card numbers, each demonstrating a differe
 
 For test cards, use any future expiration date, a 3-digit CVC, and any ZIP code.
 
-## Step 3: Send your first API request
+## Step 3: Send your first Payments API request
 
 Use cURL to make a test payment. The example charges $29.99 with the payments API.
 
@@ -161,7 +161,7 @@ If the payment succeeds, the response is similar to the following:
 - `receipt_url` - URL to the customer receipt.
 
 
-## Step 4: Handle errors
+## Step 4: Handle a simple error
 
 Payments may fail for various reasons. The following describes how to respond to common issues:
 
