@@ -4,13 +4,13 @@ This tutorial shows you how to integrate payment processing into an application 
 
 ## What you'll learn
 
-* How to authenticate with an API
-* How to choose an environment
-* How to send your first test payment
-* How to check payment status
-* How to handle a simple error
-* How to retrieve the payment details
-* How to process a refund
+* [How to authenticate with an API](#step-1-get-your-api-keys)
+* [How to choose an environment](#step-2-choose-your-environment)
+* [How to send your first test payment](#step-3-send-your-first-payments-api-request)
+* [How to check payment status](#step-4-check-the-payment-status)
+* [How to handle a simple error](#step-5-handle-a-simple-error)
+* [How to retrieve the payment details](#step-6-retrieve-the-payment-details)
+* [How to process a refund](#step-7-process-a-refund)
 
 ## Prerequisites
 
