@@ -32,96 +32,96 @@ The following table explains whether the error code you receive indicates a [har
 
 | Decline code                   | Description                                |
 |--------------------------------|--------------------------------------------|
-| `account_closed`               | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
-| `account_frozen`               | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
-| `authentication_required`      | * Customer-initiated decline type: Soft
-* Merchant-initiated decline type: Soft |
-| blacklisted_card`              | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
-| `card_expired`                 | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Soft |
-| `card_limit_exceeded`          | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Soft |
-| `card_not_active`              | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Soft |
-| `card_type_block`              | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
-| `card_velocity_exceeded`       | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Soft |
-| `declined`                     | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
-| `declined_can_retry`           | * Customer-initiated decline type: Soft
-* Merchant-initiated decline type: Soft |
-| `do_not_honor`                 | * Customer-initiated decline type: Soft
-* Merchant-initiated decline type: Soft |
-| `duplicate_transaction`        | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Soft |
-| `fraud`                        | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
-! `fraud_block`                  | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
-| `illegal_action`               | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
-| `insufficient_funds`           | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Soft |
-| `invalid_address`              | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
-| `invalid_amount`               | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
-| `invalid_card_bin`             | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
-| `invalid_card_number`          | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
-| `invalid_currency`             | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Soft |
-| `invalid_expiration_date`      | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Soft |
-| `invalid_field_data`           | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
-| `invalid_merchant`             | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
-| `invalid_payment_method`       | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
-| `invalid_pin`                  | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
-| `invalid_security_code`        | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
-| `invalid_security_field`       | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
-| `invalid_transaction_type`     | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
-| `issuer_invalid_card`          | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
-| `issuer_not_found`             | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
-| `issuer_unavailable`           | * Customer-initiated decline type: Soft
-* Merchant-initiated decline type: Soft |
-| `limit_exceeded`               | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
-| `lost_stolen_card`             | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
-| `mid_limit_exceeded`           | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Soft |
-| `new_card_issued`              | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Soft |
-| `no_response`                  | * Customer-initiated decline type: Soft
-* Merchant-initiated decline type: Soft |
-| `pin_try_exceeded`             | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Soft |
-| `restricted_card`              | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
-| `sca_not_completed`            | * Customer-initiated decline type: Soft
-* Merchant-initiated decline type: Soft |
-| `stop_recurring                | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
-| `suspected_fraud`              | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Soft |
-| `unidentified_error`           | * Customer-initiated decline type: Soft
-* Merchant-initiated decline type: Soft |
-| `voice_authorization_required` | * Customer-initiated decline type: Hard
-* Merchant-initiated decline type: Hard |
+| `account_closed`               | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
+| `account_frozen`               | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
+| `authentication_required`      | * Customer-initiated decline type: Soft    |
+|                                | * Merchant-initiated decline type: Soft    |
+| blacklisted_card`              | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
+| `card_expired`                 | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Soft    |
+| `card_limit_exceeded`          | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Soft    |
+| `card_not_active`              | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Soft    |
+| `card_type_block`              | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
+| `card_velocity_exceeded`       | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Soft    |
+| `declined`                     | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
+| `declined_can_retry`           | * Customer-initiated decline type: Soft    |
+|                                | * Merchant-initiated decline type: Soft    |
+| `do_not_honor`                 | * Customer-initiated decline type: Soft    |
+|                                | * Merchant-initiated decline type: Soft    |
+| `duplicate_transaction`        | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Soft    |
+| `fraud`                        | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
+! `fraud_block`                  | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
+| `illegal_action`               | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
+| `insufficient_funds`           | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Soft    |
+| `invalid_address`              | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
+| `invalid_amount`               | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
+| `invalid_card_bin`             | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
+| `invalid_card_number`          | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
+| `invalid_currency`             | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Soft    |
+| `invalid_expiration_date`      | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Soft    |
+| `invalid_field_data`           | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
+| `invalid_merchant`             | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
+| `invalid_payment_method`       | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
+| `invalid_pin`                  | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
+| `invalid_security_code`        | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
+| `invalid_security_field`       | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
+| `invalid_transaction_type`     | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
+| `issuer_invalid_card`          | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
+| `issuer_not_found`             | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
+| `issuer_unavailable`           | * Customer-initiated decline type: Soft    |
+|                                | * Merchant-initiated decline type: Soft    |
+| `limit_exceeded`               | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
+| `lost_stolen_card`             | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
+| `mid_limit_exceeded`           | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Soft    |
+| `new_card_issued`              | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Soft    |
+| `no_response`                  | * Customer-initiated decline type: Soft    |
+|                                | * Merchant-initiated decline type: Soft    |
+| `pin_try_exceeded`             | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Soft    |
+| `restricted_card`              | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
+| `sca_not_completed`            | * Customer-initiated decline type: Soft    |
+|                                | * Merchant-initiated decline type: Soft    |
+| `stop_recurring`               | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
+| `suspected_fraud`              | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Soft    |
+| `unidentified_error`           | * Customer-initiated decline type: Soft    |
+|                                | * Merchant-initiated decline type: Soft    |
+| `voice_authorization_required` | * Customer-initiated decline type: Hard    |
+|                                | * Merchant-initiated decline type: Hard    |
 
 ## Retry policies
 
