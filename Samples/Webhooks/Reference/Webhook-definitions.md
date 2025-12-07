@@ -6,7 +6,7 @@ A Webhook ID is a unique identifier assigned to a specific webhook. This ID is c
 
 ## Endpoint URL
 
-An endpoint URL is the destination on your server where the service delivers webhook events. This URL must begin with http:// or https://, and your service must return a `2xx` HTTP status code to acknowledge successful receipt of each event. If your endpoint fails to acknowledge events with a `2xx` status code over several days, the service may disable it. Properly configure and maintain your endpoint to ensure uninterrupted receipt and processing of webhook events.
+An endpoint URL is the destination on your server where the service delivers webhook events. This URL must begin with `http://` or `https://`, and your service must return a `2xx` HTTP status code to acknowledge successful receipt of each event. If your endpoint fails to acknowledge events with a `2xx` status code over several days, the service may disable it. Properly configure and maintain your endpoint to ensure uninterrupted receipt and processing of webhook events.
 
 ## Secret
 
