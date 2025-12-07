@@ -9,4 +9,4 @@ To protect webhook data, follow these security practices:
 5. Log incoming traffic and monitor for anomalies or failed verifications.
 6. Regularly review and rotate secrets to reduce the risk of unauthorized access.
 
-Following these security best practices will significantly improve the safety and reliability of your webhook integrations.
+Following these practices improves the security and reliability of webhook integration.
