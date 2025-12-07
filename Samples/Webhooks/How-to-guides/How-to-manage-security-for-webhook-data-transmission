@@ -5,7 +5,7 @@ To protect webhook data, follow these security practices:
 1. Always use HTTPS for endpoint URLs to encrypt transmitted data.
 2. Verify each payload using the provided secret to ensure authenticity and integrity.
 3. Limit webhook delivery retries to avoid excessive requests.
-4. Only accept incoming requests from the service’s known IP addresses. This limits webhook events to trusted sources.
+4. Only accept incoming requests from the service’s known IP addresses (IP safelisting). This limits webhook events to trusted sources.
 5. Log incoming traffic and monitor for anomalies or failed verifications.
 6. Regularly review and rotate secrets to reduce the risk of unauthorized access.
 
