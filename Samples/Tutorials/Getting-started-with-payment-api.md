@@ -317,7 +317,7 @@ To process live payments, complete the following steps:
 3. **Update your base URL** to `https://api..com/v1`
 4. **Review security practices** - Ensure keys are stored securely
 5. **Set up monitoring** - Track payment success rates and errors
-6. **[Configure webhooks](./Tutorials/Creating-a-webhook.md)** for production URLs
+6. **[Configure webhooks](./Creating-a-webhook.md)** for production URLs
 7. **Test with small amounts** before processing larger transactions
 
 ### Key concepts checklist
