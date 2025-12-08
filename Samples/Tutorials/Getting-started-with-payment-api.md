@@ -130,7 +130,7 @@ The request includes the following:
 
 ## Step 4: Check the payment status
 
-When you receive the response your Payments API request, verify `status` field displays `succeeded`. If the requests fails, see [Step 5: Handle a simple error](#tep-5-handle-a-simple-error) for details.
+When you receive the response your Payments API request, verify `status` field displays `succeeded`. If the requests fails, see [Step 5: Handle a simple error](#Step-5-handle-a-simple-error) for details.
 
 ### Successful response
 
