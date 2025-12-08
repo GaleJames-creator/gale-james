@@ -16,7 +16,7 @@ Replace `{anonymousShopperId}` with the actual shopper ID provided in the subscr
 
 Once you have received a session token, you can access the shopper's order and product information.
 
-1. **Get product information**: * Retrieve product details by sendin a GET /products request. Replace `{productId}` with the specific product ID you wish to view.
+1. **Get product information**: Retrieve product details by sendin a GET /products request. Replace `{productId}` with the specific product ID you wish to view.
 
 ```json
   GET https://api.service.com/v1/shoppers/me/products/{productId}?expand=all
