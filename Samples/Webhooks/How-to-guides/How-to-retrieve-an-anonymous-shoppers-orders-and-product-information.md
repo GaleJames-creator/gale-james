@@ -24,9 +24,6 @@ Once you have received a session token, you can access the shopper's order and p
 
 2. **Get order information**: Fetch order details by making a GET /orders request. This allows you to list all orders associated with the anonymous shopper.
 
-
 ```json
   GET https://api.service.com/v1/shoppers/me/orders?expand=all
 ```
-
-3. 
