@@ -1,6 +1,6 @@
 # How to retrieve an anonymous shopper's orders and product information
 
-This guide assumes you received a webhook containg an anonymous shopper's user ID (`userId). To retrieve an anonymous shopper's orders and product information, follow these steps:
+This guide assumes you received a webhook containg an anonymous shopper's user ID (`userId). To retrieve an anonymous shopper's orders and product information by using their `userId`, follow these steps:
 
 ## Step 1: Obtain a token for the anonymous shopper
 
