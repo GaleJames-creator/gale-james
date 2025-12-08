@@ -293,11 +293,11 @@ If the resource is unchanged, the server returns `304 Not Modified` with no resp
 
 You have completed the following steps:
 
-✅ Authenticated with your API
-✅ How to choose an environment
-✅ Processed a test payment  
-✅ Hoe to check payment status
-✅ How to andle a simple error  
+✅ Authenticated with your API<br>
+✅ How to choose an environment<br>
+✅ Processed a test payment<br>
+✅ Hoe to check payment status<br>
+✅ How to andle a simple error<br>  
 ✅ How to retrieve the payment details  
 
 ## Next steps
