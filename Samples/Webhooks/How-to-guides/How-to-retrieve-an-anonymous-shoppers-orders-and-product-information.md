@@ -4,10 +4,10 @@ To retrieve an anonymous shopper's orders and product information, follow these 
 
 ## Step 1: Obtain a token for the anonymous shopper
 
-Begin by obtaining an access token using the anonymous shopper's ID by sending a POST request to Digital River's OAuth token endpoint:
+Begin by obtaining an access token using the anonymous shopper's ID by sending a POST request to the services's OAuth token endpoint:
 
 ```json
-  POST https://api.digitalriver.com/oauth20/token?grant_type=client_credentials&dr_userid={anonymousShopperId}
+  POST https://api.service.com/oauth20/token?grant_type=client_credentials&dr_userid={anonymousShopperId}
 ```
 
 Replace `{anonymousShopperId}` with the actual shopper ID provided in the subscription details under `shopper.id`.
