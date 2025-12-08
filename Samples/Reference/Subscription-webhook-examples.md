@@ -33,8 +33,7 @@ To create a subscription webhook response, you will receive a webhook with a `20
 
 **Note**: Ensure to handle the `id` and `data` fields appropriately to extract the subscription details required for your application. This response can confirm the subscription creation and relay necessary information to the subscriber or to internal systems for further processing.
 
-In the example below, the initial `id` represents the subscription identifier. The subscription identifier appears as subscription ID (`id`) in the Subscription resource. For example, use `id` to list all orders associated with a subscription in `https://www.service.com/v1/subscriptions/{subId}/orders
-Opens a new window. It also provides additional subscription details.
+In the example below, the initial `id` represents the subscription identifier. The subscription identifier appears as subscription ID (`id`) in the Subscription resource. For example, use `id` to list all orders associated with a subscription in `https://www.service.com/v1/subscriptions/{subId}/orders`. It also provides additional subscription details.
 
 ```json
 {
