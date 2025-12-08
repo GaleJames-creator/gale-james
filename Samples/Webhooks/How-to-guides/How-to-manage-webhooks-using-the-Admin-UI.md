@@ -46,9 +46,7 @@ By following these steps, you will successfully subscribe to selected event type
 
 Your endpoint must return a `2xx` HTTP status code to acknowledge the receipt of an event. If the endpoint fails to acknowledge events for several days, it will be disabled.
 
-You will not receive the event if the seecixw receives response codes outside this range. For example, the service treats a URL redirection as a failure.
-
-## Using webhooks
+You will not receive the event if the service receives response codes outside this range. For example, the service treats a URL redirection as a failure.
 
 ## Editing webhooks
 
