@@ -289,16 +289,23 @@ curl https://sandbox-api.payment.com/v1/payments/pay_1234567890abcdef \
 
 If the resource is unchanged, the server returns `304 Not Modified` with no response body.
 
-## Next steps
+## What you've accomplished
 
 You have completed the following steps:
 
-✅ Set up your  account and API keys  
-✅ Processed your first test payment  
-✅ Handled errors gracefully  
-✅ Retrieved payment details  
-✅ Created a refund  
-✅ (Optional) Set up webhooks for real-time notifications
+✅ Authenticated with your API
+✅ How to choose an environment
+✅ Processed a test payment  
+✅ Hoe to check payment status
+✅ How to andle a simple error  
+✅ How to retrieve the payment details  
+
+## Next steps
+Ready for more? Check out:
+
+- [How to implement retry logic for failed payments](../How-to-guides/How-to-implement-retry-logic-for-failed-payments.md)
+- [How to processes refunds](../How-to-guides/How-to-process-refunds.md)
+
 
 ### Going to production
 
@@ -309,13 +316,13 @@ To process live payments, complete the following steps:
 3. **Update your base URL** to `https://api..com/v1`
 4. **Review security practices** - Ensure keys are stored securely
 5. **Set up monitoring** - Track payment success rates and errors
-6. **[Configure webhooks](./Creating-a-webhook.md)** for production URLs
+6. **[Configure webhooks](../../Webhooks/Tutorials/Creating-a-webhook.md)** for production URLs
 7. **Test with small amounts** before processing larger transactions
 
 ### Key concepts checklist
 
 - [ ] Verify API keys are stored securely in environment variables
-- [ ] Use the Sandbox environment for testing
+- [ ] Use the sandbox environment for testing
 - [ ] Handle errors using the correct HTTP status codes
 - [ ] Set up idempotency for payment requests
 - [ ] Keep an eye on rate limit headers
