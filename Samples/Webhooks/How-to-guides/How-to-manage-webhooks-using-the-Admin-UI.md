@@ -6,7 +6,7 @@ You can reveal and rotate a webhook's secret in Admin UI.
 
 ## Searching for a webhook
 
-You can easily search for an existing webhook in Global Commerce to review or update its settings. Use the steps below to find a webhook by its unique ID.
+You can easily search for an existing webhook in Admin UI to review or update its settings. Use the steps below to find a webhook by its unique ID.
 
 To search for an existing webhook:
 
@@ -16,9 +16,11 @@ To search for an existing webhook:
 
 ## Creating a webhook
 
+Creating a webhook allows your system to receive real-time notifications from the service, enabling you to automate and enhance your processes. Whether you're tracking subscription updates, inventory statuses, or other events, setting up a webhook is straightforward: open your firewall to the service IPs, create the webhook in your service project, and configure your system to respond to the events. Follow these simple steps to get started.
+
 You can create a webhook to send notifications in three easy steps:
 
-### Step 1: Open your firewall to trusted Digital River IP addresses
+### Step 1: Open your firewall to trusted service IP addresses
 To receive webhook notifications from service, you must open your firewalls to all trusted service IP addresses listed in the Payment API safelist.
 See the Payment API Safelist section for trusted service IP addresses.
 
@@ -40,6 +42,12 @@ See the Payment API Safelist section for trusted service IP addresses.
 10. Scroll down and click **Create**.
 
 By following these steps, you will successfully subscribe to selected event types, enabling your systems to receive notifications and respond to changes promptly.
+
+### Step 3: Respond to webhook events
+
+Your endpoint must return a `2xx` HTTP status code to acknowledge the receipt of an event. If the endpoint fails to acknowledge events over several days, your endpoint will be disabled.
+
+You will not receive the event if the seecixw receives response codes outside this range. For example, the service treats a URL redirection as a failure.
 
 ## Using webhooks
 
