@@ -8,8 +8,8 @@ Webhooks notify you about events as soon as they happen, automatically retry if 
 
 ## What you'll learn
 
-* How to register a webhook endpoint
-* How to verify a webhook signature
+* [How to register a webhook endpoint](#step-1-register-a-webhook-endpoint)
+* [How to verify a webhook signature](#step-2-verify-webhook-signatures)
 
 ## Prerequisites
 
@@ -135,3 +135,22 @@ app.post('/webhooks/payment', (req, res) => {
   res.status(200).send('Webhook received');
 });
 ```
+
+## What you've accomplished
+
+You have completed the following steps:
+
+✅ Registered a webhook endpoint<br>
+✅ Verified webhook signatures
+
+### Next steps
+
+Ready for more? Check out:
+
+[How to manage security for webhook data transmission](../How-to-guides/How-to-manage-security-for-webhook-data-transmission.md)
+[How to manage webhooks using hte Admin UI](..//How-to-guides/How-to-manage-webhooks-using-the-Admin-UI.md)
+[How to retrieve an anonymous shopper's orders and product information](../How-to-retrieve-an-anonymous-shoppers-orders-and-product-information.md)
+
+
+
+
