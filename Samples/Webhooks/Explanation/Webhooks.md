@@ -6,7 +6,8 @@ The service notifies your endpoint URL of API events via webhooks, each carrying
 
 Creating a webhook allows your system to receive real-time notifications from the service, enabling you to automate and enhance your processes. Whether you're tracking subscription updates, inventory statuses, or other events, setting up a webhook is straightforward: open your firewall to the service's IPs, create the webhook in your service project, and configure your system to respond to the events. See [Creating a webhook](../How-to-guides/How-to-manage-webhooks-using-the-Admin-UI.md#creating-a-webhook) for additional information.
 
-To create a subscription webhook response, you will receive a webhook with a 201 Created status, which includes a unique identifier and details about the newly created subscription. Use this data to build email notifications and integrate with Commerce APIs for additional information. Here is a sample of the response structure you can expect:
+To create a subscription webhook response, you will receive a webhook with a `201 Created status`, which includes a unique identifier and details about the newly created subscription. Use this data to build email notifications and integrate with Payment APIs for additional information. Here is a sample of the response structure you can expect:
+
 
 ```json
 {
