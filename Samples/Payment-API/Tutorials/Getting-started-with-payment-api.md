@@ -301,6 +301,7 @@ You have completed the following steps:
 ✅ How to retrieve the payment details  
 
 ### Next steps
+
 Ready for more? Check out:
 
 - [How to implement retry logic for failed payments](../How-to-guides/How-to-implement-retry-logic-for-failed-payments.md)
