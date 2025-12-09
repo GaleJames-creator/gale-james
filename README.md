@@ -3,15 +3,15 @@
 ## About me
 With over 15 years of experience, I specialize in developer documentation, API reference, and payment systems. My work helps technical teams excel.
 
-## Documentation philosophy
-My portfolio follows the **Diátaxis framework**, which organizes documentation into these four user-focused types:
+## Documentation philosophy: Diátaxis framework
+My portfolio follows the **[Diátaxis framework](https://diataxis.fr/)**, which organizes documentation into these four user-focused types:
 
-- **Tutorials**: Learning-oriented, step-by-step lessons
-- **How-to guides**: Task-oriented, problem-solving directions  
-- **Explanation**: Understanding-oriented, conceptual knowledge
-- **Reference**: Information-oriented, technical specifications
+- **📚 Tutorials**: Learning-oriented, step-by-step lessons
+- **🛠️ How-to guides**: Task-oriented, problem-solving directions  
+- **💡 Explanation**: Understanding-oriented, conceptual knowledge
+- **📖 Reference**: Information-oriented, technical specifications
 
-[Learn more about Diátaxis](https://diataxis.fr/).
+This systematic approach ensures users can find the right content whether they're learning, doing, understanding, or looking up information.
 
 ## Writing Approach
 
@@ -26,7 +26,7 @@ I adapt my writing for each content type:
 
 This portfolio demonstrates my experience with all four content types and is organized as follows:
 
-- [Explaination](./explanation/README.md)
+- [Explanation](./explanation/README.md)
 - [How-to-guides](./how-to-guides/README.md)
 - [Reference](./reference/README.md)
 - [Tutorials](./tutorials/README.md)
