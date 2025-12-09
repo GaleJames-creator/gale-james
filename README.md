@@ -11,7 +11,7 @@ My portfolio follows the **[Diátaxis framework](https://diataxis.fr/)**, which 
 - **💡 Explanation**: Understanding-oriented, conceptual knowledge
 - **📖 Reference**: Information-oriented, technical specifications
 
-This systematic approach ensures users can find the right content whether they're learning, doing, understanding, or looking up information.
+This approach helps users easily find the content they need, whether they want to learn, do, understand, or look up information.
 
 ## Writing Approach
 
