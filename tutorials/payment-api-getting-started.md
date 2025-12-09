@@ -18,7 +18,7 @@ This tutorial shows you how to integrate payment processing into an application 
 * Have a development environment with command-line access
 * A cURL or HTTP client.
 
-**Estimated time to complete:** 10 minutes
+**Estimated time to complete:** 15 minutes
 
 ## Step 1: Get your API keys
 
