@@ -13,7 +13,7 @@ Use how-to guides when you want to accomplish a specific, goal-oriented task by 
 * [Implement retry logic for failed payments](./payment-retry-logic-.md): This guide provides intructions for setting up automatic retries for failed payments.
 * [Process a refund](./payment-process-refunds.md): This guide shows you how to process a refund.
 * [Manage security for webhook data transmission](./webhooks-data-transmission.md): This guide provides intructions for protecting webhook data.
-* [Manage webhooks using the Admin UI](./how-to-guides/webhooks-Admin-UI.md): This guide explains how to created, edit, enable, disable, or delete webhooks, and manage secrets. 
+* [Manage webhooks using the Admin UI](./webhooks-Admin-UI.md): This guide explains how to created, edit, enable, disable, or delete webhooks, and manage secrets. 
 * [Retrieve an anonymous shopper's order and product information](./webhooks-anonymous-shopper.md): This guide provides step-by-step instructions for retrieving an anonymous shopper's orders and product information.
 
 ---
