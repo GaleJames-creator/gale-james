@@ -16,5 +16,5 @@ The service notifies your endpoint URL of API events via webhooks, each carrying
 
 ## Reference
 
-- [Subscription webhook examples](../webhook-subscription-examples.md)
-- [Webhook definitions](../webhook-definitions.md)
+- [Subscription webhook examples](../reference/webhook-subscription-examples.md)
+- [Webhook definitions](../reference/webhook-definitions.md)
