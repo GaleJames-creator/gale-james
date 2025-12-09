@@ -6,21 +6,12 @@ With over 15 years of experience, I specialize in developer documentation, API r
 ## Documentation philosophy: Diátaxis framework
 My portfolio follows the **[Diátaxis framework](https://diataxis.fr/)**, which organizes documentation into these four user-focused types:
 
-- **📚 Tutorials**: Learning-oriented, step-by-step lessons
-- **🛠️ How-to guides**: Task-oriented, problem-solving directions  
-- **💡 Explanation**: Understanding-oriented, conceptual knowledge
-- **📖 Reference**: Information-oriented, technical specifications
+- **[📚 Tutorials](./tutorials/README.md)**: Learning-oriented, step-by-step lessons
+- **[🛠️ How-to guide](./how-to-guides/README.md)**: Task-oriented, problem-solving directions  
+- **[💡 Explanation](./explanation/README.md)**: Understanding-oriented, conceptual knowledge
+- **[📖 Reference](./reference/README.md)**: Information-oriented, technical specifications
 
 This approach helps users easily find the content they need, whether they want to learn, do, understand, or look up information.
-
-## Portfolio organization
-
-This portfolio demonstrates my experience with all four content types and is organized as follows:
-
-- [Explanation](./explanation/README.md)
-- [How-to-guides](./how-to-guides/README.md)
-- [Reference](./reference/README.md)
-- [Tutorials](./tutorials/README.md)
 
 ## Documentation experience
 
@@ -47,7 +38,7 @@ My contributions included:
 - **Languages**: Python, JavaScript (working knowledge for code examples)
 - **AI Tools**: Claude, Google Gemini, Atlassian Intelligence, GitBook AI.
 
-## Contact
+## Connect
 
-You can reach me through LinkedIn at [www.linkedin.com/in/gale-j-8219701](www.linkedin.com/in/gale-j-8219701).
+💼 [www.linkedin.com/in/gale-j-8219701](www.linkedin.com/in/gale-j-8219701).
 
