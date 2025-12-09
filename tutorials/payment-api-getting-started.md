@@ -306,6 +306,8 @@ Ready for more? Check out:
 
 - [Implement retry logic for failed payments](../how-to-guides/payment-retry-logic-.md)
 - [Process a refund](../how-to-guides/payment-process-refunds.md)
+- [Manage security for webhook data transmission](../how-to-guides/webhooks-data-transmission.md)
+- [Manage webhooks using the Admin UI](../how-to-guides/webhooks-Admin-UI.md)
 
 
 ### Going to production
