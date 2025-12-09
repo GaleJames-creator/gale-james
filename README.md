@@ -13,15 +13,6 @@ My portfolio follows the **[Diátaxis framework](https://diataxis.fr/)**, which 
 
 This approach helps users easily find the content they need, whether they want to learn, do, understand, or look up information.
 
-## Writing Approach
-
-I adapt my writing for each content type:
-
-* **Tutorials**: Friendly and step-by-step
-* **How-to guides**: Clear and action-oriented
-* **Explanations**: Informative and easy to understand
-* **Reference**: Concise and factual
-
 ## Portfolio organization
 
 This portfolio demonstrates my experience with all four content types and is organized as follows:
