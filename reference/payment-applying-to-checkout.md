@@ -1,4 +1,3 @@
-
 # Applying a payment method to checkout  
 This guide explains how to add a credit card and billing address as a payment method during checkout with JSON. If the request is successful, you will get a success status code. If there is an issue, the response will describe the problem. Common error responses include invalid card number, expired card, and invalid CVV. By understanding these potential errors, you can better anticipate and handle them in your integration.
 
@@ -88,4 +87,4 @@ Error response (JSON)
 }
 ```
 
-If you get an error, see [Best practices for API error codes](./Best-practices-for-handling-payment-api-errors.md) for instructions.
+If you get an error, see [Best practices for API error codes](.//payment-error-best-practices-for-handling-payment-api-errors.md) for instructions.
