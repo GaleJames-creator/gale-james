@@ -304,8 +304,8 @@ You have completed the following steps:
 
 Ready for more? Check out:
 
-- [How to implement retry logic for failed payments](../how-to-guides/payment-retry-logic-.md)
-- [How to processes refunds](../how-to-guides/payment-process-refunds.md)
+- [Implement retry logic for failed payments](../how-to-guides/payment-retry-logic-.md)
+- [Process a refund](../how-to-guides/payment-process-refunds.md)
 
 
 ### Going to production
