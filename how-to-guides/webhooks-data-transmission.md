@@ -1,4 +1,4 @@
-# How to manage security for webhook data transmission
+# Manage security for webhook data transmission
 
 To protect webhook data, follow these security practices:
 
