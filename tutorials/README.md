@@ -8,7 +8,7 @@ Our tutorials help you get comfortable with a product by guiding you step by ste
 - You are new to the product.
 - You ask, "How do I get started?"
 
-## Available tutorials
+## Available tutorials:
 
 * [Getting started with Payments API](./payment-api-getting-started.md): Process your first payment in 15 minutes.
 * [Creating a webhook](./webhook-creating-your-first.md): Set up and test webhook notifications.
