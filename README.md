@@ -7,7 +7,7 @@ With over 15 years of experience, I specialize in developer documentation, API r
 My portfolio follows the **[Diátaxis framework](https://diataxis.fr/)**, which organizes documentation into these four user-focused types:
 
 - **[📚 Tutorials](./tutorials/README.md)**: Learning-oriented, step-by-step lessons
-- **[🛠️ How-to guide](./how-to-guides/README.md)**: Task-oriented, problem-solving directions  
+- **[🛠️ How-to guides](./how-to-guides/README.md)**: Task-oriented, problem-solving directions  
 - **[💡 Explanation](./explanation/README.md)**: Understanding-oriented, conceptual knowledge
 - **[📖 Reference](./reference/README.md)**: Information-oriented, technical specifications
 
