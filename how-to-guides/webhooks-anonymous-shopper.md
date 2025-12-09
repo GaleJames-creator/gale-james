@@ -1,28 +1,34 @@
-# How to retrieve an anonymous shopper's orders and product information
+# Retrieve an anonymous shopper's orders and product information
 
-This guide assumes you received a webhook containing an anonymous shopper's user ID (`userId`). To retrieve an anonymous shopper's orders and product information by using their `userId`, follow these steps:
+This guide shows how to retrieve an anonymous shopper's orders and product information using their user ID (userId).
 
-## Step 1: Obtain a token for the anonymous shopper
+## Prerequisites:
 
-Begin by obtaining an access token using the anonymous shopper's ID by sending a POST request to the services's OAuth token endpoint:
+- You have received a webhook containing the anonymous shopper's user ID (`userId`).
+
+- You have access to the service's API endpoints and credentials as required.
+
+## Step 1: Obtain an access token for the anonymous shopper
+
+Send a `POST` request to the service's OAuth token endpoint to obtain an access token for the anonymous shopper. Use the following format:
 
 ```json
   POST https://api.service.com/oauth20/token?grant_type=client_credentials&dr_userid={anonymousShopperId}
 ```
 
-Replace `{anonymousShopperId}` with the actual shopper ID provided in the subscription details under `shopper.id`.
+Replace `{anonymousShopperId}` with the actual user ID from your webhook payload (typically found in `shopper.id`).
 
-## Step 2: Use the token to access orders and product Information
+## Step 2: Use the access token to retrieve orders and product information
 
-Once you have received a session token, you can access the shopper's order and product information.
+After obtaining the session token, include it in the `Authorization` header as a Bearer token for all subsequent requests to access the anonymous shopper's data.
 
-1. **Get product information**: Retrieve product details by sendin a GET /products request. Replace `{productId}` with the specific product ID you wish to view.
+1. **To retrieve product information**: Send a `GET` request to the `/products` endpoint, specifying the desired product ID. As shown in the following example:
 
 ```json
   GET https://api.service.com/v1/shoppers/me/products/{productId}?expand=all
 ```
 
-2. **Get order information**: Fetch order details by making a GET /orders request. This allows you to list all orders associated with the anonymous shopper.
+2. **To list all orders for the anonymous shopper**: Send a `GET` request to the `/orders` endpoint. As shown in the following example:
 
 ```json
   GET https://api.service.com/v1/shoppers/me/orders?expand=all
