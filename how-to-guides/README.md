@@ -1,6 +1,6 @@
 # Browse by topic
 
-* Payment
+* Payments
   * [How to implement retry logic for failed payments](./payment-retry-logic-.md)
   * [How to process a refund](./payment-process-refunds.md)
 * Webhooks
