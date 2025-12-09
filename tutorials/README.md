@@ -1,9 +1,11 @@
 # Tutorials
 
 ## What tutorials are:
-Our tutorials help you get comfortable with a product by guiding you step by step. You'll learn by doing, with simple instructions that are stress-free.
+
+Our tutorials guide you step by step so you learn the basics by doing.
 
 ## When to use tutorials:
+
 - You want to learn the basics.
 - You are new to the product.
 - You ask, "How do I get started?"
