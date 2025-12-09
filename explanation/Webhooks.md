@@ -6,15 +6,15 @@ The service notifies your endpoint URL of API events via webhooks, each carrying
 
 ## Tutorials
 
-- [Creating a webhook](../Tutorials/Creating-a-webhook.md)
+- [Creating a webhook](../tutorials/webhook-creating-your-first.md)
 
 ## How-to-guides
 
-- [How to manage security for webhook and data transmission](../How-to-guides/How-to-manage-security-for-webhook-data-transmission.md)
-- [How to manage webhooks using the Admin UI](../How-to-guides/How-to-manage-webhooks-using-the-Admin-UI.md)
-- [How to retrieve an anonymous shopper's order and product information](../How-to-guides/How-to-retrieve-an-anonymous-shoppers-orders-and-product-information.md)
+- [How to manage security for webhook and data transmission](../how-to-guides/webhooks-data-transmission.md)
+- [How to manage webhooks using the Admin UI](../how-to-guides/webhooks-Admin-UI.md)
+- [How to retrieve an anonymous shopper's order and product information](../how-to-guides/webhooks-anonymous-shopper.md)
 
 ## Reference
 
-- [Subscription webhook examples](../Reference/Subscription-webhook-examples.md)
-- [Webhook definitions](../Reference/Webhook-definitions.md)
+- [Subscription webhook examples](../webhook-subscription-examples.md)
+- [Webhook definitions](../webhook-definitions.md)
