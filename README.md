@@ -1,12 +1,41 @@
-# Gale James - Senior Technical Writer
+# Gale James - Senior/Lead Technical Writer
 
 ## About me
-Senior Technical Writer with 15+ years of experience specializing in API documentation, developer portals, and payment systems.
+With over 15 years of experience, I specialize in developer documentation, API reference, and payment systems. My work helps technical teams excel.
+
+## Documentation philosophy
+My portfolio follows the **Diátaxis framework**, which organizes documentation into these four user-focused types:
+
+- **Tutorials**: Learning-oriented, step-by-step lessons
+- **How-to guides**: Task-oriented, problem-solving directions  
+- **Explanation**: Understanding-oriented, conceptual knowledge
+- **Reference**: Information-oriented, technical specifications
+
+[Learn more about Diátaxis](https://diataxis.fr/).
+
+## Writing Approach
+
+I adapt my writing for each content type:
+
+* **Tutorials**: Friendly and step-by-step
+* **How-to guides**: Clear and action-oriented
+* **Explanations**: Informative and easy to understand
+* **Reference**: Concise and factual
+
+## Portfolio organization
+
+This portfolio demonstrates my experience with all four content types and is organized as follows:
+
+- [Explaination](./explanation/README.md)
+- [How-to-guides](./how-to-guides/README.md)
+- [Reference](./reference/README.md)
+- [Tutorials](./tutorials/README.md)
 
 ## Documentation experience
 
 ### Digital River API Documentation (2016-2025)
-I led documentation for Digital River's CaaS platform, managing content in GitBook and establishing documentation standards.
+
+I led a team of three technical writers, including myself, who managed all documentation for Digital River's products, established standards, and maintained content in GitBook.
 
 **Repository**: [DigitalRiver/GitBook](https://github.com/DigitalRiver/GitBook)
 
@@ -20,12 +49,14 @@ My contributions included:
 - Created and enforced documentation standards and style guides
 
 ## Skills
+
 - **Documentation Platforms**: GitBook, ReadMe, MadCap Flare
 - **Markup**: Markdown, XML, DITA
 - **Version Control**: Git, GitHub, SVN
 - **Languages**: Python, JavaScript (working knowledge for code examples)
-- **AI Tools**: Google Gemini, Atlassian Intelligence, GitBook AI.
+- **AI Tools**: Claude, Google Gemini, Atlassian Intelligence, GitBook AI.
 
-## Portfolio
-[Full portfolio and writing samples](https://github.com/GaleJames-creator/gale-james)
+## Contact
+
+You can reach me through LinkedIn at [www.linkedin.com/in/gale-j-8219701](www.linkedin.com/in/gale-j-8219701).
 
