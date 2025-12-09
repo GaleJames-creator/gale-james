@@ -147,9 +147,9 @@ You have completed the following steps:
 
 Ready for more? Check out:
 
-- [How to manage security for webhook data transmission](../How-to-guides/How-to-manage-security-for-webhook-data-transmission.md)
-- [How to manage webhooks using the Admin UI](../How-to-guides/How-to-manage-webhooks-using-the-Admin-UI.md)
-- [How to retrieve an anonymous shopper's orders and product information](../How-to-guides/How-to-retrieve-an-anonymous-shoppers-orders-and-product-information.md)
+- [How to manage security for webhook data transmission](../how-to-guides/webhooks-data-transmission.md)
+- [How to manage webhooks using the Admin UI](../how-to-guides/webhooks-Admin-UI.md)
+- [How to retrieve an anonymous shopper's orders and product information](../how-to-guides/webhooks-anonymous-shopper.md)
 
 
 
