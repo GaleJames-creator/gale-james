@@ -1,8 +1,26 @@
 # How to process a refund
 
-You can refund all or part of a payment. Refunds may take several days to appear on the customer's statement.
+This guide shows you, step by step, how to issue a full or partial refund using the refunds API endpoint. Use this guide when you need to return funds to a customer, either in full or in part. Note that refunds may take several days to appear on the customer’s statement.
 
-## Full refund example
+## Prerequisites
+
+- You have a valid API key.
+
+- You know the `payment_id` of the transaction to refund.
+
+Follow these steps to send a refund request using the refunds endpoint.
+
+## Step 1: Send a refund
+
+Use the refunds endpoint to send a full or partial refund. You must include the transaction's `payment_id` and a refund `reason` in the request body. Accepted values are:
+
+- `duplicate` - The payment was a duplicate charge
+- `fraudulent` - The payment was a fraudulent transaction
+- `requested_by_customer` - The customer requested a refund.
+
+### Full refund example
+
+To refund the entire payment, use this `curl` command:
 
 ```bash
 curl https://sandbox-api..com/v1/refunds \
@@ -15,7 +33,9 @@ curl https://sandbox-api..com/v1/refunds \
   }'
 ```
 
-## Partial refund example
+### Partial refund example
+
+To refund part of a payment, specify the `amount` (in cents) in your request:
 
 ```bash
 curl https://sandbox-api..com/v1/refunds \
@@ -32,15 +52,9 @@ curl https://sandbox-api..com/v1/refunds \
   }'
 ```
 
-### Refund reasons
+## Step 2: Check the API response
 
-Specify a reason when issuing a refund in the request body. Possible values are:
-
-- `duplicate` - The payment was a duplicate charge
-- `fraudulent` - The payment was a fraudulent transaction
-- `requested_by_customer` - The customer requested a refund.
-
-## Response
+A successful refund returns a response like this:
 
 ```json
 {
