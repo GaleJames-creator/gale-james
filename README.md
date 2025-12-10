@@ -40,5 +40,5 @@ My contributions included:
 
 ## Connect
 
-💼 [Gale James at LinkedIn](https://wwww.linkedin.com/in/gale-james)
+💼 [Gale James at LinkedIn](wwww.linkedin.com/in/gale-james)
 
