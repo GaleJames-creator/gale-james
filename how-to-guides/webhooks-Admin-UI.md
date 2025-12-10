@@ -4,6 +4,10 @@ The Admin UI lets you search for, create, edit, enable, disable, or delete webho
 
 You can reveal and rotate a webhook's secret in Admin UI.
 
+## Prerequisites
+
+- You have an Admin UI account. To get an account, contact your Customer Success Manager.
+
 ## Searching for a webhook
 
 You can easily search for an existing webhook in Admin UI to review or update its settings. Use the steps below to find a webhook by its unique ID.
