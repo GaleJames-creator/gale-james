@@ -2,7 +2,7 @@
 
 This guide shows how to retrieve an anonymous shopper's orders and product information using their user ID (userId).
 
-## Prerequisites:
+## Prerequisites
 
 - You have received a webhook containing the anonymous shopper's user ID (`userId`).
 
