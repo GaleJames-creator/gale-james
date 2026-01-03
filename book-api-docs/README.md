@@ -19,7 +19,7 @@ This API documentation helps publishers easily manage their book catalog using c
 ✅ Enterprise mindset: Release management, migration planning, deprecation handling, and rollback procedures
 <br>
 ✅ Quality excellence: Use of systematic QA processes to identify and resolve 258 encoding issues
-****
+<br>
 ✅ Developer focus: Production-ready code examples developers can actually use
 <br>
 ✅ Initiative and ownership: Extended beyond requirements to deliver professional-grade deliverables
