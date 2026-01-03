@@ -41,7 +41,7 @@ This API documentation helps publishers easily manage their book catalog using c
 
 **Impact**: Simplified documentation maintenance and improved developer onboarding experience.
 
-📄 **Detailed analysis**: [API Versioning Strategy: Decision Rational](./architecture/versioning-rational.md)
+📄 **Detailed analysis**: [API Versioning Strategy: Decision Rational](./architecture/versioning-rationale.md)
 
 ### Enterprise release management
 
