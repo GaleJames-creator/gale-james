@@ -118,5 +118,3 @@ Ideal role: Senior/Lead Technical Writer position, focusing on:
 ---
 
 *This portfolio demonstrates production-ready technical writing capabilities for API-first companies, developer tools platforms, and enterprise software organizations.*
-```
-
