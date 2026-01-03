@@ -1,5 +1,4 @@
 # BookHub Publisher API documentation
-BookHub Publisher API documentation
 
 Production-ready API documentation suite demonstrating enterprise technical writing, strategic decision-making, and systematic quality assurance.
 
