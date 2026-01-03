@@ -4,6 +4,7 @@
 > **Specializations:** API documentation • Developer tools • Payment systems
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Gale%20James-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/gale-james)
+<br>
 [![Email](https://img.shields.io/badge/Email-galejames80%40gmail.com-red?style=flat&logo=gmail)](mailto:galejames80@gmail.com)
 
 ---
