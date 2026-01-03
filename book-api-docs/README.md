@@ -190,13 +190,13 @@ The course provided the technical foundation in API documentation and effective 
 
 # Connect
 
-Author: Gale James
+**Author**: Gale James
 <br>
-GitHub: [github.com/GaleJames-creator](https://github.com/GaleJames-creator/gale-james)
+**GitHub**: [github.com/GaleJames-creator](https://github.com/GaleJames-creator/gale-james)
 <br>
-LinkedIn: [www.linkedin.com/in/gale-james](https://www.linkedin.com/in/gale-james)
+**LinkedIn**: [www.linkedin.com/in/gale-james](https://www.linkedin.com/in/gale-james)
 <br>
-Email: [galejames80@gmail.com](mailto:galejames80@gmail.com)
+**Email**: [galejames80@gmail.com](mailto:galejames80@gmail.com)
 
 ---
 
