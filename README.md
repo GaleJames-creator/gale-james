@@ -46,7 +46,7 @@ My portfolio follows the **[Diátaxis framework](https://diataxis.fr/)**, which 
 
 | Type | Purpose | User Goal |
 |------|---------|-----------|
-| 📚 **[Tutorial](./tutorials/README.md)s** | Learning-oriented | "Teach me the basics" |
+| 📚 **[Tutorials](./tutorials/README.md)** | Learning-oriented | "Teach me the basics" |
 | 🛠️ **[How-to guides](./how-to-guides/README.md)** | Task-oriented | "Help me solve this problem" |
 | 💡 **[Explanation](./explanation/README.md)** | Understanding-oriented | "Help me understand this concept" |
 | 📖 **[Reference](./reference/README.md)** | Information-oriented | "Give me the technical details" |
