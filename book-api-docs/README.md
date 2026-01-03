@@ -188,8 +188,6 @@ Professional extensions I added:
 
 The course provided the technical foundation in API documentation and effective AI prompting strategies; I contributed strategic thinking, rigorous quality assurance, and enterprise-grade practices that transform educational exercises into portfolio-quality work.
 
----
-
 # Connect
 
 Author: Gale James
