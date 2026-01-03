@@ -38,7 +38,13 @@ My contributions included:
 - **Languages**: Python, JavaScript (working knowledge for code examples)
 - **AI Tools**: Claude, Google Gemini, Atlassian Intelligence, GitBook AI.
 
-## Connect
+# Connect
 
-💼 [Gale James at LinkedIn](https://www.linkedin.com/in/gale-james/)
+**Author**: Gale James
+<br>
+**GitHub**: [github.com/GaleJames-creator](https://github.com/GaleJames-creator/gale-james)
+<br>
+**LinkedIn**: [www.linkedin.com/in/gale-james](https://www.linkedin.com/in/gale-james)
+<br>
+**Email**: [galejames80@gmail.com](mailto:galejames80@gmail.com)
 
