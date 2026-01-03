@@ -22,8 +22,6 @@ I’m a Senior Technical Writer with 9+ years of experience creating documentati
 
 **Currently seeking:** Senior/Lead Technical Writer roles focused on developer-facing products, API documentation, or developer tools.
 
----
-
 ## 📂 Portfolio Projects
 
 ### 🌟 Featured: BookHub Publisher API Documentation
@@ -41,9 +39,8 @@ Production-ready API documentation suite demonstrating enterprise technical writ
 **Skills demonstrated:** API documentation, OpenAPI 3.0, release management, strategic thinking, quality assurance.
 
 **Why this matters:** Shows I can make independent technical decisions, not just follow instructions. I chose path-based API versioning over the course-recommended header-based approach and documented why—demonstrating the strategic thinking senior roles require.
----
 
-## 📐 Documentation Philosophy: Diátaxis Framework
+### 📐 Documentation Philosophy: Diátaxis Framework
 
 My portfolio follows the **[Diátaxis framework](https://diataxis.fr/)**, which organizes documentation into four user-focused types:
 
@@ -57,8 +54,6 @@ My portfolio follows the **[Diátaxis framework](https://diataxis.fr/)**, which 
 This approach ensures users can easily find what they need, whether they want to learn, do, understand, or look up information.
 
 **Why this matters:** The Diátaxis framework prevents the common documentation mistake of mixing tutorials with reference material, creating confusion. My work demonstrates how to apply this framework to real-world API documentation.
-
----
 
 ## 💼 Professional Experience
 
@@ -77,8 +72,6 @@ Led a team of three technical writers managing all documentation for Digital Riv
 
 **Note:** This repository showcases my experience with docs-as-code workflows, Git version control, and GitBook platform management. While I cannot share proprietary content, the BookHub project in this portfolio demonstrates similar skills applied to API documentation.
 
----
-
 ## 🛠️ Skills & Tools
 
 ### Documentation Platforms
@@ -94,8 +87,6 @@ Led a team of three technical writers managing all documentation for Digital Riv
 ### AI-Assisted Workflows
 - **Tools:** Claude (Anthropic), Google Gemini, Atlassian Intelligence, GitBook AI
 - **Applications:** Content generation, code example creation, documentation quality assurance
-
----
 
 ## 🎯 What I'm Looking For
 
