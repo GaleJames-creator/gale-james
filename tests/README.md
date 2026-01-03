@@ -43,15 +43,6 @@ Production-ready API documentation suite demonstrating enterprise technical writ
 
 ---
 
-### 📚 Additional Portfolio Samples
-
-**Coming soon:**
-- Payment API integration guides *(in development)*
-- Developer onboarding documentation *(in development)*
-- API error handling best practices *(in development)*
-
----
-
 ## 💼 Professional Experience
 
 ### Digital River API Documentation (2016-2025)
