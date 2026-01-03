@@ -200,8 +200,8 @@ Email: [galejames80@gmail.com](mailto:galejames80@gmail.com)
 
 ---
 
-_This documentation suite demonstrates production-ready technical writing capabilities suitable for API-first companies, developer tools platforms, and enterprise software organizations.
-_
+*This documentation suite demonstrates production-ready technical writing capabilities suitable for API-first companies, developer tools platforms, and enterprise software organizations.*
+
 
 
 
