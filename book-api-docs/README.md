@@ -193,28 +193,17 @@ The course provided the technical foundation in API documentation and effective 
 # Connect
 
 Author: Gale James
+<br>
 GitHub: [github.com/GaleJames-creator](https://github.com/GaleJames-creator/gale-james)
+<br>
 LinkedIn: [www.linkedin.com/in/gale-james](https://www.linkedin.com/in/gale-james)
+<br>
 Email: [galejames80@gmail.com](mailto:galejames80@gmail.com)
 
 ---
 
 _This documentation suite demonstrates production-ready technical writing capabilities suitable for API-first companies, developer tools platforms, and enterprise software organizations.
 _
-
----
-
-Connect
-
-Author: Gale James
-GitHub: github.com/GaleJames-creator
-LinkedIn: www.linkedin.com/in/gale-james 
-Email: galejames80@gmail.com 
-
----
-
-This documentation suite demonstrates production-ready technical writing capabilities suitable for API-first companies, developer tools platforms, and enterprise software organizations.
-
 
 
 
