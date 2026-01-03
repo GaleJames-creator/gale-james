@@ -119,7 +119,7 @@ Ideal role: Senior/Lead Technical Writer position, focusing on:
 
 ## 📊 GitHub Stats
 
-![Gale's GitHub stats](https://github-readme-stats.vercel.app/api?username=GaleJames-creator&show_icons=true&theme=default)
+![Gale's GitHub stats]([https://github-readme-stats.vercel.app/api?username=GaleJames-creator&show_icons=true&theme=default](https://github.com/GaleJames-creator/gale-james/pulse))
 
 ---
 
