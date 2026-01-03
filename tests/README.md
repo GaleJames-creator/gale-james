@@ -26,7 +26,7 @@ I'm a Senior Technical Writer with 15+ years of experience creating documentatio
 ## 📂 Portfolio Projects
 
 ### 🌟 Featured: BookHub Publisher API Documentation
-**[View Project →](bookhub-api-docs/)**
+**[View Project →](./book-api-docs/)**
 
 Production-ready API documentation suite demonstrating enterprise technical writing and strategic decision-making.
 
@@ -143,16 +143,3 @@ This approach ensures users can easily find what they need, whether they want to
 
 *This portfolio demonstrates production-ready technical writing capabilities for API-first companies, developer tools platforms, and enterprise software organizations.*
 ```
-
----
-
-**To use this:**
-
-1. Copy the markdown above
-2. Replace it in your top-level `README.md` file
-3. Make sure your folder structure matches:
-```
-   your-github-username.github.io/  (or your portfolio repo)
-   ├── README.md  (paste the markdown above here)
-   └── bookhub-api-docs/
-       └── README.md  (the BookHub-specific README we created earlier)
