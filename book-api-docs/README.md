@@ -127,8 +127,6 @@ Machine-readable API definition:
 
 ### 📊 [Quality Assurance Documentation](./process-docs/ENCODING_FIXES_SUMMARY.md)
 
-**File**: ENCODING_FIXES_SUMMARY.md
-
 Process documentation demonstrating systematic problem-solving:
 
 * Detailed accounting of 258 encoding issues identified
