@@ -76,8 +76,7 @@ This API documentation helps publishers easily manage their book catalog using c
 
 ## Documentation samples
 
-**📘 [API Integration Guide](./api-guide/bookhub_publisher_api_guide_v2_path.md)
-**
+###📘 [API Integration Guide](./api-guide/bookhub_publisher_api_guide_v2_path.md)
 
 Complete developer guide featuring:
 
@@ -94,8 +93,7 @@ Complete developer guide featuring:
 * Clear "What's New in v2" section
 * Breaking changes are prominently documented with migration paths
 
-**📋 [Release Management Documentation](./release-managment/release_management_2_path.md)
-**
+### 📋 [Release Management Documentation](./release-management/release_management_v2_path.md)
 
 Enterprise-grade release planning, including:
 
