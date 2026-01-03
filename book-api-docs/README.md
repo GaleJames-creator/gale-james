@@ -72,7 +72,7 @@ This API documentation helps publishers easily manage their book catalog using c
 
 **Impact**: Documentation renders correctly on Windows, Mac, Linux, and web platforms.
 
-📄 **Process documentation**: [Encoding Fixes Summary](./proccess-docs/ENCODING_FIXES_SUMMARY.md)**
+📄 **Process documentation**: [Encoding Fixes Summary](./proccess-docs/ENCODING_FIXES_SUMMARY.md)
 
 ## Documentation samples
 
@@ -125,8 +125,8 @@ Machine-readable API definition:
 * Comprehensive field descriptions
 * Example values for all endpoints
 
-**📊 [Quality Assurance Documentation](./process-docs/ENCODING_FIXES_SUMMARY.md)
-**
+### 📊 [Quality Assurance Documentation](./process-docs/ENCODING_FIXES_SUMMARY.md)
+
 **File**: ENCODING_FIXES_SUMMARY.md
 
 Process documentation demonstrating systematic problem-solving:
