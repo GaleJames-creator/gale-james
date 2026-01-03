@@ -72,11 +72,11 @@ This API documentation helps publishers easily manage their book catalog using c
 
 **Impact**: Documentation renders correctly on Windows, Mac, Linux, and web platforms.
 
-📄 **Process documentation**: [Encoding Fixes Summary](./proccess-docs/ENCODING_FIXES_SUMMARY.md)
+📄 **Process documentation**: [Encoding Fixes Summary](./proccess-docs/ENCODING_FIXES_SUMMARY.md)**
 
 ## Documentation samples
 
-###📘 [API Integration Guide](./api-guide/bookhub_publisher_api_guide_v2_path.md)
+### 📘 [API Integration Guide](./api-guide/bookhub_publisher_api_guide_v2_path.md)
 
 Complete developer guide featuring:
 
@@ -110,8 +110,7 @@ Enterprise-grade release planning, including:
 * Client code migration examples in 4 languages
 * Production deployment checklist
 
-**🔧 [OpenAPI Specification](./openapi-spec/bookhub_publisher_api_guide_v2_path.yaml)
-**
+### 🔧 [OpenAPI Specification](./openapi-spec/bookhub_publisher_api_guide_v2_path.yaml)
 
 Machine-readable API definition:
 
