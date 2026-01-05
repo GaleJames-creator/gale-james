@@ -11,7 +11,7 @@
 
 ## About Me
 
-I’m a Senior Technical Writer with 9+ years of experience creating documentation that developers actually want to use. I specialize in API documentation, developer tools, and payment systems, with a track record of leading documentation teams and migrating complex content platforms.
+I’m a Senior Technical Writer with 15+ years of experience creating documentation that developers actually want to use. I specialize in API documentation, developer tools, and payment systems, with a track record of leading documentation teams and migrating complex content platforms.
 
 **What I bring:**
 - Strategic documentation planning using the Diátaxis framework
