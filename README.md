@@ -109,7 +109,7 @@ Ideal role: Senior/Lead Technical Writer position, focusing on:
 ## 📫 Connect With Me
 
 **Gale James**  
-📧 Email: [galejames80@gmail.com](mailto:galejames80@gmail.com)  
+📧 Email: [galejames80@gmail.com](mailto:tqxn2nz75b@privaterelay.appleid.com)  
 💼 LinkedIn: [linkedin.com/in/gale-james](https://www.linkedin.com/in/gale-james)  
 🐙 GitHub: [github.com/GaleJames-creator](https://github.com/GaleJames-creator)
 
