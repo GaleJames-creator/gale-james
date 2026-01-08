@@ -1,6 +1,6 @@
 # Gale James - Senior/Lead Technical Writer
 
-> 15+ years creating developer documentation that helps technical teams excel  
+> 15+ years creating technical documentation and 9+ years writing developer documentation that helps technical teams excel  
 > **Specializations:** API documentation • Developer tools • Payment systems
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Gale%20James-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/gale-james)
