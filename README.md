@@ -1,120 +1,89 @@
-# Gale James - Senior/Lead Technical Writer
+# Gale James - Senior Technical Writer
 
-> 15+ years creating technical documentation and 9+ years writing developer documentation that helps technical teams excel  
-> **Specializations:** API documentation • Developer tools • Payment systems
+**API Documentation Specialist** | 15+ Years Experience | 200+ Endpoints Documented
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Gale%20James-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/gale-james)
-<br>
-[![Email](https://img.shields.io/badge/Email-galejames80%40gmail.com-red?style=flat&logo=gmail)](mailto:galejames80@gmail.com)
+I specialize in API reference documentation, developer portals, and payment systems. This portfolio highlights my experience with OpenAPI specifications, docs-as-code workflows, and the Diátaxis documentation framework.
 
----
+## 📚 Featured Documentation Projects
 
-## About Me
+### BookHub Publisher API (Complete API Documentation Set)
+This project shows how I create detailed API documentation using enterprise-level procedures.
 
-I’m a Senior Technical Writer with 9+ years of experience creating documentation that developers actually want to use. I specialize in API documentation, developer tools, and payment systems, with a track record of leading documentation teams and migrating complex content platforms.
+**[View Complete Project →](https://github.com/GaleJames-creator/gale-james/tree/main/book-api-docs)**
 
-**What I bring:**
-- Strategic documentation planning using the Diátaxis framework
-- Enterprise API documentation experience (REST, OpenAPI, payment systems)
-- Docs-as-code workflows with Git, Markdown, and modern platforms
-- Team leadership and documentation standards development
-- AI-assisted technical writing workflows
-
-**Currently seeking:** Senior/Lead Technical Writer roles focused on developer-facing products, API documentation, or developer tools.
-
-## 📂 Portfolio Projects
-
-### 🌟 Featured: BookHub Publisher API Documentation
-**[View Project →](./book-api-docs/)**
-
-Production-ready API documentation suite demonstrating enterprise technical writing and strategic decision-making.
-
-**Highlights:**
-- Complete API integration guide with multi-language examples (Python, JavaScript, Java, PHP)
-- OpenAPI 3.0 specification for automated client generation
-- Enterprise release management documentation
-- Strategic versioning decision with documented rationale
-- Systematic QA: resolved 258 encoding issues for cross-platform compatibility
-
-**Skills demonstrated:** API documentation, OpenAPI 3.0, release management, strategic thinking, quality assurance.
-
-**Why this matters:** Shows I can make independent technical decisions, not just follow instructions. I chose path-based API versioning over the course-recommended header-based approach and documented why—demonstrating the strategic thinking senior roles require.
-
-### 📐 Documentation Philosophy: Diátaxis Framework
-
-My portfolio follows the **[Diátaxis framework](https://diataxis.fr/)**, which organizes documentation into four user-focused types:
-
-| Type | Purpose | User Goal |
-|------|---------|-----------|
-| 📚 **[Tutorials](./tutorials/README.md)** | Learning-oriented | "Teach me the basics" |
-| 🛠️ **[How-to guides](./how-to-guides/README.md)** | Task-oriented | "Help me solve this problem" |
-| 💡 **[Explanation](./explanation/README.md)** | Understanding-oriented | "Help me understand this concept" |
-| 📖 **[Reference](./reference/README.md)** | Information-oriented | "Give me the technical details" |
-
-This approach ensures users can easily find what they need, whether they want to learn, do, understand, or look up information.
-
-**Why this matters:** The Diátaxis framework prevents the common documentation mistake of mixing tutorials with reference material, creating confusion. My work demonstrates how to apply this framework to real-world API documentation.
-
-## 💼 Professional Experience
-
-### Digital River API Documentation (2016-2025)
-
-Led a team of three technical writers managing all documentation for Digital River's products. Established documentation standards and maintained content in GitBook.
-
-**Repository:** [DigitalRiver/GitBook](https://github.com/DigitalRiver/gitbook) *(company repository - cannot fork due to confidentiality)*
-
-**Key contributions:**
-- ✅ Developed API reference documentation for Commerce APIs
-- ✅ Wrote integration guides for electronic funds transfer systems
-- ✅ Led platform migration from Drupal → ReadMe → GitBook
-- ✅ Created and enforced documentation standards and style guides
-- ✅ Managed docs-as-code workflows with Git version control
-
-**Note:** This repository showcases my experience with docs-as-code workflows, Git version control, and GitBook platform management. While I cannot share proprietary content, the BookHub project in this portfolio demonstrates similar skills applied to API documentation.
-
-## 🛠️ Skills & Tools
-
-### Documentation Platforms
-- **Current expertise:** GitBook, ReadMe, GitHub Pages
-- **Previous experience:** MadCap Flare, Drupal
-
-### Technical Skills
-- **Markup languages:** Markdown, XML, DITA
-- **Version control:** Git, GitHub, SVN
-- **Programming:** Python, JavaScript (working knowledge for code examples)
-- **API specifications:** OpenAPI 3.0, REST API standards
-
-### AI-Assisted Workflows
-- **Tools:** Claude (Anthropic), Google Gemini, Atlassian Intelligence, GitBook AI
-- **Applications:** Content generation, code example creation, documentation quality assurance
-
-## 🎯 What I'm Looking For
-
-Ideal role: Senior/Lead Technical Writer position, focusing on:
-- Developer-facing products and API documentation
-- Developer tools and platforms
-- Companies with a docs-as-code culture
-- Opportunities to establish documentation standards and lead documentation strategy
-
-**Location:** Remote preferred (based in Minneapolis, Minnesota)
-
-**What I value:**
-- Companies that invest in documentation as a product
-- Cross-functional collaboration with engineering teams
-- Modern documentation tooling and workflows
-- Opportunity to mentor junior writers
+- **[OpenAPI 3.0 Specification](https://github.com/GaleJames-creator/gale-james/blob/main/book-api-docs/openapi-spec/bookhub_publisher_api_guide_v2_path.yaml)** - Complete YAML spec with authentication, versioning, error handling
+- **[API Integration Guide](https://github.com/GaleJames-creator/gale-james/blob/main/book-api-docs/api-guide/bookhub_publisher_api_guide_v2_path.md)** - Path-based version implementation
+- **[Versioning Strategy](https://github.com/GaleJames-creator/gale-james/blob/main/book-api-docs/architecture/versioning-rationale.md)** - Architecture decision rationale
+- **[Release Management](https://github.com/GaleJames-creator/gale-james/blob/main/book-api-docs/release-management/release_management_v2_path.md)** - Change control and documentation
 
 ---
 
-## 📫 Connect With Me
+## 📖 Documentation by Type (Diátaxis Framework)
 
-**Gale James**  
-📧 Email: [tqxn2nz75b@privaterelay.appleid.com](mailto:tqxn2nz75b@privaterelay.appleid.com)  
-💼 LinkedIn: [linkedin.com/in/gale-james](https://www.linkedin.com/in/gale-james)  
-🐙 GitHub: [github.com/GaleJames-creator](https://github.com/GaleJames-creator)
+### Tutorials (Learning-Oriented)
+This is a step-by-step guide to help you get started with APIs.
 
-**Open to:** Full-time Senior/Lead Technical Writer positions | Contract work for API documentation projects | Freelance developer documentation
+- **[Getting Started with Payments API](https://github.com/GaleJames-creator/gale-james/blob/main/tutorials/payment-api-getting-started.md)** - Complete quickstart guide with code samples
+
+### How-To Guides (Task-Oriented)
+These guides provide practical steps for completing specific tasks.
+
+- **[Process a Refund](https://github.com/GaleJames-creator/gale-james/blob/main/how-to-guides/payment-process-refunds.md)** - API-based refund workflow
+- **[Implement Retry Logic for Failed Payments](https://github.com/GaleJames-creator/gale-james/blob/main/how-to-guides/payment-retry-logic-.md)** - Error handling patterns
+- **[Manage Webhooks via Admin UI](https://github.com/GaleJames-creator/gale-james/blob/main/how-to-guides/webhooks-Admin-UI.md)** - Configuration guide
+- **[Webhook Security](https://github.com/GaleJames-creator/gale-james/blob/main/how-to-guides/webhooks-data-transmission.md)** - Data transmission best practices
+- **[Retrieve Anonymous Shopper Data](https://github.com/GaleJames-creator/gale-james/blob/main/how-to-guides/webhooks-anonymous-shopper.md)** - This API integration is designed to protect user privacy.
+
+### Explanation (Understanding-Oriented)
+This section uses conceptual documentation to explain how different systems work.
+
+- **[Authorization vs. Capture](https://github.com/GaleJames-creator/gale-james/blob/main/explanation/payment-authorization-vs-capture.md)** - Payment processing concepts
+- **[Webhooks Explained](https://github.com/GaleJames-creator/gale-james/blob/main/explanation/webhooks.md)** - Event-driven architecture
+
+### Reference (Information-Oriented)
+This section contains technical specifications and API reference materials.
+
+- **[API Reference Example](https://github.com/GaleJames-creator/gale-james/blob/main/reference/payment-api-endpoints.md)** - Endpoint documentation format
+- **[API Rate Limits](https://github.com/GaleJames-creator/gale-james/blob/main/reference/payment-api-rate-limits.md)** - Throttling and quotas
+- **[Error Handling Best Practices](https://github.com/GaleJames-creator/gale-james/blob/main/reference/payment-error-best-practices-for-handling-payment-api-errors.md)** - Error response patterns
+- **[Idempotency Keys](https://github.com/GaleJames-creator/gale-james/blob/main/reference/payment-indempotency-keys.md)** - Preventing duplicate charges
+- **[Webhook Definitions](https://github.com/GaleJames-creator/gale-james/blob/main/reference/webhook-definitions.md)** - Event schema reference
+- **[Webhook Examples](https://github.com/GaleJames-creator/gale-james/blob/main/reference/webhook-subscription-examples.md)** - Subscription event payloads
 
 ---
 
-*This portfolio demonstrates production-ready technical writing capabilities for API-first companies, developer tools platforms, and enterprise software organizations.*
+## 💼 Professional Experience Highlight
+
+### Digital River (2016-2025) - Senior Technical Writer
+I led the API documentation for Digital River’s Commerce-as-a-Service platform and documented more than 200 REST API endpoints.
+
+**Key Contributions:**
+- Developed comprehensive API reference documentation for Commerce APIs.
+- Created integration guides for electronic funds transfer systems.
+- Led the migration of documentation from Drupal to ReadMe and then to GitBook.
+- Established documentation standards and created style guides.
+- Implemented docs-as-code workflows using Git for version control.
+
+**Repository:** [DigitalRiver/GitBook](https://github.com/DigitalRiver/GitBook) *(company repository, proprietary content)*
+
+---
+
+## 🛠 Technical Skills
+
+**Documentation platforms**: GitBook, ReadMe, MadCap Flare, and Swagger/OpenAPI editors.
+**API specifications**: OpenAPI 3.0, REST API documentation, and Postman.
+**Markup languages**: Markdown, YAML, JSON, XML, and DITA.
+**Version control**: Git, GitHub, and SVN.
+**Programming languages**: JavaScript and Python (used for code examples and documentation).
+**Documentation frameworks**: Diátaxis and docs-as-code.
+**AI tools**: Claude, Google Gemini, GitHub Copilot, and GitBook AI.
+---
+
+## 📫 Contact
+
+**LinkedIn:** [linkedin.com/in/gale-james](https://linkedin.com/in/gale-james)  
+**Email:** [Available on LinkedIn]
+
+---
+
+*This portfolio was last updated in January 2026.*
