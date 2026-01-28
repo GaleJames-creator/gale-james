@@ -2,12 +2,12 @@
 
 **API Documentation Specialist** | 15+ Years Experience | 200+ Endpoints Documented
 
-I specialize in API reference documentation, developer portals, and payment systems. This portfolio highlights my experience with OpenAPI specifications, docs-as-code workflows, and the Diátaxis documentation framework.
+I specialize in API reference documentation, developer portals, and payment systems. This portfolio demonstrates my experience in OpenAPI specifications, docs-as-code workflows, and the Diátaxis documentation framework.
 
 ## 📚 Featured Documentation Projects
 
 ### BookHub Publisher API (Complete API Documentation Set)
-This project shows how I create detailed API documentation using enterprise-level procedures.
+A comprehensive API documentation project demonstrating enterprise-level documentation practices
 
 **[View Complete Project →](https://github.com/GaleJames-creator/gale-james/tree/main/book-api-docs)**
 
@@ -21,12 +21,10 @@ This project shows how I create detailed API documentation using enterprise-leve
 ## 📖 Documentation by Type (Diátaxis Framework)
 
 ### Tutorials (Learning-Oriented)
-This is a step-by-step guide to help you get started with APIs.
 
 - **[Getting Started with Payments API](https://github.com/GaleJames-creator/gale-james/blob/main/tutorials/payment-api-getting-started.md)** - Complete quickstart guide with code samples
 
 ### How-To Guides (Task-Oriented)
-These guides provide practical steps for completing specific tasks.
 
 - **[Process a Refund](https://github.com/GaleJames-creator/gale-james/blob/main/how-to-guides/payment-process-refunds.md)** - API-based refund workflow
 - **[Implement Retry Logic for Failed Payments](https://github.com/GaleJames-creator/gale-james/blob/main/how-to-guides/payment-retry-logic-.md)** - Error handling patterns
@@ -35,13 +33,11 @@ These guides provide practical steps for completing specific tasks.
 - **[Retrieve Anonymous Shopper Data](https://github.com/GaleJames-creator/gale-james/blob/main/how-to-guides/webhooks-anonymous-shopper.md)** - This API integration is designed to protect user privacy.
 
 ### Explanation (Understanding-Oriented)
-This section uses conceptual documentation to explain how different systems work.
 
 - **[Authorization vs. Capture](https://github.com/GaleJames-creator/gale-james/blob/main/explanation/payment-authorization-vs-capture.md)** - Payment processing concepts
 - **[Webhooks Explained](https://github.com/GaleJames-creator/gale-james/blob/main/explanation/webhooks.md)** - Event-driven architecture
 
 ### Reference (Information-Oriented)
-This section contains technical specifications and API reference materials.
 
 - **[API Reference Example](https://github.com/GaleJames-creator/gale-james/blob/main/reference/payment-api-endpoints.md)** - Endpoint documentation format
 - **[API Rate Limits](https://github.com/GaleJames-creator/gale-james/blob/main/reference/payment-api-rate-limits.md)** - Throttling and quotas
@@ -70,13 +66,13 @@ I led the API documentation for Digital River’s Commerce-as-a-Service platform
 
 ## 🛠 Technical Skills
 
-**Documentation platforms**: GitBook, ReadMe, MadCap Flare, and Swagger/OpenAPI editors.
-**API specifications**: OpenAPI 3.0, REST API documentation, and Postman.
-**Markup languages**: Markdown, YAML, JSON, XML, and DITA.
-**Version control**: Git, GitHub, and SVN.
-**Programming languages**: JavaScript and Python (used for code examples and documentation).
-**Documentation frameworks**: Diátaxis and docs-as-code.
-**AI tools**: Claude, Google Gemini, GitHub Copilot, and GitBook AI.
+**Documentation Platforms:** GitBook, ReadMe, MadCap Flare, Swagger/OpenAPI Editors  
+**API Specifications:** OpenAPI 3.0, REST API documentation, Postman  
+**Markup Languages:** Markdown, YAML, JSON, XML, DITA  
+**Version Control:** Git, GitHub, SVN  
+**Programming Languages:** JavaScript, Python (for code examples and documentation)  
+**Documentation Frameworks:** Diátaxis, docs-as-code  
+**AI Tools:** Claude, Google Gemini, GitHub Copilot, GitBook AI
 ---
 
 ## 📫 Contact
