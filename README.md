@@ -66,13 +66,14 @@ I led the API documentation for Digital River’s Commerce-as-a-Service platform
 
 ## 🛠 Technical Skills
 
-**Documentation Platforms:** GitBook, ReadMe, MadCap Flare, Swagger/OpenAPI Editors  
-**API Specifications:** OpenAPI 3.0, REST API documentation, Postman  
-**Markup Languages:** Markdown, YAML, JSON, XML, DITA  
-**Version Control:** Git, GitHub, SVN  
-**Programming Languages:** JavaScript, Python (for code examples and documentation)  
-**Documentation Frameworks:** Diátaxis, docs-as-code  
-**AI Tools:** Claude, Google Gemini, GitHub Copilot, GitBook AI
+**Documentation Platforms**: GitBook, ReadMe, MadCap Flare, Swagger/OpenAPI Editors  
+**API Specifications**: OpenAPI 3.0, REST API documentation, Postman  
+**Markup Languages**: Markdown, YAML, JSON, XML, DITA  
+**Version Control**: Git, GitHub, SVN  
+**Programming Languages**: JavaScript, Python (for code examples and documentation)  
+**Documentation Frameworks**: Diátaxis, docs-as-code  
+**AI Tools**: Claude, Google Gemini, GitHub Copilot, GitBook AI
+
 ---
 
 ## 📫 Contact
