@@ -18,6 +18,12 @@ A comprehensive API documentation project demonstrating enterprise-level documen
 
 ---
 
+## 🎥 Multimedia Content
+
+**[Making Your First API Call with Postman](https://app.guidde.com/share/playbooks/j2GEH6v4pUaJ2vo8ErNt9c?origin=hPx2XmP4HZbFEVrCFFzGjtJsDSB2)** - Interactive video tutorial demonstrating API testing workflow (1:41)
+
+---
+
 ## 📖 Documentation by Type (Diátaxis Framework)
 
 ### Tutorials (Learning-Oriented)
