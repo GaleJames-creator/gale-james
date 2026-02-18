@@ -1,6 +1,6 @@
 # Gale James - Senior Technical Writer
 
-**API Documentation Specialist** | 15+ Years Experience | 200+ Endpoints Documented
+**API Documentation Specialist** | 15+ Years Experience | 73+ Endpoints Documented
 
 I specialize in API reference documentation, developer portals, and payment systems. This portfolio demonstrates my experience in OpenAPI specifications, docs-as-code workflows, and the Diátaxis documentation framework.
 
@@ -54,10 +54,15 @@ A comprehensive API documentation project demonstrating enterprise-level documen
 
 ---
 
+## Digital River Documentation
+
+- **[Commerce API Documentation](https://docs.digitalriver.com/commerce-api)** - Authored and maintained the developer-facing Commerce API documentation, including 73+ REST API endpoints. 
+---
+
 ## 💼 Professional Experience Highlight
 
-### Digital River (2016-2025) - Senior Technical Writer
-I led the API documentation for Digital River’s Commerce-as-a-Service platform and documented more than 200 REST API endpoints.
+### Digital River - Senior Technical Writer → Manager, Technical Writer (2016-2025)
+I led the API documentation for Digital River’s Commerce-as-a-Service platform and documented 73+ REST API endpoints.
 
 **Key Contributions:**
 - Developed comprehensive API reference documentation for Commerce APIs.
@@ -89,4 +94,4 @@ I led the API documentation for Digital River’s Commerce-as-a-Service platform
 
 ---
 
-*This portfolio was last updated in January 2026.*
+*This portfolio was last updated in February 2026.*
