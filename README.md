@@ -56,7 +56,8 @@ A comprehensive API documentation project demonstrating enterprise-level documen
 
 ## Digital River Documentation
 
-- **[Commerce API Documentation](https://docs.digitalriver.com/commerce-api)** - Authored and maintained the developer-facing Commerce API documentation, including 73+ REST API endpoints. 
+- **[Commerce API Documentation](https://docs.digitalriver.com/commerce-api)** - Authored and maintained the developer-facing Commerce API documentation, including 73+ REST API endpoints.
+**Note**: External UI links are broken following Digital River's wind-down in 2025. The documentation content itelf remains intact.
 ---
 
 ## 💼 Professional Experience Highlight
