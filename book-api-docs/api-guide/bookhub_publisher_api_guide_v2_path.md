@@ -1,6 +1,6 @@
-# BookHub Publisher API - v2 Path-Based Version Guide
+# BookHub Publisher API - v2 path-based version guide
 
-## Document Information
+## Document information
 
 | Property | Value |
 |----------|-------|
@@ -14,52 +14,52 @@
 
 ---
 
-## Table of Contents
+## Table of contents
 
 1. [Introduction](#introduction)
-2. [What's New in v2](#whats-new-in-v2)
-3. [Breaking Changes](#breaking-changes)
-4. [Migration Guide](#migration-guide)
-5. [Quick Start](#quick-start)
-6. [API Versioning Strategy](#api-versioning-strategy)
+2. [What's new in v2](#whats-new-in-v2)
+3. [Breaking changes](#breaking-changes)
+4. [Migration guide](#migration-guide)
+5. [Quick start](#quick-start)
+6. [API versioning strategy](#api-versioning-strategy)
 7. [Authentication](#authentication)
-8. [API Endpoints](#api-endpoints)
-   - [Create Book](#create-book)
-   - [Get Single Book (with hitCount)](#get-single-book)
-   - [Get All Books (no title sorting)](#get-all-books)
-   - [Finalize Book](#finalize-book)
-9. [Data Models](#data-models)
-10. [Code Examples](#code-examples)
-11. [Best Practices](#best-practices)
-12. [Support & Resources](#support--resources)
+8. [API endpoints](#api-endpoints)
+   - [Create book](#create-book)
+   - [Get single book (with `hitCount`)](#get-single-book)
+   - [Get all books (no title sorting)](#get-all-books)
+   - [Finalize book](#finalize-book)
+9. [Data models](#data-models)
+10. [Code examples](#code-examples)
+11. [Best practices](#best-practices)
+12. [Support and resources](#support--resources)
 
 ---
 
-# Introduction
+## Introduction
 
-## About This Version
+### About this version
 
-This document describes **version 2 (v2)** of the BookHub Publisher API, which uses **path-based versioning**. Unlike the header-based versioning approach used in other implementations, v2 uses the URI path (`/v2/books`) to specify the API version, making it simpler and more intuitive for developers.
+Version 2 (v2) of the BookHub Publisher API uses **path-based versioning**. Unlike the header-based versioning approach used in other implementations, the version is visible in the URL (`/v2/books`).
 
-## Why Path-Based Versioning?
+### Why path-based versioning?
 
 Path-based versioning offers several advantages for the BookHub Publisher API:
 
-1. **Simplicity**: The version is visible in the URL, making it easier to test and debug
-2. **Caching**: Standard HTTP caches work naturally with different paths
-3. **Browser Testing**: You can test endpoints directly in a browser address bar
-4. **Documentation Clarity**: API documentation is clearer when versions are in the path
-5. **Tool Compatibility**: Works seamlessly with OpenAPI/Swagger tools
+- **Simplicity**: The version is visible in the URL, making it easier to test and debug
+- **Caching**: Standard HTTP caches work naturally with different paths
+- **Browser testing**: You can test endpoints directly in a browser address bar
+- **Documentation clarity**: API documentation is clearer when versions are in the path
+- **Tool compatibility**: Works seamlessly with OpenAPI/Swagger tools
 
 ---
 
-# What's New in v2
+## What's new in v2
 
-## 1. Hit Count Analytics (New Feature)
+### 1. Hit count analytics (new feature)
 
-The most significant addition in v2 is the **hitCount** field on individual book retrievals. This provides publishers with basic visibility analytics.
+The most significant addition in v2 is the `hitCount` field on individual book retrievals. This provides publishers with basic visibility analytics.
 
-### What is hitCount?
+#### What is `hitCount`?
 
 The `hitCount` field tracks how many times a specific book's detail page has been accessed via the API. This metric helps publishers:
 
@@ -68,7 +68,7 @@ The `hitCount` field tracks how many times a specific book's detail page has bee
 - **Measure marketing effectiveness** by tracking views after campaigns
 - **Make data-driven decisions** about inventory and pricing
 
-### How it works
+#### How it works
 
 ```
 GET /v2/books/{bookId}
@@ -88,7 +88,7 @@ GET /v2/books/{bookId}
 }
 ```
 
-### Important Notes
+#### Important notes
 
 - `hitCount` is **read-only** and automatically incremented
 - The count increments each time the GET endpoint is accessed
@@ -98,23 +98,23 @@ GET /v2/books/{bookId}
 
 ---
 
-# Breaking Changes
+## Breaking changes
 
-## 1. Title Sorting Removed (Breaking Change)
+### 1. Title sorting removed (breaking change)
 
 **v2 no longer supports sorting by title** on the GET all books endpoint. This is a **breaking change** that requires migration if you currently use title-based sorting.
 
-### Why Was Title Sorting Removed?
+#### Why was title sorting removed?
 
-Title sorting was removed due to:
+BookHub removed title sorting due to:
 
-1. **Performance concerns**: Text-based sorting on large datasets is computationally expensive
-2. **Internationalization complexity**: Different languages have different sorting rules
-3. **Case sensitivity issues**: Determining proper sort order with mixed case is ambiguous
-4. **Limited usage**: Analytics showed less than 3% of requests used title sorting
-5. **Better alternatives**: Date-based sorting provides a more stable, performant option
+- **Performance concerns**: Text-based sorting on large datasets is computationally expensive
+- **Internationalization complexity**: Different languages have different sorting rules
+- **Case sensitivity issues**: Determining proper sort order with mixed case is ambiguous
+- **Limited usage**: Analytics showed less than 3% of requests used title sorting
+- **Better alternatives**: Date-based sorting provides a more stable, performant option
 
-### What This Means
+#### What this means
 
 In **v1**, this worked:
 ```
@@ -133,7 +133,7 @@ GET /v2/books?sort=createdDate&order=desc
 ✓ Valid request
 ```
 
-### Available Sort Options in v2
+#### Available sort options in v2
 
 The `sort` parameter now accepts **only one value**:
 
@@ -145,11 +145,11 @@ The `order` parameter still works:
 
 ---
 
-# Migration Guide
+## Migration guide
 
-## Migrating from v1 to v2
+### Migrating from v1 to v2
 
-### Step 1: Update Base URLs
+#### Step 1: Update base URLs
 
 **Before (v1):**
 ```
@@ -161,11 +161,11 @@ https://api.bookhub.com/api/v1/books
 https://api.bookhub.com/api/v2/books
 ```
 
-### Step 2: Handle hitCount Field
+#### Step 2: Handle `hitCount` field
 
 If you're retrieving individual books, your code will now receive the `hitCount` field.
 
-**Python Example:**
+**Python example:**
 ```python
 # v1 code
 response = requests.get(f"{BASE_URL}/v1/books/{book_id}")
@@ -179,11 +179,11 @@ hit_count = book.get('hitCount', 0)  # New field available
 print(f"This book has been viewed {hit_count} times")
 ```
 
-### Step 3: Replace Title Sorting
+#### Step 3: Replace title sorting
 
 If you currently use title sorting, you have two options:
 
-**Option A: Use Date Sorting (Recommended)**
+**Option A: Use date sorting (recommended)**
 ```python
 # Before (v1)
 response = requests.get(f"{BASE_URL}/v1/books?sort=title&order=asc")
@@ -192,7 +192,7 @@ response = requests.get(f"{BASE_URL}/v1/books?sort=title&order=asc")
 response = requests.get(f"{BASE_URL}/v2/books?sort=createdDate&order=desc")
 ```
 
-**Option B: Implement Client-Side Sorting**
+**Option B: Implement client-side sorting**
 ```python
 # Fetch all books
 response = requests.get(f"{BASE_URL}/v2/books?limit=100")
@@ -202,7 +202,7 @@ books = response.json()['data']['books']
 sorted_books = sorted(books, key=lambda x: x['title'].lower())
 ```
 
-### Step 4: Update Error Handling
+#### Step 4: Update error handling
 
 Be prepared to handle the new error when title sorting is attempted:
 
@@ -226,15 +226,15 @@ def get_books(sort_by='createdDate', order='desc'):
 
 ---
 
-# Quick Start
+## Quick start
 
-## Prerequisites
+### Prerequisites
 
 1. BookHub publisher account
 2. API credentials (JWT token)
 3. HTTPS client (curl, Postman, or programming language HTTP library)
 
-## Basic Workflow
+### Basic workflow
 
 ```bash
 # 1. Create a book (returns PENDING status)
@@ -244,7 +244,7 @@ curl -X POST https://api.bookhub.com/api/v2/books \
   -d '{
     "title": "My New Book",
     "author": "John Doe",
-    "description": "An exciting story",
+    "description": "A new biography from a well-known author",
     "language": "en-US",
     "publisher": "My Publishing House",
     "publishedDate": "2024-03-15",
@@ -272,9 +272,9 @@ curl -X PATCH https://api.bookhub.com/api/v2/books/{bookId}/finalize \
 
 ---
 
-# API Versioning Strategy
+## API versioning strategy
 
-## Path-Based Versioning Explained
+### Path-based versioning explained
 
 The BookHub Publisher API v2 uses **URI path versioning**, where the version number is part of the URL path:
 
@@ -282,21 +282,21 @@ The BookHub Publisher API v2 uses **URI path versioning**, where the version num
 https://api.bookhub.com/api/{version}/books
 ```
 
-### Version Paths
+#### Version paths
 
 - **v1**: `https://api.bookhub.com/api/v1/books` (Legacy)
 - **v2**: `https://api.bookhub.com/api/v2/books` (Current)
 
-### Why Different from Header-Based?
+#### Why different from header-based?
 
 Some API implementations use header-based versioning (via `api-version` header). Path-based versioning was chosen for v2 because:
 
-1. **Simplicity**: Version is in the URL, no need to remember custom headers
-2. **Testability**: Easy to test in browser, curl, Postman
-3. **Caching**: Standard HTTP caching works naturally
-4. **Documentation**: Clearer for developers to understand
+- **Simplicity**: Version is in the URL, no need to remember custom headers
+- **Testability**: Easy to test in browser, curl, Postman
+- **Caching**: Standard HTTP caching works naturally
+- **Documentation**: Clearer for developers to understand
 
-### Version Support Policy
+#### Version support policy
 
 - **v1**: Supported until December 31, 2026
 - **v2**: Current version, recommended for all new integrations
@@ -304,19 +304,19 @@ Some API implementations use header-based versioning (via `api-version` header).
 
 ---
 
-# Authentication
+## Authentication
 
-## JWT Bearer Token
+### JWT bearer token
 
 All API requests require authentication using a JWT (JSON Web Token) bearer token.
 
-### Obtaining a Token
+#### Obtaining a token
 
-Contact BookHub API support to receive your JWT credentials:
+Obtain your JWT credentials by contacting:
 - Email: api-support@bookhub.com
 - Include your publisher account information
 
-### Using the Token
+#### Using the token
 
 Include the token in the `Authorization` header:
 
@@ -324,14 +324,14 @@ Include the token in the `Authorization` header:
 Authorization: Bearer YOUR_JWT_TOKEN
 ```
 
-### Example
+#### Example
 
 ```bash
 curl -X GET https://api.bookhub.com/api/v2/books \
   -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 ```
 
-### Token Expiration
+#### Token expiration
 
 - Tokens are valid for 24 hours
 - Refresh tokens before expiration
@@ -339,19 +339,40 @@ curl -X GET https://api.bookhub.com/api/v2/books \
 
 ---
 
-# API Endpoints
+## API endpoints
 
-## Create Book
+### Create book
 
-Creates a new book with PENDING status. Books must be finalized before becoming visible to customers.
+Creates a new book with `PENDING` status. Books must be finalized before becoming visible to customers.
 
-### Endpoint
+#### Endpoint
 
 ```
 POST /v2/books
 ```
 
-### Request Headers
+#### Request example
+
+```bash
+curl -X POST "https://api.bookhub.com/api/v2/books" \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "The Great Adventure",
+    "author": "Jane Smith",
+    "description": "An epic tale of courage and discovery",
+    "language": "en-US",
+    "publisher": "Adventure Books Inc",
+    "publishedDate": "2024-03-15",
+    "isbn": "978-0-1234-5678-9",
+    "price": 24.99,
+    "coverImages": ["https://covers.bookhub.com/great-adventure-front.jpg"],
+    "genres": ["Fiction", "Adventure"],
+    "bookFormat": "Hardcover"
+  }'
+```
+
+#### Request headers
 
 ```
 Authorization: Bearer YOUR_JWT_TOKEN
@@ -361,7 +382,7 @@ X-Request-ID: uuid (optional, for tracking)
 X-Publisher-ID: string (optional)
 ```
 
-### Request Body
+#### Request body
 
 ```json
 {
@@ -385,7 +406,7 @@ X-Publisher-ID: string (optional)
 }
 ```
 
-### Response (201 Created)
+#### Response (201 Created)
 
 ```json
 {
@@ -402,7 +423,7 @@ X-Publisher-ID: string (optional)
 }
 ```
 
-### Field Validation
+#### Field validation
 
 | Field | Type | Required | Constraints |
 |-------|------|----------|-------------|
@@ -420,27 +441,27 @@ X-Publisher-ID: string (optional)
 
 ---
 
-## Get Single Book
+### Get single book
 
-Retrieves detailed information about a specific book, **including the hitCount analytics field** (v2 only).
+Retrieves detailed information about a specific book, **including the `hitCount` analytics field** (v2 only).
 
-### Endpoint
+#### Endpoint
 
 ```
 GET /v2/books/{bookId}
 ```
 
-### Path Parameters
+#### Path parameters
 
 - `bookId` (required): Unique identifier of the book
 
-### Request Headers
+#### Request headers
 
 ```
 Authorization: Bearer YOUR_JWT_TOKEN
 ```
 
-### Response (200 OK)
+#### Response (200 OK)
 
 ```json
 {
@@ -471,26 +492,26 @@ Authorization: Bearer YOUR_JWT_TOKEN
 }
 ```
 
-### hitCount Field Explained
+#### `hitCount` field explained
 
 The `hitCount` field is **new in v2** and provides basic analytics:
 
 - **Type**: Integer (minimum 0)
 - **Purpose**: Tracks how many times the book detail page has been accessed
 - **Updates**: Automatically incremented each time this endpoint is called
-- **Initial Value**: 0 for newly created books
-- **Read-Only**: Cannot be modified directly via API
+- **Initial value**: 0 for newly created books
+- **Read-only**: Cannot be modified directly via API
 
-### Use Cases for hitCount
+#### Use cases for `hitCount`
 
-1. **Trending Analysis**: Identify which books are getting the most attention
+- **Trending analysis**: Identify which books are getting the most attention
    ```python
    # Get top 10 most-viewed books
    all_books = fetch_all_books()
    trending = sorted(all_books, key=lambda x: x['hitCount'], reverse=True)[:10]
    ```
 
-2. **Marketing ROI**: Compare hit counts before and after marketing campaigns
+- **Marketing ROI**: Compare hit counts before and after marketing campaigns
    ```python
    before_campaign = get_book('abc123')['hitCount']
    # Run marketing campaign
@@ -499,13 +520,13 @@ The `hitCount` field is **new in v2** and provides basic analytics:
    print(f"Campaign generated {increase} additional views")
    ```
 
-3. **Inventory Planning**: Prioritize books with high view counts for restocking
+- **Inventory planning**: Prioritize books with high view counts for restocking
    ```python
    if book['hitCount'] > 1000 and book['status'] == 'ACTIVE':
        notify_warehouse_to_restock(book['bookId'])
    ```
 
-### Response Headers
+#### Response headers
 
 ```
 ETag: "33a64df551425fcc55e4d42a148795d9f25f89d4"
@@ -514,27 +535,29 @@ Cache-Control: max-age=3600, must-revalidate
 
 ---
 
-## Get All Books
+### Get all books
 
-Retrieves a paginated list of books. **Note: Title sorting is NOT supported in v2** - only `createdDate` sorting is available.
+Retrieves a paginated list of books. 
 
-### Endpoint
+> **Note**: Title sorting is NOT supported in v2 - only `createdDate` sorting is available.
+
+#### Endpoint
 
 ```
 GET /v2/books
 ```
 
-### Query Parameters
+#### Query parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
 | page | integer | No | 1 | Page number (minimum 1) |
 | limit | integer | No | 20 | Items per page (max 100) |
-| status | enum | No | All | Filter: PENDING, ACTIVE, INACTIVE |
-| sort | enum | No | createdDate | **v2 only accepts createdDate** |
+| status | enum | No | All | Filter: `PENDING`, `ACTIVE`, `INACTIVE` |
+| sort | enum | No | createdDate | **v2 only accepts `createdDate`** |
 | order | enum | No | desc | Sort order: asc or desc |
 
-### Important: Sorting Limitations
+#### Sorting limitations
 
 **v2 DOES NOT support title sorting**. The `sort` parameter accepts only:
 - `createdDate`
@@ -570,14 +593,14 @@ GET /v2/books?sort=title&order=asc
 }
 ```
 
-### Request Example
+#### Request example
 
 ```bash
 curl -X GET "https://api.bookhub.com/api/v2/books?page=1&limit=20&status=ACTIVE&sort=createdDate&order=desc" \
   -H "Authorization: Bearer YOUR_JWT_TOKEN"
 ```
 
-### Response (200 OK)
+#### Response (200 OK)
 
 ```json
 {
@@ -613,7 +636,7 @@ curl -X GET "https://api.bookhub.com/api/v2/books?page=1&limit=20&status=ACTIVE&
 }
 ```
 
-### Response Headers
+#### Response headers
 
 ```
 X-Total-Count: 87
@@ -621,7 +644,7 @@ Link: <https://api.bookhub.com/api/v2/books?page=2>; rel="next",
       <https://api.bookhub.com/api/v2/books?page=5>; rel="last"
 ```
 
-### Client-Side Title Sorting (Alternative)
+#### Client-side title sorting (alternative)
 
 If you need books sorted by title, fetch them and sort client-side:
 
@@ -647,28 +670,28 @@ def get_books_sorted_by_title(ascending=True):
 
 ---
 
-## Finalize Book
+### Finalize book
 
-Changes a book's status from PENDING to ACTIVE, making it visible to customers.
+Changes a book's status from `PENDING` to `ACTIVE`, making it visible to customers.
 
-### Endpoint
+#### Endpoint
 
 ```
 PATCH /v2/books/{bookId}/finalize
 ```
 
-### Path Parameters
+#### Path parameters
 
 - `bookId` (required): Unique identifier of the book to finalize
 
-### Request Headers
+#### Request headers
 
 ```
 Authorization: Bearer YOUR_JWT_TOKEN
 Content-Type: application/json
 ```
 
-### Request Body (Optional)
+#### Request body (optional)
 
 ```json
 {
@@ -676,7 +699,7 @@ Content-Type: application/json
 }
 ```
 
-### Response (200 OK)
+#### Response (200 OK)
 
 ```json
 {
@@ -691,16 +714,16 @@ Content-Type: application/json
 }
 ```
 
-### Business Rules
+#### Business rules
 
 - Only books with `PENDING` status can be finalized
 - Finalization is **idempotent** (calling it multiple times has the same effect)
 - Book becomes immediately available to customers after finalization
-- Cannot revert from ACTIVE to PENDING via API (contact support)
+- Cannot revert from `ACTIVE` to `PENDING` via API (contact support)
 
-### Error Response (400 Bad Request)
+#### Error response (400 Bad Request)
 
-If the book is not in PENDING status:
+If the book is not in `PENDING` status:
 
 ```json
 {
@@ -716,9 +739,9 @@ If the book is not in PENDING status:
 
 ---
 
-# Data Models
+## Data models
 
-## BaseBook Schema
+### BaseBook schema
 
 Standard book object used across all endpoints.
 
@@ -742,7 +765,7 @@ Standard book object used across all endpoints.
 }
 ```
 
-## BookWithAnalytics Schema (v2 Only)
+### BookWithAnalytics schema (v2 only)
 
 Extends BaseBook with analytics field.
 
@@ -755,7 +778,7 @@ Extends BaseBook with analytics field.
 
 The `hitCount` field is **only returned by the GET /v2/books/{bookId} endpoint**.
 
-## Pagination Schema
+### Pagination schema
 
 ```json
 {
@@ -766,7 +789,7 @@ The `hitCount` field is **only returned by the GET /v2/books/{bookId} endpoint**
 }
 ```
 
-## Error Response Schema
+### Error response schema
 
 ```json
 {
@@ -789,9 +812,9 @@ The `hitCount` field is **only returned by the GET /v2/books/{bookId} endpoint**
 
 ---
 
-# Code Examples
+## Code examples
 
-## Python Example: Create and Track Book Views
+### Python example: Create and track book views
 
 ```python
 import requests
@@ -863,7 +886,7 @@ else:
     print(create_response.json())
 ```
 
-## JavaScript Example: List Books with Client-Side Title Sort
+### JavaScript example: List books with client-side title sort
 
 ```javascript
 const axios = require('axios');
@@ -922,7 +945,7 @@ async function getBooksWithTitleSort(ascending = true) {
 getBooksWithTitleSort(true);
 ```
 
-## Java Example: Handle Removed Title Sorting
+### Java example: Handle removed title sorting
 
 ```java
 import java.net.http.*;
@@ -982,7 +1005,7 @@ public class BookHubV2Client {
 }
 ```
 
-## PHP Example: Track High-Performing Books
+### PHP example: Track high-performing books
 
 ```php
 <?php
@@ -1050,9 +1073,9 @@ foreach ($high_performers as $index => $book) {
 
 ---
 
-# Best Practices
+## Best practices
 
-## 1. Use hitCount for Analytics, Not Real-Time Decisions
+### 1. Use `hitCount` for analytics, not real-time decisions
 
 The `hitCount` field is useful for trend analysis but should not be used for real-time, mission-critical decisions:
 
@@ -1066,7 +1089,7 @@ The `hitCount` field is useful for trend analysis but should not be used for rea
 - Using as the sole metric for success
 - Treating it as perfectly accurate (may have slight delays in updates)
 
-## 2. Migrate Away from Title Sorting Properly
+### 2. Migrate away from title sorting properly
 
 If you're migrating from v1 and used title sorting:
 
@@ -1092,7 +1115,7 @@ sorted_books = sorted(all_books, key=lambda x: x['title'])
 
 **Step 3**: Update documentation and inform your team
 
-## 3. Handle Pagination Correctly
+### 3. Handle pagination correctly
 
 When fetching all books, paginate through results:
 
@@ -1119,7 +1142,7 @@ def fetch_all_books(base_url, token):
     return all_books
 ```
 
-## 4. Use Idempotency Keys for Create Operations
+### 4. Use idempotency keys for create operations
 
 Always use idempotency keys when creating books to prevent duplicates:
 
@@ -1138,7 +1161,7 @@ response = requests.post(
 )
 ```
 
-## 5. Cache Book Details Appropriately
+### 5. Cache book details appropriately
 
 The API returns `ETag` and `Cache-Control` headers. Use them:
 
@@ -1164,7 +1187,7 @@ else:
     book_data = response.json()
 ```
 
-## 6. Monitor Rate Limits
+### 6. Monitor rate limits
 
 Track rate limit headers to avoid being throttled:
 
@@ -1182,41 +1205,41 @@ def check_rate_limits(response):
 
 ---
 
-# Support & Resources
+## Support and resources
 
-## Getting Help
+### Getting help
 
-- **API Support Email**: api-support@bookhub.com
-- **Developer Documentation**: https://docs.bookhub.com
-- **Status Page**: https://status.bookhub.com
+- **API support email**: api-support@bookhub.com
+- **Developer documentation**: https://docs.bookhub.com
+- **Status page**: https://status.bookhub.com
 
-## Additional Resources
+### Additional resources
 
-- **OpenAPI Specification**: Download the v2 YAML spec for use with Swagger/OpenAPI tools
-- **Postman Collection**: Available upon request
-- **SDK Libraries**: Python, JavaScript, Java, and PHP SDKs coming soon
+- **OpenAPI specification**: Download the v2 YAML spec for use with Swagger/OpenAPI tools
+- **Postman collection**: Available upon request
+- **SDK libraries**: Python, JavaScript, Java, and PHP SDKs coming soon
 
-## Migration Assistance
+### Migration assistance
 
 Need help migrating from v1 to v2? Contact our integration team:
-- Email: integrations@bookhub.com
-- Include: Current usage patterns, timeline, specific concerns
+- **Email**: integrations@bookhub.com
+- **Include**: Current usage patterns, timeline, specific concerns
 
-## Feedback
+### Feedback
 
 We value your feedback on v2 changes:
-- Feature requests: features@bookhub.com
-- Bug reports: bugs@bookhub.com
-- General feedback: feedback@bookhub.com
+- **Feature requests**: features@bookhub.com
+- **Bug reports**: bugs@bookhub.com
+- **General feedback**: feedback@bookhub.com
 
 ---
 
-## Version History
+### Version history
 
 | Version | Date | Changes |
 |---------|------|---------|
-| 2.0 | January 2, 2026 | Initial v2 release with path-based versioning, hitCount field, removed title sorting |
+| 2.0 | January 2, 2026 | Initial v2 release with path-based versioning, `hitCount` field, removed title sorting |
 
 ---
 
-**End of Documentation**
+**End of documentation**
