@@ -5,20 +5,20 @@ info:
     BookHub's Publisher API enables programmatic management of book inventory on the BookHub marketplace. 
     This API uses path-based versioning (v1, v2) and requires authentication via JWT tokens.
     
-    ## What's New in v2
+    ## What's new in v2
     
-    ### New Features
-    - **Hit Count Tracking**: The GET /v2/books/{bookId} endpoint now returns a `hitCount` field showing how many times a book has been viewed
+    ### New features
+    - **Hit count tracking**: The GET /v2/books/{bookId} endpoint now returns a `hitCount` field showing how many times a book has been viewed
     
-    ### Breaking Changes
-    - **Removed Title Sorting**: The GET /v2/books endpoint no longer supports sorting by title. Use `createdDate` sorting instead
+    ### Breaking changes
+    - **Removed title sorting**: The GET /v2/books endpoint no longer supports sorting by title. Use `createdDate` sorting instead
     
     ## Versioning
     The API uses URI path versioning:
     - v1: Initial stable release (https://api.bookhub.com/api/v1/books)
     - v2: Latest version with analytics features (https://api.bookhub.com/api/v2/books)
     
-    ## Rate Limiting
+    ## Rate limiting
     All versions: 150 requests/minute
   version: '2.0.0'
   contact:
@@ -95,7 +95,7 @@ components:
       description: |
         Sort field (v2 only supports createdDate)
         
-        NOTE: Title sorting has been removed in v2. Use createdDate instead.
+        > **Note**: Title sorting has been removed in v2. Use createdDate instead.
       schema:
         type: string
         enum: [createdDate]
@@ -412,11 +412,11 @@ paths:
       description: |
         Retrieves a paginated list of books for the authenticated publisher.
         
-        ## v2 Changes
-        - **BREAKING**: Title sorting has been removed. Use `createdDate` for sorting instead.
+        ## v2 changes
+        - **(breaking change)**: Title sorting has been removed. Use `createdDate` for sorting instead.
         - The `sort` parameter now only accepts `createdDate`
         
-        ## Migration Guide
+        ## Migration guide
         If you were using `sort=title`:
         - Replace with `sort=createdDate` (recommended)
         - Implement client-side sorting if title ordering is required
@@ -485,8 +485,8 @@ paths:
       description: |
         Retrieves detailed information about a specific book.
         
-        ## v2 Changes
-        - **NEW**: Returns `hitCount` field showing view analytics
+        ## v2 changes
+        - **(new)**: Returns `hitCount` field.
         - The hit count is incremented each time this endpoint is accessed
       operationId: getBook
       tags:
@@ -558,8 +558,8 @@ paths:
       description: |
         Changes a book's status from PENDING to ACTIVE, making it visible to customers.
         
-        ## Important Notes
-        - Only PENDING books can be finalized
+        ## Important notes
+        - Only `PENDING` books can be finalized
         - This operation is idempotent
         - The book becomes immediately available to customers
       operationId: finalizeBook
