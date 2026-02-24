@@ -12,7 +12,7 @@ Production-ready API documentation suite demonstrating enterprise technical writ
 
 ## Overview
 
-This API documentation helps publishers easily manage their book catalog using code. This project covers the full lifecycle of API documentation for a book publishing platform, from the initial specification to release management and cross-platform compatibility testing.
+This API documentation helps publishers manage their book catalog using code. This project covers the full lifecycle of API documentation for a book publishing platform, from the initial specification to release management and cross-platform compatibility testing.
 
 **Scope**: A four-endpoint REST API to manage a book catalog. Features include JWT authentication, pagination, filtering, and status lifecycle management.
 
@@ -160,14 +160,14 @@ Process documentation demonstrating systematic problem-solving:
 * Deprecation planning and migration path design
 * Breaking change communication
 
-### Quality & process excellence
+### Quality and process excellence
 
 * Systematic issue identification and resolution
 * Cross-platform compatibility testing and validation
 * Documentation standards creation and enforcement
 * Version control and maintenance workflows
 
-## Tools & technologies
+## Tools and technologies
 
 This course required the use of:
 
@@ -176,7 +176,7 @@ This course required the use of:
 * **Programming Languages**: Python, JavaScript, Java, PHP code examples
 * **Validation Tools**: SwaggerEditor, custom QA automation scripts
 
-## Project Background
+## Project background
 
 This project was created while completing LinkedIn Learning's "Planning a Versioned RESTful API with Claude"course and was significantly extended with professional documentation practices.
 
