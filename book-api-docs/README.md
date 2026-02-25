@@ -8,7 +8,7 @@ Production-ready API documentation suite demonstrating enterprise technical writ
 * Release management documentation 
 * Quality assurance processes
 
-**Technologies**: REST API, OpenAPI 3.0, Python, JavaScript, Java, PHP
+**Technologies**: REST API, OpenAPI 3.0, Python, JavaScript, Java, and PHP
 
 ## Overview
 
@@ -41,11 +41,11 @@ This API documentation helps publishers manage their book catalog using code. Th
 * **Documentation clarity**: Each version gets self-contained, unambiguous documentation
 * **Maintainability**: Independent version updates without cross-version conflicts
 * **Developer experience**: Version immediately visible in URL for easier testing
-* **Industry alignment**: Matches patterns used by GitHub, Stripe, and Twilio
+* **Industry alignment**: Matches patterns used by GitHub, Google Cloud, and Twilio
 
 **Impact**: Simplified documentation maintenance and improved developer onboarding experience.
 
-📄 **Detailed analysis**: [API Versioning Strategy: Decision Rational](./architecture/versioning-rationale.md)
+📄 **Detailed analysis**: [API Versioning Strategy: Decision Rationale](./architecture/versioning-rationale.md)
 
 ### Enterprise release management
 
@@ -76,11 +76,11 @@ This API documentation helps publishers manage their book catalog using code. Th
 
 **Impact**: Documentation renders correctly on Windows, Mac, Linux, and web platforms.
 
-📄 **Process documentation**: [Encoding Fixes Summary](./proccess-docs/ENCODING_FIXES_SUMMARY.md)
+📄 **Process documentation**: [Encoding Fixes Summary](./process-docs/ENCODING_FIXES_SUMMARY.md)
 
 ## Documentation samples
 
-### 📘 [API Integration Guide](./api-guide/bookhub_publisher_api_guide_v2_path.md)
+### 📘 [API integration guide](./api-guide/bookhub_publisher_api_guide_v2_path.md)
 
 Complete developer guide featuring:
 
@@ -97,7 +97,7 @@ Complete developer guide featuring:
 * Clear "What's New in v2" section
 * Breaking changes are prominently documented with migration paths
 
-### 📋 [Release Management Documentation](./release-management/release_management_v2_path.md)
+### 📋 [Release management documentation](./release-management/release_management_v2_path.md)
 
 Enterprise-grade release planning, including:
 
@@ -114,7 +114,7 @@ Enterprise-grade release planning, including:
 * Client code migration examples in 4 languages
 * Production deployment checklist
 
-### 🔧 [OpenAPI Specification](./openapi-spec/bookhub_publisher_api_guide_v2_path.yaml)
+### 🔧 [OpenAPI specification](./openapi-spec/bookhub_publisher_api_guide_v2_path.yaml)
 
 Machine-readable API definition:
 
@@ -129,7 +129,7 @@ Machine-readable API definition:
 * Comprehensive field descriptions
 * Example values for all endpoints
 
-### 📊 [Quality Assurance Documentation](./process-docs/ENCODING_FIXES_SUMMARY.md)
+### 📊 [Quality assurance documentation](./process-docs/ENCODING_FIXES_SUMMARY.md)
 
 Process documentation demonstrating systematic problem-solving:
 
@@ -149,7 +149,7 @@ Process documentation demonstrating systematic problem-solving:
 ### Technical writing
 
 * REST API documentation with OpenAPI 3.0 specifications
-* Multi-language code examples (Python, JavaScript, Java, PHP)
+* Multi-language code examples (Python, JavaScript, Java, and PHP)
 * Developer-focused content with practical use cases
 * Release notes and migration guides
 
@@ -169,16 +169,16 @@ Process documentation demonstrating systematic problem-solving:
 
 ## Tools and technologies
 
-This course required the use of:
+I used the following tools and technologies:
 
 * **Formats**: Markdown, YAML, JSON
 * **Specifications**: OpenAPI 3.0, REST API standards
-* **Programming Languages**: Python, JavaScript, Java, PHP code examples
-* **Validation Tools**: SwaggerEditor, custom QA automation scripts
+* **Programming languages**: Python, JavaScript, Java, and PHP
+* **Validation tools**: SwaggerEditor, custom QA automation scripts
 
 ## Project background
 
-This project was created while completing LinkedIn Learning's "Planning a Versioned RESTful API with Claude"course and was significantly extended with professional documentation practices.
+I created this project while completing LinkedIn Learning's "Planning a Versioned RESTful API with Claude" course and I significantly extended the content using professional documentation practices.
 
 Course deliverables: API guide and OpenAPI specification
 
@@ -192,7 +192,7 @@ Professional extensions I added:
 
 The course provided the technical foundation in API documentation and effective AI prompting strategies; I contributed strategic thinking, rigorous quality assurance, and enterprise-grade practices that transform educational exercises into portfolio-quality work.
 
-# Connect
+## Connect
 
 **Author**: Gale James
 <br>
