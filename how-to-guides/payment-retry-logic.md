@@ -2,7 +2,7 @@
 
 This guide shows you how to set up automatic retries for failed payments due to temporary issues, such as network errors or rate limits, in your payment system.
 
-## What you'll need
+## Prerequisites
 
 Before you start, make sure you:
 
@@ -16,25 +16,23 @@ Before you start, make sure you:
 
 Retry a payment only if you receive one of the following error codes:
 
-- 429 (rate limits)
+- `429` (rate limits)
 
-- 500, 502, 503, 504 (server errors)
+- `500`, `502`, `503`, `504` (server errors)
 
 - Network timeouts
 
 **Do not retry if you receive these errors:**
   
-- `400`: Invalid request. Fix the request instead and notify the user about the issue.
-- `401`: Authentication error. Check your API key and inform the user about the unsuccessful authentication attempt.
-- `402`: Card declined. User action required; surface this error to the user so they can resolve it directly with their bank or card provider.
+- `400`: Invalid request. Fix the request instead and notify the customer about the issue.
+- `401`: Authentication error. Check your API key and inform the customer about the unsuccessful authentication attempt.
+- `402`: Card declined. Customer action required; surface this error to the customer so they can resolve it directly with their bank or card provider.
 
-## Step 2: Implement Exponential Backoff for Retries
+## Step 2: Implement exponential backoff for retries
 
 Automatically retry failed payment requests using exponential backoff. This approach helps avoid overloading the API and effectively handles temporary issues.
 
-The following example retries the payment request up to three times. If you get a 200 response, the payment succeeded. For errors 429, 500, 502, 503, 504, or a timeout, wait 1, 2, or 4 seconds before retrying. For other errors, stop and raise an exception.
-
-If all attempts fail, raise an exception. This method handles temporary issues and prevents API overload.
+The following example retries the payment request up to three times. If you get a 200 response, the payment succeeded. For errors `429`, `500`, `502`, `503`, `504`, or a timeout, wait 1, 2, or 4 seconds before retrying. For other errors, stop and raise an exception.
 
 ### Python function with retry logic example
   
@@ -55,7 +53,7 @@ def create_payment_with_retry(payment_data, max_retries=3):
                 return response.json()
             
             if response.status_code in [429, 500, 502, 503, 504]:
-                wait_time = 2 ** attempt  # Wait 1s, 2s, 
+                wait_time = 2 ** attempt  # Wait 1s, 2s, or 4 seconds before retrying.
                 time.sleep(wait_time)
                 continue
             
@@ -95,3 +93,7 @@ import logging
 
 logging.info(f"Payment retry attempt {attempt + 1}/{max_retries}")
 ```
+
+## Next steps
+
+- [Authorization vs. capture: understanding the difference](../explanation/payment-authorization-vs-capture.md)
