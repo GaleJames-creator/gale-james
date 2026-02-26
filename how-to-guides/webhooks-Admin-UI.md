@@ -10,7 +10,7 @@ You can reveal and rotate a webhook's secret in Admin UI.
 
 ## Searching for a webhook
 
-You can easily search for an existing webhook in Admin UI to review or update its settings. Use the steps below to find a webhook by its unique ID.
+You can search for an existing webhook in Admin UI to review or update its settings. Use the steps below to find a webhook by its unique ID.
 
 1. Sign in to Admin UI.
 2. Select **Administration**, then click **Webhook Service**. 
@@ -18,12 +18,10 @@ You can easily search for an existing webhook in Admin UI to review or update it
 
 ## Creating a webhook
 
-Creating a webhook allows your system to receive real-time notifications from the service, enabling you to automate and enhance your processes. Whether you're tracking subscription updates, inventory statuses, or other events, setting up a webhook is straightforward: open your firewall to the service IPs, create the webhook in your service project, and configure your system to respond to the events. Follow these simple steps to get started.
-
-You can create a webhook to send notifications in three easy steps:
+Creating a webhook allows your system to receive real-time notifications from the service, enabling you to automate and enhance your processes. 
 
 ### Step 1: Open your firewall to trusted service IP addresses
-To receive webhook notifications from the service, you must open your firewalls to all trusted service IP addresses listed in the Payment API safelist. See the Payment API Safelist section for trusted service IP addresses. See the Payment API Safelist section for trusted service IP addresses.
+To receive webhook notifications from the service, you must open your firewalls to all trusted service IP addresses listed in the Payment API safelist.
 
 ### Step 2: Create webhooks
 
@@ -33,18 +31,16 @@ To receive webhook notifications from the service, you must open your firewalls 
 4. On the Create Webhook page, enter the endpoint URL. It must begin with `https://` or `http://` and will receive the webhook payload.
 5. Choose **HTTP** or **OAUTH** as **Transport Type**.
 6. Enter Username and Password for the endpoint.
-7. Under OAuth, create webhooks by:
+7. Under OAuth:
 
-   a. Selecting **Client credentials** or **Password** in from the **Grant type** list. 
+   a. Select **Client credentials** or **Password** from the **Grant type** list. 
    
-   b. Entering the token endpoint URL starting with either `HTTP://` or `HTTPS://` in the **Token endpoint URL field**.
+   b. Enter the token endpoint URL starting with either `https://` or `http://` in the **Token endpoint URL field**.
    
-   c. Providing the password or client ID and client secret in the appropriate fields.
-8. (Optional) Select **Enabled** for **Status**. If not enabled, no payment is sent. The system also prompts you to enable the webhook when you click **Create**.
-9. Select event checkboxes you want for the endpoint. At least one required.
+   c. Provide the password or client ID and client secret in the appropriate fields.
+8. (Optional) Select **Enabled** for **Status**. If not enabled, no event notification is sent. The system also prompts you to enable the webhook when you click **Create**.
+9. Select event checkboxes you want for the endpoint. At least one is required.
 10. Click **Create**.
-
-By following these steps, you will successfully subscribe to selected event types, enabling your systems to receive notifications and respond to changes promptly.
 
 ### Step 3: Respond to webhook events
 
@@ -59,9 +55,9 @@ You will not receive the event if the service receives response codes outside th
 3. Select the **Webhook ID** you want to turn on or off from the list and click **Edit**. The Edit Webhook page appears.
 4. Enter the endpoint URL in the **Endpoint URL** field.
 5. (Optional.) Enter the user credentials for the endpoint in the **Username** and **Password** fields.
-   **Note**: If you do not need an extra layer of security, you can leave these fields blank.
+   > **Note**: If you do not need an extra layer of security, you can leave these fields blank.
 6. (Optional.) Select **Enabled** for **Status**.
-   **Note**: If you do not select **Enabled**, the system will prompt you to enable the webhook when you click **Create**.
+   > **Note**: If you do not select **Enabled**, the system will prompt you to enable the webhook when you click **Create**.
 7. Select the checkbox next to each event you want to associate with the endpoint, or select the checkbox next to **Event** to select all events. At least one event type must be chosen.
 8. Scroll down and click **Save**.   
 
@@ -70,14 +66,14 @@ You will not receive the event if the service receives response codes outside th
 1. Sign in to Admin UI.
 2. Select **Administration**, and then click **Webhook Service**. The Webhook Service page appears.
 3. Select the **Webhook ID** you want to enable or disable from the list, then click **Enable/Disable**.
-4. In the **Webhook Status Change** dialog, enter your Admin UI username in the field, then click **Proceed**. Note that the **Username** field is case-sensitive. The **Secret** column displays the endpoint’s secret.
+4. In the **Webhook Status Change** dialog, enter your Admin UI username in the field, then click **Proceed**. Note that the **Username** field is case-sensitive. 
 
 ## Revealing a webhook's secret
 
 1. Sign in to Admin UI.
 2. Select **Administration**, and then click **Webhook Service**. The Webhook Service page appears.
 3. Find the webhook with the secret you want to verify and click the **Reveal Secret** link.
-4. Provide your Admin UI username and click **Reveal**. The **Reveal Secret** field under **Secret** will display the token. Note that the **Username** field is case-sensitive. The **Secret** column displays the endpoint's secret.
+4. Provide your Admin UI username and click **Reveal**. The **Reveal Secret** field under **Secret** will display the token. Note that the **Username** field is case-sensitive.
 
 ## Rotating a webhook's secret
 
@@ -99,9 +95,16 @@ The event payload will be sent to the endpoint URL when a subscribed event occur
 
 ## Deleting a webhook
 
-The Admin UI lets you remove unwanted or outdated webhooks. This operation is irreversible, so you should exercise caution and confirm that the webhook is no longer needed before proceeding. Follow the steps below to delete a webhook successfully.
+The Admin UI lets you remove unwanted or outdated webhooks. 
+
+> **Warning**: This operation is irreversible. Confirm that the webhook is no longer needed before proceeding.
 
 1. Sign in to Admin UI.
 2. Select **Administration**, and then click **Webhook Service**. The Webhook Service page appears.
 3. Select the **Webhook ID** you want to delete from the list and click **Delete**. The Delete Webhook dialog appears.
-4. Click **Yes** to delete the webhook. Note that once you delete a webhook, you cannot recover it.
+4. Click **Yes** to delete the webhook.
+
+## Next steps
+
+- [Retrieve an anonymous customer's orders and product information](../how-to-guides/webhooks-anonymous-shopper.md)
+- [Manage security for webhook data transmission](../how-to-guides/webhooks-data-transmission.md)
