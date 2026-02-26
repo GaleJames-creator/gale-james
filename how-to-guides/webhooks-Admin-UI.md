@@ -79,7 +79,7 @@ You will not receive the event if the service receives response codes outside th
 3. Find the webhook with the secret you want to verify and click the **Reveal Secret** link.
 4. Provide your Admin UI username and click **Reveal**. The **Reveal Secret** field under **Secret** will display the token. Note that the **Username** field is case-sensitive. The **Secret** column displays the endpoint's secret.
 
-## Rotating a webhoo's secret
+## Rotating a webhook's secret
 
 You can maintain up to five secrets per webhook. To rotate a webhook's secret:
 
