@@ -8,7 +8,12 @@ The webhook service notifies your endpoint URL of API events via webhooks, each 
 
 ## How it works
 
-The event triggers a webhook and sends the event details to your chosen endpoint URL. Your app can immediately respond to events such as order updates, subscription changes, or refunds. This flow keeps your system in sync, automates workflows, improves user experiences, and keeps data current without inefficient polling. See [Manage webhooks using the Admin UI](../how-to-guides/webhooks-Admin_UI.md) for instructions.
+The event triggers a webhook and sends the event details to your chosen endpoint URL. Your app can immediately respond to events such as order updates, subscription changes, or refunds. This flow keeps your system in sync, automates workflows, improves user experiences, and keeps data current without inefficient polling. See [Manage webhooks using the Admin UI](../how-to-guides/webhooks-Admin-UI.md) for instructions.
 
 ## Use cases
 Use webhooks to [retrieve an anonymous customer's order and product information](../how-to-guides/webhooks-anonymous-shopper.md).
+
+## Next steps
+
+- [Retrieve an anonymous customer's orders and product information](../how-to-guides/webhooks-anonymous-shopper.md)
+- [Manage security for webhook data transmission](../how-to-guides/webhooks-data-transmission.md)
