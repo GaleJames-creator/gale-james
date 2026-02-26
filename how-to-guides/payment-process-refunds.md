@@ -1,6 +1,8 @@
 # Process a refund
 
-This guide shows you, step by step, how to issue a full or partial refund using the refunds API endpoint. Use this guide when you need to return funds to a customer, either in full or in part. Note that refunds may take several days to appear on the customer’s statement.
+This guide shows you, step by step, how to issue a full or partial refund using the refunds API endpoint. Use this guide when you need to return funds to a customer, either in full or in part. 
+
+> **Note**: Refunds may take several days to appear on the customer’s statement.
 
 ## Prerequisites
 
@@ -8,22 +10,22 @@ This guide shows you, step by step, how to issue a full or partial refund using 
 
 - You know the `payment_id` of the transaction to refund.
 
-Follow these steps to send a refund request using the refunds endpoint.
-
 ## Step 1: Send a refund
 
 Use the refunds endpoint to send a full or partial refund. You must include the transaction's `payment_id` and a refund `reason` in the request body. Accepted values are:
 
-- `duplicate` - The payment was a duplicate charge
-- `fraudulent` - The payment was a fraudulent transaction
-- `requested_by_customer` - The customer requested a refund.
+| Reason                  | Description                               |
+|-------------------------|-------------------------------------------|
+| `duplicate`             | The payment was a duplicate charge.       |
+| `fraudulent`            | The payment was a fraudulent transaction. |
+| `requested_by_customer` | The customer requested a refund.          |
 
 ### Full refund example
 
 To refund the entire payment, use this `curl` command:
 
 ```bash
-curl https://sandbox-api..com/v1/refunds \
+curl https://sandbox-api.com/v1/refunds \
   -X POST \
   -H "Authorization: Bearer sk_test_1234567890abcdef" \
   -H "Content-Type: application/json" \
@@ -38,7 +40,7 @@ curl https://sandbox-api..com/v1/refunds \
 To refund part of a payment, specify the `amount` (in cents) in your request:
 
 ```bash
-curl https://sandbox-api..com/v1/refunds \
+curl https://sandbox-api.com/v1/refunds \
   -X POST \
   -H "Authorization: Bearer sk_test_1234567890abcdef" \
   -H "Content-Type: application/json" \
@@ -69,3 +71,5 @@ A successful refund returns a response like this:
   "metadata": {}
 }
 ```
+
+A successful response returns a `200 OK` status code.
