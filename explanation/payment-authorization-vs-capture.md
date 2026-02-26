@@ -85,3 +85,7 @@ Follow these steps when resubmitting an authorization request:
 3. Track the retry dates to ensure it does not exceed these limits.
 
 Additionally, we recommend avoiding scheduling retries 7 days apart. This prevents them from falling on the same day of the week, thereby helping you obtain a higher authorization success rate.
+
+## Next steps
+
+- [Implement retry logic for failed payments](../how-to-guides/payment-retry-logic.md)
