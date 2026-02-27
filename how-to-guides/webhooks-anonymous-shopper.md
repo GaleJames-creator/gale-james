@@ -1,6 +1,6 @@
 # Retrieve an anonymous customer's orders and product information
 
-This guide shows how to retrieve an anonymous customer's orders and product information using their user ID (userId).
+This guide shows you how to retrieve an anonymous customer's orders and product information using their user ID (`userId`).
 
 ## Prerequisites
 
@@ -12,24 +12,61 @@ This guide shows how to retrieve an anonymous customer's orders and product info
 
 Send a `POST` request to the service's OAuth token endpoint to obtain an access token for the anonymous customer. Use the following format:
 
-```json
+```http
   POST https://api.service.com/oauth20/token?grant_type=client_credentials&dr_userid={anonymousShopperId}
 ```
 
-Replace `{anonymousShopperId}` with the actual user ID from your webhook payload (typically found in `shopper.id`).
+Replace `{anonymousShopperId}` with the actual customer's user ID from your webhook payload (typically found in `shopper.id`).
 
 ## Step 2: Use the access token to retrieve orders and product information
 
 After obtaining the session token, include it in the `Authorization` header as a Bearer token for all subsequent requests to access the anonymous customer's data.
 
-1. **To retrieve product information**: Send a `GET` request to the `/products` endpoint, specifying the desired product ID. As shown in the following example:
+### To retrieve product information
 
-```json
-  GET https://api.service.com/v1/shoppers/me/products/{productId}?expand=all
+Send a `GET` request to the `/products` endpoint, specifying the product ID (`productId`). 
+
+```http
+  GET https://api.service.com/v1/shoppers/me/products/{productId}
 ```
 
-2. **To list all orders for the anonymous customer**: Send a `GET` request to the `/orders` endpoint. As shown in the following example:
+A successful response returns a 200 OK status code.
 
 ```json
-  GET https://api.service.com/v1/shoppers/me/orders?expand=all
+{
+  "product": {
+    "id": 64578500,
+    "name": "Dungeon Crawl",
+    "productType": "DOWNLOAD",
+    "pricing": { ... },
+    // Additional fields omitted for brevity
+  }
+}
+```
+
+### To list all orders for the anonymous customer
+
+Send a `GET` request to the `/orders` endpoint. 
+
+```http
+  GET https://api.service.com/v1/shoppers/me/orders
+```
+
+A successful response returns a 200 OK status code.
+
+```json
+{
+  "orders": {
+    "uri": "https://api.service.com/v1/shoppers/me/orders",
+    "order": [
+      {
+        "id": 278666810197,
+        "submissionDate": "2023-10-31T15:59:19.000Z",
+        "orderState": "In Process"
+      }
+    ],
+    "totalResults": "1",
+    "totalResultPages": "1"
+  }
+}
 ```
