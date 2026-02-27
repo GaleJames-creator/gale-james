@@ -347,7 +347,7 @@ Creates a new book with `PENDING` status. Books must be finalized before becomin
 
 #### Endpoint
 
-```
+```http
 POST /v2/books
 ```
 
@@ -374,7 +374,7 @@ curl -X POST "https://api.bookhub.com/api/v2/books" \
 
 #### Request headers
 
-```
+```http
 Authorization: Bearer YOUR_JWT_TOKEN
 Content-Type: application/json
 Idempotency-Key: uuid (optional, recommended)
@@ -447,7 +447,7 @@ Retrieves detailed information about a specific book, **including the `hitCount`
 
 #### Endpoint
 
-```
+```http
 GET /v2/books/{bookId}
 ```
 
@@ -457,7 +457,7 @@ GET /v2/books/{bookId}
 
 #### Request headers
 
-```
+```http
 Authorization: Bearer YOUR_JWT_TOKEN
 ```
 
@@ -528,7 +528,7 @@ The `hitCount` field is **new in v2** and provides basic analytics:
 
 #### Response headers
 
-```
+```bash
 ETag: "33a64df551425fcc55e4d42a148795d9f25f89d4"
 Cache-Control: max-age=3600, must-revalidate
 ```
@@ -543,7 +543,7 @@ Retrieves a paginated list of books.
 
 #### Endpoint
 
-```
+```http
 GET /v2/books
 ```
 
@@ -638,7 +638,7 @@ curl -X GET "https://api.bookhub.com/api/v2/books?page=1&limit=20&status=ACTIVE&
 
 #### Response headers
 
-```
+```bash
 X-Total-Count: 87
 Link: <https://api.bookhub.com/api/v2/books?page=2>; rel="next",
       <https://api.bookhub.com/api/v2/books?page=5>; rel="last"
@@ -676,7 +676,7 @@ Changes a book's status from `PENDING` to `ACTIVE`, making it visible to custome
 
 #### Endpoint
 
-```
+```http
 PATCH /v2/books/{bookId}/finalize
 ```
 
@@ -686,7 +686,7 @@ PATCH /v2/books/{bookId}/finalize
 
 #### Request headers
 
-```
+```bash
 Authorization: Bearer YOUR_JWT_TOKEN
 Content-Type: application/json
 ```
