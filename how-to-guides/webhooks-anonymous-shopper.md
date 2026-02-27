@@ -18,7 +18,7 @@ Send a `POST` request to the service's OAuth token endpoint to obtain an access 
 
 Replace `{anonymousShopperId}` with the actual customer's user ID from your webhook payload (typically found in `shopper.id`).
 
-## Step 2: Use the access token to retrieve orders and product information
+## Step 2: Use the access token to retrieve order and product information
 
 After obtaining the session token, include it in the `Authorization` header as a Bearer token for all subsequent requests to access the anonymous customer's data.
 
