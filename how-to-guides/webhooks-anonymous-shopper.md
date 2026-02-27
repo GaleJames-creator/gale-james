@@ -1,6 +1,6 @@
-# Retrieve an anonymous customer's orders and product information
+# Retrieve an anonymous customer's order and product information
 
-This guide shows you how to retrieve an anonymous customer's orders and product information using their user ID (`userId`).
+This guide shows you how to retrieve an anonymous customer's order and product information using their user ID (`userId`).
 
 ## Prerequisites
 
