@@ -4,7 +4,7 @@
 
 ### Create a payment
 ```bash
-curl https://sandbox-api..com/v1/payments \
+curl https://sandbox-api.com/v1/payments \
   -X POST \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
@@ -19,7 +19,7 @@ curl https://sandbox-api..com/v1/payments/PAYMENT_ID \
 
 ### Create a refund
 ```bash
-curl https://sandbox-api..com/v1/refunds \
+curl https://sandbox-api.com/v1/refunds \
   -X POST \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
@@ -28,7 +28,7 @@ curl https://sandbox-api..com/v1/refunds \
 
 ### List webhooks
 ```bash
-curl https://sandbox-api..com/v1/webhooks \
+curl https://sandbox-api.com/v1/webhooks \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
