@@ -13,7 +13,7 @@ Use a reference when you want to find specific facts or details.
   * [Managing API rate limits](./payment-api-rate-limits.md)
   * [Preventing duplicate charges with idempotency keys](./payment-idempotency-keys.md)
   * [Applying a payment method to checkout](./payment-applying-to-checkout.md)
-  * [API reference guide](./payment-api-endpoints.md)
+  * [API reference guide](./api-reference-guide.md)
   * [Subscription webhook examples](./webhook-subscription-examples.md)
   * [Webhook definitions](./webhook-definitions.md)
 
