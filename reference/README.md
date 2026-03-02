@@ -2,8 +2,7 @@
 
 ## What references are
 
-A reference describes what things are, not how to use them.
-
+Reference documentation describes the details of specific things — parameters, error codes, API endpoints, and other technical specifications — without explaining how to use them.
 ## When to use references
 
 Use a reference when you want to find specific facts or details.
