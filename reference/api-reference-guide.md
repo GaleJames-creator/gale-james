@@ -13,6 +13,7 @@ GET /v1/payment-options
 ```bash
 curl -X GET "https://api.sandbox-api.com/api/v1/payment-options" \
   -H "Authorization: Bearer YOUR_JWT_TOKEN"
+  -H "Content-: application/json" \
 ```
 
 ### Response (200 OK)
@@ -52,7 +53,7 @@ The token is invalid. Enter a valid token and try again.
 ```json
 {
   "code": "invalid_token",
-  "description": "The token is invalid, Enter a valid token and try again."
+  "description": "The token is invalid. Enter a valid token and try again."
 }
 ```
 
@@ -61,8 +62,8 @@ The token is invalid. Enter a valid token and try again.
 The possible errors associated with this conflict response are:
 
 - `resource-already-exists`: A payment Option with this nickname already exists. Provide a unique nickname for the payment option and try again.
-- `invalid-payment-source`: The `paymentSource` with source ID (`sourceId`) in not valid. Provide a valid `paymentSource` for the `soureId` and try again.
-- `resource-already-exists`: The `paymentSource` with source ID (`sourceId`) already exist. Provide a new `paymentSource` for the `soureId` and try again.
+- `invalid-payment-source`: The `paymentSource` with source ID (`sourceId`) in not valid. Provide a valid `paymentSource` for the `sourecId` and try again.
+- `resource-already-exists`: The `paymentSource` with source ID (`sourceId`) already exist. Provide a new `paymentSource` for the `sourecId` and try again.
 - `invalid-state-code`: The state code is incorrect. Enter a valid 2-digit state code and try again.
 - `invalid-postal-code`: The postal code is incorrect. Enter a valid postal code in `12345` or `12345-6789` format and try again.
 
@@ -95,7 +96,7 @@ curl https://sandbox-api.com/v1/orders/12345/refunds \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
   -H "Content-: application/json" \
   -d '{
-    "": "Order Level",
+    "type": "Order Level",
     "category": "PRODUCT_LEVEL_PRODUCT",
     "reason": "REQUESTED_BY_CUSTOMER",
     "comments": "The customer said the product was damaged.",
@@ -145,7 +146,7 @@ The parameter is invalid. Enter a valid parameter and try again.
 ```json
 {
   "code": "invalid_parameter",
-  "description": "The paremeter is invalid, Enter a valid parameter and try again."
+  "description": "The parameter is invalid. Enter a valid parameter and try again."
 }
 ```
 
@@ -155,7 +156,7 @@ The token is invalid. Provide the correct token and try again.
 
 ### Response (404 Not Found)
 
-The order ID or line item was  not found or the refund is invalid. Provide the correct order ID, line item or refund and try again.
+The order ID or line item was not found or the refund is invalid. Provide the correct order ID, line item, or refund, and try again.
 
 ```json
 {
