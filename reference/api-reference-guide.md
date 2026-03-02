@@ -12,8 +12,8 @@ GET /v1/payment-options
 
 ```bash
 curl -X GET "https://api.sandbox-api.com/api/v1/payment-options" \
-  -H "Authorization: Bearer YOUR_JWT_TOKEN"
-  -H "Content-: application/json" \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
+  -H "Content-Type: application/json" \
 ```
 
 ### Response (200 OK)
@@ -42,7 +42,7 @@ The parameter is invalid. Enter a valid parameter and try again.
 ```json
 {
   "code": "invalid_parameter",
-  "description": "The paremeter is invalid, Enter a valid parameter and try again."
+  "description": "The paremeter is invalid. Enter a valid parameter and try again."
 }
 ```
 
@@ -62,8 +62,8 @@ The token is invalid. Enter a valid token and try again.
 The possible errors associated with this conflict response are:
 
 - `resource-already-exists`: A payment Option with this nickname already exists. Provide a unique nickname for the payment option and try again.
-- `invalid-payment-source`: The `paymentSource` with source ID (`sourceId`) in not valid. Provide a valid `paymentSource` for the `sourecId` and try again.
-- `resource-already-exists`: The `paymentSource` with source ID (`sourceId`) already exist. Provide a new `paymentSource` for the `sourecId` and try again.
+- `invalid-payment-source`: The `paymentSource` with source ID (`sourceId`) is not valid. Provide a valid `paymentSource` for the `sourceId` and try again.
+- `resource-already-exists`: The `paymentSource` with source ID (`sourceId`) already exists. Provide a new `paymentSource` for the `sourceId` and try again.
 - `invalid-state-code`: The state code is incorrect. Enter a valid 2-digit state code and try again.
 - `invalid-postal-code`: The postal code is incorrect. Enter a valid postal code in `12345` or `12345-6789` format and try again.
 
@@ -94,7 +94,7 @@ POST /v1/orders/{orderId}/refunds
 curl https://sandbox-api.com/v1/orders/12345/refunds \
   -X POST \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
-  -H "Content-: application/json" \
+  -H "Content-Type: application/json" \
   -d '{
     "type": "Order Level",
     "category": "PRODUCT_LEVEL_PRODUCT",
