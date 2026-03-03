@@ -16,7 +16,7 @@ GET /v1/payment-options
 ### Request example
 
 ```bash
-curl -X GET "https://api.sandbox-api.com/api/v1/payment-options" \
+curl -X GET "https://api.sandbox-api.com/v1/payment-options" \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
   -H "Content-Type: application/json" \
 ```
