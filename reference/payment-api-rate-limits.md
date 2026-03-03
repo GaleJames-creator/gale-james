@@ -1,6 +1,6 @@
 # Managing API rate limits
 
-The Payment API uses rate limits to maintain API stability and ensure fair usage.
+Managing API rate limits involves monitoring and controlling how often your application makes requests to an API to avoid exceeding the API provider's quota. This reference guide explains the key strategies for managing API rate limits to maintain API stability and ensure fair usage.
 
 ### Rate limit tiers
 
@@ -41,7 +41,7 @@ If you go over the rate limit, the API returns a `429 Too Many Requests` respons
 
 1. **Monitor rate limit headers** in each response.
 2. **Use exponential backoff** for retries.
-3. **Cache GET requests** where possible, such as for payments or webhooks lists.
+3. **Cache GET requests** where possible, such as for payments or webhook lists.
 4. **Batch operations** when applicable.
 5. **Request a tier upgrade** if you consistently reach the rate limit.
 
