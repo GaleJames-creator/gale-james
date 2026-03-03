@@ -119,13 +119,8 @@ In the request body, include the following required fields:
 | Required parameters | Description                                                                                                                 | 
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | `type`              | The type of refund, such as `Order Level` or `Product Level` refund.                                                        |
-| `category`          | The enum for the category. Possible values: `PRODUCT_LEVEL_PRODUCT`,                                                        |
-|                     | `PRODUCT_LEVEL_SHIPPING`, `PRODUCT_LEVEL_FEE`,`PRODUCT_LEVEL_DUTIES_AND_TARIFFS`, `ORDER_LEVEL_PRODUCT`,                    | 
-|                     | `ORDER_LEVEL_SHIPPING`, `ORDER_LEVEL_FEE`, `ORDER_LEVEL_FULL`, `ORDER_LEVEL_TAX_EXEMPT`, `ORDER_LEVEL_DUTIES_AND_TARIFFS`   |
-| `reason`            | The enum for the reason. Possible values: `CUSTOMER_SATISFACTION_ISSUE`, `DAMAGED_PRODUCT`,                                 |
-|                     | `DELAYED_SHIPPING`, `FEE_CHARGED_INCORRECTLY`,`FEE_EXEMPT_CUSTOMER`, `FRAUD`, `MATCH_PROMOTIONAL_PRICE`,                    |
-|                     | `MISSING_ITEMS_FROM_ORDER`, `NEVER_RECEIVED`, `ORDER_PROCESSING_ERROR`, `PHONE_ORDER_ERROR`, `PRODUCT_SHOULD_NOT_HAVE_FEE`, |
-|                     | `TAX_EXEMPT`, `UNABLE_TO_SHIP_TO_COUNTRY`, `UNDELIVERABLE_ADDRESS`, `VENDOR_APPROVED_REFUND`                                |
+| `category`          | The enum for the category. Possible values: `PRODUCT_LEVEL_PRODUCT`,  `PRODUCT_LEVEL_SHIPPING`, `PRODUCT_LEVEL_FEE`,`PRODUCT_LEVEL_DUTIES_AND_TARIFFS`, `ORDER_LEVEL_PRODUCT`, `ORDER_LEVEL_SHIPPING`, `ORDER_LEVEL_FEE`, `ORDER_LEVEL_FULL`, `ORDER_LEVEL_TAX_EXEMPT`, `ORDER_LEVEL_DUTIES_AND_TARIFFS`   |
+| `reason`            | The enum for the reason. Possible values: `CUSTOMER_SATISFACTION_ISSUE`, `DAMAGED_PRODUCT`, `DELAYED_SHIPPING`, `FEE_CHARGED_INCORRECTLY`,`FEE_EXEMPT_CUSTOMER`, `FRAUD`, `MATCH_PROMOTIONAL_PRICE`, `MISSING_ITEMS_FROM_ORDER`, `NEVER_RECEIVED`, `ORDER_PROCESSING_ERROR`, `PHONE_ORDER_ERROR`, `PRODUCT_SHOULD_NOT_HAVE_FEE`, `TAX_EXEMPT`, `UNABLE_TO_SHIP_TO_COUNTRY`, `UNDELIVERABLE_ADDRESS`, `VENDOR_APPROVED_REFUND`                                |
 | `comments`          | Any comments for the refund (e.g., `The customer said the product was damaged.`).                                           |
 | `value`             | The value for the `refundAmount`.                                                                                           |
 
