@@ -1,7 +1,8 @@
 # Subscription webhook examples
 
-To create a subscription webhook response, you will receive a webhook with a `201 Created status`, which includes a unique identifier and details about the newly created subscription. Use this data to build email notifications and integrate with Payment APIs for additional information. Here is a sample of the response structure you can expect:
+Webhooks let your system know right away when a customer starts, renews, or cancels a subscription. This reference guide provides examples of subscription webhook messages and shows how to use them in your app.
 
+When you create a subscription, you'll get a webhook with a `201 Created` status, a unique ID, and subscription details. Use this for email notifications or Payment API integration. Here’s a sample response structure:
 
 ```json
 {
@@ -31,9 +32,9 @@ To create a subscription webhook response, you will receive a webhook with a `20
 }
 ```
 
-**Note**: Ensure to handle the `id` and `data` fields appropriately to extract the subscription details required for your application. This response can confirm the subscription creation and relay necessary information to the subscriber or to internal systems for further processing.
+**Note**: Use the `id` and `data` fields to get the subscription details you need. This response confirms the subscription was created and provides info for your app or your customer.
 
-In the example below, the initial `id` represents the subscription identifier. The subscription identifier appears as subscription ID (`id`) in the Subscription resource. For example, use `id` to list all orders associated with a subscription in `https://www.service.com/v1/subscriptions/{subId}/orders`. It also provides additional subscription details.
+In the example below, the initial ID (`id`)  represents the subscription identifier. The subscription identifier appears as subscription id in the Subscription resource. For example, use the `id` parameter to list all orders associated with a subscription at `https://api.sandbox-api.com/v1/subscriptions/{subId}/orders`. It also provides additional subscription details.
 
 ```json
 {
