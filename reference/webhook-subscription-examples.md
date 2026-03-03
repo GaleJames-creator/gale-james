@@ -2,6 +2,8 @@
 
 Webhooks let your system know right away when a customer starts, renews, or cancels a subscription. This reference guide provides examples of subscription webhook messages and shows how to use them in your app.
 
+## 201 Created webhook
+
 When you create a subscription, you'll get a webhook with a `201 Created` status, a unique ID, and subscription details. Use this for email notifications or Payment API integration. Here’s a sample response structure:
 
 ```json
@@ -33,6 +35,8 @@ When you create a subscription, you'll get a webhook with a `201 Created` status
 ```
 
 **Note**: Use the `id` and `data` fields to get the subscription details you need. This response confirms the subscription was created and provides info for your app or your customer.
+
+## Subscription webhook example
 
 In the example below, the initial ID (`id`)  represents the subscription identifier. The subscription identifier appears as subscription id in the Subscription resource. For example, use the `id` parameter to list all orders associated with a subscription at `https://api.sandbox-api.com/v1/subscriptions/{subId}/orders`. It also provides additional subscription details.
 
