@@ -1,24 +1,25 @@
 # API reference guide
 
-This guide provides details on two API endpoints.
+This guide provides details on three API endpoints.
 
-* [Retrieve available payment methods](#retrieve-available-payment-methods)
+* [Retrieve available payment options](#retrieve-available-payment-options)
+* [Update the customer's payment options](#update-the-customers-payment-options)
 * [Create an order refund](#create-an-order-refund)
 
-## Retrieve available payment methods
+## Retrieve available payment options
 Get a list of the available payment options.
 
 ### Endpoint
 ```http
-GET /v1/payment-options
+GET /v1/shoppers/me/payment-options
 ```
 
 ### Request example
 
 ```bash
-curl -X GET "https://api.sandbox-api.com/v1/payment-options" \
+curl -X GET "https://api.sandbox-api.com/v1/shoppers/me/payment-options" \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
-  -H "Content-Type: application/json" \
+  -H "Content-Type: application/json" 
 ```
 
 ### Response (200 OK)
@@ -62,20 +63,118 @@ The token is invalid. Enter a valid token and try again.
 }
 ```
 
-### Response (409 Conflict)
+## Update the customer's payment options
 
-The possible errors associated with this conflict response are:
+You can update the customer's payment options. 
 
-- `resource-already-exists`: A payment Option with this nickname already exists. Provide a unique nickname for the payment option and try again.
-- `invalid-payment-source`: The `paymentSource` with source ID (`sourceId`) is not valid. Provide a valid `paymentSource` for the `sourceId` and try again.
-- `resource-already-exists`: The `paymentSource` with source ID (`sourceId`) already exists. Provide a new `paymentSource` for the `sourceId` and try again.
-- `invalid-state-code`: The state code is incorrect. Enter a valid 2-digit state code and try again.
-- `invalid-postal-code`: The postal code is incorrect. Enter a valid postal code in the format `12345` or `12345-6789` and try again.
+### Endpoint
+
+```http
+POST /v1/shoppers/me/payment-options/{paymentOptionId}
+```
+
+### Path parameters
+
+- `paymentOptionId` (required): Unique identifier of the payment option (e.g., `123456789`). 
+
+### Request example
+
+```bash
+curl https://api.sandbox-api.com/v1/shoppers/me/payment-options/123456789 \
+  -X POST \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "paymentOption": {
+      "nickName": "DRBank",
+      "isDefault": "true",
+      "sourceId": "c25fcccc-6e57-4d93-bafb-a6765510a422"
+    },
+    "shopper": {
+      "ipAddress": "192.168.100.102"
+    }
+  }
+'
+```
+
+### Request parameters
+
+In the request body, include the following optional fields:
+
+| Parameter	                     	| Location		  | Type		  | Required	| Description                                                                                  |
+| ------------------------------- | ------------- | --------- | --------- | -------------------------------------------------------------------------------------------- |  
+| `paymentOptionId`	              | path			    | string	  | Yes		    | The unique identifier for the payment option (e.g., `123456789`)                             | 
+| `sourceId`                      | body (JSON)   | string    | No        | The unique identifier for the payment source (e.g., `c25fcccc-6e57-4d93-bafb-a6765510a422`)  |
+| `paymentOption.nickName`	      | body (JSON)  	| string	  | No 		    | Name of payment option (e.g., `WFBank`)                                                      | 
+| `paymentOption.isDefault`	    	| body (JSON)	  | string	  | No 		    | Determines if the payment option is the customer's default payment option (e.g., `true`)     | 
+| `shopper.ipAddress`           	| body (JSON)	  | string	  | No		    | Customer's IP address (e.g., `198.51.100.1`)                                                 | 
+
+### Response (201 Created)
 
 ```json
 {
-  "code": "resource-already-exists",
-  "description": "A Payment Option with a nickname of [nickname] already exists."
+  "uri": "https://api.sandbox-api.com/v1/shoppers/me/payment-options/123456789",
+  "id": 740865108,
+  "nickName": "Default",
+  "isDefault": "true",
+  "type": "creditCard",
+  "sourceId": "a231f38d-3a07-4a13-96ed-89693ba7d56c",
+  "sourceClientSecret": "a231f38d-3a07-4a13-96ed-89693ba7d56c_f6d8c951-59c9-4ef3-ac45-9f33c77d2f46",
+  "creditCard": {
+    "expirationYear": "2030",
+    "lastFourDigits": "0000",
+    "clientSecret": "a231f38d-3a07-4a13-96ed-89693ba7d56c_f6d8c951-59c9-4ef3-ac45-9f33c77d2f46",
+    "expirationMonth": "08",
+    "fundingSource": "debit",
+    "brand": "Visa",
+    "reusable": "true"
+  }
+}
+```
+
+### Response (204 No Content)
+
+The server successfully processed the request, but has no content to return in the response body.
+
+### Response (400 Bad Request)
+
+The possible errors associated with this bad request response are:
+
+- `invalid-request`: The request was invalid and could not be parsed by the system. Enter valid information and try again.
+
+```json
+{
+  "errors": {
+    "code": "invalid-request",
+    "description": "The request could not be parsed. Enter valid information and try again."
+  }
+}
+```
+
+### Response (401 Unauthorized)
+
+The token is invalid. Enter a valid token and try again.
+
+```json
+{
+  "errors": {
+    "code": "invalid-token",
+    "description": "The token is invalid. Enter a valid token and try again."
+  }
+}
+```
+
+### Response (409 Conflict)
+
+The `paymentSource` is not valid. Possible reasons are:
+
+- `invalid-state-code`: The state code is invalid. Provide a valid state code and try again.
+- `invalid-postal-code`: The postal code is invalid. Provide a valid postal code and try again.
+
+```json
+{
+  "code": "invalid-payment-source",
+  "description": "A PaymentSource with source ID {sourceId} is not valid for creating a billing option."
 }
 ```
 
@@ -156,22 +255,31 @@ The token is invalid. Provide the correct token and try again.
 
 ### Response (404 Not Found)
 
-The order ID or line item was not found, or the refund is invalid. Provide the correct order ID, line item, or refund, and try again.
+The order ID or line item was not found, or the refund is invalid. The possible errors associated with this not found response are:
+
+- `order-not-found`: The provided `orderId` was not found. Provide the correct `orderId` and try again.
+- `invalid-refund`: The `value` or `currency` for the `refundAmount` is invalid. Provide a valid `value` or `currency` for the `refundAmount` and try again.
 
 ```json
 {
   "errors": {
     "code": "resource-not-found",
     "subcode": "invalid-order-id",
-    "description": "The order ID is invalid. Provide the correct order ID and try again.",
-    "message": "Invalid order ID."
+    "description": "The order ID is invalid.",
+    "message": "The order ID is invalid. Correct the order ID and try again."
   }
 }
+
 ```
 
 ### Response (409 Conflict)
 
-The refund type, category, reason, or refund amount is incorrect. Provide the correct value and try again.
+The refund type, category, reason, or refund amount is incorrect. The possible errors associated with this conflict response are:
+
+- `invalid-refund-type`: The refund `type` is invalid. Provide a valid refund `type` and try again.
+- `invalid-refund-category`: The refund `category` is invalid. Provide a valid refund `category` and try again.
+- `invalid-refund-reason`: The refund `reason` is invalid. Provide a valid refund `reason` and try again.
+- `invalid-refund-amount`: The `value` or `currency` for the `refundAmount` is invalid. Provide a valid `value` or `currency` for the `refundAmount` and try again.
 
 ```json
 {
