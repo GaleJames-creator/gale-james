@@ -1,6 +1,11 @@
 # API reference guide
 
-## Retrieve the available payment methods
+This guide provides details on two API endpoints.
+
+* [Retrieve available payment methods](#retrieve-available-payment-methods)
+* [Create an order refund](#create-an-order-refund)
+
+## Retrieve available payment methods
 Get a list of the available payment options.
 
 ### Endpoint
@@ -42,7 +47,7 @@ The parameter is invalid. Enter a valid parameter and try again.
 ```json
 {
   "code": "invalid_parameter",
-  "description": "The paremeter is invalid. Enter a valid parameter and try again."
+  "description": "The parameter is invalid. Enter a valid parameter and try again."
 }
 ```
 
@@ -65,7 +70,7 @@ The possible errors associated with this conflict response are:
 - `invalid-payment-source`: The `paymentSource` with source ID (`sourceId`) is not valid. Provide a valid `paymentSource` for the `sourceId` and try again.
 - `resource-already-exists`: The `paymentSource` with source ID (`sourceId`) already exists. Provide a new `paymentSource` for the `sourceId` and try again.
 - `invalid-state-code`: The state code is incorrect. Enter a valid 2-digit state code and try again.
-- `invalid-postal-code`: The postal code is incorrect. Enter a valid postal code in `12345` or `12345-6789` format and try again.
+- `invalid-postal-code`: The postal code is incorrect. Enter a valid postal code in the format `12345` or `12345-6789` and try again.
 
 ```json
 {
@@ -156,7 +161,7 @@ The token is invalid. Provide the correct token and try again.
 
 ### Response (404 Not Found)
 
-The order ID or line item was not found or the refund is invalid. Provide the correct order ID, line item, or refund, and try again.
+The order ID or line item was not found, or the refund is invalid. Provide the correct order ID, line item, or refund, and try again.
 
 ```json
 {
