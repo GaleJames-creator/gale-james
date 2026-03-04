@@ -1,4 +1,4 @@
-# Best practices for handling API errors
+# Managig API errors
 
 Web services use status codes to tell you what happened. A `2xx` means success, `4xx` implies a problem with your request, and `5xx`  means a server problem. You might also see an error code with more details. Knowing these codes helps you quickly resolve issues with your API requests.
 
