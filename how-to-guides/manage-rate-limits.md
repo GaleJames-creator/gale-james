@@ -21,3 +21,4 @@ Before you start, make sure you:
 ## Next steps
 
 - [Managing API rate limits](../reference/payment-api-rate-limits.md)
+- [Implement retry logic for failed payments](./payment-retry-logic.md)
