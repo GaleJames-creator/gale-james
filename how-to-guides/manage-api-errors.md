@@ -2,8 +2,6 @@
 
 Use these steps to identify and resolve API errors in your integration.
 
-Follow these steps if you get an error code:
-
 - Check the response headers for additional details, such as rate limits or warnings.
 - Retry after waiting if a `5xx` error occurs. This helps your app recover from server issues.  
 - Use the correct HTTP method—`GET`, `POST`, `PUT`, or `DELETE`—based on your action.
