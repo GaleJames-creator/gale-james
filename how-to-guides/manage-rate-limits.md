@@ -7,7 +7,7 @@ Use these steps to prevent and manage rate limits in your integration.
 Before you start, make sure you:
 
 - Have an integrated payment system
-- Are familiar with the Payment API
+- Are familiar with APIs
 - Understand HTTP status codes
 
 ## Steps
