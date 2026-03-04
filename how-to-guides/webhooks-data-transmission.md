@@ -1,13 +1,13 @@
 # Manage security for webhook data transmission
 
+Use these security steps to protect webhook data.
+
 ## Prerequisites
 
 - An active webhook
 - Admin UI access
 
-## Protecting webhook data
-
-To protect webhook data, follow these security practices:
+## Steps
 
 - Always use HTTPS for endpoint URLs to encrypt transmitted data.
 - Verify each payload using the provided [secret](../reference/webhook-definitions.md#secret) to ensure authenticity and integrity. See [Revealing a webhook's secret](./webhooks-Admin-UI.md#revealing-a-webhooks-secret) for instructions.
