@@ -2,11 +2,11 @@
 
 ## What how-to guides are
 
-How-to guides provide step-by-step instructions. 
+How-to guides help you accomplish specific, goal-oriented tasks.
 
 ## When to use how-to guides
 
-Use how-to guides when you want to accomplish a specific, goal-oriented task.
+Use how-to guides when you need task-focused instructions and already understand the underlying concepts.
 
 ## Available how-to guides
 
@@ -15,7 +15,7 @@ Use how-to guides when you want to accomplish a specific, goal-oriented task.
 * [Manage security for webhook data transmission](./webhooks-data-transmission.md): How to protect webhook data.
 * [Manage webhooks using the Admin UI](./webhooks-Admin-UI.md): How to create, edit, enable, disable, or delete webhooks, and manage secrets. 
 * [Retrieve an anonymous customer's order and product information](./webhooks-anonymous-shopper.md): How to retrieve an anonymous customer's order and product information.
-* [Manage API errors](./manage-api-errors.md): How to manage API errors.
+* [Manage API errors](./manage-api-errors.md): How to identify, troubleshoot, and resolve common API error codes.
 
 
 ---
