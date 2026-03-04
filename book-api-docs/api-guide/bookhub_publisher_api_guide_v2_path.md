@@ -31,7 +31,8 @@
 9. [Data models](#data-models)
 10. [Code examples](#code-examples)
 11. [Best practices](#best-practices)
-12. [Support and resources](#support--resources)
+12. [Support and resources](#support-and-resources)
+13. [Version history](#version-history)
 
 ---
 
@@ -55,7 +56,7 @@ Path-based versioning offers several advantages for the BookHub Publisher API:
 
 ## What's new in v2
 
-### 1. Hit count analytics (new feature)
+### Hit count analytics (new feature)
 
 The most significant addition in v2 is the `hitCount` field on individual book retrievals. This provides publishers with basic visibility analytics.
 
@@ -70,7 +71,7 @@ The `hitCount` field tracks how many times a specific book's detail page has bee
 
 #### How it works
 
-```
+```http
 GET /v2/books/{bookId}
 ```
 
@@ -100,7 +101,7 @@ GET /v2/books/{bookId}
 
 ## Breaking changes
 
-### 1. Title sorting removed (breaking change)
+### Title sorting removed (breaking change)
 
 **v2 no longer supports sorting by title** on the GET all books endpoint. This is a **breaking change** that requires migration if you currently use title-based sorting.
 
@@ -117,20 +118,37 @@ BookHub removed title sorting due to:
 #### What this means
 
 In **v1**, this worked:
-```
+```http
 GET /v1/books?sort=title&order=asc
 ```
 
-In **v2**, this is **no longer valid**:
-```
+##### ❌ Invalid request example
+
+In **v2**, this won't work:
+```http
 GET /v2/books?sort=title&order=asc
-❌ ERROR: Invalid sort parameter
 ```
 
-In **v2**, use this instead:
+##### Returns a `400` error:
+
+```json
+{
+  "status": "error",
+  "message": "Invalid sort parameter",
+  "errors": [{
+    "field": "sort",
+    "error": "INVALID_VALUE",
+    "description": "v2 only supports sorting by createdDate. Use v1 for title sorting."
+  }]
+}
 ```
+
+##### ✅ Valid request example
+
+In **v2**, use this instead:
+
+```http
 GET /v2/books?sort=createdDate&order=desc
-✓ Valid request
 ```
 
 #### Available sort options in v2
@@ -152,12 +170,12 @@ The `order` parameter still works:
 #### Step 1: Update base URLs
 
 **Before (v1):**
-```
+```http
 https://api.bookhub.com/api/v1/books
 ```
 
 **After (v2):**
-```
+```http
 https://api.bookhub.com/api/v2/books
 ```
 
@@ -320,7 +338,7 @@ Obtain your JWT credentials by contacting:
 
 Include the token in the `Authorization` header:
 
-```
+```http
 Authorization: Bearer YOUR_JWT_TOKEN
 ```
 
@@ -357,6 +375,9 @@ POST /v2/books
 curl -X POST "https://api.bookhub.com/api/v2/books" \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
   -H "Content-Type: application/json" \
+  -H "Idempotency-Key: 550e8400-e29b-41d4-a716-446655440000" \
+  -H "X-Request-ID: 7f3d9a2c-1b4e-4f8a-9c6d-2e5f1a3b8d4e" \
+  -H "X-Publisher-ID: pub_adventure_books" \
   -d '{
     "title": "The Great Adventure",
     "author": "Jane Smith",
@@ -366,45 +387,19 @@ curl -X POST "https://api.bookhub.com/api/v2/books" \
     "publishedDate": "2024-03-15",
     "isbn": "978-0-1234-5678-9",
     "price": 24.99,
-    "coverImages": ["https://covers.bookhub.com/great-adventure-front.jpg"],
-    "genres": ["Fiction", "Adventure"],
+    "coverImages": [
+       "https://covers.bookhub.com/great-adventure-front.jpg",
+       "https://covers.bookhub.com/great-adventure-back.jpg"
+     ],
+    "genres": [
+       "Fiction",
+       "Adventure"
+     ],
     "bookFormat": "Hardcover"
   }'
 ```
 
-#### Request headers
-
-```http
-Authorization: Bearer YOUR_JWT_TOKEN
-Content-Type: application/json
-Idempotency-Key: uuid (optional, recommended)
-X-Request-ID: uuid (optional, for tracking)
-X-Publisher-ID: string (optional)
-```
-
-#### Request body
-
-```json
-{
-  "title": "The Great Adventure",
-  "author": "Jane Smith",
-  "description": "An epic tale of courage and discovery",
-  "language": "en-US",
-  "publisher": "Adventure Books Inc",
-  "publishedDate": "2024-03-15",
-  "isbn": "978-0-1234-5678-9",
-  "price": 24.99,
-  "coverImages": [
-    "https://covers.bookhub.com/great-adventure-front.jpg",
-    "https://covers.bookhub.com/great-adventure-back.jpg"
-  ],
-  "genres": [
-    "Fiction",
-    "Adventure"
-  ],
-  "bookFormat": "Hardcover"
-}
-```
+> **Note**: `Idempotency-Key` is recommended for all `POST` requests to prevent duplicate book creation. `X-Request-ID` helps track requests in logs. `X-Publisher-ID` scopes the request to a specific publisher account.
 
 #### Response (201 Created)
 
@@ -427,17 +422,17 @@ X-Publisher-ID: string (optional)
 
 | Field | Type | Required | Constraints |
 |-------|------|----------|-------------|
-| title | string | Yes | Max 255 characters |
-| author | string | Yes | Max 255 characters |
-| description | string | Yes | Max 5000 characters |
-| language | string | Yes | ISO 639-1 format (e.g., en-US) |
-| publisher | string | Yes | Max 255 characters |
-| publishedDate | string (date) | Yes | YYYY-MM-DD format |
-| isbn | string | Yes | Valid ISBN-10 or ISBN-13 |
-| price | number | Yes | Minimum 0.01 |
-| coverImages | array | Yes | 1-5 valid URLs |
-| genres | array | Yes | 1-5 genre strings |
-| bookFormat | enum | Yes | Paperback, Hardcover, or eBook |
+| `title` | string | Yes | Max 255 characters |
+| `author` | string | Yes | Max 255 characters |
+| `description` | string | Yes | Max 5000 characters |
+| `language` | string | Yes | ISO 639-1 format (e.g., en-US) |
+| `publisher` | string | Yes | Max 255 characters |
+| `publishedDate` | string (date) | Yes | YYYY-MM-DD format |
+| `isbn` | string | Yes | Valid ISBN-10 or ISBN-13 |
+| `price` | number | Yes | Minimum 0.01 |
+| `coverImages` | array | Yes | 1-5 valid URLs |
+| `genres` | array | Yes | 1-5 genre strings |
+| `bookFormat` | enum | Yes | Paperback, Hardcover, or eBook |
 
 ---
 
@@ -455,10 +450,11 @@ GET /v2/books/{bookId}
 
 - `bookId` (required): Unique identifier of the book
 
-#### Request headers
+#### Request example
 
-```http
-Authorization: Bearer YOUR_JWT_TOKEN
+```bash
+curl -X GET "https://api.bookhub.com/api/v2/books/{bookId}" \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN" 
 ```
 
 #### Response (200 OK)
@@ -539,7 +535,7 @@ Cache-Control: max-age=3600, must-revalidate
 
 Retrieves a paginated list of books. 
 
-> **Note**: Title sorting is NOT supported in v2 - only `createdDate` sorting is available.
+> **Note**: Title sorting is not supported. Only `createdDate` sorting is available for the `sort` parameter.
 
 #### Endpoint
 
@@ -551,37 +547,41 @@ GET /v2/books
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| page | integer | No | 1 | Page number (minimum 1) |
-| limit | integer | No | 20 | Items per page (max 100) |
-| status | enum | No | All | Filter: `PENDING`, `ACTIVE`, `INACTIVE` |
-| sort | enum | No | createdDate | **v2 only accepts `createdDate`** |
-| order | enum | No | desc | Sort order: asc or desc |
+| `page` | integer | No | 1 | Page number (minimum 1) |
+| `limit` | integer | No | 20 | Items per page (max 100) |
+| `status` | enum | No | All | Filter: `PENDING`, `ACTIVE`, `INACTIVE` |
+| `sort` | enum | No | createdDate | **v2 only accepts `createdDate`** |
+| `order` | enum | No | desc | Sort order: asc or desc |
 
-#### Sorting limitations
+#### ✅ Valid request examples
 
-**v2 DOES NOT support title sorting**. The `sort` parameter accepts only:
-- `createdDate`
+##### Sort by creation date, newest first (default)
 
-**Examples:**
-
-✅ **Valid requests:**
-```bash
-# Sort by creation date, newest first (default)
+```http
 GET /v2/books?sort=createdDate&order=desc
+```
 
-# Sort by creation date, oldest first
+##### Sort by creation date, oldest first
+
+```http
 GET /v2/books?sort=createdDate&order=asc
+```
 
-# No sort parameter (uses default: createdDate desc)
+##### No sort parameter (uses default: createdDate desc)
+
+```http
 GET /v2/books
 ```
 
-❌ **Invalid request:**
-```bash
-# This will return a 400 error
-GET /v2/books?sort=title&order=asc
+#### ❌ Invalid request example
 
-# Error response:
+```http
+GET /v2/books?sort=title&order=asc
+```
+
+Returns a `400` error:
+
+```json
 {
   "status": "error",
   "message": "Invalid sort parameter",
@@ -684,20 +684,24 @@ PATCH /v2/books/{bookId}/finalize
 
 - `bookId` (required): Unique identifier of the book to finalize
 
-#### Request headers
+#### Request example
 
 ```bash
-Authorization: Bearer YOUR_JWT_TOKEN
-Content-Type: application/json
+curl https://api.bookhub.com/api/v2/books/{bookId}/finalize \
+  -X PATCH \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "notes": "Reviewed and approved by editorial team"
+  }
+'
 ```
 
-#### Request body (optional)
+#### Request parameters
 
-```json
-{
-  "notes": "Reviewed and approved by editorial team"
-}
-```
+| Parameter | Location | Type   | Required | Description                              |
+| --------- | -------- | ------ | -------- | ---------------------------------------- |
+| `notes`   | Body     | string | No       | A comment regarding activating the book. |
 
 #### Response (200 OK)
 
@@ -1234,12 +1238,10 @@ We value your feedback on v2 changes:
 
 ---
 
-### Version history
+## Version history
 
 | Version | Date | Changes |
 |---------|------|---------|
 | 2.0 | January 2, 2026 | Initial v2 release with path-based versioning, `hitCount` field, removed title sorting |
 
 ---
-
-**End of documentation**
