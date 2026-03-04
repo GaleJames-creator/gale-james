@@ -15,7 +15,7 @@ Use how-to guides when you want to accomplish a specific, goal-oriented task.
 * [Manage security for webhook data transmission](./webhooks-data-transmission.md): How to protect webhook data.
 * [Manage webhooks using the Admin UI](./webhooks-Admin-UI.md): How to create, edit, enable, disable, or delete webhooks, and manage secrets. 
 * [Retrieve an anonymous customer's order and product information](./webhooks-anonymous-shopper.md): How to retrieve an anonymous customer's order and product information.
-* [Best practices for handling API errors](./best-practices-for-handling-api-errors.md): How to apply the best practices for handling API errors.
+* [Manage API errors](./manage-api-errors.md): How to manage API errors.
 
 
 ---
