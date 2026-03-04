@@ -18,6 +18,30 @@ Before you start, make sure you:
 - Batch operations when applicable.
 - Request a tier upgrade if you consistently reach the rate limit.
 
+
+## Retry logic
+
+The following example demonstrates how to retry a failed operation using exponential backoff. Use this pattern to handle temporary errors, such as rate limiting, by waiting and retrying.
+
+```javascript
+async function makeRequestWithRetry(url, options, maxRetries = 3) {
+  for (let attempt = 0; attempt < maxRetries; attempt++) {
+    const response = await fetch(url, options);
+    
+    if (response.status === 429) {
+      const retryAfter = response.headers.get('Retry-After') || 60;
+      const delay = Math.pow(2, attempt) * 1000; // Exponential backoff
+      await sleep(Math.max(delay, retryAfter * 1000));
+      continue;
+    }
+    
+    return response;
+  }
+  
+  throw new Error('Max retries exceeded');
+}
+```
+
 ## Next steps
 
 - [Managing API rate limits](../reference/payment-api-rate-limits.md)
