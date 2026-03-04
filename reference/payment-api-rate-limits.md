@@ -37,14 +37,6 @@ If you go over the rate limit, the API returns a `429 Too Many Requests` respons
 }
 ```
 
-### Best practices for managing rate limits
-
-1. **Monitor rate limit headers** in each response.
-2. **Use exponential backoff** for retries.
-3. **Cache GET requests** where possible, such as for payments or webhook lists.
-4. **Batch operations** when applicable.
-5. **Request a tier upgrade** if you consistently reach the rate limit.
-
 ### Retry logic (pseudocode) example
 
 The following pseudocode demonstrates how to retry a failed operation using exponential backoff. Use this pattern to handle temporary errors, such as rate limiting, by waiting and retrying.
