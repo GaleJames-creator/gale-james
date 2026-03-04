@@ -1,5 +1,15 @@
 # Manage API errors
 
+## Prerequisites
+
+Before you start, make sure you:
+
+- Have an integrated payment system
+
+- Understand HTTP status codes
+
+## Resolving API errors
+
 Use these steps to identify and resolve API errors in your integration.
 
 - Check the response headers for additional details, such as rate limits or warnings.
