@@ -1,5 +1,7 @@
 # Manage API errors
 
+Use these steps to identify and resolve API errors in your integration.
+
 Follow these steps if you get an error code:
 
 - Check the response headers for additional details, such as rate limits or warnings.
