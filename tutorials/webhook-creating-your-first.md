@@ -2,10 +2,6 @@
 
 Webhooks send a POST request to your URL when an event occurs, such as a payment or refund. This keeps your system updated without polling.
 
-## Why use webhooks?
-
-Webhooks notify you about events as soon as they happen, automatically retry if delivery fails, and let you handle tasks in the background without blocking your main processes.
-
 ## What you'll learn
 
 * [How to register a webhook endpoint](#step-1-register-a-webhook-endpoint)
@@ -17,13 +13,15 @@ Before getting started, ensure you have:
 
 - **A public, secure endpoint** where you want to receive webhook events that can process HTTPS POST requests from the service sending the webhook (e.g., GitHub, Stripe, etc.).
   
-  **Best Practice**: Use security measures like secret tokens or signature verification to make sure requests are really from the expected service.
+  > **Tip**: Use security measures like secret tokens or signature verification to make sure requests are really from the expected service.
   
 - **A testing or staging environment** to validate your webhook endpoint before going live.
 
 ## Step 1: Register a webhook endpoint
 
-To receive real-time event notifications, register a webhook endpoint. Provide a publicly accessible URL, such as `https://www.acme.com/webhooks/payment`. The service sends event data to this URL when an event occurs. Use HTTPS to encrypt data in transit. Protect your endpoint with authentication to prevent unauthorized access. Registering your endpoint lets your app update immediately when a payment or refund occurs.
+To receive real-time event notifications, register a webhook endpoint and provide a publicly accessible URL, such as `https://www.acme.com/webhooks/payment`. The service sends event data to this URL when an event occurs. 
+
+> **Note**: Use HTTPS to encrypt data in transit. Protect your endpoint with authentication to prevent unauthorized access.
 
 In the following example, an event is triggered when a payment succeeds (`payment.succeeded`), a payment fails (`payment.failed`), or a refund is issued (`refund.created`).
 
@@ -62,9 +60,9 @@ curl https://sandbox-api.payment.com/v1/webhooks \
 }
 ```
 
-The `secret` is a unique key used to sign webhook payloads and verify that data comes from the Payment API. The signature is included in the 'Payment-Signature' header. Store secrets securely, such as in environment variables or a secrets manager. Rotate secrets regularly and revoke old ones to keep your integration secure.
+The `secret` is a unique key used to sign webhook payloads and verify that data comes from the Payment API. The signature is included in the `Payment-Signature` header. Store secrets securely, such as in environment variables or a secrets manager. Rotate secrets regularly and revoke old ones to keep your integration secure.
 
-### Webhook payload example
+### Webhook payload
 
 Test your webhook by making a payment and checking the POST request data at your endpoint. For local testing, use a tool like ngrok to expose your server. Use the Payment sandbox to safely simulate different scenarios before deploying.
 
@@ -88,11 +86,11 @@ Test your webhook by making a payment and checking the POST request data at your
 }
 ```
 
-### Step 2: Verify webhook signatures
+## Step 2: Verify webhook signatures
 
 Always verify webhook signatures to confirm requests are from Payment. If verification fails, log the attempt, return a 401 status, and set up alerts for repeated failures. You can temporarily disable the endpoint if needed to maintain security.
 
-**Node.js Example:**
+**Verify a signature in Node.js**
 
 ```javascript
 const crypto = require('crypto');
@@ -149,8 +147,4 @@ Ready for more? Check out:
 
 - [Manage security for webhook data transmission](../how-to-guides/webhooks-data-transmission.md)
 - [Manage webhooks using the Admin UI](../how-to-guides/webhooks-Admin-UI.md)
-- [Retrieve an anonymous shopper's orders and product information](../how-to-guides/webhooks-anonymous-shopper.md)
-
-
-
-
+- [Retrieve an anonymous customer's orders and product information](../how-to-guides/webhooks-anonymous-shopper.md)
