@@ -28,36 +28,40 @@ A comprehensive API documentation project demonstrating enterprise-level documen
 
 ### Tutorials (learning-oriented)
 
-- **[Getting started with payments API](./tutorials/payment-api-getting-started.md)**: Complete quickstart guide with code samples
+- **[Getting started with payments API](./tutorials/payment-api-getting-started.md)**: Process your first payment in 15 minutes.
+- **[Creating a webhook](./tutorials/webhook-creating-your-first.md)**: Set up and test webhook notifications.
 
 ### How-to guides (task-oriented)
 
-- **[Process a refund](./how-to-guides/payment-process-refunds.md)**: API-based refund workflow
-- **[Implement retry logic for failed payments](./how-to-guides/payment-retry-logic.md)**: Error handling patterns
-- **[Manage webhooks via Admin UI](./how-to-guides/webhooks-Admin-UI.md)**: Configuration guide
-- **[Manage security for webhook data transmission](./how-to-guides/webhooks-data-transmission.md)**: Data transmission best practices
-- **[Retrieve an anonymous customer's order and product information](./how-to-guides/webhooks-anonymous-shopper.md)**: This API integration is designed to protect user privacy.
+- **[Implement retry logic for failed payments](./how-to-guides/payment-retry-logic.md)**: How to set up automatic retries for failed payments.
+- **[Process a refund](./how-to-guides/payment-process-refunds.md)**: How to process a refund.
+- **[Manage security for webhook data transmission](./how-to-guides/webhooks-data-transmission.md)**: How to protect webhook data.
+- **[Manage webhooks using the Admin UI](./how-to-guides/webhooks-Admin-UI.md)**: How to create, edit, enable, disable, or delete webhooks, and manage secrets.
+- **[Retrieve an anonymous customer's order and product information](./how-to-guides/webhooks-anonymous-shopper.md)**: How to retrieve an anonymous customer's order and product information.
+- **[Manage API errors](./how-to-guides/manage-api-errors.md)**: How to identify, troubleshoot, and resolve common API error codes.
+- **[Manage rate limits](./how-to-guides/manage-rate-limits.md)**: How to prevent rate limits.
+- **[Prevent duplicate charges with idempotency keys](./how-to-guides/prevent-duplicate-charges.md)**: How to use idempotency keys to prevent duplicate charges.
+
 
 ### Explanation (understanding-oriented)
 
-- **[Authorization vs. capture](./explanation/payment-authorization-vs-capture.md)**: Payment processing concepts
-- **[Webhooks explained](./explanation/webhooks.md)**: Event-driven architecture
+- **[Authorization vs. capture: understanding the difference](./explanation/payment-authorization-vs-capture.md)**: Explains the key differences between payment authorization and capture, and why each step is important in payment processing.
+- **[Webhooks](./explanation/webhooks.md)**: Explains the key webhook concepts, how they work, and when to use them.
 
 ### Reference (information-oriented)
 
-- **[API reference guide](./reference/api-reference-guide.md)**: Endpoint documentation format
-- **[Managing API rate limits](./reference/payment-api-rate-limits.md)**: Throttling and quotas
-- **[Best practices for handling API errors](./reference/best-practices-for-handling-api-errors.md)**: Error response patterns
-- **[Preventing duplicate charges with idempotency keys](./reference/payment-idempotency-keys.md)**: Preventing duplicate charges
-- **[Webhook definitions](./reference/webhook-definitions.md)**: Event schema reference
-- **[Subscription webhook examples](./reference/webhook-subscription-examples.md)**: Subscription event payloads
+- **[Managing API rate limits](./reference/payment-api-rate-limits.md)**: Explains the key strategies for managing API rate limits to maintain API stability and ensure fair usage.
+- **[Preventing duplicate charges with idempotency keys](./reference/payment-idempotency-keys.md)**: Explains how idempotency keys work and why they are key for preventing accidental duplicate charges.
+- **[API reference guide](./reference/api-reference-guide.md)**: Explains three API endpoints: retrieve available payment options, update payment options, and create an order refund.
+- **[Subscription webhook examples](./reference/webhook-subscription-examples.md)**: Explains two subscription webhook examples: 201 Created webhook and full subscription payload.
+- **[Webhook definitions](./reference/webhook-definitions.md)**: Explains the key terms and concepts you need to set up and manage webhooks.
 
 ---
 
 ## Digital River documentation
 
 - **[Commerce API documentation](https://docs.digitalriver.com/commerce-api)**: Authored and maintained the developer-facing Commerce API documentation, including 73+ REST API endpoints.
-**Note**: External UI links are broken following Digital River's wind-down in 2025. The documentation content itself remains intact.
+> **Note**: External UI links are broken following Digital River's wind-down in 2025. The documentation content itself remains intact.
 ---
 
 ## 💼 Professional experience highlights
