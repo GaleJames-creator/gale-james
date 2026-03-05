@@ -13,10 +13,10 @@ This tutorial shows you how to integrate payment processing into an application 
 
 ## Prerequisites
 
-* Ensure you have a Payment account
-* Know REST APIs and JSON
+* Have a Payment account
+* Understand REST APIs and JSON
 * Have a development environment with command-line access
-* A cURL or HTTP client.
+* Have a cURL or HTTP client
 
 **Estimated time to complete:** 15 minutes
 
@@ -41,7 +41,7 @@ API keys authenticate your requests to Payment. You'll need different keys for t
 * Never include keys in public code or repositories.
 * Rotate keys regularly, especially if compromised.
 
-Rotate API keys regularly and monitor for issues. For help, contact your Customer Success Manager.
+For help, contact your Customer Success Manager.
 
 **Setting an environment variable**
 
@@ -67,7 +67,7 @@ The Payments API provides two environments: sandbox (for development and testing
 | **Sandbox** | `https://sandbox-api.payment.com/v1` | Testing and development |
 | **Production** | `https://api.payment.com/v1` | Live payment processing |
 
-**Note**: This guide uses the sandbox environment and test API keys.
+> **Note**: This guide uses the sandbox environment and test API keys.
 
 ### Test cards
 
@@ -86,7 +86,7 @@ For test cards, use any future expiration date, a 3-digit CVC, and any ZIP code.
 
 Use cURL to make a test payment. The example charges $29.99 with the Payments API.
 
-### Request Example
+### Request example
 
 ```bash
 curl https://sandbox-api.payment.com/v1/payments \
@@ -113,24 +113,9 @@ curl https://sandbox-api.payment.com/v1/payments \
   }'
 ```
 
-### Understanding the request
-
-The request includes the following:
-
-**Headers:**
-- `Authorization: Bearer sk_test_...` - Your API key for authentication
-- `Content-Type: application/json` - Indicates the request body is JSON
-
-**Request body parameters:**
-- `amount` - Payment amount in cents (`2999` = $29.99)
-- `currency` - Three-letter ISO lowercase currency code (e.g., `usd`)
-- `payment_method` - Card information
-- `customer` - Customer information for receipts and records
-- `description` - Optional note that appears on statements
-
 ## Step 4: Check the payment status
 
-When you receive the response your Payments API request, verify `status` field displays `succeeded`. If the requests fails, see [Step 5: Handle a simple error](#Step-5-handle-a-simple-error) for details.
+When you receive the response to your Payments API request, verify the `status` field displays `succeeded`. If the request fails, see [Step 5: Handle a simple error](#step-5-handle-a-simple-error) for details.
 
 ### Successful response
 
@@ -172,9 +157,9 @@ If the payment succeeds, the response is similar to the following:
 
 Payments may fail for various reasons. The following describes how to respond to common issues:
 
-### Declined card example
+### Declined card
 
-The following example demonstrates a declined card. Use declined card tests to verify your system handles failures and displays error messages to users.
+The following request example demonstrates using a declined card to verify your system handles failures and displays error messages to users.
 
 ```bash
 curl https://sandbox-api.payment.com/v1/payments \
@@ -227,7 +212,7 @@ During payment processing, you may encounter the following common errors:
 | `429` | `rate_limit_error` | Too many requests | Implement retry logic with backoff |
 | `500` | `api_error` | Server error | Retry the request |
 
-If you get an error, see [Best practices for handling API errors](../reference/payment-error-best-practices-for-handling-payment-api-errors.md) for instructions.
+If you get an error, see [Manage API errors](../how-to-guides/manage-api-errors.md) for instructions.
 
 ## Step 6: Retrieve the payment details
 
@@ -294,17 +279,17 @@ If the resource is unchanged, the server returns `304 Not Modified` with no resp
 You have completed the following steps:
 
 ✅ Authenticated with your API<br>
-✅ How to choose an environment<br>
+✅ Chose an environment<br>
 ✅ Processed a test payment<br>
-✅ Hoe to check payment status<br>
-✅ How to andle a simple error<br>
-✅ How to retrieve the payment details  
+✅ Checked the payment status<br>
+✅ Handled a simple error<br>
+✅ Retrieved the payment details  
 
 ### Next steps
 
 Ready for more? Check out:
 
-- [Implement retry logic for failed payments](../how-to-guides/payment-retry-logic-.md)
+- [Implement retry logic for failed payments](../how-to-guides/payment-retry-logic.md)
 - [Process a refund](../how-to-guides/payment-process-refunds.md)
 - [Retrieve an anonymous shopper's orders and product information](../how-to-guides/webhooks-anonymous-shopper.md)
 - [Manage security for webhook data transmission](../how-to-guides/webhooks-data-transmission.md)
@@ -317,7 +302,7 @@ To process live payments, complete the following steps:
 
 1. **Complete your account verification** in the Dashboard
 2. **Switch to live API keys** (prefix: `sk_live_`)
-3. **Update your base URL** to `https://api..com/v1`
+3. **Update your base URL** to `https://api.payment.com/v1`
 4. **Review security practices** - Ensure keys are stored securely
 5. **Set up monitoring** - Track payment success rates and errors
 6. **[Configure webhooks](./webhook-creating-your-first.md)** for production URLs
