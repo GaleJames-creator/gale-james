@@ -1,6 +1,6 @@
 # Webhook definitions
 
-Webhooks allow one system to send real-time data to another whenever a specific event happens. By delivering event notifications to a specified URL, your application can react automatically to changes or updates. This reference guide explains the key terms and concepts you need to set up and manage webhooks.
+Webhooks allow one system to send real-time data to another whenever a specific event happens. By delivering event notifications to a specified URL, your application can react automatically to changes or updates.
 
 ## Webhook ID
 
@@ -12,6 +12,4 @@ An endpoint URL is where webhooks send events. It must use `http://` or `https:/
 
 ## Secret
 
-A secret is a unique key that the service uses to sign webhook payloads sent to your endpoint URL. This cryptographic signature guarantees data integrity and confirms authenticity. You can view or update a webhook's secret in your account settings. Incorporate this secret into your endpoint's verification process to validate received payloads.
-
-You can reveal and rotate a webhook's secret in Admin UI.
+A secret is a unique key that the service uses to sign webhook payloads sent to your endpoint URL. This cryptographic signature guarantees data integrity and confirms authenticity. You can reveal and rotate a webhook's secret in the Admin UI. Incorporate this secret into your endpoint's verification process to validate received payloads.
