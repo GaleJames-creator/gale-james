@@ -45,7 +45,7 @@ This API documentation helps publishers manage their book catalog using code. Th
 
 **Impact**: Simplified documentation maintenance and improved developer onboarding experience.
 
-📄 **Detailed analysis**: [API Versioning Strategy: Decision Rationale](./architecture/versioning-rationale.md)
+📄 **Detailed analysis**: [API versioning strategy: Decision rationale](./architecture/versioning-rationale.md)
 
 ### Enterprise release management
 
@@ -61,7 +61,7 @@ This API documentation helps publishers manage their book catalog using code. Th
 
 **Impact**: Enabled smooth version transition with minimal disruption to existing integrations.
 
-📄 **Documentation**: [Release Management Document](./release-management/release_management_v2_path.md)
+📄 **Documentation**: [Release management document](./release-management/release_management_v2_path.md)
 
 ### Systematic quality assurance
 
@@ -76,7 +76,7 @@ This API documentation helps publishers manage their book catalog using code. Th
 
 **Impact**: Documentation renders correctly on Windows, Mac, Linux, and web platforms.
 
-📄 **Process documentation**: [Encoding Fixes Summary](./process-docs/ENCODING_FIXES_SUMMARY.md)
+📄 **Process documentation**: [Encoding fixes summary](./process-docs/ENCODING_FIXES_SUMMARY.md)
 
 ## Documentation samples
 
