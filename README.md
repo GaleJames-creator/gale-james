@@ -1,26 +1,20 @@
 # Gale James - Senior Technical Writer
 
-**API Documentation Specialist** | 15+ Years Experience | 73+ Endpoints Documented
+**API Documentation Specialist** | 9+ Years Experience | 73+ Endpoints Documented
 
-I specialize in API documentation for developer portals for ecommerce and payment systems. This portfolio showcases my work with OpenAPI specifications, docs-as-code workflows, and the Diátaxis documentation framework.
+I specialize in developer-facing API documentation for complex developer platforms. I documented over 73 REST API endpoints, led docs-as-code migrations, and built scalable documentation systems across multiple API versions. My domain background is in ecommerce and payment systems, where precise documentation directly affects integration success.
 
 ## 📚 Featured documentation projects
 
 ### BookHub Publisher API (complete API documentation set)
-A comprehensive API documentation project demonstrating enterprise-level documentation practices.
+A complete documentation set for a RESTful publishing platform API, including OpenAPI spec, integration guide, versioning architecture decision, and release management.
 
 **[View complete project →](./book-api-docs)**
 
-- **[OpenAPI 3.0 specification](./book-api-docs/openapi-spec/bookhub_publisher_api_guide_v2_path.yaml)**: Complete YAML spec with authentication, versioning, error handling
-- **[API integration guide](./book-api-docs/api-guide/bookhub_publisher_api_guide_v2_path.md)**: Path-based version implementation
-- **[Versioning strategy](./book-api-docs/architecture/versioning-rationale.md)**: Architecture decision rationale
-- **[Release management](./book-api-docs/release-management/release_management_v2_path.md)**: Change control and documentation
-
----
-
-## 🎥 Multimedia content
-
-**[Making your first API call with Postman](https://app.guidde.com/share/playbooks/j2GEH6v4pUaJ2vo8ErNt9c?origin=hPx2XmP4HZbFEVrCFFzGjtJsDSB2)**: Video tutorial of API testing workflow (1:41)
+- **[OpenAPI 3.0 specification](./book-api-docs/openapi-spec/bookhub_publisher_api_guide_v2_path.yaml)**: The YAML specification lets publishers manage their book inventory on BookHub via a RESTful interface. It includes authentication, versioning, and error handling.
+- **[API integration guide](./book-api-docs/api-guide/bookhub_publisher_api_guide_v2_path.md)**: This guide covers path-based versioning, the new hitCount analytics feature, the removal of title sorting, migration steps from v1, authentication requirements, key endpoints, best practices, available support, and the deprecation policy.
+- **[Versioning strategy](./book-api-docs/architecture/versioning-rationale.md)**: This document explains the rationale for API versioning in BookHub Publisher API v2. After evaluating header-based (e.g., api-version: 2024-12-30) and path-based (e.g., /v2/books) approaches, I chose path-based versioning, which diverged from the course instructor's recommendation; the rationale document explains why.
+- **[Release management](./book-api-docs/release-management/release_management_v2_path.md)**: This document highlights the major changes, migration strategy, support resources, and key dates. This summary covers the focus on analytics, performance improvements, breaking changes, and what publishers and developers should do to migrate successfully to v2.
 
 ---
 
@@ -28,8 +22,9 @@ A comprehensive API documentation project demonstrating enterprise-level documen
 
 ### Tutorials (learning-oriented)
 
-- **[Getting started with payments API](./tutorials/payment-api-getting-started.md)**: Process your first payment in 15 minutes.
-- **[Creating a webhook](./tutorials/webhook-creating-your-first.md)**: Set up and test webhook notifications.
+- **[Making your first API call with Postman](https://app.guidde.com/share/playbooks/j2GEH6v4pUaJ2vo8ErNt9c?origin=hPx2XmP4HZbFEVrCFFzGjtJsDSB2)** *(video, 1:41)*: Demonstrates how to make a simple API call.
+- **[Getting started with payments API](./tutorials/payment-api-getting-started.md)**: Covers authentication, test vs. production environments, and error handling. Make your first payment call in 15 minutes.
+- **[Creating a webhook](./tutorials/webhook-creating-your-first.md)**: Step-by-step instructions for creating, securing, and testing webhook notifications.
 
 ### How-to guides (task-oriented)
 
@@ -58,10 +53,10 @@ A comprehensive API documentation project demonstrating enterprise-level documen
 
 ---
 
-## Digital River documentation
+## 🌐 Digital River documentation
 
-- **[Commerce API documentation](https://docs.digitalriver.com/commerce-api)**: Authored and maintained the developer-facing Commerce API documentation, including 73+ REST API endpoints.
-> **Note**: External UI links are broken following Digital River's wind-down in 2025. The documentation content itself remains intact.
+- **[Commerce API documentation](https://docs.digitalriver.com/commerce-api)**: Authored and maintained the developer-facing Commerce API documentation, including 73+ REST API endpoints. Digital River wound down operations in 2025; the linked documentation reflects work completed during active operations.
+
 ---
 
 ## 💼 Professional experience highlights
@@ -72,7 +67,7 @@ I led API documentation for Digital River’s Commerce-as-a-Service platform, do
 **Key contributions:**
 - Developed comprehensive API reference documentation for Commerce APIs.
 - Created integration guides for electronic funds transfer systems.
-- Led the migration of documentation from Drupal to ReadMe and then to GitBook.
+- Led a two-phase documentation platform migration: first from Drupal to ReadMe to address a disorganized legacy content structure, then from ReadMe to GitBook after identifying that ReadMe couldn't support our JSON file requirements. Evaluated alternative docs-as-code platforms against our content requirements and made the final GitBook recommendation.
 - Established documentation standards and created style guides.
 - Implemented docs-as-code workflows using Git for version control.
 
@@ -88,7 +83,7 @@ I led API documentation for Digital River’s Commerce-as-a-Service platform, do
 **Version control**: Git, GitHub, SVN  
 **Programming languages**: JavaScript, Python (for code examples and documentation)  
 **Documentation frameworks**: Diátaxis, docs-as-code  
-**AI tools**: Claude, Google Gemini, GitHub Copilot, GitBook AI
+**AI tools**: Claude, Gemini, and GitHub Copilot. Used AI in my workflow for editorial control, prompt iteration, and review.
 
 ---
 
