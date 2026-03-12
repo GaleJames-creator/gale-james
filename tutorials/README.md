@@ -10,8 +10,9 @@ Use tutorials when you are new to the product and want to learn the basics by do
 
 ## Available tutorials
 
-* [Getting started with Payments API](./payment-api-getting-started.md): Process your first payment in 15 minutes.
-* [Creating a webhook](./webhook-creating-your-first.md): Set up and test webhook notifications.
+* [Making your first API call with Postman](https://app.guidde.com/share/playbooks/j2GEH6v4pUaJ2vo8ErNt9c?origin=hPx2XmP4HZbFEVrCFFzGjtJsDSB2) *(video, 1:41)*: How to make a simple API call using Postman.
+* [Getting started with Payments API](./payment-api-getting-started.md): How to authenticate, navigate test vs. production environments, and make your first payment call in 15 minutes.
+* [Creating a webhook](./webhook-creating-your-first.md): How to create, secure, and test webhook notifications.
 
 ---
 
