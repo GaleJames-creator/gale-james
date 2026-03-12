@@ -12,7 +12,7 @@ A complete documentation set for a RESTful publishing platform API, including Op
 **[View complete project →](./book-api-docs)**
 
 - **[OpenAPI 3.0 specification](./book-api-docs/openapi-spec/bookhub_publisher_api_guide_v2_path.yaml)**: The YAML specification lets publishers manage their book inventory on BookHub via a RESTful interface. It includes authentication, versioning, and error handling.
-- **[API integration guide](./book-api-docs/api-guide/bookhub_publisher_api_guide_v2_path.md)**: This guide covers path-based versioning, the new hitCount analytics feature, the removal of title sorting, migration steps from v1, authentication requirements, key endpoints, best practices, available support, and the deprecation policy.
+- **[API integration guide](./book-api-docs/api-guide/bookhub_publisher_api_guide_v2_path.md)**: This guide covers path-based versioning, the new `hitCount` analytics feature, the removal of title sorting, migration steps from v1, authentication requirements, key endpoints, best practices, available support, and the deprecation policy.
 - **[Versioning strategy](./book-api-docs/architecture/versioning-rationale.md)**: This document explains the rationale for API versioning in BookHub Publisher API v2. After evaluating header-based (e.g., api-version: 2024-12-30) and path-based (e.g., /v2/books) approaches, I chose path-based versioning, which diverged from the course instructor's recommendation; the rationale document explains why.
 - **[Release management](./book-api-docs/release-management/release_management_v2_path.md)**: This document highlights the major changes, migration strategy, support resources, and key dates. This summary covers the focus on analytics, performance improvements, breaking changes, and what publishers and developers should do to migrate successfully to v2.
 
@@ -22,9 +22,9 @@ A complete documentation set for a RESTful publishing platform API, including Op
 
 ### Tutorials (learning-oriented)
 
-- **[Making your first API call with Postman](https://app.guidde.com/share/playbooks/j2GEH6v4pUaJ2vo8ErNt9c?origin=hPx2XmP4HZbFEVrCFFzGjtJsDSB2)** *(video, 1:41)*: Demonstrates how to make a simple API call.
-- **[Getting started with payments API](./tutorials/payment-api-getting-started.md)**: Covers authentication, test vs. production environments, and error handling. Make your first payment call in 15 minutes.
-- **[Creating a webhook](./tutorials/webhook-creating-your-first.md)**: Step-by-step instructions for creating, securing, and testing webhook notifications.
+- **[Making your first API call with Postman](https://app.guidde.com/share/playbooks/j2GEH6v4pUaJ2vo8ErNt9c?origin=hPx2XmP4HZbFEVrCFFzGjtJsDSB2)** *(video, 1:41)*: How to make a simple API call using Postman.
+- **[Getting started with payments API](./tutorials/payment-api-getting-started.md)**: How to authenticate, navigate test vs. production environments, and make your first payment call in 15 minutes.
+- **[Creating a webhook](./tutorials/webhook-creating-your-first.md)**: How to create, secure, and test webhook notifications.
 
 ### How-to guides (task-oriented)
 
@@ -40,16 +40,16 @@ A complete documentation set for a RESTful publishing platform API, including Op
 
 ### Explanation (understanding-oriented)
 
-- **[Authorization vs. capture: understanding the difference](./explanation/payment-authorization-vs-capture.md)**: Explains the key differences between payment authorization and capture, and why each step is important in payment processing.
-- **[Webhooks](./explanation/webhooks.md)**: Explains the key webhook concepts, how they work, and when to use them.
+- **[Authorization vs. capture: understanding the difference](./explanation/payment-authorization-vs-capture.md)**: Covers hard declines vs. soft declines, decline codes, and retry policies.
+- **[Webhooks](./explanation/webhooks.md)**: Covers the key webhook concepts, how they work, and when to use them.
 
 ### Reference (information-oriented)
 
-- **[Managing API rate limits](./reference/payment-api-rate-limits.md)**: Explains the key strategies for managing API rate limits to maintain API stability and ensure fair usage.
-- **[Preventing duplicate charges with idempotency keys](./reference/payment-idempotency-keys.md)**: Explains how idempotency keys work and why they are key for preventing accidental duplicate charges.
-- **[API reference guide](./reference/api-reference-guide.md)**: Explains three API endpoints: retrieve available payment options, update payment options, and create an order refund.
-- **[Subscription webhook examples](./reference/webhook-subscription-examples.md)**: Explains two subscription webhook examples: 201 Created webhook and full subscription payload.
-- **[Webhook definitions](./reference/webhook-definitions.md)**: Explains the key terms and concepts you need to set up and manage webhooks.
+- **[Managing API rate limits](./reference/payment-api-rate-limits.md)**: Covers rate limit tiers and headers, and handling rate limits.
+- **[Preventing duplicate charges with idempotency keys](./reference/payment-idempotency-keys.md)**: Covers how idempotency keys work and why they are essential for preventing accidental duplicate charges.
+- **[API reference guide](./reference/api-reference-guide.md)**: Covers three API endpoints: retrieve available payment options, update payment options, and create an order refund.
+- **[Subscription webhook examples](./reference/webhook-subscription-examples.md)**: Covers two subscription webhook examples: 201 Created webhook and full subscription payload.
+- **[Webhook definitions](./reference/webhook-definitions.md)**: Covers the terms and concepts you need to set up and manage webhooks.
 
 ---
 
