@@ -2,7 +2,7 @@
 
 **API Documentation Specialist** | 9+ Years Experience | 73+ Endpoints Documented
 
-I specialize in developer-facing API documentation for complex developer platforms. I documented over 73 REST API endpoints, led docs-as-code migrations, and built scalable documentation systems across multiple API versions. My domain background is in ecommerce and payment systems, where precise documentation directly affects integration success.
+I specialize in developer-facing API documentation for complex developer platforms. I documented over 73 REST API endpoints, led docs-as-code migrations, and built scalable documentation systems across multiple API versions. My domain background is in ecommerce and payment systems, where precise documentation directly affects integration success. This portfolio is maintained in GitHub with an automated link-checking workflow that validates all Markdown links on every push.
 
 ## 📚 Featured documentation projects
 
@@ -80,7 +80,7 @@ I led API documentation for Digital River’s Commerce-as-a-Service platform, do
 **Documentation platforms**: GitBook, ReadMe, MadCap Flare, Swagger/OpenAPI Editors  
 **API specifications**: OpenAPI 3.0, REST API documentation, Postman  
 **Markup languages**: Markdown, YAML, JSON, XML, DITA  
-**Version control**: Git, GitHub, SVN  
+**Version control**: Git, GitHub, GitHub Actions, SVN  
 **Programming languages**: JavaScript, Python (for code examples and documentation)  
 **Documentation frameworks**: Diátaxis, docs-as-code  
 **AI tools**: Claude, Gemini, and GitHub Copilot. Used AI in my workflow for editorial control, prompt iteration, and review.
