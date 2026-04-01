@@ -17,7 +17,7 @@ Use how-to guides when you need task-focused instructions and already understand
 * [Retrieve an anonymous customer's order and product information](./webhooks-anonymous-shopper.md): How to retrieve an anonymous customer's order and product information.
 * [Manage API errors](./manage-api-errors.md): How to identify, troubleshoot, and resolve common API error codes.
 * [Manage rate limits](./manage-rate-limits.md): How to prevent rate limits.
-* [Prevent duplicate charges with idempotency keys](./how-to-guides-prevent-duplicate-charges-with-idempotency-keys.md): How to use idempotency keys to prevent duplicate charges.
+* [Prevent duplicate charges with idempotency keys](./prevent-duplicate-charges-with-idempotency-keys.md): How to use idempotency keys to prevent duplicate charges.
 
 
 ---
