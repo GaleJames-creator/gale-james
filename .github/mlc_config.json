@@ -1,7 +1,10 @@
 {
   "ignorePatterns": [
     { "pattern": "^http://localhost" },
-    { "pattern": "^http://127\\.0\\.0\\.1" }
+    { "pattern": "^http://127\\.0\\.0\\.1" },
+    { "pattern": "^https?://(www\\.)?linkedin\\.com" },
+    { "pattern": "^https?://([a-z]+\\.)?bookhub\\.com" },
+    { "pattern": "^https?://github\\.com/bookhub" }
   ],
   "timeout": "20s",
   "retryOn429": true,
@@ -9,3 +12,4 @@
   "fallbackRetryDelay": "30s",
   "aliveStatusCodes": [200, 206]
 }
+
