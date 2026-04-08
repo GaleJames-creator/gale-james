@@ -2,7 +2,9 @@
 
 **API Documentation Specialist** | 9+ Years Experience | 73+ Endpoints Documented
 
-I specialize in developer-facing API documentation for complex developer platforms. I documented over 73 REST API endpoints, led docs-as-code migrations, and built scalable documentation systems across multiple API versions. My domain background is in ecommerce and payment systems, where precise documentation directly affects integration success. This portfolio uses automated GitHub Actions workflows to validate links and Markdown on every push.
+I specialize in developer-facing API documentation for complex developer platforms. I documented over 73 REST API endpoints, led docs-as-code migrations, and built scalable documentation systems across multiple API versions. My domain background is in ecommerce and payment systems, where precise documentation directly affects integration success. T
+
+The examples provided here are original documentation projects created for this portfolio. This portfolio uses automated GitHub Actions workflows to validate links and Markdown on every push.
 
 ## 📚 Featured documentation projects
 
