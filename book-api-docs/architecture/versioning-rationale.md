@@ -29,9 +29,9 @@ After evaluating both **header-based versioning** (e.g., `api-version: 2024-12-3
 4. [Comparative analysis](#comparative-analysis)
 5. [Final recommendation](#final-recommendation)
 6. [Trade-offs accepted](#trade-offs-accepted)
-7. [Industry alignment](#industry-alignment)
-8. [Implementation impact](#implementation-impact)
-9. [Alternative considered](#alternative-considered)
+7. [Implementation impact](#implementation-impact)
+8. [Alternative considered](#alternative-considered)
+9. [Conclusion](#conclusion)
 
 ---
 
@@ -70,6 +70,7 @@ api-version: 2024-12-30
 ```
 
 **Characteristics:**
+
 - Clean, version-agnostic URLs
 - Date-based version identifiers (e.g., `2024-12-30`, `2025-03-15`)
 - Supports preview versions (e.g., `2025-03-15-preview`)
@@ -86,6 +87,7 @@ Authorization: Bearer <token>
 ```
 
 **Characteristics:**
+
 - Version visible in URL
 - Separate URL paths per major version
 - Simple integer versioning (v1, v2, v3)
@@ -116,9 +118,9 @@ Authorization: Bearer <token>
 ### 1. Documentation clarity
 
 #### Header-based versioning
-**Score: ❌ Poor**
 
-**Challenge:** Every code example must include a header context
+- **Score: ❌ Poor**
+- **Challenge:** Every code example must include a header context
 
 ```python
 # Must show header in EVERY example
@@ -140,9 +142,9 @@ response = requests.get(
 - Single consolidated doc becomes confusing (which version is this?).
 
 #### Path-based versioning
-**Score: ✅ Excellent**
 
-**Advantage:** Version is immediately visible in every example
+- **Score: ✅ Excellent**
+- **Advantage:** Version is immediately visible in every example
 
 ```python
 # Version is obvious in the URL
@@ -154,13 +156,16 @@ response = requests.get(
 )
 ```
 
-**Benefits:**
+##### Benefits
+
 - Impossible to miss the version.
 - Copy-paste examples are safer.
 - Each version has self-contained documentation.
 - Clear visual distinction between v1 and v2 examples.
 
-**Winner: Path-based versioning**
+#### Winner: Path-based versioning
+
+In this instance, path-based versioning provided the best benefits.
 
 ---
 
