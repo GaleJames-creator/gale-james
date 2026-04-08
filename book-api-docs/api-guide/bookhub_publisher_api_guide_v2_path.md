@@ -305,7 +305,7 @@ curl -X PATCH https://api.bookhub.com/api/v2/books/{bookId}/finalize \
 
 The BookHub Publisher API v2 uses **URI path versioning**, where the version number is part of the URL path:
 
-```
+```http
 https://api.bookhub.com/api/{version}/books
 ```
 
@@ -1230,9 +1230,9 @@ def check_rate_limits(response):
 
 ### Getting help
 
-- **API support email**: api-support@bookhub.com
-- **Developer documentation**: https://docs.bookhub.com
-- **Status page**: https://status.bookhub.com
+- **API support email**: `api-support@bookhub.com`
+- **Developer documentation**: `https://docs.bookhub.com`
+- **Status page**: `https://status.bookhub.com`
 
 ### Additional resources
 
@@ -1243,15 +1243,17 @@ def check_rate_limits(response):
 ### Migration assistance
 
 Need help migrating from v1 to v2? Contact our integration team:
-- **Email**: integrations@bookhub.com
+
+- **Email**: `integrations@bookhub.com`
 - **Include**: Current usage patterns, timeline, specific concerns
 
 ### Feedback
 
 We value your feedback on v2 changes:
-- **Feature requests**: features@bookhub.com
-- **Bug reports**: bugs@bookhub.com
-- **General feedback**: feedback@bookhub.com
+
+- **Feature requests**: `features@bookhub.com`
+- **Bug reports**: `bugs@bookhub.com`
+- **General feedback**: `feedback@bookhub.com`
 
 ---
 
