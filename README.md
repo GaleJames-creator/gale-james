@@ -34,7 +34,7 @@ A complete documentation set for a RESTful publishing platform API, including Op
 - **[Manage webhooks using the Admin UI](./how-to-guides/webhooks-Admin-UI.md)**: How to create, edit, enable, disable, or delete webhooks, and manage secrets.
 - **[Retrieve an anonymous customer's order and product information](./how-to-guides/webhooks-anonymous-shopper.md)**: How to retrieve an anonymous customer's order and product information.
 - **[Manage API errors](./how-to-guides/manage-api-errors.md)**: How to identify, troubleshoot, and resolve common API error codes.
-- **[Manage rate limits](./how-to-guides/manage-rate-limits.md)**: How to prevent rate limits.
+- **[Manage rate limits](./how-to-guides/manage-rate-limits.md)**: How to avoid rate limits.
 - **[Prevent duplicate charges with idempotency keys](./how-to-guides/prevent-duplicate-charges-with-idempotency-keys.md)**: How to use idempotency keys to prevent duplicate charges.
 
 
