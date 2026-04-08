@@ -117,7 +117,7 @@ Authorization: Bearer <token>
 
 ### 1. Documentation clarity
 
-#### Header-based versioning
+#### Header-based versioning (documentation clarity)
 
 - **Score: ❌ Poor**
 - **Challenge:** Every code example must include a header context
@@ -135,13 +135,14 @@ response = requests.get(
 )
 ```
 
-**Problems:**
+##### Problems
+
 - Users might copy examples without the header.
 - Easy to accidentally use the wrong version.
 - Must repeat header context throughout documentation.
 - Single consolidated doc becomes confusing (which version is this?).
 
-#### Path-based versioning
+#### Path-based versioning (documentation clarity)
 
 - **Score: ✅ Excellent**
 - **Advantage:** Version is immediately visible in every example
@@ -171,12 +172,13 @@ In this instance, path-based versioning provided the best benefits.
 
 ### 2. Documentation maintainability
 
-#### Header-based versioning
-**Score: ❌ Poor**
+#### Header-based versioning (documenatiopn maintainability)
 
-**Challenges:**
+* **Score: ❌ Poor**
+* **Challenges:**
 
 1. **Breaking changes are hidden**
+   
    ```markdown
    ## Create Book Endpoint
    
@@ -188,6 +190,7 @@ In this instance, path-based versioning provided the best benefits.
    ### For api-version: 2025-03-15
    - ISBN format: MUST include hyphens
    ```
+   
    Confusing for users to track which rules apply at what times.
 
 2. **Single document complexity**
@@ -198,6 +201,7 @@ In this instance, path-based versioning provided the best benefits.
 
 3. **Version matrix required**
    Every feature needs version tracking:
+   
    ```markdown
    | Feature          | 2024-12-30 | 2025-03-15-preview | 2025-03-15 |
    |------------------|------------|--------------------|-----------  |
@@ -206,7 +210,8 @@ In this instance, path-based versioning provided the best benefits.
    | Title sorting    | YES        | NO                 | NO          |
    ```
 
-#### Path-based versioning
+#### Path-based versioning (documentation maintainability)
+
 **Score: ✅ Excellent**
 
 **Advantages:**
@@ -237,7 +242,7 @@ In this instance, path-based versioning provided the best benefits.
 
 ### 3. User experience
 
-#### Header-based versioning
+#### Header-based versioning (user experience)
 **Score: ❌ Poor**
 
 User confusion scenarios:
@@ -260,7 +265,7 @@ User confusion scenarios:
    - No visual cue that they're on the wrong version.
    - The header is "invisible" when browsing the documentation.
 
-#### Path-based versioning
+#### Path-based versioning (user experience)
 **Score: ✅ Excellent**
 
 **User-friendly features:**
@@ -288,7 +293,7 @@ User confusion scenarios:
 
 ### 4. Migration complexity
 
-#### Header-based versioning
+#### Header-based versioning (migration complexity)
 **Score: ⚠️ Acceptable**
 
 **Migration steps:**
@@ -299,7 +304,7 @@ User confusion scenarios:
 
 **Risk:** Users might forget step #1 (adding the header) and wonder why their code still works with old behavior.
 
-#### Path-based versioning
+#### Path-based versioning (migration complexity)
 **Score: ✅ Good**
 
 **Migration steps:**
@@ -316,7 +321,7 @@ User confusion scenarios:
 
 ### 5. URL cleanliness
 
-#### Header-based versioning
+#### Header-based versioning (URL cleanliness)
 **Score: ✅ Excellent**
 
 ```
@@ -326,7 +331,7 @@ https://api.bookhub.com/api/books/123
 
 Clean, version-agnostic URLs. Aesthetically pleasing.
 
-#### Path-based versioning
+#### Path-based versioning (URL cleanliness)
 **Score: ⚠️ Acceptable**
 
 ```
@@ -342,7 +347,7 @@ URL includes version number. Slightly longer, but still clean.
 
 ### 6. HTTP caching
 
-#### Header-based versioning
+#### Header-based versioning (HTTP caching)
 **Score: ⚠️ Acceptable**
 
 Standard HTTP caches (CDNs, reverse proxies) don't automatically vary by custom headers. Requires:
@@ -353,7 +358,7 @@ Vary: api-version
 
 Must configure caching infrastructure to recognize the custom header.
 
-#### Path-based versioning
+#### Path-based versioning (HTTP caching)
 **Score: ✅ Excellent**
 
 Different URLs = different cache entries. Works with all standard HTTP caches out of the box.
@@ -394,7 +399,7 @@ No special configuration needed.
 
 ### 8. Tooling support
 
-#### Header-based versioning
+#### Header-based versioning (tooling support)
 **Score: ⚠️ Acceptable**
 
 - `OpenAPI 3.0`: Supports custom headers ✅
@@ -403,7 +408,7 @@ No special configuration needed.
 - curl: Requires `-H` flag ⚠️
 - SwaggerUI: Works, but the header must be documented ⚠️
 
-#### Path-based versioning
+#### Path-based versioning (tooling support)
 **Score: ✅ Excellent**
 
 - `OpenAPI 3.0`: Native support ✅
