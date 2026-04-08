@@ -371,13 +371,13 @@ curl -X GET https://api.bookhub.com/api/v2/books \
 
 Creates a new book with `PENDING` status. Books must be finalized before becoming visible to customers.
 
-#### Endpoint
+#### Create book endpoint
 
 ```http
 POST /v2/books
 ```
 
-#### Request example
+#### Create book request example
 
 ```bash
 curl -X POST "https://api.bookhub.com/api/v2/books" \
@@ -409,7 +409,7 @@ curl -X POST "https://api.bookhub.com/api/v2/books" \
 
 > **Note**: `Idempotency-Key` is recommended for all `POST` requests to prevent duplicate book creation. `X-Request-ID` helps track requests in logs. `X-Publisher-ID` scopes the request to a specific publisher account.
 
-#### Response (201 Created)
+#### Create book response (201 Created)
 
 ```json
 {
@@ -448,24 +448,24 @@ curl -X POST "https://api.bookhub.com/api/v2/books" \
 
 Retrieves detailed information about a specific book, **including the `hitCount` analytics field** (v2 only).
 
-#### Endpoint
+#### Get single book endpoint
 
 ```http
 GET /v2/books/{bookId}
 ```
 
-#### Path parameters
+#### Get single book path parameters
 
 - `bookId` (required): Unique identifier of the book
 
-#### Request example
+#### Get single book request example
 
 ```bash
 curl -X GET "https://api.bookhub.com/api/v2/books/{bookId}" \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" 
 ```
 
-#### Response (200 OK)
+#### Get single book response (200 OK)
 
 ```json
 {
@@ -509,6 +509,7 @@ The `hitCount` field is **new in v2** and provides basic analytics:
 #### Use cases for `hitCount`
 
 - **Trending analysis**: Identify which books are getting the most attention
+  
    ```python
    # Get top 10 most-viewed books
    all_books = fetch_all_books()
@@ -516,6 +517,7 @@ The `hitCount` field is **new in v2** and provides basic analytics:
    ```
 
 - **Marketing ROI**: Compare hit counts before and after marketing campaigns
+  
    ```python
    before_campaign = get_book('abc123')['hitCount']
    # Run marketing campaign
@@ -525,6 +527,7 @@ The `hitCount` field is **new in v2** and provides basic analytics:
    ```
 
 - **Inventory planning**: Prioritize books with high view counts for restocking
+  
    ```python
    if book['hitCount'] > 1000 and book['status'] == 'ACTIVE':
        notify_warehouse_to_restock(book['bookId'])
@@ -545,7 +548,7 @@ Retrieves a paginated list of books.
 
 > **Note**: Title sorting is not supported. Only `createdDate` sorting is available for the `sort` parameter.
 
-#### Endpoint
+#### Get all books endpoint
 
 ```http
 GET /v2/books
@@ -561,7 +564,7 @@ GET /v2/books
 | `sort` | enum | No | createdDate | **v2 only accepts `createdDate`** |
 | `order` | enum | No | desc | Sort order: asc or desc |
 
-#### ✅ Valid request examples
+#### ✅ Valid get all books request examples
 
 ##### Sort by creation date, newest first (default)
 
@@ -581,7 +584,7 @@ GET /v2/books?sort=createdDate&order=asc
 GET /v2/books
 ```
 
-#### ❌ Invalid request example
+#### ❌ Invalid get all books request example
 
 ```http
 GET /v2/books?sort=title&order=asc
@@ -601,14 +604,14 @@ Returns a `400` error:
 }
 ```
 
-#### Request example
+#### Get all books request example
 
 ```bash
 curl -X GET "https://api.bookhub.com/api/v2/books?page=1&limit=20&status=ACTIVE&sort=createdDate&order=desc" \
   -H "Authorization: Bearer YOUR_JWT_TOKEN"
 ```
 
-#### Response (200 OK)
+#### Get all books response (200 OK)
 
 ```json
 {
@@ -644,7 +647,7 @@ curl -X GET "https://api.bookhub.com/api/v2/books?page=1&limit=20&status=ACTIVE&
 }
 ```
 
-#### Response headers
+#### Get all books response headers
 
 ```bash
 X-Total-Count: 87
@@ -682,17 +685,17 @@ def get_books_sorted_by_title(ascending=True):
 
 Changes a book's status from `PENDING` to `ACTIVE`, making it visible to customers.
 
-#### Endpoint
+#### Finalize book endpoint
 
 ```http
 PATCH /v2/books/{bookId}/finalize
 ```
 
-#### Path parameters
+#### Finalize book path parameters
 
 - `bookId` (required): Unique identifier of the book to finalize
 
-#### Request example
+#### Finalize book request example
 
 ```bash
 curl https://api.bookhub.com/api/v2/books/{bookId}/finalize \
@@ -705,13 +708,13 @@ curl https://api.bookhub.com/api/v2/books/{bookId}/finalize \
 '
 ```
 
-#### Request parameters
+#### Finalize book request parameters
 
 | Parameter | Location | Type   | Required | Description                              |
 | --------- | -------- | ------ | -------- | ---------------------------------------- |
 | `notes`   | Body     | string | No       | A comment regarding activating the book. |
 
-#### Response (200 OK)
+#### Finalize book response (200 OK)
 
 ```json
 {
@@ -733,7 +736,7 @@ curl https://api.bookhub.com/api/v2/books/{bookId}/finalize \
 - Book becomes immediately available to customers after finalization
 - Cannot revert from `ACTIVE` to `PENDING` via API (contact support)
 
-#### Error response (400 Bad Request)
+#### Finalize book error response (400 Bad Request)
 
 If the book is not in `PENDING` status:
 
