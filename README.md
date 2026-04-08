@@ -28,7 +28,7 @@ A complete documentation set for a RESTful publishing platform API, including Op
 - **[Getting started with payments API](./tutorials/payment-api-getting-started.md)**: How to authenticate, navigate test vs. production environments, and make your first payment call in 15 minutes.
 - **[Creating a webhook](./tutorials/webhook-creating-your-first.md)**: How to create, secure, and test webhook notifications.
 
-### How-to guides (task-oriented)
+### How-to guides (task-oriented) 
 
 - **[Implement retry logic for failed payments](./how-to-guides/payment-retry-logic.md)**: How to set up automatic retries for failed payments.
 - **[Process a refund](./how-to-guides/payment-process-refunds.md)**: How to process a refund.
