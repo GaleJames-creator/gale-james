@@ -178,7 +178,7 @@ In this instance, path-based versioning provided the best benefits.
 - **Challenges:**
 
     1. **Breaking changes are hidden**
-       
+
        ```markdown
        ## Create Book Endpoint
        
@@ -190,20 +190,20 @@ In this instance, path-based versioning provided the best benefits.
        ### For api-version: 2025-03-15
        - ISBN format: MUST include hyphens
        ```
-       
+
        Confusing for users to track which rules apply at what times.
-    
+
     2. **Single document complexity**
-       
+
        - Must annotate every parameter: "Available in 2025-03-15+"
        - Must explain version-specific behavior throughout
        - Risk of missing version-specific details
        - High maintenance burden for documentation updates
-    
+
     3. **Version matrix required**
-       
+
        Every feature needs version tracking:
-       
+
        ```markdown
        | Feature          | 2024-12-30 | 2025-03-15-preview | 2025-03-15 |
        |------------------|------------|--------------------|-----------  |
@@ -219,7 +219,7 @@ In this instance, path-based versioning provided the best benefits.
 - **Advantages:**
 
     1. **Independent documentation**
-       
+
        ```bash
        docs/
        ├── v1/
@@ -228,14 +228,14 @@ In this instance, path-based versioning provided the best benefits.
            └── api-guide.md  ← Complete v2 documentation
        ```
        
-    2. **Clean version separation**
+    3. **Clean version separation**
        
        - v1 docs describe v1 behavior (no version annotations needed)
        - v2 docs describe v2 behavior (standalone)
        - Breaking changes are obvious (different docs)
        - Easy to maintain each version independently
     
-    3. **Simpler updates**
+    4. **Simpler updates**
        
        - Update v2 docs without touching v1
        - No risk of breaking v1 documentation
