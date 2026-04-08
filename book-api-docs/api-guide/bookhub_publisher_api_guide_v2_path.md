@@ -75,7 +75,8 @@ The `hitCount` field tracks how many times a specific book's detail page has bee
 GET /v2/books/{bookId}
 ```
 
-**Response includes:**
+##### Response includes
+
 ```json
 {
   "status": "success",
@@ -118,6 +119,7 @@ BookHub removed title sorting due to:
 #### What this means
 
 In **v1**, this worked:
+
 ```http
 GET /v1/books?sort=title&order=asc
 ```
@@ -125,11 +127,12 @@ GET /v1/books?sort=title&order=asc
 ##### ❌ Invalid request example
 
 In **v2**, this won't work:
+
 ```http
 GET /v2/books?sort=title&order=asc
 ```
 
-##### Returns a `400` error:
+##### Returns a `400` error
 
 ```json
 {
@@ -158,6 +161,7 @@ The `sort` parameter now accepts **only one value**:
 - `createdDate` (default: newest first)
 
 The `order` parameter still works:
+
 - `asc`: Ascending (oldest to newest)
 - `desc`: Descending (newest to oldest, default)
 
@@ -169,12 +173,14 @@ The `order` parameter still works:
 
 #### Step 1: Update base URLs
 
-**Before (v1):**
+##### Before (v1)
+
 ```http
 https://api.bookhub.com/api/v1/books
 ```
 
-**After (v2):**
+##### After (v2)
+
 ```http
 https://api.bookhub.com/api/v2/books
 ```
@@ -183,7 +189,8 @@ https://api.bookhub.com/api/v2/books
 
 If you're retrieving individual books, your code will now receive the `hitCount` field.
 
-**Python example:**
+##### Python example
+
 ```python
 # v1 code
 response = requests.get(f"{BASE_URL}/v1/books/{book_id}")
@@ -201,7 +208,8 @@ print(f"This book has been viewed {hit_count} times")
 
 If you currently use title sorting, you have two options:
 
-**Option A: Use date sorting (recommended)**
+##### Option A: Use date sorting (recommended)
+
 ```python
 # Before (v1)
 response = requests.get(f"{BASE_URL}/v1/books?sort=title&order=asc")
@@ -210,7 +218,7 @@ response = requests.get(f"{BASE_URL}/v1/books?sort=title&order=asc")
 response = requests.get(f"{BASE_URL}/v2/books?sort=createdDate&order=desc")
 ```
 
-**Option B: Implement client-side sorting**
+##### Option B: Implement client-side sorting
 ```python
 # Fetch all books
 response = requests.get(f"{BASE_URL}/v2/books?limit=100")
