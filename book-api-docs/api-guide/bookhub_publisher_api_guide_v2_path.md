@@ -219,6 +219,7 @@ response = requests.get(f"{BASE_URL}/v2/books?sort=createdDate&order=desc")
 ```
 
 ##### Option B: Implement client-side sorting
+
 ```python
 # Fetch all books
 response = requests.get(f"{BASE_URL}/v2/books?limit=100")
@@ -339,7 +340,8 @@ All API requests require authentication using a JWT (JSON Web Token) bearer toke
 #### Obtaining a token
 
 Obtain your JWT credentials by contacting:
-- Email: api-support@bookhub.com
+
+- Email: `api-support@bookhub.com`
 - Include your publisher account information
 
 #### Using the token
@@ -544,7 +546,7 @@ Cache-Control: max-age=3600, must-revalidate
 
 ### Get all books
 
-Retrieves a paginated list of books. 
+Retrieves a paginated list of books.
 
 > **Note**: Title sorting is not supported. Only `createdDate` sorting is available for the `sort` parameter.
 
@@ -1095,11 +1097,13 @@ foreach ($high_performers as $index => $book) {
 The `hitCount` field is useful for trend analysis but should not be used for real-time, mission-critical decisions:
 
 ✅ **Good uses:**
+
 - Identifying trending books over weeks/months
 - Measuring marketing campaign effectiveness
 - Generating internal reports
 
 ❌ **Avoid:**
+
 - Making instant inventory decisions based on single view count
 - Using as the sole metric for success
 - Treating it as perfectly accurate (may have slight delays in updates)
@@ -1109,6 +1113,7 @@ The `hitCount` field is useful for trend analysis but should not be used for rea
 If you're migrating from v1 and used title sorting:
 
 **Step 1**: Audit your codebase for `sort=title` parameters
+
 ```bash
 # Search your codebase
 grep -r "sort=title" .
@@ -1116,6 +1121,7 @@ grep -r "sort.*title" .
 ```
 
 **Step 2**: Replace with date sorting or client-side sorting
+
 ```python
 # Before
 response = get_books(sort='title', order='asc')
