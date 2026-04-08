@@ -174,69 +174,76 @@ In this instance, path-based versioning provided the best benefits.
 
 #### Header-based versioning (documenatiopn maintainability)
 
-* **Score: ❌ Poor**
-* **Challenges:**
+- **Score: ❌ Poor**
+- **Challenges:**
 
-1. **Breaking changes are hidden**
-   
-   ```markdown
-   ## Create Book Endpoint
-   
-   `POST /api/books`  ← Same URL for both versions!
-   
-   ### For api-version: 2024-12-30
-   - ISBN format: Can be with or without hyphens
-   
-   ### For api-version: 2025-03-15
-   - ISBN format: MUST include hyphens
-   ```
-   
-   Confusing for users to track which rules apply at what times.
-
-2. **Single document complexity**
-   - Must annotate every parameter: "Available in 2025-03-15+"
-   - Must explain version-specific behavior throughout
-   - Risk of missing version-specific details
-   - High maintenance burden for documentation updates
-
-3. **Version matrix required**
-   Every feature needs version tracking:
-   
-   ```markdown
-   | Feature          | 2024-12-30 | 2025-03-15-preview | 2025-03-15 |
-   |------------------|------------|--------------------|-----------  |
-   | Hit count        | NO         | YES                | YES         |
-   | ISBN hyphens     | Optional   | Required           | Required    |
-   | Title sorting    | YES        | NO                 | NO          |
-   ```
+    1. **Breaking changes are hidden**
+       
+       ```markdown
+       ## Create Book Endpoint
+       
+       `POST /api/books`  ← Same URL for both versions!
+       
+       ### For api-version: 2024-12-30
+       - ISBN format: Can be with or without hyphens
+       
+       ### For api-version: 2025-03-15
+       - ISBN format: MUST include hyphens
+       ```
+       
+       Confusing for users to track which rules apply at what times.
+    
+    2. **Single document complexity**
+       
+       - Must annotate every parameter: "Available in 2025-03-15+"
+       - Must explain version-specific behavior throughout
+       - Risk of missing version-specific details
+       - High maintenance burden for documentation updates
+    
+    3. **Version matrix required**
+       
+       Every feature needs version tracking:
+       
+       ```markdown
+       | Feature          | 2024-12-30 | 2025-03-15-preview | 2025-03-15 |
+       |------------------|------------|--------------------|-----------  |
+       | Hit count        | NO         | YES                | YES         |
+       | ISBN hyphens     | Optional   | Required           | Required    |
+       | Title sorting    | YES        | NO                 | NO          |
+       ```
 
 #### Path-based versioning (documentation maintainability)
 
-**Score: ✅ Excellent**
+- **Score: ✅ Excellent**
 
-**Advantages:**
+- **Advantages:**
 
-1. **Independent documentation**
-   ```
-   docs/
-   ├── v1/
-   │   └── api-guide.md  ← Complete v1 documentation
-   └── v2/
-       └── api-guide.md  ← Complete v2 documentation
-   ```
-   
-2. **Clean version separation**
-   - v1 docs describe v1 behavior (no version annotations needed)
-   - v2 docs describe v2 behavior (standalone)
-   - Breaking changes are obvious (different docs)
-   - Easy to maintain each version independently
+    1. **Independent documentation**
+       
+       ```bash
+       docs/
+       ├── v1/
+       │   └── api-guide.md  ← Complete v1 documentation
+       └── v2/
+           └── api-guide.md  ← Complete v2 documentation
+       ```
+       
+    2. **Clean version separation**
+       
+       - v1 docs describe v1 behavior (no version annotations needed)
+       - v2 docs describe v2 behavior (standalone)
+       - Breaking changes are obvious (different docs)
+       - Easy to maintain each version independently
+    
+    3. **Simpler updates**
+       
+       - Update v2 docs without touching v1
+       - No risk of breaking v1 documentation
+       - Clear deprecation path (remove v1 directory when sunset)
 
-3. **Simpler updates**
-   - Update v2 docs without touching v1
-   - No risk of breaking v1 documentation
-   - Clear deprecation path (remove v1 directory when sunset)
+#### Winner: Path-based versioning
 
-**Winner: Path-based versioning**
+The winner is path-based versioning.
 
 ---
 
