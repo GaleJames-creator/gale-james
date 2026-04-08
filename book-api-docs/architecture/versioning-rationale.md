@@ -227,21 +227,21 @@ In this instance, path-based versioning provided the best benefits.
        └── v2/
            └── api-guide.md  ← Complete v2 documentation
        ```
-       
-    3. **Clean version separation**
-       
+
+    2. **Clean version separation**
+
        - v1 docs describe v1 behavior (no version annotations needed)
        - v2 docs describe v2 behavior (standalone)
        - Breaking changes are obvious (different docs)
        - Easy to maintain each version independently
-    
-    4. **Simpler updates**
-       
+
+    3. **Simpler updates**
+
        - Update v2 docs without touching v1
        - No risk of breaking v1 documentation
        - Clear deprecation path (remove v1 directory when sunset)
 
-#### Winner: Path-based versioning
+#### Winner
 
 The winner is path-based versioning.
 
@@ -250,6 +250,7 @@ The winner is path-based versioning.
 ### 3. User experience
 
 #### Header-based versioning (user experience)
+
 **Score: ❌ Poor**
 
 User confusion scenarios:
