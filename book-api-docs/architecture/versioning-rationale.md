@@ -283,17 +283,17 @@ User confusion scenarios:
 
 1. **Visual clarity**
 
-   ```http
-   https://api.bookhub.com/api/v1/books  ← "I'm using v1"
-   https://api.bookhub.com/api/v2/books  ← "I'm using v2"
-   ```
+```http
+https://api.bookhub.com/api/v1/books  ← "I'm using v1"
+https://api.bookhub.com/api/v2/books  ← "I'm using v2"
+```
 
 2. **Browser testing possible**
 
-   ```http
-   # Just paste in browser to test (with token in query for GET)
-   https://api.bookhub.com/api/v2/books?token=YOUR_TOKEN
-   ```
+```http
+# Just paste in browser to test (with token in query for GET)
+https://api.bookhub.com/api/v2/books?token=YOUR_TOKEN
+```
 
 3. **Documentation alignment**
 
@@ -345,10 +345,10 @@ The winner is path-based versioning.
 
 - **Score**: ✅ Excellent
 
-    ```http
-    https://api.bookhub.com/api/books
-    https://api.bookhub.com/api/books/123
-    ```
+```http
+https://api.bookhub.com/api/books
+https://api.bookhub.com/api/books/123
+```
 
 Clean, version-agnostic URLs. Aesthetically pleasing.
 
@@ -356,10 +356,10 @@ Clean, version-agnostic URLs. Aesthetically pleasing.
 
 - **Score**: ⚠️ Acceptable
 
-    ```http
-    https://api.bookhub.com/api/v2/books
-    https://api.bookhub.com/api/v2/books/123
-    ```
+```http
+https://api.bookhub.com/api/v2/books
+https://api.bookhub.com/api/v2/books/123
+```
 
 URL includes version number. Slightly longer, but still clean.
 
@@ -434,21 +434,25 @@ The winner is path-based versioning (industry standard).
 
 - **Score**: ⚠️ Acceptable
 
-  - `OpenAPI 3.0`: Supports custom headers ✅
-  - Postman: Requires manual header configuration ⚠️
-  - Browser testing: Not possible ❌
-  - curl: Requires `-H` flag ⚠️
-  - SwaggerUI: Works, but the header must be documented ⚠️
+| Tool | Support status |
+| ---- | -------------- |
+| `OpenAPI 3.0` | Supports custom headers ✅ |
+| Postman | Requires manual header configuration ⚠️ |
+| Browser testing | Not possible ❌ |
+| curl | Requires `-H` flag ⚠️ |
+| SwaggerUI | Works, but the header must be documented ⚠️ |
 
 #### Path-based versioning (tooling support)
 
 - **Score**: ✅ Excellent
 
-  - `OpenAPI 3.0`: Native support ✅
-  - Postman: Works naturally ✅
-  - Browser testing: Possible for GET requests ✅
-  - curl: Clean syntax ✅
-  - SwaggerUI: Perfect visualization ✅
+| Tool | Support status |
+| ---- | -------------- |
+| `OpenAPI 3.0` | Native support ✅ |
+| Postman | Works naturally ✅ |
+| Browser testing | Possible for GET requests ✅ |
+| curl | Clean syntax ✅ |
+| SwaggerUI | Perfect visualization ✅ |
 
 #### Tooling support winner
 
@@ -478,7 +482,7 @@ https://api.bookhub.com/api/v2/books  ← Current version
 | Industry alignment | ✅ Excellent | ⚠️ Acceptable | Important | Path |
 | Tooling support | ✅ Excellent | ⚠️ Acceptable | Important | Path |
 
-- **Score**: Path-based versioning wins 7/8 criteria
+**Score**: Path-based versioning wins 7/8 criteria
 
 ---
 
