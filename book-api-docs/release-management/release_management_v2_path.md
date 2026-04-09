@@ -248,17 +248,17 @@ All errors now include:
 
 **Deprecation status**: Fully removed in v2
 
-**Timeline**:
+#####Timeline
 
 - **December 15, 2025**: Deprecation announced for v1
 - **January 2, 2026**: Removed in v2
 - **July 2, 2026**: v1 sunset (title sorting no longer available)
 
-**Migration path**:
+##### Migration path
 
 Publishers must choose one of two alternatives:
 
-**Option A: Server-side date sorting (recommended)**
+###### Option A: Server-side date sorting (recommended)
 
 ```python
 # Replace title sorting with date sorting
@@ -268,7 +268,7 @@ response = requests.get(
 )
 ```
 
-**Option B: Client-side title sorting**
+###### Option B: Client-side title sorting
 
 ```python
 # Fetch all books and sort locally
@@ -461,7 +461,7 @@ tester.test_sorting()
 
 Update your integration to use v2:
 
-**Step 1: Update base URLs**
+###### Step 1: Update base URLs
 
 ```python
 # Before
@@ -471,7 +471,7 @@ BASE_URL = "https://api.bookhub.com/api/v1"
 BASE_URL = "https://api.bookhub.com/api/v2"
 ```
 
-**Step 2: Handle new fields**
+###### Step 2: Handle new fields
 
 ```python
 def get_book_details(book_id):
@@ -495,7 +495,7 @@ def get_book_details(book_id):
     }
 ```
 
-**Step 3: Replace title sorting**
+###### Step 3: Replace title sorting
 
 ```python
 def get_sorted_books(sort_type='date'):
@@ -521,7 +521,7 @@ def get_sorted_books(sort_type='date'):
         return response.json()['data']['books']
 ```
 
-**Step 4: Update error handling**
+###### Step 4: Update error handling
 
 ```python
 def safe_get_books(sort_by='createdDate'):
@@ -1080,7 +1080,7 @@ For high-volume publishers and partners:
 - Priority bug fixes
 - Extended testing period
 
-Contact: partners@bookhub.com
+Contact: `partners@bookhub.com`
 
 ---
 
@@ -1335,6 +1335,7 @@ Contact emergency support:
 #### Step 3: Root cause analysis
 
 Work with the BookHub team to identify issues:
+
 1. Review the error logs.
 2. Analyze the performance metrics.
 3. Identify specific failure points.
