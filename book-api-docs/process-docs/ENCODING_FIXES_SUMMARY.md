@@ -50,7 +50,7 @@ This update replaces all Unicode symbols that could display incorrectly across d
 - Version: YYYY-MM-DD-preview
 ```
 
-**Rationale**: 
+**Rationale**:
 
 - Eliminates Unicode box-drawing characters (â"€, â"‚, â"Œ, â"", etc.)
 - Improves readability across all text editors and platforms
@@ -114,7 +114,8 @@ This update replaces all Unicode symbols that could display incorrectly across d
 ### Stage characteristics (lines 610-617)
 
 - **Changed**: All symbols to ASCII equivalents
-- **Example**: 
+- **Example**:
+
   - `- YES Available for testing`
   - `- WARNING Features may change`
   - `- NO No SLA guarantees`
@@ -208,7 +209,6 @@ This update replaces all Unicode symbols that could display incorrectly across d
 ```
 
 ### Warnings before
-
 
 > ⚠️ **Important**: Features may change
 
