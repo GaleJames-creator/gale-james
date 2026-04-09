@@ -49,6 +49,7 @@ BookHub Publisher API v2 represents a significant evolution in how publishers in
 ### Target audience
 
 This release impacts:
+
 - Publishers using the BookHub API programmatically.
 - Developers integrating with BookHub Publisher API.
 - Internal teams building on top of the publisher platform.
@@ -63,15 +64,18 @@ This release impacts:
 #### Hit count analytics field
 
 **What's new**:
+
 The `hitCount` field is now available on the GET single book endpoint, providing publishers with engagement metrics.
 
 **Use cases**:
+
 - Track which books are generating the most interest.
 - Measure marketing campaign effectiveness.
 - Identify trending titles early.
 - Make data-driven inventory decisions.
 
 **Technical details**:
+
 ```json
 // GET /v2/books/{bookId}
 {
@@ -88,6 +92,7 @@ The `hitCount` field is now available on the GET single book endpoint, providing
 ```
 
 **Implementation notes**:
+
 - The field is read-only and automatically incremented.
 - The initial value for new books is `0`.
 - Counter increments on each GET request to the single book endpoint.
@@ -95,6 +100,7 @@ The `hitCount` field is now available on the GET single book endpoint, providing
 - Persists across the book's lifetime.
 
 **Example usage**:
+
 ```python
 import requests
 
@@ -113,9 +119,11 @@ if hit_count > 500:
 #### Path-based versioning
 
 **What's new**:
+
 The API version is now specified in the URL path rather than a header.
 
 **Benefits**:
+
 - **Visibility**: Version is immediately obvious in URLs
 - **Browser testing**: Can test endpoints directly in the browser
 - **Caching**: Standard HTTP caches work naturally
@@ -123,6 +131,7 @@ The API version is now specified in the URL path rather than a header.
 - **Tool compatibility**: Better support in OpenAPI/Swagger tools
 
 **Migration**:
+
 ```bash
 # Old (v1)
 GET https://api.bookhub.com/api/v1/books
@@ -140,9 +149,11 @@ GET https://api.bookhub.com/api/v2/books
 **Impact level**: HIGH - Breaking change
 
 **What changed**:
+
 The `sort=title` parameter is no longer supported on the GET all books endpoint.
 
 **Rationale**:
+
 - **Performance**: Text sorting on large datasets is computationally expensive
 - **Internationalization**: Different languages have different sorting rules
 - **Case sensitivity**: Mixed case creates ambiguous sort orders
@@ -150,12 +161,14 @@ The `sort=title` parameter is no longer supported on the GET all books endpoint.
 - **Better alternatives**: Date-based sorting is more reliable and performant
 
 **Before (v1)**:
+
 ```bash
 # This worked in v1
 GET /v1/books?sort=title&order=asc
 ```
 
 **After (v2)**:
+
 ```bash
 # This returns a 400 error in v2
 GET /v2/books?sort=title&order=asc
@@ -172,6 +185,7 @@ GET /v2/books?sort=title&order=asc
 ```
 
 **Available sort options**:
+
 - `createdDate` (only valid option in v2)
 - `order`: `asc` or `desc`
 
@@ -182,12 +196,14 @@ GET /v2/books?sort=title&order=asc
 #### Performance improvements
 
 **List endpoint optimization**:
+
 - 40% faster average response time
 - Reduced database load through optimized queries
 - Improved caching efficiency
 
 **Metrics**:
-```
+
+```bash
 Average Response Time:
 - v1: 450ms
 - v2: 270ms (40% improvement)
@@ -200,13 +216,16 @@ Average Response Time:
 #### API response consistency
 
 **Standardized error messages**:
+
 All errors now include:
+
 - Consistent error code format
 - Clear, actionable messages
 - Suggested alternatives where applicable
 - Request ID for support tracking
 
 **Example**:
+
 ```json
 {
   "status": "error",
@@ -230,14 +249,17 @@ All errors now include:
 **Deprecation status**: Fully removed in v2
 
 **Timeline**:
+
 - **December 15, 2025**: Deprecation announced for v1
 - **January 2, 2026**: Removed in v2
 - **July 2, 2026**: v1 sunset (title sorting no longer available)
 
 **Migration path**:
+
 Publishers must choose one of two alternatives:
 
 **Option A: Server-side date sorting (recommended)**
+
 ```python
 # Replace title sorting with date sorting
 response = requests.get(
@@ -247,6 +269,7 @@ response = requests.get(
 ```
 
 **Option B: Client-side title sorting**
+
 ```python
 # Fetch all books and sort locally
 response = requests.get(
@@ -300,6 +323,7 @@ Sunset: Thu, 02 Jul 2026 00:00:00 GMT
 #### Monitoring deprecation warnings
 
 **Python example**:
+
 ```python
 def check_deprecation_warnings(response):
     """Monitor API deprecation warnings."""
@@ -338,6 +362,7 @@ def check_deprecation_warnings(response):
 #### Migration phases
 
 ##### Phase 1: Assessment (week 1)
+
 Identify the impact on your integration:
 
 ```bash
@@ -348,12 +373,14 @@ grep -r "api\.bookhub\.com/api/v1" .
 ```
 
 **Checklist**:
+
 - [ ] Identify all API v1 calls in the codebase.
 - [ ] Document usage of title sorting.
 - [ ] Review `hitCount` field integration needs.
 - [ ] Estimate migration effort.
 
 ##### Phase 2: Testing (week 2-3)
+
 Test v2 in sandbox environment:
 
 ```python
@@ -423,6 +450,7 @@ tester.test_sorting()
 ```
 
 **Testing checklist**:
+
 - [ ] Test all current API calls with v2.
 - [ ] Verify hitCount field handling.
 - [ ] Test sorting parameter changes.
@@ -430,9 +458,11 @@ tester.test_sorting()
 - [ ] Performance test with production-like load.
 
 ##### Phase 3: Implementation (week 3-4)
+
 Update your integration to use v2:
 
 **Step 1: Update base URLs**
+
 ```python
 # Before
 BASE_URL = "https://api.bookhub.com/api/v1"
@@ -442,6 +472,7 @@ BASE_URL = "https://api.bookhub.com/api/v2"
 ```
 
 **Step 2: Handle new fields**
+
 ```python
 def get_book_details(book_id):
     """Retrieve book with v2 fields."""
@@ -465,6 +496,7 @@ def get_book_details(book_id):
 ```
 
 **Step 3: Replace title sorting**
+
 ```python
 def get_sorted_books(sort_type='date'):
     """Get books with appropriate sorting."""
@@ -490,6 +522,7 @@ def get_sorted_books(sort_type='date'):
 ```
 
 **Step 4: Update error handling**
+
 ```python
 def safe_get_books(sort_by='createdDate'):
     """Get books with fallback error handling."""
@@ -517,21 +550,25 @@ def safe_get_books(sort_by='createdDate'):
 ```
 
 ##### Phase 4: Deployment (week 5)
+
 Roll out v2 integration to production:
 
 **Deployment strategy**:
+
 1. **Canary deployment**: Route 10% of traffic to v2.
 2. **Monitor**: Check error rates and performance.
 3. **Gradual rollout**: Increase to 50%, then 100%.
 4. **Validation**: Verify all features work correctly.
 
 **Monitoring checklist**:
+
 - [ ] Monitor error rates (should remain stable).
 - [ ] Track response times (expect 40% improvement).
 - [ ] Verify hitCount data collection.
 - [ ] Check client-side sorting performance (if used).
 
 ##### Phase 5: Validation (week 6)
+
 Confirm successful migration:
 
 ```python
@@ -583,6 +620,7 @@ else:
 #### Basic book retrieval
 
 **Before (v1)**:
+
 ```python
 import requests
 
@@ -601,6 +639,7 @@ print(f"Author: {book['author']}")
 ```
 
 **After (v2)**:
+
 ```python
 import requests
 
@@ -621,6 +660,7 @@ print(f"Views: {book['hitCount']}")  # New field
 #### Listing books with sorting
 
 **Before (v1)**:
+
 ```python
 # Get books sorted by title
 response = requests.get(
@@ -632,6 +672,7 @@ books = response.json()['data']['books']
 ```
 
 **After (v2) - Option A: Date sorting**:
+
 ```python
 # Get books sorted by creation date
 response = requests.get(
@@ -643,6 +684,7 @@ books = response.json()['data']['books']
 ```
 
 **After (v2) - Option B: Client-side sorting**:
+
 ```python
 # Get all books and sort by title locally
 response = requests.get(
@@ -659,6 +701,7 @@ sorted_books = sorted(books, key=lambda x: x['title'].lower())
 #### Hit count analytics
 
 **New v2 Feature**:
+
 ```python
 def analyze_book_performance(book_ids):
     """Analyze book performance using hitCount."""
@@ -696,6 +739,7 @@ analyze_book_performance(book_ids)
 #### Version-agnostic client
 
 **Dual-version support during migration**:
+
 ```python
 class BookHubClient:
     """Client supporting both v1 and v2."""
@@ -948,6 +992,7 @@ if __name__ == "__main__":
 ```
 
 **Run the validator**:
+
 ```bash
 python validate_migration.py your_api_token_here
 ```
@@ -978,6 +1023,7 @@ python validate_migration.py your_api_token_here
 > **Warning**: v1 will stop working after July 2, 2026.
 
 After this date:
+
 - All v1 API calls will return `410 Gone` errors.
 - No v1 support will be available.
 - All integrations must use v2.
@@ -989,11 +1035,13 @@ After this date:
 #### Technical support
 
 **Email support**:
-- **General questions**: api-support@bookhub.com
-- **Migration assistance**: api-migration@bookhub.com
-- **Emergency issues**: api-urgent@bookhub.com
+
+- **General questions**: `api-support@bookhub.com`
+- **Migration assistance**: `api-migration@bookhub.com`
+- **Emergency issues**: `api-urgent@bookhub.com`
 
 **Response times**:
+
 - **Standard**: 24 hours
 - **Priority** (during migration): 4 hours
 - **Emergency**: 1 hour
@@ -1001,28 +1049,32 @@ After this date:
 #### Documentation
 
 **Available resources**:
-- **Full v2 API documentation**: https://docs.bookhub.com/api/v2
-- **Migration guide**: https://docs.bookhub.com/api/v2/migration
-- **OpenAPI spec**: https://api.bookhub.com/openapi/v2.yaml
-- **Code examples**: https://github.com/bookhub/api-examples
+
+- **Full v2 API documentation**: `https://docs.bookhub.com/api/v2`
+- **Migration guide**: `https://docs.bookhub.com/api/v2/migration`
+- **OpenAPI spec**: `https://api.bookhub.com/openapi/v2.yaml`
+- **Code examples**: `https://github.com/bookhub/api-examples`
 
 #### Live support sessions
 
 **Migration workshops**:
+
 - **Dates**: January 15, February 15, March 15, 2026
 - **Time**: 2:00 PM EST
 - **Duration**: 90 minutes
-- **Registration**: workshops@bookhub.com
+- **Registration**: `workshops@bookhub.com`
 
 **Office hours**:
+
 - Every Tuesday, 10:00 AM - 12:00 PM EST
 - Every Thursday, 2:00 PM - 4:00 PM EST
 - Drop-in Q&A via Zoom
-- **Link**: https://zoom.us/j/bookhub-api-office-hours
+- **Link**: `https://zoom.us/j/bookhub-api-office-hours`
 
 #### Partner support
 
 For high-volume publishers and partners:
+
 - Dedicated migration engineer
 - Custom migration plan
 - Priority bug fixes
@@ -1041,12 +1093,14 @@ Contact: partners@bookhub.com
 **Purpose**: Test v2 integration without affecting production
 
 **Details**:
+
 - **URL**: `https://sandbox-api.bookhub.com/api/v2`
 - Same authentication as production
 - Separate data store
 - Reset available on request.
 
 **Setup**:
+
 ```bash
 # Configure sandbox environment
 export BOOKHUB_ENV="sandbox"
@@ -1095,11 +1149,13 @@ export BOOKHUB_TOKEN="your_sandbox_token"
 #### Postman collection
 
 Download our Postman collection for v2 testing:
+
 ```bash
 curl -O https://docs.bookhub.com/postman/bookhub-api-v2.json
 ```
 
 Import into Postman and set environment variables:
+
 - `base_url`: `https://sandbox-api.bookhub.com/api/v2`
 - `token`: Your sandbox API token
 
@@ -1235,6 +1291,7 @@ if __name__ == '__main__':
 ```
 
 Run the test suite:
+
 ```bash
 python test_v2_api.py
 ```
@@ -1246,6 +1303,7 @@ python test_v2_api.py
 ### When to rollback
 
 Consider rollback if you experience:
+
 - Critical production errors affecting >10% of requests
 - Data integrity issues
 - Performance degradation >50% from baseline
@@ -1269,7 +1327,8 @@ BASE_URL = "https://api.bookhub.com/api/v1"  # Revert to v1
 #### Step 2: Notify BookHub
 
 Contact emergency support:
-- **Email**: api-urgent@bookhub.com
+
+- **Email**: `api-urgent@bookhub.com`
 - **Subject**: "URGENT: v2 Rollback - [Your Company]"
 - **Include**: Error details, affected volume, and rollback timestamp.
 
@@ -1284,6 +1343,7 @@ Work with the BookHub team to identify issues:
 #### Step 4: Plan re-migration
 
 Once issues are resolved:
+
 1. Test fixes in a sandbox.
 2. Conduct a limited production test.
 3. Attempt full migration.
@@ -1296,6 +1356,7 @@ Once issues are resolved:
 #### Data synchronization
 
 If using the `hitCount` field:
+
 - Data collected during the v2 period will be retained.
 - Not accessible via v1 (field doesn't exist).
 - Will be available when you re-migrate to v2.
@@ -1303,6 +1364,7 @@ If using the `hitCount` field:
 #### Client-side sorting
 
 If you implemented client-side title sorting:
+
 - The feature will still work after the rollback.
 - Consider keeping it (reduces future migration effort).
 - Alternatively, revert to server-side title sorting in v1.
@@ -1338,6 +1400,7 @@ for i in range(12):
 ### Post-rollback support
 
 After rolling back to v1:
+
 - Priority support available
 - Extended sandbox access
 - Customized migration plan
@@ -1374,12 +1437,14 @@ Contact api-migration@bookhub.com to schedule a post-rollback review.
 ### Contact information
 
 **BookHub API team**:
-- **General support**: api-support@bookhub.com
-- **Migration help**: api-migration@bookhub.com
-- **Emergency issues**: api-urgent@bookhub.com
-- **Feature requests**: feature-requests@bookhub.com
+
+- **General support**: `api-support@bookhub.com`
+- **Migration help**: `api-migration@bookhub.com`
+- **Emergency issues**: `api-urgent@bookhub.com`
+- **Feature requests**: `feature-requests@bookhub.com`
 
 **Response commitments**:
+
 - **Standard support**: 24 hours
 - **Migration support**: 4 hours
 - **Emergency support**: 1 hour
@@ -1387,18 +1452,21 @@ Contact api-migration@bookhub.com to schedule a post-rollback review.
 ### Additional resources
 
 **Documentation**:
-- **v2 Full documentation**: https://docs.bookhub.com/api/v2
-- **Migration guide**: https://docs.bookhub.com/api/v2/migration
-- **OpenAPI specification**: https://api.bookhub.com/openapi/v2.yaml
+
+- **v2 Full documentation**: `https://docs.bookhub.com/api/v2`
+- **Migration guide**: `https://docs.bookhub.com/api/v2/migration`
+- **OpenAPI specification**: `https://api.bookhub.com/openapi/v2.yaml`
 
 **Code examples**:
-- **GitHub repository**: https://github.com/bookhub/api-examples
-- **Sample projects**: https://github.com/bookhub/sample-integrations
+
+- **GitHub repository**: `https://github.com/bookhub/api-examples`
+- **Sample projects**: `https://github.com/bookhub/sample-integrations`
 
 **Community**:
-- **Developer forum**: https://forum.bookhub.com/api
+
+- **Developer forum**: `https://forum.bookhub.com/api`
 - **Stack overflow**: Tag `bookhub-api`
-- **Discord**: https://discord.gg/bookhub-developers
+- **Discord**: `https://discord.gg/bookhub-developers`
 
 ---
 
