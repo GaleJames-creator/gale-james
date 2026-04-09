@@ -270,7 +270,7 @@ User confusion scenarios:
    - Must use Postman/curl/code for every test
    - Higher barrier for non-technical publishers
 
-4. **Documentation discovery**
+3. **Documentation discovery**
 
    - Users might read v2 docs but use v1 by accident.
    - No visual cue that they're on the wrong version.
@@ -278,28 +278,28 @@ User confusion scenarios:
 
 #### Path-based versioning (user experience)
 
-- **Score**: ✅ Excellent
-- **User-friendly features**:
+**Score**: ✅ Excellent
+**User-friendly features**:
 
-  1. **Visual clarity**
+1. **Visual clarity**
 
-     ```http
-     https://api.bookhub.com/api/v1/books  ← "I'm using v1"
-     https://api.bookhub.com/api/v2/books  ← "I'm using v2"
-     ```
+   ```http
+   https://api.bookhub.com/api/v1/books  ← "I'm using v1"
+   https://api.bookhub.com/api/v2/books  ← "I'm using v2"
+   ```
 
-  2. **Browser testing possible**
+2. **Browser testing possible**
 
-     ```http
-     # Just paste in browser to test (with token in query for GET)
-     https://api.bookhub.com/api/v2/books?token=YOUR_TOKEN
-     ```
+   ```http
+   # Just paste in browser to test (with token in query for GET)
+   https://api.bookhub.com/api/v2/books?token=YOUR_TOKEN
+   ```
 
-  3. **Documentation alignment**
+3. **Documentation alignment**
 
-    - URL structure matches doc structure
-    - /v1/ docs naturally correspond to /api/v1/ endpoints
-    - Impossible to confuse which version you're using
+- URL structure matches doc structure
+- /v1/ docs naturally correspond to /api/v1/ endpoints
+- Impossible to confuse which version you're using
 
 #### User experience winner
 
@@ -460,7 +460,7 @@ The winner is path-based versioning.
 
 Use URI/Path-based versioning for BookHub Publisher API v2:
 
-```
+```http
 https://api.bookhub.com/api/v1/books  ← Legacy version
 https://api.bookhub.com/api/v2/books  ← Current version
 ```
@@ -487,19 +487,25 @@ https://api.bookhub.com/api/v2/books  ← Current version
 By choosing path-based versioning, we accept:
 
 ### 1. Longer URLs
-**Impact:** Minimal
+
+#### Minimmal impact
+
 - URLs are slightly longer (`/v2/books` vs `/books`).
 - But still clean and readable.
 - Users don't typically type API URLs manually.
 
 ### 2. URL changes for major versions
-**Impact:** Acceptable
+
+#### Acceptable impact
+
 - Major versions already require code changes.
 - URL change makes migration explicit and obvious.
 - Better than the silent header-based version-switching.
 
 ### 3. Multiple URL namespaces
-**Impact:** Positive
+
+#### Positive impact
+
 - Forces a clear separation between versions.
 - Makes deprecation explicit (remove /v1/ namespace).
 - Aligns with documentation structure.
