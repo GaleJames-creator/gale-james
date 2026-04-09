@@ -40,7 +40,6 @@ A complete documentation set for a RESTful publishing platform API, including Op
 - **[Manage rate limits](./how-to-guides/manage-rate-limits.md)**: How to avoid rate limits.
 - **[Prevent duplicate charges with idempotency keys](./how-to-guides/prevent-duplicate-charges-with-idempotency-keys.md)**: How to use idempotency keys to prevent duplicate charges.
 
-
 ### Explanation (understanding-oriented)
 
 - **[Authorization vs. capture: understanding the difference](./explanation/payment-authorization-vs-capture.md)**: Covers hard declines vs. soft declines, decline codes, and retry policies.
@@ -65,9 +64,11 @@ A complete documentation set for a RESTful publishing platform API, including Op
 ## 💼 Professional experience highlights
 
 ### Digital River - Senior Technical Writer → Manager, Technical Writer (2016-2025)
+
 I led API documentation for Digital River’s Commerce-as-a-Service platform, documenting 73+ REST API endpoints.
 
-**Key contributions:**
+#### Key contributions
+
 - Developed comprehensive API reference documentation for Commerce APIs.
 - Created integration guides for electronic funds transfer systems.
 - Led a two-phase documentation platform migration: first from Drupal to ReadMe to address a disorganized legacy content structure, then from ReadMe to GitBook after identifying that ReadMe couldn't support our JSON file requirements. Evaluated alternative docs-as-code platforms against our content requirements and made the final GitBook recommendation.
