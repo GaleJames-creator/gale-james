@@ -13,14 +13,15 @@ You can reveal and rotate a webhook's secret in Admin UI.
 You can search for an existing webhook in Admin UI to review or update its settings. Use the steps below to find a webhook by its unique ID.
 
 1. Sign in to Admin UI.
-2. Select **Administration**, then click **Webhook Service**. 
+2. Select **Administration**, then click **Webhook Service**.
 3. On **Webhook Service**, enter the webhook ID and click **Search**. Exact matches show up.
 
 ## Creating a webhook
 
-Creating a webhook allows your system to receive real-time notifications from the service, enabling you to automate and enhance your processes. 
+Creating a webhook allows your system to receive real-time notifications from the service, enabling you to automate and enhance your processes.
 
 ### Step 1: Open your firewall to trusted service IP addresses
+
 To receive webhook notifications from the service, you must open your firewalls to all trusted service IP addresses listed in the Payment API safelist.
 
 ### Step 2: Create webhooks
@@ -33,7 +34,7 @@ To receive webhook notifications from the service, you must open your firewalls 
 6. Enter Username and Password for the endpoint.
 7. Under OAuth:
 
-   a. Select **Client credentials** or **Password** from the **Grant type** list. 
+   a. Select **Client credentials** or **Password** from the **Grant type** list.
    
    b. Enter the token endpoint URL starting with either `https://` or `http://` in the **Token endpoint URL field**.
    
