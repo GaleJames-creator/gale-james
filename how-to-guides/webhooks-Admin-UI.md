@@ -37,10 +37,10 @@ To receive webhook notifications from the service, you must open your firewalls 
    a. Select **Client credentials** or **Password** from the **Grant type** list.
    b. Enter the token endpoint URL starting with either `https://` or `http://` in the **Token endpoint URL field**.
    c. Provide the password or client ID and client secret in the appropriate fields.
-   
-9. (Optional) Select **Enabled** for **Status**. If not enabled, no event notification is sent. The system also prompts you to enable the webhook when you click **Create**.
-10. Select event checkboxes you want for the endpoint. At least one is required.
-11. Click **Create**.
+
+8. (Optional) Select **Enabled** for **Status**. If not enabled, no event notification is sent. The system also prompts you to enable the webhook when you click **Create**.
+9. Select event checkboxes you want for the endpoint. At least one is required.
+10. Click **Create**.
 
 ### Step 3: Respond to webhook events
 
