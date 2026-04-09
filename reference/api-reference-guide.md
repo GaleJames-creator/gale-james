@@ -259,8 +259,8 @@ The token is invalid. Provide the correct token and try again.
 
 The order ID or line item was not found, or the refund is invalid. The possible errors associated with this not-found response are:
 
-- `order-not-found`: The provided `orderId` was not found. Provide the correct `orderId` and try again.
-- `invalid-refund`: The `refundAmount`'s `value` or `currency` is invalid. Provide a valid `value` or `currency` for the `refundAmount`, and try again.
+* `order-not-found`: The provided `orderId` was not found. Provide the correct `orderId` and try again.
+* `invalid-refund`: The `refundAmount`'s `value` or `currency` is invalid. Provide a valid `value` or `currency` for the `refundAmount`, and try again.
 
 ```json
 {
@@ -278,10 +278,10 @@ The order ID or line item was not found, or the refund is invalid. The possible 
 
 The refund type, category, reason, or refund amount is incorrect. The possible errors associated with this conflict response are:
 
-- `invalid-refund-type`: The refund `type` is invalid. Provide a valid refund `type` and try again.
-- `invalid-refund-category`: The refund `category` is invalid. Provide a valid refund `category` and try again.
-- `invalid-refund-reason`: The refund `reason` is invalid. Provide a valid refund `reason` and try again.
-- `invalid-refund-amount`: The `refundAmount`'s `value` or `currency` is invalid. Provide a valid `value` or `currency` for the `refundAmount`, and try again.
+* `invalid-refund-type`: The refund `type` is invalid. Provide a valid refund `type` and try again.
+* `invalid-refund-category`: The refund `category` is invalid. Provide a valid refund `category` and try again.
+* `invalid-refund-reason`: The refund `reason` is invalid. Provide a valid refund `reason` and try again.
+* `invalid-refund-amount`: The `refundAmount`'s `value` or `currency` is invalid. Provide a valid `value` or `currency` for the `refundAmount`, and try again.
 
 ```json
 {
