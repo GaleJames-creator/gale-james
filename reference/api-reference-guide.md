@@ -103,13 +103,13 @@ curl https://api.sandbox-api.com/v1/shoppers/me/payment-options/123456789 \
 
 In the request body, include the following optional fields:
 
-| Parameter | Location | Type | Required	| Description |
-| ------------------------------- | ------------- | --------- | --------- | -------------------------------------------------------------------------------------------- |  
-| `paymentOptionId` | path | string | Yes | The unique identifier for the payment option (e.g., `123456789`) | 
+| Parameter  Location | Type | Required | Description |
+| ------------------------------- | ------------- | --------- | --------- | -------------------------------------------------------------------------------------------- |
+| `paymentOptionId` | path | string | Yes | The unique identifier for the payment option (e.g., `123456789`) |
 | `sourceId` | body (JSON) | string | No | The unique identifier for the payment source (e.g., `c25fcccc-6e57-4d93-bafb-a6765510a422`) |
-| `paymentOption.nickName` | body (JSON) | string | No | Name of payment option (e.g., `WFBank`) | 
-| `paymentOption.isDefault` | body (JSON) | string | No | Determines if the payment option is the customer's default payment option (e.g., `true`) | 
-| `shopper.ipAddress` | body (JSON) | string | No | Customer's IP address (e.g., `198.51.100.1`) | 
+| `paymentOption.nickName` | body (JSON) | string | No | Name of payment option (e.g., `WFBank`) |
+| `paymentOption.isDefault` | body (JSON) | string | No | Determines if the payment option is the customer's default payment option (e.g., `true`) |
+| `shopper.ipAddress` | body (JSON) | string | No | Customer's IP address (e.g., `198.51.100.1`) |
 
 ### 201 Created response updating a payment option
 
@@ -142,7 +142,7 @@ The server successfully processed the request, but has no content to return in t
 
 The possible errors associated with this bad request response are:
 
-- `invalid-request`: The request was invalid and could not be parsed by the system. Enter valid information and try again.
+* `invalid-request`: The request was invalid and could not be parsed by the system. Enter valid information and try again.
 
 ```json
 {
@@ -170,8 +170,8 @@ The token is invalid. Enter a valid token and try again.
 
 The `paymentSource` is not valid. Possible reasons are:
 
-- `invalid-state-code`: The state code is invalid. Provide a valid state code and try again.
-- `invalid-postal-code`: The postal code is invalid. Provide a valid postal code and try again.
+* `invalid-state-code`: The state code is invalid. Provide a valid state code and try again.
+* `invalid-postal-code`: The postal code is invalid. Provide a valid postal code and try again.
 
 ```json
 {
@@ -192,7 +192,7 @@ POST /v1/orders/{orderId}/refunds
 
 ### Refunds path parameters
 
-- `orderId` (required): Unique identifier of the order. In this example, the `orderId` is `12345`.
+* `orderId` (required): Unique identifier of the order. In this example, the `orderId` is `12345`.
 
 ### Refund request example
 
@@ -217,7 +217,7 @@ curl https://sandbox-api.com/v1/orders/12345/refunds \
 
 In the request body, include the following required fields:
 
-| Required parameters | Description                                                                                                                 | 
+| Required parameters | Description                                                                                                                 |
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | `type`              | The type of refund, such as `Order Level` or `Product Level` refund.                                                        |
 | `category`          | The enum for the category. Possible values: `PRODUCT_LEVEL_PRODUCT`,  `PRODUCT_LEVEL_SHIPPING`, `PRODUCT_LEVEL_FEE`,`PRODUCT_LEVEL_DUTIES_AND_TARIFFS`, `ORDER_LEVEL_PRODUCT`, `ORDER_LEVEL_SHIPPING`, `ORDER_LEVEL_FEE`, `ORDER_LEVEL_FULL`, `ORDER_LEVEL_TAX_EXEMPT`, `ORDER_LEVEL_DUTIES_AND_TARIFFS`   |
