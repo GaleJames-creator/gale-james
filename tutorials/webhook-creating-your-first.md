@@ -11,15 +11,15 @@ Webhooks send a POST request to your URL when an event occurs, such as a payment
 
 Before getting started, ensure you have:
 
-- **A public, secure endpoint** where you want to receive webhook events that can process HTTPS POST requests from the service sending the webhook (e.g., GitHub, Stripe, etc.).
+* **A public, secure endpoint** where you want to receive webhook events that can process HTTPS POST requests from the service sending the webhook (e.g., GitHub, Stripe, etc.).
   
   > **Tip**: Use security measures like secret tokens or signature verification to make sure requests are really from the expected service.
   
-- **A testing or staging environment** to validate your webhook endpoint before going live.
+* **A testing or staging environment** to validate your webhook endpoint before going live.
 
 ## Step 1: Register a webhook endpoint
 
-To receive real-time event notifications, register a webhook endpoint and provide a publicly accessible URL, such as `https://www.acme.com/webhooks/payment`. The service sends event data to this URL when an event occurs. 
+To receive real-time event notifications, register a webhook endpoint and provide a publicly accessible URL, such as `https://www.acme.com/webhooks/payment`. The service sends event data to this URL when an event occurs.
 
 > **Note**: Use HTTPS to encrypt data in transit. Protect your endpoint with authentication to prevent unauthorized access.
 
@@ -90,7 +90,7 @@ Test your webhook by making a payment and checking the POST request data at your
 
 Always verify webhook signatures to confirm requests are from Payment. If verification fails, log the attempt, return a 401 status, and set up alerts for repeated failures. You can temporarily disable the endpoint if needed to maintain security.
 
-**Verify a signature in Node.js**
+### Verify a signature in Node.js
 
 ```javascript
 const crypto = require('crypto');
@@ -145,6 +145,6 @@ You have completed the following steps:
 
 Ready for more? Check out:
 
-- [Manage security for webhook data transmission](../how-to-guides/webhooks-data-transmission.md)
-- [Manage webhooks using the Admin UI](../how-to-guides/webhooks-Admin-UI.md)
-- [Retrieve an anonymous customer's orders and product information](../how-to-guides/webhooks-anonymous-shopper.md)
+* [Manage security for webhook data transmission](../how-to-guides/webhooks-data-transmission.md)
+* [Manage webhooks using the Admin UI](../how-to-guides/webhooks-Admin-UI.md)
+* [Retrieve an anonymous customer's orders and product information](../how-to-guides/webhooks-anonymous-shopper.md)
