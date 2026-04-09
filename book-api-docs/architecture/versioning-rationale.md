@@ -13,11 +13,11 @@
 
 ## Executive summary
 
-After evaluating both **header-based versioning** (e.g., `api-version: 2024-12-30`) and **path-based versioning** (e.g., `/v2/books`), I recommend **path-based versioning** for the BookHub Publisher API v2.
+After evaluating header-based and path-based versioning, I recommend path-based versioning for BookHub Publisher API v2.
 
-**Key decision:** Use URI path versioning (`/v1/books`, `/v2/books`) rather than custom header versioning.
+- **Key decision**: Use URI path versioning (`/v1/books`, `/v2/books`) instead of custom header versioning.
 
-**Primary rationale**: Documentation clarity, maintainability, and user experience take precedence over URL cleanliness and theoretical elegance.
+- **Primary rationale**: Clarity, maintainability, and user experience are prioritized over URL simplicity.
 
 ---
 
@@ -39,7 +39,7 @@ After evaluating both **header-based versioning** (e.g., `api-version: 2024-12-3
 
 ### Project context
 
-The BookHub Publisher API enables book publishers to programmatically manage their catalog. The target audience includes:
+BookHub Publisher API enables book publishers to programmatically manage their catalog. The target audience includes:
 
 - **Primary users**: Book publishers (varying technical expertise)
 - **Integration developers**: Third-party developers building integrations
@@ -172,12 +172,12 @@ The winner is path-based versioning. In this instance, path-based versioning pro
 
 ### 2. Documentation maintainability
 
-#### Header-based versioning (documenatiopn maintainability)
+#### Header-based versioning (documentation maintainability)
 
 - **Score: ❌ Poor**
 - **Challenges:**
 
-    1. **Breaking changes are hidden**
+    1. **Breaking changes are hidden**.
 
        ```markdown
        ## Create Book Endpoint
@@ -195,7 +195,7 @@ The winner is path-based versioning. In this instance, path-based versioning pro
 
     2. **Single document complexity**
 
-       - Must annotate every parameter: "Available in 2025-03-15+"
+       - Must annotate every parameter: "Available in 2025-03-15+."
        - Must explain version-specific behavior throughout
        - Risk of missing version-specific details
        - High maintenance burden for documentation updates
@@ -265,11 +265,13 @@ User confusion scenarios:
    ```
 
 2. **Browser testing impossible**
+
    - Can't test GET endpoints in the browser address bar
    - Must use Postman/curl/code for every test
    - Higher barrier for non-technical publishers
 
-3. **Documentation discovery**
+4. **Documentation discovery**
+
    - Users might read v2 docs but use v1 by accident.
    - No visual cue that they're on the wrong version.
    - The header is "invisible" when browsing the documentation.
@@ -279,24 +281,25 @@ User confusion scenarios:
 - **Score**: ✅ Excellent
 - **User-friendly features**:
 
-    1. **Visual clarity**
-    
-       ```http
-       https://api.bookhub.com/api/v1/books  ← "I'm using v1"
-       https://api.bookhub.com/api/v2/books  ← "I'm using v2"
-       ```
-    
-    2. **Browser testing possible**
-    
-       ```http
-       # Just paste in browser to test (with token in query for GET)
-       https://api.bookhub.com/api/v2/books?token=YOUR_TOKEN
-       ```
-    
-    3. **Documentation alignment**
-       - URL structure matches doc structure
-       - /v1/ docs naturally correspond to /api/v1/ endpoints
-       - Impossible to confuse which version you're using
+  1. **Visual clarity**
+
+     ```http
+     https://api.bookhub.com/api/v1/books  ← "I'm using v1"
+     https://api.bookhub.com/api/v2/books  ← "I'm using v2"
+     ```
+
+  2. **Browser testing possible**
+
+     ```http
+     # Just paste in browser to test (with token in query for GET)
+     https://api.bookhub.com/api/v2/books?token=YOUR_TOKEN
+     ```
+
+  3. **Documentation alignment**
+
+    - URL structure matches doc structure
+    - /v1/ docs naturally correspond to /api/v1/ endpoints
+    - Impossible to confuse which version you're using
 
 #### User experience winner
 
@@ -332,7 +335,7 @@ The winner is path-based versioning.
 
 #### Migration complexity winner
 
-The winnner is path-based versioning.
+The winner is path-based versioning.
 
 ---
 
@@ -342,7 +345,7 @@ The winnner is path-based versioning.
 
 - **Score**: ✅ Excellent
 
-    ```
+    ```http
     https://api.bookhub.com/api/books
     https://api.bookhub.com/api/books/123
     ```
@@ -353,7 +356,7 @@ Clean, version-agnostic URLs. Aesthetically pleasing.
 
 - **Score**: ⚠️ Acceptable
 
-    ```
+    ```http
     https://api.bookhub.com/api/v2/books
     https://api.bookhub.com/api/v2/books/123
     ```
@@ -362,7 +365,7 @@ URL includes version number. Slightly longer, but still clean.
 
 ### URL cleanliness winner
 
-The winner is header-based versioning (but this is a minor aesthetic preference).
+The winner is header-based versioning (a minor aesthetic preference).
 
 ---
 
@@ -370,7 +373,7 @@ The winner is header-based versioning (but this is a minor aesthetic preference)
 
 #### Header-based versioning (HTTP caching)
 
-- **Sco**: ⚠️ Acceptable
+- **Score**: ⚠️ Acceptable
 
 Standard HTTP caches (CDNs, reverse proxies) don't automatically vary by custom headers. Requires:
 
@@ -386,7 +389,7 @@ Must configure caching infrastructure to recognize the custom header.
 
 Different URLs = different cache entries. Works with all standard HTTP caches out of the box.
 
-```
+```bash
 Cache Key: /api/v1/books/123
 Cache Key: /api/v2/books/123
 ```
@@ -413,9 +416,10 @@ The winner is path-based versioning.
 | **AWS** | Mixed | Varies by service |
 | **Shopify** | Path-based | `/admin/api/2024-01/products` |
 
-**Analysis:**
+#### Analysis
+
 - **Path-based**: 5/7 (71%) - Most common
-- **Header-based**: 1/7 (14%) - Stripe is a notable exception
+- **Header-based**: 1/7 (14%) - Stripe is a notable exception.
 - **Mixed**: 1/7 (14%)
 
 ### Industry alignment winner
@@ -430,25 +434,25 @@ The winner is path-based versioning (industry standard).
 
 - **Score**: ⚠️ Acceptable
 
-    - `OpenAPI 3.0`: Supports custom headers ✅
-    - Postman: Requires manual header configuration ⚠️
-    - Browser testing: Not possible ❌
-    - curl: Requires `-H` flag ⚠️
-    - SwaggerUI: Works, but the header must be documented ⚠️
+  - `OpenAPI 3.0`: Supports custom headers ✅
+  - Postman: Requires manual header configuration ⚠️
+  - Browser testing: Not possible ❌
+  - curl: Requires `-H` flag ⚠️
+  - SwaggerUI: Works, but the header must be documented ⚠️
 
 #### Path-based versioning (tooling support)
 
 - **Score**: ✅ Excellent
 
-    - `OpenAPI 3.0`: Native support ✅
-    - Postman: Works naturally ✅
-    - Browser testing: Possible for GET requests ✅
-    - curl: Clean syntax ✅
-    - SwaggerUI: Perfect visualization ✅
+  - `OpenAPI 3.0`: Native support ✅
+  - Postman: Works naturally ✅
+  - Browser testing: Possible for GET requests ✅
+  - curl: Clean syntax ✅
+  - SwaggerUI: Perfect visualization ✅
 
 #### Tooling support winner
 
-The winner is path-based versioning
+The winner is path-based versioning.
 
 ---
 
@@ -587,6 +591,7 @@ Header-based versioning (especially with date identifiers) works well for:
 - **GraphQL APIs** - Where URL-based versioning doesn't fit the paradigm.
 
 **BookHub doesn't fit these criteria:**
+
 - Releases are quarterly, not daily.
 - Users include non-technical publishers.
 - Simple version requirements (v1 vs v2).
@@ -606,13 +611,14 @@ For the BookHub Publisher API, I chose **path-based versioning** because it prio
 ### Key principle
 
 Path-based versioning is:
+
 - Boring ✅
 - Battle-tested ✅
 - Well-understood ✅
 - Widely supported ✅
 - Easy to maintain ✅
 
-And most importantly: **It makes our documentation clear and our users successful.**
+And, most importantly, it makes our documentation clear and our users successful.
 
 ---
 
