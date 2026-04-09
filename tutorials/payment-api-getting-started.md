@@ -147,10 +147,11 @@ If the payment succeeds, the response is similar to the following:
 }
 ```
 
-**Key fields:**
-- `id` - Unique payment ID. Save this ID for refunds or retrievals.
-- `status` - Payment result. Possible values: `succeeded`, `failed`, `pending`, or `canceled`.
-- `receipt_url` - URL to the customer receipt.
+#### Key fields
+
+* `id` - Unique payment ID. Save this ID for refunds or retrievals.
+* `status` - Payment result. Possible values: `succeeded`, `failed`, `pending`, or `canceled`.
+* `receipt_url` - URL to the customer receipt.
 
 
 ## Step 5: Handle a simple error
