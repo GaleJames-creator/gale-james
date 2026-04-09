@@ -253,7 +253,7 @@ The winner is path-based versioning.
 
 - **Score**: ❌ Poor
 
-User confusion scenarios:
+##### User confusion scenarios
 
 1. **Easy to use the wrong version**
 
@@ -279,21 +279,22 @@ User confusion scenarios:
 #### Path-based versioning (user experience)
 
 **Score**: ✅ Excellent
-**User-friendly features**:
+
+##### User-friendly features
 
 1. **Visual clarity**
 
-```http
-https://api.bookhub.com/api/v1/books  ← "I'm using v1"
-https://api.bookhub.com/api/v2/books  ← "I'm using v2"
-```
+   ```http
+   https://api.bookhub.com/api/v1/books  ← "I'm using v1"
+   https://api.bookhub.com/api/v2/books  ← "I'm using v2"
+   ```
 
 2. **Browser testing possible**
 
-```http
-# Just paste in browser to test (with token in query for GET)
-https://api.bookhub.com/api/v2/books?token=YOUR_TOKEN
-```
+   ```http
+   # Just paste in browser to test (with token in query for GET)
+   https://api.bookhub.com/api/v2/books?token=YOUR_TOKEN
+   ```
 
 3. **Documentation alignment**
 
@@ -311,27 +312,33 @@ The winner is path-based versioning.
 
 #### Header-based versioning (migration complexity)
 
-- **Score**: ⚠️ Acceptable
-- **Migration steps**:
+**Score**: ⚠️ 
+
+##### Migration steps for header-based versioning
 
     1. Update code to add `api-version: 2025-03-15` header.
     2. Update ISBN formats to include hyphens.
     3. Remove title sorting logic.
     4. Add cover image validation.
 
-- **Risk**: Users might forget step #1 (adding the header) and wonder why their code still works with old behavior.
+##### Risk**
+
+Users might forget step #1 (adding the header) and wonder why their code still works with old behavior.
 
 #### Path-based versioning (migration complexity)
 
-- **Score**: ✅ Good
-- **Migration steps**:
+**Score**: ✅ Good
+
+##### Migration steps path-based versioning
 
     1. Change `/v1/books` to `/v2/books` in code.
     2. Update ISBN formats to include hyphens.
     3. Remove title sorting logic.
     4. Add cover image validation.
 
-- **Advantage**: Step #1 is obvious and hard to miss. If you forget to update the URL, you're clearly still on v1.
+##### Advantage**
+
+Step #1 is obvious and hard to miss. If you forget to update the URL, you're clearly still on v1.
 
 #### Migration complexity winner
 
@@ -343,7 +350,7 @@ The winner is path-based versioning.
 
 #### Header-based versioning (URL cleanliness)
 
-- **Score**: ✅ Excellent
+**Score**: ✅ Excellent
 
 ```http
 https://api.bookhub.com/api/books
@@ -354,7 +361,7 @@ Clean, version-agnostic URLs. Aesthetically pleasing.
 
 #### Path-based versioning (URL cleanliness)
 
-- **Score**: ⚠️ Acceptable
+**Score**: ⚠️ Acceptable
 
 ```http
 https://api.bookhub.com/api/v2/books
@@ -363,7 +370,7 @@ https://api.bookhub.com/api/v2/books/123
 
 URL includes version number. Slightly longer, but still clean.
 
-### URL cleanliness winner
+#### URL cleanliness winner
 
 The winner is header-based versioning (a minor aesthetic preference).
 
@@ -373,7 +380,7 @@ The winner is header-based versioning (a minor aesthetic preference).
 
 #### Header-based versioning (HTTP caching)
 
-- **Score**: ⚠️ Acceptable
+**Score**: ⚠️ Acceptable
 
 Standard HTTP caches (CDNs, reverse proxies) don't automatically vary by custom headers. Requires:
 
@@ -385,7 +392,7 @@ Must configure caching infrastructure to recognize the custom header.
 
 #### Path-based versioning (HTTP caching)
 
-- **Score**: ✅ Excellent
+**Score**: ✅ Excellent
 
 Different URLs = different cache entries. Works with all standard HTTP caches out of the box.
 
@@ -396,7 +403,7 @@ Cache Key: /api/v2/books/123
 
 No special configuration needed.
 
-### HTTP caching winner
+#### HTTP caching winner
 
 The winner is path-based versioning.
 
@@ -422,7 +429,7 @@ The winner is path-based versioning.
 - **Header-based**: 1/7 (14%) - Stripe is a notable exception.
 - **Mixed**: 1/7 (14%)
 
-### Industry alignment winner
+#### Industry alignment winner
 
 The winner is path-based versioning (industry standard).
 
@@ -432,7 +439,7 @@ The winner is path-based versioning (industry standard).
 
 #### Header-based versioning (tooling support)
 
-- **Score**: ⚠️ Acceptable
+**Score**: ⚠️ Acceptable
 
 | Tool | Support status |
 | ---- | -------------- |
