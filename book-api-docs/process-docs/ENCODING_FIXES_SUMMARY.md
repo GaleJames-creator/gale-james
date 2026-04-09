@@ -1,6 +1,7 @@
 # BookHub Publisher API guide - Encoding fixes summary
 
 ## Document version
+
 - **File**: `bookhub_publisher_api_guide_v2.md`
 - **Version**: 2.1
 - **Date**: December 31, 2024
@@ -33,6 +34,7 @@ This update replaces all Unicode symbols that could display incorrectly across d
 ### 2. Lifecycle stages diagram simplified
 
 **Before**: ASCII art box with Unicode box-drawing characters
+
 ```markdown
 â"Œâ"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"
 â"‚                    VERSION LIFECYCLE                             â"‚
@@ -40,6 +42,7 @@ This update replaces all Unicode symbols that could display incorrectly across d
 ```
 
 **After**: Clean markdown formatting with bold headers
+
 ```markdown
 **Stage 1: PREVIEW (Optional)**
 - Duration: 4-8 weeks
@@ -48,6 +51,7 @@ This update replaces all Unicode symbols that could display incorrectly across d
 ```
 
 **Rationale**: 
+
 - Eliminates Unicode box-drawing characters (â"€, â"‚, â"Œ, â"", etc.)
 - Improves readability across all text editors and platforms
 - Maintains all informational content
@@ -58,6 +62,7 @@ This update replaces all Unicode symbols that could display incorrectly across d
 ### 3. Legend added for color codes
 
 **Added at first usage** (line ~167):
+
 ```markdown
 **Change Type Legend:**
 - **RED** = Breaking Change (requires code changes)
@@ -71,40 +76,43 @@ This update replaces all Unicode symbols that could display incorrectly across d
 
 ### 4. Dimensions format clarified
 
-**Before**: `Width × Height in pixels` (× = multiplication sign)
-**After**: `Width x Height in pixels` (x = letter x)
-
-**Location**: Line 2628 in cover image specifications table
-
-**Rationale**: The × symbol could display as "Ã" in some systems. Using "x" is universally recognized and compatible.
+- **Before**: `Width × Height in pixels` (× = multiplication sign)
+- **After**: `Width x Height in pixels` (x = letter x)
+- **Location**: Line 2628 in cover image specifications table
+- **Rationale**: The × symbol could display as "Ã" in some systems. Using "x" is universally recognized and compatible.
 
 ---
 
 ## Specific sections updated
 
 ### Feature availability matrix (lines 65-122)
+
 - **Changed**: All checkmarks (✅) to `YES`
 - **Changed**: All crosses (❌) to `NO`
 - **Result**: Clear, unambiguous feature status across 3 API versions
 - **Example**: `| Create books | YES | YES | YES |`
 
 ### Version-specific features (lines 124-175)
+
 - **Changed**: Checkmarks to `YES`
 - **Changed**: Warning symbols to `WARNING`
 - **Changed**: Color indicators (🔴) to `RED`
 - **Added**: Legend explaining RED/YELLOW/GREEN indicators
 
 ### Lifecycle stages (lines 548-601)
+
 - **Removed**: All Unicode box-drawing characters
 - **Simplified**: To markdown bullet lists with bold headers
 - **Preserved**: All 4 lifecycle stages with complete information
 - **Format**: Clean, readable, accessible
 
 ### Preview features section (lines 2423-2430)
+
 - **Changed**: Warning emoji (⚠️) to `WARNING`
 - **Example**: `**WARNING Important Notes:**`
 
 ### Stage characteristics (lines 610-617)
+
 - **Changed**: All symbols to ASCII equivalents
 - **Example**: 
   - `- YES Available for testing`
@@ -112,6 +120,7 @@ This update replaces all Unicode symbols that could display incorrectly across d
   - `- NO No SLA guarantees`
 
 ### Migration impact summary (lines 4108-4126)
+
 - **Changed**: Color indicators to text
 - **Maintained**: Clear legend explaining change types
 - **Example**: `| **ISBN Format** | RED Breaking | High - Must update all ISBNs |`
@@ -121,24 +130,28 @@ This update replaces all Unicode symbols that could display incorrectly across d
 ## Benefits of changes
 
 ### Cross-platform compatibility
+
 - No rendering issues on Windows, macOS, Linux
 - Consistent display in text editors (VS Code, Sublime, Notepad++)
 - Proper rendering in web browsers
 - No mojibake characters
 
 ### Accessibility
+
 - Screen readers can properly announce "YES" and "NO"
 - Clear text alternatives for visual indicators
 - No reliance on emoji support
 - Works in terminal/command-line environments
 
 ### Clarity
+
 - "YES" and "NO" are unambiguous
 - "RED/YELLOW/GREEN" clearly indicate change severity
 - Legend provides immediate context
 - No confusion from missing/broken symbols
 
 ### Professional appearance
+
 - Clean, consistent formatting
 - No broken characters or replacement symbols
 - Maintains document structure and readability
@@ -180,37 +193,39 @@ This update replaces all Unicode symbols that could display incorrectly across d
 
 ## Before/after examples
 
-### Feature matrix
-**Before:**
+### Feature matrix before
+
 ```markdown
 | Create books | ✅ | ✅ | Available in all versions |
 | Delete books | ❌ | ✅ | New in preview |
 ```
 
-**After:**
+#### Feature matrix after
+
 ```markdown
 | Create books | YES | YES | Available in all versions |
 | Delete books | NO | YES | New in preview |
 ```
 
-### Warnings
-**Before:**
+### Warnings before
+
 
 > ⚠️ **Important**: Features may change
 
-**After:**
+### Warnings after
 
 > **Warning**: Features may change.
 
-### Change indicators
-**Before:**
+### Change indicators before
+
 ```markdown
 - 🔴 ISBN format (breaking change)
 - 🟡 Error messages (enhancement)
 - 🟢 New fields (additive)
 ```
 
-**After:**
+### Change indicators after
+
 ```markdown
 - RED ISBN format (breaking change)
 - YELLOW Error messages (enhancement)
