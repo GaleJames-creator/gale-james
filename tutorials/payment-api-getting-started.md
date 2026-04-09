@@ -29,21 +29,21 @@ API keys authenticate your requests to Payment. You'll need different keys for t
 1. Sign in to the Payment Dashboard.
 2. Navigate to **Developers** → **API Keys**.
 3. You will find two types of API keys:
-   - **Test keys** (prefix: `sk_test_`): Use these for development and testing purposes.
-   - **Live keys** (prefix: `sk_live_`): Use these for production after all testing is complete.
+   * **Test keys** (prefix: `sk_test_`): Use these for development and testing purposes.
+   * **Live keys** (prefix: `sk_live_`): Use these for production after all testing is complete.
 
 ### Protect your API keys
 
-**Security best practices:**
+#### Security best practices
 
 * Do not share API keys in code (add them to `.gitignore`).
-* Store keys in environment variables or a secure configuration system. 
+* Store keys in environment variables or a secure configuration system.
 * Never include keys in public code or repositories.
 * Rotate keys regularly, especially if compromised.
 
 For help, contact your Customer Success Manager.
 
-**Setting an environment variable**
+#### Setting an environment variable
 
 To set your API key, choose one of the commands below:
 
@@ -86,7 +86,7 @@ For test cards, use any future expiration date, a 3-digit CVC, and any ZIP code.
 
 Use cURL to make a test payment. The example charges $29.99 with the Payments API.
 
-### Request example
+### Request example for sending a payment API request
 
 ```bash
 curl https://sandbox-api.payment.com/v1/payments \
@@ -153,7 +153,6 @@ If the payment succeeds, the response is similar to the following:
 * `status` - Payment result. Possible values: `succeeded`, `failed`, `pending`, or `canceled`.
 * `receipt_url` - URL to the customer receipt.
 
-
 ## Step 5: Handle a simple error
 
 Payments may fail for various reasons. The following describes how to respond to common issues:
@@ -219,7 +218,7 @@ If you get an error, see [Manage API errors](../how-to-guides/manage-api-errors.
 
 Retrieve payment details using the payment ID.
 
-### Request example
+### Request example retrieving the payment details
 
 ```bash
 curl https://sandbox-api.payment.com/v1/payments/pay_1234567890abcdef \
@@ -260,8 +259,8 @@ A successful request returns transaction details, including payment status, amou
 
 The GET endpoint supports caching to improve performance. The response includes the following headers:
 
-- `Cache-Control` header: Caching directives
-- `ETag` header: Resource version identifier
+* `Cache-Control` header: Caching directives
+* `ETag` header: Resource version identifier
 
 **Conditional request example:**
 
@@ -290,11 +289,11 @@ You have completed the following steps:
 
 Ready for more? Check out:
 
-- [Implement retry logic for failed payments](../how-to-guides/payment-retry-logic.md)
-- [Process a refund](../how-to-guides/payment-process-refunds.md)
-- [Retrieve an anonymous shopper's orders and product information](../how-to-guides/webhooks-anonymous-shopper.md)
-- [Manage security for webhook data transmission](../how-to-guides/webhooks-data-transmission.md)
-- [Manage webhooks using the Admin UI](../how-to-guides/webhooks-Admin-UI.md)
+* [Implement retry logic for failed payments](../how-to-guides/payment-retry-logic.md)
+* [Process a refund](../how-to-guides/payment-process-refunds.md)
+* [Retrieve an anonymous shopper's orders and product information](../how-to-guides/webhooks-anonymous-shopper.md)
+* [Manage security for webhook data transmission](../how-to-guides/webhooks-data-transmission.md)
+* [Manage webhooks using the Admin UI](../how-to-guides/webhooks-Admin-UI.md)
 
 
 ### Going to production
