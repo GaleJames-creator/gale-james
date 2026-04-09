@@ -1,6 +1,6 @@
 # Subscription webhook examples
 
-Webhooks let your system know right away when a customer starts, renews, or cancels a subscription. 
+Webhooks let your system know right away when a customer starts, renews, or cancels a subscription.
 
 ## 201 Created webhook
 
