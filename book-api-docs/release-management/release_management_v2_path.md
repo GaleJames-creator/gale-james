@@ -19,8 +19,8 @@
 2. [Changes in v2](#changes-in-v2)
 3. [Deprecations in v2](#deprecations-in-v2)
 4. [Migration strategy](#migration-strategy)
-5. [Timeline and support](#timeline--support)
-6. [Testing and validation](#testing--validation)
+5. [Timeline and support](#timeline-and-support)
+6. [Testing and validation](#testing-and-validation)
 7. [Rollback procedures](#rollback-procedures)
 8. [Appendix](#appendix)
 
