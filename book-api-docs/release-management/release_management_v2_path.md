@@ -1001,9 +1001,7 @@ python validate_migration.py your_api_token_here
 
 ## Timeline and support
 
-### Migration timeline
-
-#### Detailed schedule
+### Detailed schedule
 
 | Date | Milestone | Action required | Support available |
 |------|-----------|-----------------|-------------------|
@@ -1018,7 +1016,7 @@ python validate_migration.py your_api_token_here
 | **Jun 15, 2026** | v1 Deprecation Notice | Final warning sent | Transition assistance |
 | **Jul 2, 2026** | v1 Sunset | v1 endpoints disabled | v2-only support |
 
-#### Critical dates
+### Critical dates
 
 > **Warning**: v1 will stop working after July 2, 2026.
 
