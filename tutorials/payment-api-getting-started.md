@@ -295,7 +295,6 @@ Ready for more? Check out:
 * [Manage security for webhook data transmission](../how-to-guides/webhooks-data-transmission.md)
 * [Manage webhooks using the Admin UI](../how-to-guides/webhooks-Admin-UI.md)
 
-
 ### Going to production
 
 To process live payments, complete the following steps:
@@ -310,12 +309,11 @@ To process live payments, complete the following steps:
 
 ### Key concepts checklist
 
-- [ ] Verify API keys are stored securely in environment variables
-- [ ] Use the sandbox environment for testing
-- [ ] Handle errors using the correct HTTP status codes
-- [ ] Set up idempotency for payment requests
-- [ ] Keep an eye on rate limit headers
-- [ ] Check webhook signatures
-- [ ] Log payment IDs so you can reconcile later
-- [ ] Try different test cards to check both successful and declined payments
-
+* [ ] Verify API keys are stored securely in environment variables
+* [ ] Use the sandbox environment for testing
+* [ ] Handle errors using the correct HTTP status codes
+* [ ] Set up idempotency for payment requests
+* [ ] Keep an eye on rate limit headers
+* [ ] Check webhook signatures
+* [ ] Log payment IDs so you can reconcile later
+* [ ] Try different test cards to check both successful and declined payments
