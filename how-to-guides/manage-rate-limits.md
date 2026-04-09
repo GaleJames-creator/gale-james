@@ -18,7 +18,6 @@ Before you start, make sure you:
 - Batch operations when applicable.
 - Request a tier upgrade if you consistently reach the rate limit.
 
-
 ## Retry logic
 
 The following example demonstrates how to retry a failed operation using exponential backoff. Use this pattern to handle temporary errors, such as rate limiting, by waiting and retrying.
