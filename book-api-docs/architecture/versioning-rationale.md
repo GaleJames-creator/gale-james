@@ -516,7 +516,7 @@ By choosing path-based versioning, we accept:
 
 ### Documentation structure
 
-```
+```bash
 docs.bookhub.com/
 ├── api/
 │   ├── v1/
@@ -536,6 +536,7 @@ docs.bookhub.com/
 ### Code examples clarity
 
 **v1 Documentation:**
+
 ```python
 # v1 API - ISBN format flexible
 response = requests.post(
@@ -545,6 +546,7 @@ response = requests.post(
 ```
 
 **v2 Documentation:**
+
 ```python
 # v2 API - ISBN format strict
 response = requests.post(
@@ -575,11 +577,13 @@ Clean routing configuration.
 ### Why not header-based versioning?
 
 **Theoretical advantages:**
+
 - ✅ Cleaner URLs (aesthetic preference)
 - ✅ Version-agnostic URL structure
 - ✅ Supports fine-grained versioning (date-based)
 
 **Practical disadvantages (deal-breakers):**
+
 - ❌ Documentation becomes complex and confusing
 - ❌ High maintenance burden (must track version compatibility throughout)
 - ❌ Easy for users to accidentally use the wrong version
