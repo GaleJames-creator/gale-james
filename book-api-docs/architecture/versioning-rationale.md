@@ -312,14 +312,14 @@ The winner is path-based versioning.
 
 #### Header-based versioning (migration complexity)
 
-**Score**: ⚠️ 
+**Score**: ⚠️
 
 ##### Migration steps for header-based versioning
 
-    1. Update code to add `api-version: 2025-03-15` header.
-    2. Update ISBN formats to include hyphens.
-    3. Remove title sorting logic.
-    4. Add cover image validation.
+1. Update code to add `api-version: 2025-03-15` header.
+2. Update ISBN formats to include hyphens.
+3. Remove title sorting logic.
+4. Add cover image validation.
 
 ##### Risk**
 
@@ -331,10 +331,10 @@ Users might forget step #1 (adding the header) and wonder why their code still w
 
 ##### Migration steps path-based versioning
 
-    1. Change `/v1/books` to `/v2/books` in code.
-    2. Update ISBN formats to include hyphens.
-    3. Remove title sorting logic.
-    4. Add cover image validation.
+1. Change `/v1/books` to `/v2/books` in code.
+2. Update ISBN formats to include hyphens.
+3. Remove title sorting logic.
+4. Add cover image validation.
 
 ##### Advantage**
 
