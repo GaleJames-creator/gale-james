@@ -24,7 +24,7 @@ After obtaining the session token, include it in the `Authorization` header as a
 
 ### To retrieve product information
 
-Send a `GET` request to the `/products` endpoint, specifying the product ID (`productId`). 
+Send a `GET` request to the `/products` endpoint, specifying the product ID (`productId`).
 
 ```http
   GET https://api.service.com/v1/shoppers/me/products/{productId}
@@ -46,7 +46,7 @@ A successful response returns a 200 OK status code.
 
 ### To list all orders for the anonymous customer
 
-Send a `GET` request to the `/orders` endpoint. 
+Send a `GET` request to the `/orders` endpoint.
 
 ```http
   GET https://api.service.com/v1/shoppers/me/orders
