@@ -24,7 +24,7 @@ Some common reasons for authorization declines include incorrect credit card num
 
 Soft declines are temporary problems, like not enough money or a daily limit being reached. If you try the payment again, it might work. Follow the [retry steps](#retry-policies) to ensure successful authorization.
 
-## Decline codes 
+## Decline codes
 
 The following table explains whether the error code you receive indicates a [hard or soft decline](#hard-declines-vs-soft-declines) for customer-initiated and merchant-initiated transactions. When it's a soft decline, make sure you follow the retry policies when submitting additional authorization requests. See the complete list of error codes for more information.
 
@@ -51,7 +51,7 @@ The following table explains whether the error code you receive indicates a [har
 | `invalid_amount`               | Hard                            | Hard                            |
 | `invalid_card_bin`             | Hard                            | Hard                            |
 | `invalid_card_number`          | Hard                            | Hard                            |
-| `invalid_currency`             | Hard                            | Soft                            | 
+| `invalid_currency`             | Hard                            | Soft                            |
 | `invalid_expiration_date`      | Hard                            | Soft                            |
 | `invalid_field_data`           | Hard                            | Hard                            |
 | `invalid_merchant`             | Hard                            | Hard                            |
@@ -78,9 +78,9 @@ The following table explains whether the error code you receive indicates a [har
 
 ## Retry policies
 
-Follow these steps when resubmitting an authorization request: 
+Follow these steps when resubmitting an authorization request:
 
-1. Attempt authorization a maximum of once per day for each subscription. 
+1. Attempt authorization a maximum of once per day for each subscription.
 2. Do not exceed four total attempts within a 30-day period for any subscription.
 3. Track the retry dates to ensure it does not exceed these limits.
 
