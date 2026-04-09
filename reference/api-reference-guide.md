@@ -7,9 +7,11 @@ This guide provides details on three API endpoints.
 * [Create an order refund](#create-an-order-refund)
 
 ## Retrieve available payment options
+
 Get a list of the available payment options.
 
 ### Endpoint
+
 ```http
 GET /v1/shoppers/me/payment-options
 ```
