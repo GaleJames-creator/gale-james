@@ -35,13 +35,12 @@ To receive webhook notifications from the service, you must open your firewalls 
 7. Under OAuth:
 
    a. Select **Client credentials** or **Password** from the **Grant type** list.
-   
    b. Enter the token endpoint URL starting with either `https://` or `http://` in the **Token endpoint URL field**.
-   
    c. Provide the password or client ID and client secret in the appropriate fields.
-8. (Optional) Select **Enabled** for **Status**. If not enabled, no event notification is sent. The system also prompts you to enable the webhook when you click **Create**.
-9. Select event checkboxes you want for the endpoint. At least one is required.
-10. Click **Create**.
+   
+9. (Optional) Select **Enabled** for **Status**. If not enabled, no event notification is sent. The system also prompts you to enable the webhook when you click **Create**.
+10. Select event checkboxes you want for the endpoint. At least one is required.
+11. Click **Create**.
 
 ### Step 3: Respond to webhook events
 
@@ -60,14 +59,14 @@ You will not receive the event if the service receives response codes outside th
 6. (Optional.) Select **Enabled** for **Status**.
    > **Note**: If you do not select **Enabled**, the system will prompt you to enable the webhook when you click **Create**.
 7. Select the checkbox next to each event you want to associate with the endpoint, or select the checkbox next to **Event** to select all events. At least one event type must be chosen.
-8. Scroll down and click **Save**.   
+8. Scroll down and click **Save**.
 
 ## Turning webhooks on or off
 
 1. Sign in to Admin UI.
 2. Select **Administration**, and then click **Webhook Service**. The Webhook Service page appears.
 3. Select the **Webhook ID** you want to enable or disable from the list, then click **Enable/Disable**.
-4. In the **Webhook Status Change** dialog, enter your Admin UI username in the field, then click **Proceed**. Note that the **Username** field is case-sensitive. 
+4. In the **Webhook Status Change** dialog, enter your Admin UI username in the field, then click **Proceed**. Note that the **Username** field is case-sensitive.
 
 ## Revealing a webhook's secret
 
@@ -96,7 +95,7 @@ The event payload will be sent to the endpoint URL when a subscribed event occur
 
 ## Deleting a webhook
 
-The Admin UI lets you remove unwanted or outdated webhooks. 
+The Admin UI lets you remove unwanted or outdated webhooks.
 
 > **Warning**: This operation is irreversible. Confirm that the webhook is no longer needed before proceeding.
 
