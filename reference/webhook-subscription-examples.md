@@ -4,7 +4,7 @@ Webhooks let your system know right away when a customer starts, renews, or canc
 
 ## 201 Created webhook
 
-When you create a subscription, you'll get a webhook with a `201 Created` status, a unique ID, and subscription details. Use this for email notifications or Payment API integration. 
+When you create a subscription, you'll get a webhook with a `201 Created` status, a unique ID, and subscription details. Use this for email notifications or Payment API integration.
 
 ```json
 {
@@ -25,7 +25,7 @@ When you create a subscription, you'll get a webhook with a `201 Created` status
 
 ## Full subscription payload
 
-In the example below, the top-level ID (`id`) represents the subscription identifier. You can use the `id` parameter as the `subId` query parameter to list all orders associated with a subscription (e.g., `https://api.sandbox-api.com/v1/subscriptions/{subId}/orders`). 
+In the example below, the top-level ID (`id`) represents the subscription identifier. You can use the `id` parameter as the `subId` query parameter to list all orders associated with a subscription (e.g., `https://api.sandbox-api.com/v1/subscriptions/{subId}/orders`).
 
 ```json
 {
