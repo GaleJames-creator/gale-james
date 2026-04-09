@@ -248,7 +248,7 @@ All errors now include:
 
 **Deprecation status**: Fully removed in v2
 
-#####Timeline
+##### Timeline
 
 - **December 15, 2025**: Deprecation announced for v1
 - **January 2, 2026**: Removed in v2
@@ -1407,7 +1407,7 @@ After rolling back to v1:
 - Customized migration plan
 - One-on-one technical assistance
 
-Contact api-migration@bookhub.com to schedule a post-rollback review.
+Contact `api-migration@bookhub.com` to schedule a post-rollback review.
 
 ---
 
@@ -1477,4 +1477,4 @@ Contact api-migration@bookhub.com to schedule a post-rollback review.
 
 ---
 
-**End of release management document**
+End of release management document
