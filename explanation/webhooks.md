@@ -1,6 +1,6 @@
 # Webhooks
 
-Webhooks deliver real-time event notifications from one service to another, triggering actions in your app without polling. You can use them to update apps, send notifications, or sync data. 
+Webhooks deliver real-time event notifications from one service to another, triggering actions in your app without polling. You can use them to update apps, send notifications, or sync data.
 
 ## Key concepts
 
