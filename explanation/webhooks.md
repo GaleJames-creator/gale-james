@@ -21,7 +21,7 @@ Webhooks deliver real-time event notifications from one service to another, trig
 
 ## How it works
 
-The event triggers a webhook and sends the event details to your chosen endpoint URL. Your app can immediately respond to events such as order updates, subscription changes, or refunds. This flow keeps your system in sync, automates workflows, improves user experiences, and keeps data current without inefficient polling. 
+The event triggers a webhook and sends the event details to your chosen endpoint URL. Your app can immediately respond to events such as order updates, subscription changes, or refunds. This flow keeps your system in sync, automates workflows, improves user experiences, and keeps data current without inefficient polling.
 
 ## Next steps
 
