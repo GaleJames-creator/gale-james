@@ -248,7 +248,7 @@ All errors now include:
 
 **Deprecation status**: Fully removed in v2
 
-##### Timeline
+##### Title sorting timeline
 
 - **December 15, 2025**: Deprecation announced for v1
 - **January 2, 2026**: Removed in v2
@@ -348,7 +348,7 @@ def check_deprecation_warnings(response):
 
 ### Migration overview
 
-#### Timeline
+#### Migration timeline
 
 | Phase | Date | Action | Status |
 |-------|------|--------|--------|
