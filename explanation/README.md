@@ -10,7 +10,7 @@ Use an explanation when you're curious about why things work the way they do, an
 
 ## Available explanations
 
-* [Authorization vs. capture: understanding the difference](./payment-authorization-vs-capture.md): Covers hard declines vs. soft declines, decline codes, and retry policies.
+* [Understanding payment authorization and capture](understanding-authorization-capture.md): Explains the two-step payment process, authorization holds, and decline types.
 * [Webhooks](./webhooks.md): Covers the key webhook concepts, how they work, and when to use them.
 
 ---

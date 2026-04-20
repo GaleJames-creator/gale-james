@@ -33,6 +33,7 @@ A complete documentation set for a RESTful publishing platform API, including Op
 
 - **[Implement retry logic for failed payments](./how-to-guides/payment-retry-logic.md)**: How to set up automatic retries for failed payments.
 - **[Process a refund](./how-to-guides/payment-process-refunds.md)**: How to process a refund.
+- **[Handle authorization failures](handling-authorization-failures.md)**: Implement retry logic for soft declines and handle hard decline notifications.
 - **[Manage security for webhook data transmission](./how-to-guides/webhooks-data-transmission.md)**: How to protect webhook data.
 - **[Manage webhooks using the Admin UI](./how-to-guides/webhooks-Admin-UI.md)**: How to create, edit, enable, disable, or delete webhooks, and manage secrets.
 - **[Retrieve an anonymous customer's order and product information](./how-to-guides/webhooks-anonymous-shopper.md)**: How to retrieve an anonymous customer's order and product information.
@@ -42,13 +43,14 @@ A complete documentation set for a RESTful publishing platform API, including Op
 
 ### Explanation (understanding-oriented)
 
-- **[Authorization vs. capture: understanding the difference](./explanation/payment-authorization-vs-capture.md)**: Covers hard declines vs. soft declines, decline codes, and retry policies.
+- **[Understanding payment authorization and capture](understanding-authorization-capture.md)**: Explains the two-step payment process, authorization holds, and decline types.
 - **[Webhooks](./explanation/webhooks.md)**: Covers the key webhook concepts, how they work, and when to use them.
 
 ### Reference (information-oriented)
 
 - **[Managing API rate limits](./reference/payment-api-rate-limits.md)**: Covers rate limit tiers and headers, and handling rate limits.
 - **[Preventing duplicate charges with idempotency keys](./reference/payment-idempotency-keys.md)**: Covers how idempotency keys work and why they are essential for preventing accidental duplicate charges.
+- **[Payment decline codes](decline-codes.md)**: Complete reference of all authorization decline codes with hard/soft classification.
 - **[API reference guide](./reference/api-reference-guide.md)**: Covers three API endpoints: retrieve available payment options, update payment options, and create an order refund.
 - **[Subscription webhook examples](./reference/webhook-subscription-examples.md)**: Covers two subscription webhook examples: 201 Created webhook and full subscription payload.
 - **[Webhook definitions](./reference/webhook-definitions.md)**: Covers the terms and concepts you need to set up and manage webhooks.

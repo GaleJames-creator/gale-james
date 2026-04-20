@@ -11,6 +11,7 @@ Use how-to guides when you need task-focused instructions and already understand
 ## Available how-to guides
 
 * [Implement retry logic for failed payments](./payment-retry-logic.md): How to set up automatic retries for failed payments.
+* [Handle authorization failures](handling-authorization-failures.md): Implement retry logic for soft declines and handle hard decline notifications.
 * [Process a refund](./payment-process-refunds.md): How to process a refund.
 * [Manage security for webhook data transmission](./webhooks-data-transmission.md): How to protect webhook data.
 * [Manage webhooks using the Admin UI](./webhooks-Admin-UI.md): How to create, edit, enable, disable, or delete webhooks, and manage secrets.
