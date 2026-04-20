@@ -472,10 +472,10 @@ response = payment_api.charge(amount=1000, ...)  # Don't do this on retry!
 
 ## Next steps
 
-- [Understanding authorization and capture](../explanation/understanding-authorization-capture.md) - Deepen your conceptual knowledge
-- [Decline codes reference](../reference/decline-codes.md) - Look up specific decline codes
-- [Process refunds](payment-process-refunds.md) - Handle refunds when needed
+* [Understanding authorization and capture](../explanation/understanding-authorization-capture.md) - Deepen your conceptual knowledge
+* [Decline codes reference](../reference/decline-codes.md) - Look up specific decline codes
+* [Process refunds](payment-process-refunds.md) - Handle refunds when needed
 
 ---
 
-*Last updated: April 2026*
+Last updated: April 2026

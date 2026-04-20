@@ -71,6 +71,7 @@ Authorization and capture occur simultaneously in a single transaction. The cust
 First, authorization happens. Capture occurs later—sometimes days or weeks after.
 
 **When it's used:**
+
 * Physical goods that need shipping
 * Made-to-order products
 * Hotel reservations
@@ -88,6 +89,7 @@ Payment authorizations sometimes fail, resulting in either hard or soft declines
 A hard decline is a permanent failure. Retrying the same payment method won’t work because the issue can’t be fixed by waiting.
 
 **Common causes:**
+
 * Account is closed.
 * The card was reported as lost or stolen.
 * The card has expired.
@@ -148,10 +150,10 @@ Keep the specific technical decline codes in your logs for internal troubleshoot
 
 Now that you understand the concepts:
 
-- **Reference:** [Payment decline codes](../reference/decline-codes.md) - Look up specific decline code meanings
-- **How-to:** [Handle authorization failures](../how-to-guides/handling-authorization-failures.md) - Implement retry logic for soft declines
-- **How-to:** [Process refunds](../how-to-guides/payment-process-refunds.md) - Handle refunds when needed
+* **Reference:** [Payment decline codes](../reference/decline-codes.md) - Look up specific decline code meanings
+* **How-to:** [Handle authorization failures](../how-to-guides/handling-authorization-failures.md) - Implement retry logic for soft declines
+* **How-to:** [Process refunds](../how-to-guides/payment-process-refunds.md) - Handle refunds when needed
 
 ---
 
-*Last updated: January 2026*
+Last updated: January 2026
