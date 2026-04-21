@@ -66,11 +66,48 @@ For implementation guidance, see [Handling authorization failures](../how-to-gui
 | `unidentified_error` | Soft | Soft |
 | `voice_authorization_required` | Hard | Hard |
 
+## Code example for decline codes
+
+```python
+    soft_decline_codes = {
+        'customer_initiated': [
+            'authentication_required',
+            'declined_can_retry',
+            'do_not_honor',
+            'issuer_unavailable',
+            'no_response',
+            'sca_not_completed',
+            'unidentified_error'
+        ],
+        'merchant_initiated': [
+            'authentication_required',
+            'card_expired',
+            'card_limit_exceeded',
+            'card_not_active',
+            'card_velocity_exceeded',
+            'declined_can_retry',
+            'do_not_honor',
+            'duplicate_transaction',
+            'insufficient_funds',
+            'invalid_currency',
+            'invalid_expiration_date',
+            'issuer_unavailable',
+            'mid_limit_exceeded',
+            'new_card_issued',
+            'no_response',
+            'pin_try_exceeded',
+            'sca_not_completed',
+            'suspected_fraud',
+            'unidentified_error'
+        ]
+    }
+```
+
 ## Decline code categories
 
 ### Account-related declines
 
-#### `account_closed` 
+#### `account_closed`
 
 * Customer-initiated: Hard
 * Merchant-initiated: Hard
@@ -302,4 +339,4 @@ For implementation guidance, see [Handling authorization failures](../how-to-gui
 
 ---
 
-*Last updated: April 2026*
+Last updated:  April 2026

@@ -1,0 +1,89 @@
+# Understand authorization failures
+
+Boost success and avoid authorization failures with these practical tips.
+
+See [When not to retry](../explanation/understanding-authorization-failures#when-not-to-retry) for more information.
+
+## When NOT to retry
+
+For hard declines, stop immediately and take these actions instead:
+
+| Decline code | Action |
+|--------------|--------|
+| `account_closed` | Request new payment method from customer |
+| `card_expired` (customer-initiated) | Ask customer to provide updated card details |
+| `fraud` | Block transaction, investigate |
+| `invalid_card_number` | Request correct card information |
+| `lost_stolen_card` | Request different payment method |
+
+> **Important**: Do not share the decline code with the customer. Doing so may aid parties attempting to commit fraudulent acts.
+
+## Retry limits
+
+1. **Attempt authorization a maximum of once per day** for each subscription or recurring payment.
+2. **Do not exceed four total attempts** within a 30-day period for any single subscription.
+3. **Track retry dates** to ensure compliance with these limits.
+
+## Avoid predictable retry patterns
+
+### Don't do this
+
+```python
+# BAD: Retries exactly 7 days apart always fall on the same day of the week
+retry_date = last_attempt + timedelta(days=7)
+```
+
+### Do this instead
+
+```python
+# GOOD: Add variation to distribute retries across different days
+base_days = 7
+jitter_hours = random.randint(0, 23)
+retry_date = last_attempt + timedelta(days=base_days, hours=jitter_hours)
+```
+
+### Why this matters
+
+If retries always happen on the same day of the week, they might consistently hit:
+
+* Weekly spending limits
+* Payday timing issues (the customer has no money every Friday)
+* Recurring maintenance windows
+
+This approach can increase your authorization success rate.
+
+## Error message guidelines
+
+### Bad (exposes technical details)
+
+```json
+"Payment failed with code: insufficient_funds. Error ID: 402-0001"
+```
+
+### Good (actionable and clear)
+
+```json
+"We couldn’t process your payment. Try another payment method or ask your bank for help."
+```
+
+### Metrics to track
+
+Optimize your retry strategy by tracking: Retry success rate, decline code types, average retries per success, revenue recovered, and churn by decline type.
+
+## Next steps
+
+* **Explanation**:
+
+    * [Understanding authorization and capture](../explanation/understanding-authorization-capture.md) - Learn more a out authorization and capture.
+
+* **How-to-guides**:
+
+    * [Process refunds](payment-process-refunds.md) - Handle refunds when needed.
+
+* **Reference**:
+    
+    * [Decline codes reference](../reference/decline-codes.md) - Look up specific decline codes.
+
+---
+
+Last updated:  April 2026

@@ -1,8 +1,10 @@
 # Reference
 
+This section contains reference content. See the [portfolio README](../README.md) for an overview of the Diátaxis framework used to organize this portfolio.
+
 ## What references are
 
-Reference documentation describes the details of specific things — parameters, error codes, API endpoints, and other technical specifications — without explaining how to use them.
+Reference documentation describes the details of specific things, such as parameters, error codes, API endpoints, and other technical specifications, without explaining how to use them.
 
 ## When to use references
 
@@ -20,3 +22,5 @@ Use a reference when you want to find specific facts or details.
 ---
 
 [← Back to main portfolio](../README.md)
+
+**Last updated**:  April 2026

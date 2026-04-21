@@ -1,5 +1,7 @@
 # Tutorials
 
+This section contains tutorial content. See the [portfolio README](../README.md) for an overview of the Diátaxis framework used to organize this portfolio.
+
 ## What tutorials are
 
 Tutorials are learning-oriented guides that walk you through a hands-on exercise from start to finish.
@@ -17,3 +19,5 @@ Use tutorials when you are new to the product and want to learn the basics by do
 ---
 
 [← Back to main portfolio](../README.md)
+
+Last updated:  April 2026

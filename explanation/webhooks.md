@@ -4,20 +4,20 @@ Webhooks deliver real-time event notifications from one service to another, trig
 
 ## Key concepts
 
-- **Event types**: Each webhook notification includes an event type (such as payment_succeeded, subscription_created, or order_updated). This tells your app what action occurred so you can respond appropriately.
-- **Endpoint URLs**: You set up an endpoint URL in your app to receive webhook POST requests. This is where the external service delivers event data in real time.
-- **Payload format**: Webhooks typically send data in JSON format, containing information about the event and all relevant objects (such as customer or order info).
-- **Security**: To protect your webhook endpoint, use secret tokens or signatures to verify that requests are from trusted sources. Validate incoming requests and avoid exposing sensitive data in URLs.
-- **Reliability**: Webhook services frequently retry notifications if your endpoint is temporarily unavailable. Ensure your endpoint can handle repeated notifications and return the correct HTTP status code.
-- **Idempotency**: Your webhook handling logic should be idempotent, meaning processing the same event more than once has the same effect as processing it once. This prevents duplicate actions if an event is retried.
-- **Logging and monitoring**: Track webhook deliveries, failures, and processing results to help with troubleshooting and maintenance.
-- **Scalability**: Design your webhook handler to process events efficiently, even under high load, so your app stays responsive and reliable.
+* **Event types**: Each webhook notification includes an event type (such as payment_succeeded, subscription_created, or order_updated). This tells your app what action occurred so you can respond appropriately.
+* **Endpoint URLs**: You set up an endpoint URL in your app to receive webhook POST requests. This is where the external service delivers event data in real time.
+* **Payload format**: Webhooks typically send data in JSON format, containing information about the event and all relevant objects (such as customer or order info).
+* **Security**: To protect your webhook endpoint, use secret tokens or signatures to verify that requests are from trusted sources. Validate incoming requests and avoid exposing sensitive data in URLs.
+* **Reliability**: Webhook services frequently retry notifications if your endpoint is temporarily unavailable. Ensure your endpoint can handle repeated notifications and return the correct HTTP status code.
+* **Idempotency**: Your webhook handling logic should be idempotent, meaning processing the same event more than once has the same effect as processing it once. This prevents duplicate actions if an event is retried.
+* **Logging and monitoring**: Track webhook deliveries, failures, and processing results to help with troubleshooting and maintenance.
+* **Scalability**: Design your webhook handler to process events efficiently, even under high load, so your app stays responsive and reliable.
 
 ## Why use webhooks?
 
-- Receive event notifications as soon as they happen
-- Automatically retry notifications if delivery fails
-- Handle event notifications in the background without blocking your main processes
+* Receive event notifications as soon as they happen.
+* Automatically retry notifications if delivery fails.
+* Handle event notifications in the background without blocking your main processes.
 
 ## How it works
 
@@ -25,5 +25,11 @@ The event triggers a webhook and sends the event details to your chosen endpoint
 
 ## Next steps
 
-- [Retrieve an anonymous customer's orders and product information](../how-to-guides/webhooks-anonymous-shopper.md)
-- [Manage security for webhook data transmission](../how-to-guides/webhooks-data-transmission.md)
+* **How-to guides**:
+
+    * [Retrieve an anonymous customer's orders and product information](../how-to-guides/webhooks-anonymous-shopper.md).
+    * [Manage security for webhook data transmission](../how-to-guides/webhooks-data-transmission.md).
+
+---
+
+Last updated:  April 2026

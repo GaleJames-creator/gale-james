@@ -1,6 +1,7 @@
 # Handle authorization failures
 
-This guide shows you how to implement retry logic for failed payment authorizations and properly handle both hard and soft declines.
+This guide explains how to implement retry logic for soft declines and handle hard declines gracefully in your payment integration.
+
 
 ## Prerequisites
 
@@ -10,9 +11,9 @@ Before you start, make sure you:
 * Have access to the [decline codes reference](../reference/decline-codes.md).
 * Can identify transaction types (customer-initiated vs merchant-initiated).
 
-## Step 1: Determine if a retry is appropriate
+## Step 1: Detect the decline type
 
-Not all authorization failures should be retried. Retry a soft decline, but do not retry a hard decline. Always check the decline type before implementing retry logic.
+Not all authorization failures should be retried. Retry a soft decline, but do not retry a hard decline. Always check the decline type before implementing retry logic. See [When not to retry](../explanation/understanding-authorization-failures#when-not-to-retry) for more information.
 
 ### Decision tree: Should you retry?
 
@@ -30,50 +31,9 @@ def should_retry_authorization(decline_code, transaction_type):
     Returns:
         bool: True if retry is appropriate, False otherwise
     """
-    # Check decline codes reference to determine if this is a soft decline
-    soft_decline_codes = {
-        'customer_initiated': [
-            'authentication_required',
-            'declined_can_retry',
-            'do_not_honor',
-            'issuer_unavailable',
-            'no_response',
-            'sca_not_completed',
-            'unidentified_error'
-        ],
-        'merchant_initiated': [
-            'authentication_required',
-            'card_expired',
-            'card_limit_exceeded',
-            'card_not_active',
-            'card_velocity_exceeded',
-            'declined_can_retry',
-            'do_not_honor',
-            'duplicate_transaction',
-            'insufficient_funds',
-            'invalid_currency',
-            'invalid_expiration_date',
-            'issuer_unavailable',
-            'mid_limit_exceeded',
-            'new_card_issued',
-            'no_response',
-            'pin_try_exceeded',
-            'sca_not_completed',
-            'suspected_fraud',
-            'unidentified_error'
-        ]
-    }
-    
-    return decline_code in soft_decline_codes.get(transaction_type, [])
-
-
-# Example usage
-if should_retry_authorization('insufficient_funds', 'merchant_initiated'):
-    # Schedule retry - this is a soft decline for recurring payments
-    schedule_retry()
-else:
-    # Hard decline - notify customer to update payment method
-    request_new_payment_method()
+    from decline_codes import SOFT_DECLINE_CODES
+    # See decline-codes.md for the full list of soft decline codes
+    return decline_code in SOFT_DECLINE_CODES.get(transaction_type, [])
 
 
 # Example usage
@@ -85,29 +45,11 @@ else:
     request_new_payment_method()
 ```
 
-### When NOT to retry
-
-For hard declines, stop immediately and take these actions instead:
-
-| Decline code | Action |
-|--------------|--------|
-| `account_closed` | Request new payment method from customer |
-| `card_expired` (customer-initiated) | Ask customer to provide updated card details |
-| `fraud` | Block transaction, investigate |
-| `invalid_card_number` | Request correct card information |
-| `lost_stolen_card` | Request different payment method |
-
-> **Important**: Do not share the decline code with the customer. Doing so may aid parties attempting to commit fraudulent acts.
-
-## Step 2: Implement a retry policy
+## Step 2: Implement retry logic for soft declines
 
 For soft declines, which are temporary issues, follow these retry limits to prevent overwhelming the payment system and annoying customers:
 
-### Retry limits
-
-1. **Attempt authorization a maximum of once per day** for each subscription or recurring payment.
-2. **Do not exceed four total attempts** within a 30-day period for any single subscription.
-3. **Track retry dates** to ensure compliance with these limits.
+See [Retry limits](../explanation/understanding-authorization-failures#retry-limits) for additional information.
 
 ### Implementation example
 
@@ -171,31 +113,7 @@ class AuthorizationRetryManager:
         return next_retry
 ```
 
-### Avoid predictable retry patterns
-
-**Don't do this:**
-
-```python
-# BAD: Retries exactly 7 days apart always fall on the same day of the week
-retry_date = last_attempt + timedelta(days=7)
-```
-
-**Do this instead:**
-
-```python
-# GOOD: Add variation to distribute retries across different days
-base_days = 7
-jitter_hours = random.randint(0, 23)
-retry_date = last_attempt + timedelta(days=base_days, hours=jitter_hours)
-```
-
-**Why this matters:** If retries always happen on the same day of the week, they might consistently hit:
-
-* Weekly spending limits
-* Payday timing issues (the customer has no money every Friday)
-* Recurring maintenance windows
-
-Introducing variation to scheduled retries increases your authorization success rate.
+See [Avoid predictable retry patterns](../explanation/understanding-authorization-failures#avoid-predictable-retry-patterns) for additional information.
 
 ## Step 3: Handle hard declines
 
@@ -244,13 +162,7 @@ def handle_hard_decline(customer, decline_code):
         )
 ```
 
-### Error message guidelines
-
-**Bad (exposes technical details):**
-> "Payment failed with code: insufficient_funds. Error ID: 402-0001"
-
-**Good (actionable and clear):**
-> "We couldn't process your payment. Please update your payment method or contact your bank for assistance."
+See [Authorization error message guidelines](../reference/authorization-error-message-guidelines.md) to learn how to format a good error message.
 
 ## Step 4: Track and monitor retry performance
 
@@ -258,9 +170,16 @@ Log each retry attempt to fine-tune your strategy and identify issues.
 
 ### Logging example
 
+> ** Note the following**:
+>
+> * To capture extra fields in log output, configure a custom log formatter. See the Python logging documentation for details.
+> * The following Python example uses `payment_api.authorize()` as a representative example. Replace it with your actual payment provider's SDK or API client.
+
 ```python
 import logging
 
+# Configure a custom formatter to capture 'extra' fields in log output.
+# Example: logging.basicConfig(format='%(message)s %(payment_id)s')
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -325,15 +244,7 @@ def attempt_authorization_with_retry(subscription_id, payment_method, attempt_nu
         raise
 ```
 
-### Metrics to track
-
-Monitor these key metrics for optimizing your retry strategy:
-
-* Retry success rate: Percentage of retries that eventually succeed.
-* Decline code distribution: Shows which codes are most common.
-* Average attempts-to-success: Shows how many retries are typically needed.
-* Revenue recovered: Money collected through successful retries.
-* Customer churn by decline type: Do certain decline codes lead to cancellations?
+See [Metric to track](../explanation/understanding-authorization-failures#metrics-to-track) for additional information.
 
 ## Complete implementation example
 
@@ -472,9 +383,20 @@ response = payment_api.charge(amount=1000, ...)  # Don't do this on retry!
 
 ## Next steps
 
-* [Understanding authorization and capture](../explanation/understanding-authorization-capture.md) - Deepen your conceptual knowledge
-* [Decline codes reference](../reference/decline-codes.md) - Look up specific decline codes
-* [Process refunds](payment-process-refunds.md) - Handle refunds when needed
+* **Explanation**:
+
+    * [Understanding authorization and capture](../explanation/understanding-authorization-capture.md) - Deepen your conceptual knowledge.
+    * [Understanding authorization failures](../explanation/understanding-authorization-failures) - Learn how to prevent authorization failures
+
+* **How-to guides**:
+
+    * [Process refunds](../how-to-guides/payment-process-refunds.md) - Handle refunds when needed.
+
+* **Reference**:
+
+    * [Authorization error message guidelines](../reference/authorization-error-message-guidelines.md) - Look up specific decline code meanings.
+    * [Decline codes reference](../reference/decline-codes.md) - Look up specific decline codes.
+    * [Preventing duplicate charges with idempotency keys](../reference/payment-idempotency-keys.md)
 
 ---
 

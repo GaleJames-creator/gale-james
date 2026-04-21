@@ -1,5 +1,7 @@
 # Explanation
 
+This section contains explanatory content. See the [portfolio README](../README.md) for an overview of the Diátaxis framework used to organize this portfolio.
+
 ## What explanations are
 
 Explanations focus on providing background, context, and conceptual understanding of a subject. It answers the question “why?” rather than “how?”
@@ -16,3 +18,5 @@ Use an explanation when you're curious about why things work the way they do, an
 ---
 
 [← Back to main portfolio](../README.md)
+
+Last updated:  April 2026
