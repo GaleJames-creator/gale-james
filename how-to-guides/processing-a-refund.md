@@ -1,4 +1,4 @@
-# Process a refund
+# Processing a refund
 
 This guide shows you, step by step, how to issue a full or partial refund using the refunds API endpoint. Use this guide when you need to return funds to a customer, either in full or in part.
 

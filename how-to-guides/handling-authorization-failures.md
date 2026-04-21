@@ -1,4 +1,4 @@
-# Handle authorization failures
+# Handling authorization failures
 
 This guide explains how to implement retry logic for soft declines and handle hard declines gracefully in your payment integration.
 
@@ -389,7 +389,7 @@ response = payment_api.charge(amount=1000, ...)  # Don't do this on retry!
 
 ### How-to guides
 
-* [Process refunds](../how-to-guides/payment-process-refunds.md) - Handle refunds when needed.
+* [Processing a refund](./processing-a-refund.md) - Handle refunds when needed.
 
 ### Reference
 

@@ -1,12 +1,11 @@
-# Retrieve an anonymous customer's order and product information
+# Retrieving anonymous customer information
 
 This guide shows you how to retrieve an anonymous customer's order and product information using their user ID (`userId`).
 
 ## Prerequisites
 
-- You have received a webhook containing the anonymous customer's user ID (`userId`).
-
-- You have access to the service's API endpoints and credentials as required.
+* You have received a webhook containing the anonymous customer's user ID (`userId`).
+* You have access to the service's API endpoints and credentials as required.
 
 ## Step 1: Obtain an access token for the anonymous customer
 

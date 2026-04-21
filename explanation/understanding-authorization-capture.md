@@ -152,8 +152,8 @@ Now that you understand the concepts:
 
 ### How-to guides
 
-* [Handle authorization failures](../how-to-guides/handling-authorization-failures.md) - Implement retry logic for soft declines.
-* [Process refunds](../how-to-guides/payment-process-refunds.md) - Handle refunds when needed.
+* [Handling authorization failures](../how-to-guides/handling-authorization-failures.md) - Implement retry logic for soft declines.
+* [Processing a refund](../how-to-guides/processing-a-refund.md) - Handle refunds when needed.
 
 ### Reference
 

@@ -78,7 +78,7 @@ Optimize your retry strategy by tracking: Retry success rate, decline code types
 
 ### How-to guides
 
-* [Process refunds](payment-process-refunds.md) - Handle refunds when needed.
+* [Processing a refund](../how-to-guides/processing-a-refund.md) - Handle refunds when needed.
 
 ### Reference
     

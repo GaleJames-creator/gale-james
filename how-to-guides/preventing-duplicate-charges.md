@@ -1,4 +1,4 @@
-# Prevent duplicate charges with idempotency keys
+# Preventing duplicate charges with idempotency keys
 
 Use these steps to add idempotency keys to your payment requests and prevent duplicate charges.
 

@@ -1,4 +1,4 @@
-# Implement retry logic for failed payments
+# Implementing retry logic for failed payments
 
 This guide shows you how to set up automatic retries for failed payments due to temporary issues, such as network errors or rate limits, in your payment system.
 

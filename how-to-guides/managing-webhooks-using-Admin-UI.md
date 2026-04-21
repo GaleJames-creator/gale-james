@@ -1,4 +1,4 @@
-# Manage webhooks using the Admin UI
+# Managing webhooks using the Admin UI
 
 The Admin UI lets you search for, create, edit, enable, disable, or delete webhooks, and manage secrets. Once you register URLs, event notifications are sent for processing.
 
@@ -108,8 +108,8 @@ The Admin UI lets you remove unwanted or outdated webhooks.
 
 ### How-to guides
 
-- [Retrieve an anonymous customer's orders and product information](../how-to-guides/webhooks-anonymous-shopper.md)
-- [Manage security for webhook data transmission](../how-to-guides/webhooks-data-transmission.md)
+- [Retrieving anonymous customer information](./retrieving-anonymous-customer-information.md)
+- [Manage security for webhook data transmission](./managing-security-webhook-data-transmission.md)
 
 ---
 

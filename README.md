@@ -35,15 +35,15 @@ This section contains tutorial content that guides users step-by-step through an
 
 This section provides step-by-step guides to help users complete specific tasks. Use how-to guides when you need clear instructions to solve a problem or reach a goal.
 
-* **[Implement retry logic for failed payments](./how-to-guides/payment-retry-logic.md)**: How to set up automatic retries for failed payments.
-* **[Process a refund](./how-to-guides/payment-process-refunds.md)**: How to process a refund.
-* **[Handle authorization failures](./how-to-guides/handling-authorization-failures.md)**: Implement retry logic for soft declines and handle hard decline notifications.
-* **[Manage security for webhook data transmission](./how-to-guides/webhooks-data-transmission.md)**: How to protect webhook data.
-* **[Manage webhooks using the Admin UI](./how-to-guides/webhooks-Admin-UI.md)**: How to create, edit, enable, disable, or delete webhooks, and manage secrets.
-* **[Retrieve an anonymous customer's order and product information](./how-to-guides/webhooks-anonymous-shopper.md)**: How to retrieve an anonymous customer's order and product information.
-* **[Manage API errors](./how-to-guides/manage-api-errors.md)**: How to identify, troubleshoot, and resolve common API error codes.
-* **[Manage rate limits](./how-to-guides/manage-rate-limits.md)**: How to avoid rate limits.
-* **[Prevent duplicate charges with idempotency keys](./how-to-guides/prevent-duplicate-charges-with-idempotency-keys.md)**: How to use idempotency keys to prevent duplicate charges.
+* [Implementing retry logic for failed payments](./how-to-guides/implementing-retry-logic.md): How to implement automatic retries for failed payments.
+* [Handling authorization failures](./how-to-guides/handling-authorization-failures.md): How to handle authorization failures for soft declines and handle hard decline notifications.
+* [Processig a refund](./how-to-guides/processing-a-refund.md): How to process a refund.
+* [Managing security for webhook data transmission](./how-to-guides/managing-security-webhook-data-transmission.md): How to protect webhook data.
+* [Managing webhooks using the Admin UI](./how-to-guides/managing-webhooks-using-Admin-UI.md): How to create, edit, enable, disable, or delete webhooks, and manage secrets.
+* [Retrieving anonymous customer information](./how-to-guides/retrieving-anonymous-customer-information.md): How to retrieve an anonymous customer's order and product information.
+* [Managing API errors](./how-to-guides/managing-api-errors.md): How to identify, troubleshoot, and resolve common API error codes.
+* [Managing API rate limits](./how-to-guides/managing-api-rate-limits.md): How to avoid rate limits.
+* [Preventing duplicate charges with idempotency keys](./how-to-guides/preventing-duplicate-charges.md): How to use idempotency keys to prevent duplicate charges.
 
 ### Explanation (understanding-oriented)
 

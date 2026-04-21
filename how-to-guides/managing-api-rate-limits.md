@@ -1,4 +1,4 @@
-# Manage rate limits
+# Managing rate limits
 
 Use these steps to prevent and manage rate limits in your integration.
 
@@ -45,8 +45,8 @@ async function makeRequestWithRetry(url, options, maxRetries = 3) {
 
 ### How-to guides**
 
-* [Managing API rate limits](../reference/payment-api-rate-limits.md)
-* [Implement retry logic for failed payments](./payment-retry-logic.md)
+* [Managing API rate limits](../reference/managing-api-rate-limits.md)
+* [Implementing retry logic for failed payments](./implementing-retry-logic.md)
 
 ---
 
