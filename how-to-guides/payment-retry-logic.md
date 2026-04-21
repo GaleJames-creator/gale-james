@@ -96,4 +96,10 @@ logging.info(f"Payment retry attempt {attempt + 1}/{max_retries}")
 
 ## Next steps
 
-- [Authorization vs. capture: understanding the difference](../explanation/payment-authorization-vs-capture.md)
+### Explanation
+
+* [Authorization vs. capture: understanding the difference](../explanation/payment-authorization-vs-capture.md)
+
+---
+
+Last updated: April 2026

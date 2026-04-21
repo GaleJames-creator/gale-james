@@ -36,3 +36,7 @@ If you go over the rate limit, the API returns a `429 Too Many Requests` respons
   }
 }
 ```
+
+---
+
+Last updated: April 2026

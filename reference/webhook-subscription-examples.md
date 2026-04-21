@@ -128,3 +128,7 @@ In the example below, the top-level ID (`id`) represents the subscription identi
     }
 }
 ```
+
+---
+
+Last updated: April 2026

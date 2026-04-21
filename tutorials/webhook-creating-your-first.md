@@ -143,8 +143,12 @@ You have completed the following steps:
 
 ### Next steps
 
-Ready for more? Check out:
+### How-to guides
 
 * [Manage security for webhook data transmission](../how-to-guides/webhooks-data-transmission.md)
 * [Manage webhooks using the Admin UI](../how-to-guides/webhooks-Admin-UI.md)
 * [Retrieve an anonymous customer's orders and product information](../how-to-guides/webhooks-anonymous-shopper.md)
+
+---
+
+Last updated: April 2026

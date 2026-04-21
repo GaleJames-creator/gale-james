@@ -62,4 +62,10 @@ async function createPayment(paymentData) {
 
 ## Next steps
 
+### Reference
+
 - [Preventing duplicate charges with idempotency keys](../reference/payment-idempotency-keys.md)
+
+---
+
+Last updated: April 2026

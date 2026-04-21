@@ -287,7 +287,7 @@ You have completed the following steps:
 
 ### Next steps
 
-Ready for more? Check out:
+Ready for more? Check out the following how-to guides:
 
 * [Implement retry logic for failed payments](../how-to-guides/payment-retry-logic.md)
 * [Process a refund](../how-to-guides/payment-process-refunds.md)
@@ -317,3 +317,7 @@ To process live payments, complete the following steps:
 * [ ] Check webhook signatures
 * [ ] Log payment IDs so you can reconcile later
 * [ ] Try different test cards to check both successful and declined payments
+
+---
+
+Last updated: April 2026

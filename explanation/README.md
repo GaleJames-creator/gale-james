@@ -12,7 +12,7 @@ Use an explanation when you're curious about why things work the way they do, an
 
 ## Available explanations
 
-* [Understanding payment authorization and capture](understanding-authorization-capture.md): Explains the two-step payment process, authorization holds, and decline types.
+* [Understanding payment authorization and capture](./understanding-authorization-capture.md): Explains the two-step payment process, authorization holds, and decline types.
 * [Webhooks](./webhooks.md): Covers the key webhook concepts, how they work, and when to use them.
 
 ---

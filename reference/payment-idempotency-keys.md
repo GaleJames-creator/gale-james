@@ -15,3 +15,7 @@ Use idempotent requests in the following situations:
 - The first request with a specific idempotency key is processed normally.
 - Subsequent requests with the same key return the cached response.
 - Idempotency keys expire after 24 hours.
+
+---
+
+Last updated: April 2026

@@ -383,20 +383,20 @@ response = payment_api.charge(amount=1000, ...)  # Don't do this on retry!
 
 ## Next steps
 
-* **Explanation**:
+### Explanation
 
-    * [Understanding authorization and capture](../explanation/understanding-authorization-capture.md) - Deepen your conceptual knowledge.
-    * [Understanding authorization failures](../explanation/understanding-authorization-failures) - Learn how to prevent authorization failures
+* [Understanding payment authorization and capture](../explanation/understanding-authorization-capture.md) - Deepen your conceptual knowledge.
+* [Understanding payment authorization failures](../explanation/understanding-authorization-failures) - Learn how to prevent authorization failures
 
-* **How-to guides**:
+### How-to guides
 
-    * [Process refunds](../how-to-guides/payment-process-refunds.md) - Handle refunds when needed.
+* [Process refunds](../how-to-guides/payment-process-refunds.md) - Handle refunds when needed.
 
-* **Reference**:
+### Reference
 
-    * [Authorization error message guidelines](../reference/authorization-error-message-guidelines.md) - Look up specific decline code meanings.
-    * [Decline codes reference](../reference/decline-codes.md) - Look up specific decline codes.
-    * [Preventing duplicate charges with idempotency keys](../reference/payment-idempotency-keys.md)
+* [Authorization error message guidelines](../reference/authorization-error-message-guidelines.md) - Look up specific decline code meanings.
+* [Decline codes reference](../reference/decline-codes.md) - Look up specific decline codes.
+* [Preventing duplicate charges with idempotency keys](../reference/payment-idempotency-keys.md)
 
 ---
 

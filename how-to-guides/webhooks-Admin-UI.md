@@ -106,5 +106,11 @@ The Admin UI lets you remove unwanted or outdated webhooks.
 
 ## Next steps
 
+### How-to guides
+
 - [Retrieve an anonymous customer's orders and product information](../how-to-guides/webhooks-anonymous-shopper.md)
 - [Manage security for webhook data transmission](../how-to-guides/webhooks-data-transmission.md)
+
+---
+
+Last updated: April 2026

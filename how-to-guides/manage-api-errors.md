@@ -22,4 +22,11 @@ Before you start, make sure you:
 
 ## Next steps
 
-- [Implement retry logic for failed payments](./payment-retry-logic.md)
+### How-to guides
+
+* [Manage rate limits](./manage-rate-limits.md)
+* [Implement retry logic for failed payments](./payment-retry-logic.md)
+
+---
+
+Last updated: April 2026

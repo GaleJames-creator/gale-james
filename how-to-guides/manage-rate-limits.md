@@ -43,5 +43,12 @@ async function makeRequestWithRetry(url, options, maxRetries = 3) {
 
 ## Next steps
 
-- [Managing API rate limits](../reference/payment-api-rate-limits.md)
-- [Implement retry logic for failed payments](./payment-retry-logic.md)
+### How-to guides**:
+
+* [Managing API rate limits](../reference/payment-api-rate-limits.md)
+* [Implement retry logic for failed payments](./payment-retry-logic.md)
+
+---
+
+Last updated: April 2026
+

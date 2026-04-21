@@ -53,7 +53,7 @@ If the merchant doesn’t capture before the hold expires, the money returns to 
 
 Authorization and capture occur simultaneously, so the customer pays right away.
 
-**When it's used:**
+#### When it's used
 
 * Digital goods and downloads
 * Small purchases
@@ -66,7 +66,7 @@ Authorization and capture occur simultaneously, so the customer pays right away.
 
 First, authorization happens. Capture occurs later—sometimes days or weeks after.
 
-**When it's used:**
+#### When it's used
 
 * Physical goods that need shipping
 * Made-to-order products
@@ -84,7 +84,7 @@ Payment authorizations sometimes fail, resulting in either hard or soft declines
 
 A hard decline is permanent. Trying the same payment method again won’t work.
 
-**Common causes:**
+#### Common causes
 
 * Account is closed.
 * The card was reported as lost or stolen.
@@ -99,7 +99,7 @@ A hard decline is permanent. Trying the same payment method again won’t work.
 
 A soft decline is temporary. You can try the same payment method again later.
 
-**Common causes:**
+#### Common causes
 
 * Insufficient funds at this moment.
 * Daily spending limit reached.
@@ -113,14 +113,14 @@ A soft decline is temporary. You can try the same payment method again later.
 
 Knowing the decline type determines the correct next action:
 
-**Hard declines:**
+### Hard declines
 
 * Stop retrying immediately.
 * Prompt the customer for a new payment method.
 * Save system resources by not making futile retry attempts.
 * Provide a better customer experience with clear messaging.
 
-**Soft declines:**
+### Soft declines
 
 * Implement smart retry logic.
 * Give the temporary condition time to resolve.
@@ -146,21 +146,20 @@ Keep the specific technical decline codes in your logs for internal troubleshoot
 
 Now that you understand the concepts:
 
-* **Explanation**:
+### Explanation
 
-    * [Understand authorization failures](./understanding-authorization-failures) - Practical tips an tricks for boosting authorization rates.
+* [Understand authorization failures](./understanding-authorization-failures) - Practical tips an tricks for boosting authorization rates.
 
-* **How-to**:
+### How-to guides
 
-    * [Handle authorization failures](../how-to-guides/handling-authorization-failures.md) - Implement retry logic for soft declines.
-    * [Process refunds](../how-to-guides/payment-process-refunds.md) - Handle refunds when needed.
+* [Handle authorization failures](../how-to-guides/handling-authorization-failures.md) - Implement retry logic for soft declines.
+* [Process refunds](../how-to-guides/payment-process-refunds.md) - Handle refunds when needed.
 
+### Reference
 
-* **Reference**:
+* [Authorization error message guidelines](../reference/authorization-error-message-guidelines.md) - Look up specific decline code meanings.
+* [Payment decline codes](../reference/decline-codes.md) - Look up specific decline code meanings.
 
-    * [Authorization error message guidelines](../reference/authorization-error-message-guidelines.md) - Look up specific decline code meanings.
-    * [Payment decline codes](../reference/decline-codes.md) - Look up specific decline code meanings.
-    
 ---
 
 Last updated:  April 2026

@@ -17,9 +17,21 @@ Provide a clear explanaition of error and how to resolve it.
 
 ## Next steps
 
+### Explanation
+
 * [Understanding authorization and capture](../explanation/understanding-authorization-capture.md) - Deepen your conceptual knowledge.
+
+### How to guides
+
+* [Process refunds](../how-to-guides/payment-process-refunds.md) - Handle refunds when needed.
+
+### Reference
+
 * [Decline codes reference](../reference/decline-codes.md) - Look up specific decline codes.
-* [Process refunds](payment-process-refunds.md) - Handle refunds when needed.
+
+---
+
+Last updated: April 2026
 
 ---
 

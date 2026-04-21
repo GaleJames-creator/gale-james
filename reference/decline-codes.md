@@ -332,10 +332,15 @@ For implementation guidance, see [Handling authorization failures](../how-to-gui
 * Merchant-initiated: Hard
 * Meaning: Requires phone authorization from the card issuer
 
-## Related documentation
+## Next steps
 
-- **Explanation:** [Understanding authorization and capture](../explanation/understanding-authorization-capture.md) - Learn the concepts
-- **How-to:** [Handling authorization failures](../how-to-guides/handling-authorization-failures.md) - Implement retry logic
+### Explanation
+
+* [Understanding authorization and capture](../explanation/understanding-authorization-capture.md) - Learn the concepts
+
+### How-to guides
+
+* [Handle authorization failures](../how-to-guides/handling-authorization-failures.md) - Implement retry logic
 
 ---
 

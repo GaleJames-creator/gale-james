@@ -18,4 +18,10 @@ Use these security steps to protect webhook data.
 
 ## Next steps
 
+### How-to guides
+
 - [Manage webhooks using the Admin UI](./webhooks-Admin-UI.md)
+
+---
+
+Last updated: April 2026

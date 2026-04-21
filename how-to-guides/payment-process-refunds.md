@@ -73,3 +73,7 @@ A successful refund returns a response like this:
 ```
 
 A successful response returns a `200 OK` status code.
+
+---
+
+Last updated: April 2026
