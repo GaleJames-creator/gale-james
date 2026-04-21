@@ -2,7 +2,6 @@
 
 This guide explains how to implement retry logic for soft declines and handle hard declines gracefully in your payment integration.
 
-
 ## Prerequisites
 
 Before you start, make sure you:
@@ -170,7 +169,7 @@ Log each retry attempt to fine-tune your strategy and identify issues.
 
 ### Logging example
 
-> ** Note the following**:
+> **Note the following**:
 >
 > * To capture extra fields in log output, configure a custom log formatter. See the Python logging documentation for details.
 > * The following Python example uses `payment_api.authorize()` as a representative example. Replace it with your actual payment provider's SDK or API client.

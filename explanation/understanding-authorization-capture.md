@@ -53,7 +53,7 @@ If the merchant doesn’t capture before the hold expires, the money returns to 
 
 Authorization and capture occur simultaneously, so the customer pays right away.
 
-#### When it's used
+#### When to use immediate capture
 
 * Digital goods and downloads
 * Small purchases
@@ -66,7 +66,7 @@ Authorization and capture occur simultaneously, so the customer pays right away.
 
 First, authorization happens. Capture occurs later—sometimes days or weeks after.
 
-#### When it's used
+#### When to use delayed capture used
 
 * Physical goods that need shipping
 * Made-to-order products
@@ -84,7 +84,7 @@ Payment authorizations sometimes fail, resulting in either hard or soft declines
 
 A hard decline is permanent. Trying the same payment method again won’t work.
 
-#### Common causes
+#### Common hard decline causes
 
 * Account is closed.
 * The card was reported as lost or stolen.
@@ -99,7 +99,7 @@ A hard decline is permanent. Trying the same payment method again won’t work.
 
 A soft decline is temporary. You can try the same payment method again later.
 
-#### Common causes
+#### Common csoft decline auses
 
 * Insufficient funds at this moment.
 * Daily spending limit reached.
