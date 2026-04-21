@@ -1,6 +1,5 @@
 # Authorization error message guidelines
 
-
 Provide a clear explanaition of error and how to resolve it.
 
 ## Bad (exposes technical details)

@@ -107,13 +107,13 @@ For implementation guidance, see [Handling authorization failures](../how-to-gui
 
 ### Account-related declines
 
-#### `account_closed`
+#### account_closed
 
 * Customer-initiated: Hard
 * Merchant-initiated: Hard
 * Meaning: The account has been permanently closed
 
-#### `account_frozen`
+#### account_frozen
 
 * Customer-initiated: Hard
 * Merchant-initiated: Hard
@@ -121,13 +121,13 @@ For implementation guidance, see [Handling authorization failures](../how-to-gui
 
 ### Authentication & verification declines
 
-#### `authentication_required`
+#### authentication_required
 
 * Customer-initiated: Soft
 * Merchant-initiated: Soft
 * Meaning: Strong Customer Authentication was not completed
 
-#### `sca_not_completed`
+#### sca_not_completed
 
 - Customer-initiated: Soft
 - Merchant-initiated: Soft
@@ -135,25 +135,25 @@ For implementation guidance, see [Handling authorization failures](../how-to-gui
 
 ### Card status declines
 
-#### `card_expired`
+#### card_expired
 
 * Customer-initiated: Hard (customer must use a different card)
 * Merchant-initiated: Soft (customer may have received a new card)
 * Meaning: The card expiration date has passed
 
-#### `card_not_active`
+#### card_not_active
 
 * Customer-initiated: Hard (not activated yet)
 * Merchant-initiated: Soft (may have been activated since saved)
 * Meaning: The card has not been activated for use
 
-#### `new_card_issued`
+#### new_card_issued
 
 * Customer-initiated: Hard (customer must use the new card)
 * Merchant-initiated: Soft (may need card details updated)
 * Meaning: The bank issued a replacement card
 
-#### `lost_stolen_card`
+#### lost_stolen_card
 
 * Customer-initiated: Hard
 * Merchant-initiated: Hard
@@ -161,31 +161,31 @@ For implementation guidance, see [Handling authorization failures](../how-to-gui
 
 ### Limit & funds declines
 
-#### `card_limit_exceeded`
+#### card_limit_exceeded
 
 * Customer-initiated: Hard (over credit limit now)
 * Merchant-initiated: Soft (limit may reset by next billing)
 * Meaning: Transaction exceeds the card’s credit limit
 
-#### `card_velocity_exceeded`
+#### card_velocity_exceeded
 
 * Customer-initiated: Hard (too many transactions today)
 * Merchant-initiated: Soft (velocity may reset tomorrow)
 * Meaning: Too many transactions in a short time period
 
-#### `insufficient_funds`
+#### insufficient_funds
 
 * Customer-initiated: Hard (not enough money now)
 * Merchant-initiated: Soft (funds may be available later)
 * Meaning: Account balance too low for the transaction
 
-#### `limit_exceeded`
+#### limit_exceeded
 
 * Customer-initiated: Hard
 * Merchant-initiated: Hard
 * Meaning: General limit exceeded
 
-#### `mid_limit_exceeded`
+#### mid_limit_exceeded
 
 * Customer-initiated: Hard (merchant limit reached)
 * Merchant-initiated: Soft (limit may reset)
@@ -193,25 +193,25 @@ For implementation guidance, see [Handling authorization failures](../how-to-gui
 
 ### Fraud & security declines
 
-#### `fraud`
+#### fraud
 
 * Customer-initiated: Hard
 * Merchant-initiated: Hard
 * Meaning: Transaction flagged as fraudulent
 
-#### `fraud_block`
+#### fraud_block
 
 * Customer-initiated: Hard
 * Merchant-initiated: Hard
 * Meaning: Card blocked due to fraud concerns
 
-#### `suspected_fraud`
+#### suspected_fraud
 
 * Customer-initiated: Hard (blocked now)
 * Merchant-initiated: Soft (may be cleared later)
 * Meaning: Transaction suspected of being fraudulent
 
-#### `blacklisted_card`
+#### blacklisted_card
 
 * Customer-initiated: Hard
 * Merchant-initiated: Hard
@@ -219,49 +219,49 @@ For implementation guidance, see [Handling authorization failures](../how-to-gui
 
 ### Invalid data declines
 
-#### `invalid_address`
+#### invalid_address
 
 * Customer-initiated: Hard
 * Merchant-initiated: Hard
 * Meaning: Billing address verification failed
 
-#### `invalid_amount`
+#### invalid_amount
 
 * Customer-initiated: Hard
 * Merchant-initiated: Hard
 * Meaning: Transaction amount is invalid
 
-#### `invalid_card_bin`
+#### invalid_card_bin
 
 * Customer-initiated: Hard
 * Merchant-initiated: Hard
 * Meaning: Card BIN (first 6 digits) is invalid
 
-#### `invalid_card_number`
+#### invalid_card_number
 
 * Customer-initiated: Hard
 * Merchant-initiated: Hard
 * Meaning: Card number failed validation
 
-#### `invalid_currency`
+#### invalid_currency
 
 * Customer-initiated: Hard (wrong currency for this card)
 * Merchant-initiated: Soft (may work with a different currency)
 * Meaning: Currency not supported for this card
 
-#### `invalid_expiration_date`
+#### invalid_expiration_date
 
 * Customer-initiated: Hard (date format wrong)
 * Merchant-initiated: Soft (stored date may be wrong)
 * Meaning: Expiration date format is invalid
 
-#### `invalid_pin`
+#### invalid_pin
 
 * Customer-initiated: Hard
 * Merchant-initiated: Hard
 * Meaning: Incorrect PIN entered
 
-#### `invalid_security_code`
+#### invalid_security_code
 
 * Customer-initiated: Hard
 * Merchant-initiated: Hard
@@ -269,18 +269,19 @@ For implementation guidance, see [Handling authorization failures](../how-to-gui
 
 ### System & network declines
 
-#### `issuer_unavailable`
+#### issuer_unavailable
 
 * Customer-initiated: Soft
 * Merchant-initiated: Soft
 * Meaning: The card issuer’s system is temporarily down
 
-#### `no_response`**
+#### no_response
+
 * Customer-initiated: Soft
 * Merchant-initiated: Soft
 * Meaning: No response received from the card networ
 
-#### `unidentified_error`
+#### unidentified_error
 
 * Customer-initiated: Soft
 * Merchant-initiated: Soft

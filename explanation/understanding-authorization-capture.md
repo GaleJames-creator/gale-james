@@ -80,7 +80,7 @@ First, authorization happens. Capture occurs later—sometimes days or weeks aft
 
 Payment authorizations sometimes fail, resulting in either hard or soft declines.
 
-### Hard declines
+### Hard declines are permanent
 
 A hard decline is permanent. Trying the same payment method again won’t work.
 
@@ -95,7 +95,7 @@ A hard decline is permanent. Trying the same payment method again won’t work.
 
 **What happens next:** The customer must provide updated payment information or use another payment method.
 
-### Soft declines
+### Soft declines are temporary
 
 A soft decline is temporary. You can try the same payment method again later.
 
@@ -113,14 +113,14 @@ A soft decline is temporary. You can try the same payment method again later.
 
 Knowing the decline type determines the correct next action:
 
-### Hard declines
+### Hard declines classifications
 
 * Stop retrying immediately.
 * Prompt the customer for a new payment method.
 * Save system resources by not making futile retry attempts.
 * Provide a better customer experience with clear messaging.
 
-### Soft declines
+### Soft declines classifications
 
 * Implement smart retry logic.
 * Give the temporary condition time to resolve.

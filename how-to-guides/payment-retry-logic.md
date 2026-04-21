@@ -6,27 +6,23 @@ This guide shows you how to set up automatic retries for failed payments due to 
 
 Before you start, make sure you:
 
-- Have an integrated payment system
-
-- Are familiar with the Payment API
-
-- Understand HTTP status codes
+* Have an integrated payment system
+* Are familiar with the Payment API
+* Understand HTTP status codes
 
 ## Step 1: Decide when to retry a payment
 
 Retry a payment only if you receive one of the following error codes:
 
-- `429` (rate limits)
-
-- `500`, `502`, `503`, `504` (server errors)
-
-- Network timeouts
+* `429` (rate limits)
+* `500`, `502`, `503`, `504` (server errors)
+* Network timeouts
 
 **Do not retry if you receive these errors:**
   
-- `400`: Invalid request. Fix the request instead and notify the customer about the issue.
-- `401`: Authentication error. Check your API key and inform the customer about the unsuccessful authentication attempt.
-- `402`: Card declined. Customer action required; surface this error to the customer so they can resolve it directly with their bank or card provider.
+* `400`: Invalid request. Fix the request instead and notify the customer about the issue.
+* `401`: Authentication error. Check your API key and inform the customer about the unsuccessful authentication attempt.
+* `402`: Card declined. Customer action required; surface this error to the customer so they can resolve it directly with their bank or card provider.
 
 ## Step 2: Implement exponential backoff for retries
 
