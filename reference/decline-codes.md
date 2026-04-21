@@ -129,9 +129,9 @@ For implementation guidance, see [Handling authorization failures](../how-to-gui
 
 #### sca_not_completed
 
-- Customer-initiated: Soft
-- Merchant-initiated: Soft
-- Meaning: Strong Customer Authentication was not completed
+* Customer-initiated: Soft
+* Merchant-initiated: Soft
+* Meaning: Strong Customer Authentication was not completed
 
 ### Card status declines
 
