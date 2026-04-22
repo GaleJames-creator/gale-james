@@ -26,9 +26,11 @@ Retry a payment only if you receive one of the following error codes:
 
 ## Step 2: Implement exponential backoff for retries
 
-Automatically retry failed payment using exponential backoff. This approach helps avoid overloading the API and effectively handles temporary issues.
+Automatically retry a failed payment using exponential backoff. This approach helps avoid overloading the API and effectively handles temporary issues.
 
-The following example retries the payment up to three times. Wait approximately 1, 2, or 4 seconds before retrying. If you get a `200` response, the payment succeeded. For errors `429`, `500`, `502`, `503`, `504`, or a timeout, wait 1, 2, or 4 seconds before retrying. For other errors, including `400`, `401`, and `402`, stop and raise an exception.
+Adding random jitter prevents multiple clients from retrying simultaneously, which would overwhelm the API.
+
+The following example retries the payment up to three times. Wait at least 1, 2, or 4 seconds before retrying. If you get a `200` response, the payment succeeded. For errors `429`, `500`, `502`, `503`, `504`, or a timeout, wait 1, 2, or 4 seconds before retrying. For other errors, including `400`, `401`, and `402`, stop and raise an exception.
 
 ### Python function with retry logic example
   
@@ -37,13 +39,13 @@ import time
 import requests
 import random
 
-def create_payment_with_retry(payment_data, max_retries=3):
+def create_payment_with_retry(payment_data, api_key, max_retries=3):
     for attempt in range(max_retries):
         try:
             response = requests.post(
                 "https://api.example.com/v1/payments",
                 json=payment_data,
-                headers={"Authorization": "Bearer {API_KEY}"}  # Never log API keys.
+                headers={"Authorization": f"Bearer {api_key}"}  # Never log API keys.
             )
             
             if response.status_code == 200:
@@ -72,9 +74,15 @@ Always use the same `idempotency_key` for each retry of the same payment. This p
 
 ```python
 headers={
-    "Authorization": "Bearer {API_KEY}",  # Never log API keys.
+    "Authorization": f"Bearer {api_key}",  # Never log API keys.
     "Idempotency-Key": payment_data.get("idempotency_key", "")
 }
+```
+> **Note**: Load the api_key from an environmental variable:
+
+```python
+import os
+api_key = os.getenv("PAYMENT_API_KEY")
 ```
 
 ## Step 4: Log retry attempts for monitoring
