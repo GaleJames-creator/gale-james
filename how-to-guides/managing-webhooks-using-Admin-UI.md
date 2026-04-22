@@ -31,8 +31,8 @@ To receive webhook notifications from the service, you must open your firewalls 
 3. Click **Create Webhook** on **Webhook Service**.
 4. On the Create Webhook page, enter the endpoint URL. It must begin with `https://` or `http://` and will receive the webhook payload.
 5. Choose **HTTP** or **OAUTH** as **Transport Type**.
-6. Enter Username and Password for the endpoint.
-7. Under OAuth:
+6. Enter the user credentials for the endpoint in the **Username** and **Password** fields. Note that the **Username** field is case-sensitive to match your Admin UI login credentials exactly.
+7. If you selected **OAuth** as **Transport Type**, complete the following:
 
    a. Select **Client credentials** or **Password** from the **Grant type** list.
    b. Enter the token endpoint URL starting with either `https://` or `http://` in the **Token endpoint URL field**.
@@ -46,13 +46,13 @@ To receive webhook notifications from the service, you must open your firewalls 
 
 Your endpoint must return a `2xx` HTTP status code to acknowledge the receipt of an event. If the endpoint fails to acknowledge events for several days, it will be disabled.
 
-You will not receive the event if the service receives response codes outside this range. For example, the service treats a URL redirection as a failure.
+You will not receive the event if the service receives response codes outside this range. For example, the service treats 3xx URL redirections as failures.
 
 ## Editing webhooks
 
 1. Sign in to Admin UI.
 2. Select **Administration**, and then click **Webhook Service**. The Webhook Service page appears.
-3. Select the **Webhook ID** you want to turn on or off from the list and click **Edit**. The Edit Webhook page appears.
+3. Select the **Webhook ID** you want to enable or disable from the list and click **Edit**. The Edit Webhook page appears.
 4. Enter the endpoint URL in the **Endpoint URL** field.
 5. (Optional.) Enter the user credentials for the endpoint in the **Username** and **Password** fields.
    > **Note**: If you do not need an extra layer of security, you can leave these fields blank.
@@ -66,14 +66,14 @@ You will not receive the event if the service receives response codes outside th
 1. Sign in to Admin UI.
 2. Select **Administration**, and then click **Webhook Service**. The Webhook Service page appears.
 3. Select the **Webhook ID** you want to enable or disable from the list, then click **Enable/Disable**.
-4. In the **Webhook Status Change** dialog, enter your Admin UI username in the field, then click **Proceed**. Note that the **Username** field is case-sensitive.
+4. In the **Webhook Status Change** dialog, enter your Admin UI username in the field, then click **Proceed**.
 
 ## Revealing a webhook's secret
 
 1. Sign in to Admin UI.
 2. Select **Administration**, and then click **Webhook Service**. The Webhook Service page appears.
 3. Find the webhook with the secret you want to verify and click the **Reveal Secret** link.
-4. Provide your Admin UI username and click **Reveal**. The **Reveal Secret** field under **Secret** will display the token. Note that the **Username** field is case-sensitive.
+4. Provide your Admin UI username and click **Reveal**. The **Reveal Secret** field under **Secret** will display the token.
 
 ## Rotating a webhook's secret
 
@@ -83,7 +83,8 @@ You can maintain up to five secrets per webhook. To rotate a webhook's secret:
 2. Select **Administration**, and then click **Webhook Service**. The Webhook Service page appears.
 3. Find the webhook with the secret you want to rotate and click the **Rotate Secret** link. The **Reveal Secret** dialog appears.
 4. Choose an expiration option from the **Expiration Time** list. Your options are **Immediately**, **1 Hour**, **3 Hours**, **6 Hours**, **12 Hours**, or **24 Hours**.
-5. Provide your Admin UI username and click **Rotate**. Note that the **Username** field is case-sensitive. Click **[Reveal Secret](#revealing-a-webhooks-secret)** to view the new secret token.
+5. Provide your Admin UI username and click **Rotate**.
+6. Click **[Reveal Secret](#revealing-a-webhooks-secret)** to view the new secret token.
 
 ## Viewing the webhook details
 
@@ -108,8 +109,8 @@ The Admin UI lets you remove unwanted or outdated webhooks.
 
 ### How-to guides
 
-* [Retrieving anonymous customer information](./retrieving-anonymous-customer-information.md)
-* [Manage security for webhook data transmission](./managing-security-webhook-data-transmission.md)
+* [Retrieving anonymous customer information](./retrieving-anonymous-customer-information.md): How to retrieve an anonymous customer's order and product information.
+* [Manage security for webhook data transmission](./managing-security-webhook-data-transmission.md): How to protect webhook data.
 
 ---
 
