@@ -6,7 +6,7 @@ You can reveal and rotate a webhook's secret in Admin UI.
 
 ## Prerequisites
 
-- You have an Admin UI account. To get an account, contact your Customer Success Manager.
+* You have an Admin UI account. To get an account, contact your Customer Success Manager.
 
 ## Searching for a webhook
 

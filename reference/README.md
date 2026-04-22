@@ -19,6 +19,7 @@ Use a reference when you want to find specific facts or details.
 * [Preventing duplicate charges with idempotency keys](./payment-idempotency-keys.md): Covers how idempotency keys work and why they are essential for preventing accidental duplicate charges.
 * [Webhook definitions](./webhook-definitions.md): Covers the terms and concepts you need to set up and manage webhooks.
 * [Subscription webhook examples](./webhook-subscription-examples.md): Covers two subscription webhook examples: 201 Created webhook and full subscription payload.
+
 ---
 
 [← Back to main portfolio](../README.md)

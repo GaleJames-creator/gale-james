@@ -283,7 +283,7 @@ You have completed the following steps:
 ✅ Processed a test payment.<br>
 ✅ Checked the payment status.<br>
 ✅ Handled a simple error.<br>
-✅ Retrieved the payment details. 
+✅ Retrieved the payment details.
 
 ### Next steps
 
