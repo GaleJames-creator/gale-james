@@ -6,9 +6,9 @@ Use these steps to prevent and manage rate limits in your integration.
 
 Before you start, make sure you:
 
-* Have an integrated payment system
-* Are familiar with APIs
-* Understand HTTP status codes
+* Have an integrated payment system.
+* Are familiar with APIs.
+* Understand HTTP status codes.
 
 ## Steps
 
@@ -45,7 +45,6 @@ async function makeRequestWithRetry(url, options, maxRetries = 3) {
 
 ### How-to guides**
 
-* [Managing API rate limits](../reference/managing-api-rate-limits.md)
 * [Implementing retry logic for failed payments](./implementing-retry-logic.md)
 
 ---

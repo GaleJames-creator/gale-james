@@ -1,6 +1,6 @@
 # Preventing duplicate charges with idempotency keys
 
-Duplicate charges can happen in payment systems when network issues or timeouts cause clients to retry. Idempotency keys make sure each payment is processed only once, even if the request is repeated.
+Duplicate charges can occur in payment systems when network issues or timeouts cause clients to retry. Idempotency keys make sure each payment is processed only once, even if the request is repeated.
 
 ## When to use idempotency
 

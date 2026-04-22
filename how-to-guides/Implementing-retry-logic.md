@@ -6,9 +6,9 @@ This guide shows you how to set up automatic retries for failed payments due to 
 
 Before you start, make sure you:
 
-* Have an integrated payment system
-* Are familiar with the Payment API
-* Understand HTTP status codes
+* Have an integrated payment system.
+* Are familiar with the Payment API.
+* Understand HTTP status codes.
 
 ## Step 1: Decide when to retry a payment
 
@@ -26,15 +26,16 @@ Retry a payment only if you receive one of the following error codes:
 
 ## Step 2: Implement exponential backoff for retries
 
-Automatically retry failed payment requests using exponential backoff. This approach helps avoid overloading the API and effectively handles temporary issues.
+Automatically retry failed payment using exponential backoff. This approach helps avoid overloading the API and effectively handles temporary issues.
 
-The following example retries the payment request up to three times. If you get a 200 response, the payment succeeded. For errors `429`, `500`, `502`, `503`, `504`, or a timeout, wait 1, 2, or 4 seconds before retrying. For other errors, stop and raise an exception.
+The following example retries the payment up to three times. Wait approximately 1, 2, or 4 seconds before retrying. If you get a `200` response, the payment succeeded. For errors `429`, `500`, `502`, `503`, `504`, or a timeout, wait 1, 2, or 4 seconds before retrying. For other errors, including `400`, `401`, and `402`, stop and raise an exception.
 
 ### Python function with retry logic example
   
 ```python
 import time
 import requests
+import random
 
 def create_payment_with_retry(payment_data, max_retries=3):
     for attempt in range(max_retries):
@@ -42,14 +43,14 @@ def create_payment_with_retry(payment_data, max_retries=3):
             response = requests.post(
                 "https://api.example.com/v1/payments",
                 json=payment_data,
-                headers={"Authorization": "Bearer {API_KEY}"} # Handle API keys securely in logs.
+                headers={"Authorization": "Bearer {API_KEY}"}  # Never log API keys.
             )
             
             if response.status_code == 200:
                 return response.json()
             
             if response.status_code in [429, 500, 502, 503, 504]:
-                wait_time = 2 ** attempt  # Wait 1s, 2s, or 4 seconds before retrying.
+                wait_time = (2 ** attempt) + random.uniform(0, 1)
                 time.sleep(wait_time)
                 continue
             
@@ -58,9 +59,8 @@ def create_payment_with_retry(payment_data, max_retries=3):
             
         except requests.exceptions.Timeout:
             if attempt < max_retries - 1:
-                time.sleep(2 ** attempt) # Incremental wait on retry
+                time.sleep((2 ** attempt) + random.uniform(0, 1))  # Exponential backoff with jitter
                 continue
-            # Stop retrying after max_retries attempts
             raise
     
     raise Exception("Max retries exceeded")
@@ -68,15 +68,12 @@ def create_payment_with_retry(payment_data, max_retries=3):
 
 ## Step 3: Add idempotency to prevent duplicate charges
 
-Always use the same idempotency key for each retry of the same payment. This prevents duplicate charges if the request is processed multiple times.
+Always use the same `idempotency_key` for each retry of the same payment. This prevents duplicate charges if the request is processed multiple times.
 
 ```python
-import uuid
-
-payment_data = {
-    "amount": 1000,
-    "currency": "USD",
-    "idempotency_key": str(uuid.uuid4())
+headers={
+    "Authorization": "Bearer {API_KEY}",  # Never log API keys.
+    "Idempotency-Key": payment_data.get("idempotency_key", "")
 }
 ```
 
@@ -95,6 +92,16 @@ logging.info(f"Payment retry attempt {attempt + 1}/{max_retries}")
 ### Explanation
 
 * [Authorization vs. capture: understanding the difference](../explanation/payment-authorization-vs-capture.md)
+
+### How-to guides
+
+* [Managing API errors](../how-to-guides/managing-api-errors.md)
+
+### Reference
+
+* [Preventing duplicate charges with idempotency keys](../reference/payment-idempotency-keys.md): Covers how idempotency keys work and why they are essential for preventing accidental duplicate charges.
+* [Payment API rate limits](../reference/payment-api-rate-limits.md): Covers rate limit tiers and headers, and handling rate limits.
+* [Payment decline codes](../reference/decline-codes.md): Complete reference of all authorization decline codes with hard/soft classification.
 
 ---
 

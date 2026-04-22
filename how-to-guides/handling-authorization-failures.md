@@ -161,7 +161,7 @@ def handle_hard_decline(customer, decline_code):
         )
 ```
 
-See [Authorization error message guidelines](../reference/authorization-error-message-guidelines.md) to learn how to format a good error message.
+See the [Authorization error message guidelines](../reference/authorization-error-message-guidelines.md) to learn how to format a good error message.
 
 ## Step 4: Track and monitor retry performance
 
@@ -384,8 +384,8 @@ response = payment_api.charge(amount=1000, ...)  # Don't do this on retry!
 
 ### Explanation
 
-* [Understanding payment authorization and capture](../explanation/understanding-authorization-capture.md) - Deepen your conceptual knowledge.
-* [Understanding payment authorization failures](../explanation/understanding-authorization-failures) - Learn how to prevent authorization failures
+* [Understanding payment authorization and capture](../explanation/understanding-authorization-capture.md): Explains the two-step payment process, authorization holds, and decline types.
+* [Understanding payment authorization failures](../explanation/understanding-authorization-failures): Explains the two-step payment process, authorization holds, and decline types.
 
 ### How-to guides
 

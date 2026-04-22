@@ -1,6 +1,6 @@
-# Payment decline codes reference
+# Payment decline codes
 
-This reference lists all payment authorization decline codes and indicates whether each represents a hard or soft decline for different transaction types.
+This reference lists all payment authorization decline codes and indicates whether each represents a hard or a soft decline for each transaction type.
 
 ## How to use this reference
 
@@ -279,7 +279,7 @@ For implementation guidance, see [Handling authorization failures](../how-to-gui
 
 * Customer-initiated: Soft
 * Merchant-initiated: Soft
-* Meaning: No response received from the card networ
+* Meaning: No response received from the card network
 
 #### unidentified_error
 
@@ -337,11 +337,11 @@ For implementation guidance, see [Handling authorization failures](../how-to-gui
 
 ### Explanation
 
-* [Understanding authorization and capture](../explanation/understanding-authorization-capture.md) - Learn the concepts
+* [Understanding authorization and capture](../explanation/understanding-authorization-capture.md): Explains the two-step payment process, authorization holds, and decline types.
 
 ### How-to guides
 
-* [Handle authorization failures](../how-to-guides/handling-authorization-failures.md) - Implement retry logic
+* [Handle authorization failures](../how-to-guides/handling-authorization-failures.md): How to handle authorization failures for soft declines and handle hard decline notifications.
 
 ---
 

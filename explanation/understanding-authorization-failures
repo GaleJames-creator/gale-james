@@ -1,8 +1,8 @@
-# Understand payment authorization failures
+# Understanding payment authorization failures
 
-Boost success and avoid authorization failures with these practical tips.
+Boost successful payment authorizations and avoid authorization failures with these practical tips.
 
-See [When not to retry](../explanation/understanding-authorization-failures#when-not-to-retry) for more information.
+See [When not to retry](#when-not-to-retry) for more information.
 
 ## When NOT to retry
 
@@ -74,15 +74,15 @@ Optimize your retry strategy by tracking: Retry success rate, decline code types
 
 ### Explanation
 
-* [Understanding authorization and capture](../explanation/understanding-authorization-capture.md) - Learn more a out authorization and capture.
+* [Understanding authorization and capture](../explanation/understanding-authorization-capture.md): Learn more about authorization and capture.
 
 ### How-to guides
 
-* [Processing a refund](../how-to-guides/processing-a-refund.md) - Handle refunds when needed.
+* [Processing a refund](../how-to-guides/processing-a-refund.md): Handle refunds when needed.
 
 ### Reference
     
-* [Decline codes reference](../reference/decline-codes.md) - Look up specific decline codes.
+* [Decline codes reference](../reference/decline-codes.md): Look up specific decline codes.
 
 ---
 

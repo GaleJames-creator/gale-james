@@ -83,7 +83,7 @@ You can maintain up to five secrets per webhook. To rotate a webhook's secret:
 2. Select **Administration**, and then click **Webhook Service**. The Webhook Service page appears.
 3. Find the webhook with the secret you want to rotate and click the **Rotate Secret** link. The **Reveal Secret** dialog appears.
 4. Choose an expiration option from the **Expiration Time** list. Your options are **Immediately**, **1 Hour**, **3 Hours**, **6 Hours**, **12 Hours**, or **24 Hours**.
-5. Provide your Admin UI username and click **Rotate**. Note that the **Username** field is case-sensitive. Click **[Reveal Secret](#revealing-a-webhooks-secret)** if you want to see the new secret token.
+5. Provide your Admin UI username and click **Rotate**. Note that the **Username** field is case-sensitive. Click **[Reveal Secret](#revealing-a-webhooks-secret)** to view the new secret token.
 
 ## Viewing the webhook details
 
@@ -108,8 +108,8 @@ The Admin UI lets you remove unwanted or outdated webhooks.
 
 ### How-to guides
 
-- [Retrieving anonymous customer information](./retrieving-anonymous-customer-information.md)
-- [Manage security for webhook data transmission](./managing-security-webhook-data-transmission.md)
+* [Retrieving anonymous customer information](./retrieving-anonymous-customer-information.md)
+* [Manage security for webhook data transmission](./managing-security-webhook-data-transmission.md)
 
 ---
 

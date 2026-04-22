@@ -6,9 +6,9 @@ Use these steps to add idempotency keys to your payment requests and prevent dup
 
 Before you start, make sure you:
 
-- Have an integrated payment system
-- Are familiar with APIs
-- Understand HTTP status codes
+- Have an integrated payment system.
+- Are familiar with APIs.
+- Understand HTTP status codes.
 
 ## How to use idempotency keys
 

@@ -2,9 +2,9 @@
 
 This guide provides details on three API endpoints.
 
-* [Retrieve available payment options](#retrieve-available-payment-options)
-* [Update the customer's payment options](#update-the-customers-payment-options)
-* [Create an order refund](#create-an-order-refund)
+* [Retrieve available payment options](#retrieve-available-payment-options).
+* [Update the customer's payment options](#update-the-customers-payment-options).
+* [Create an order refund](#create-an-order-refund).
 
 ## Retrieve available payment options
 

@@ -27,8 +27,8 @@ The event triggers a webhook and sends the event details to your chosen endpoint
 
 ### How-to guides
 
-* [Retrieve an anonymous customer's orders and product information](../how-to-guides/webhooks-anonymous-shopper.md).
-* [Manage security for webhook data transmission](../how-to-guides/webhooks-data-transmission.md).
+* [Retrieving anonymous customer information](../how-to-guides/retrieving-anonymous-customer-information.md): How to retrieve an anonymous customer's order and product information.
+* [Manage security for webhook data transmission](../how-to-guides/managing-security-webhook-data-transmission.md): How to protect webhook data.
 
 ---
 

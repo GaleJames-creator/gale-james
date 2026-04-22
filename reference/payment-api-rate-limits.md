@@ -1,4 +1,4 @@
-# Managing API rate limits
+# Payment API rate limits
 
 Managing API rate limits involves monitoring and controlling how often your application makes requests to an API to avoid exceeding the API provider's quota, maintain API stability, and ensure fair usage.
 

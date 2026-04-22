@@ -13,7 +13,7 @@ Before getting started, ensure you have:
 
 * **A public, secure endpoint** where you want to receive webhook events that can process HTTPS POST requests from the service sending the webhook (e.g., GitHub, Stripe, etc.).
   
-  > **Tip**: Use security measures like secret tokens or signature verification to make sure requests are really from the expected service.
+  > **Tip**: Use security measures such as secret tokens or signature verification to ensure requests are really from the expected service.
   
 * **A testing or staging environment** to validate your webhook endpoint before going live.
 
@@ -145,9 +145,9 @@ You have completed the following steps:
 
 ### How-to guides
 
-* [Manage security for webhook data transmission](../how-to-guides/webhooks-data-transmission.md)
-* [Manage webhooks using the Admin UI](../how-to-guides/webhooks-Admin-UI.md)
-* [Retrieve an anonymous customer's orders and product information](../how-to-guides/webhooks-anonymous-shopper.md)
+* [Managing security for webhook data transmission](../how-to-guides/managing-security-webhook-data-transmission.md): How to protect webhook data.
+* [Managing webhooks using the Admin UI](../how-to-guides/managing-webhooks-using-Admin-UI.md): How to create, edit, enable, disable, or delete webhooks, and manage secrets.
+* [Retrieving anonymous customer information](../how-to-guides/retrieving-anonymous-customer-information.md): How to retrieve an anonymous customer's order and product information.
 
 ---
 

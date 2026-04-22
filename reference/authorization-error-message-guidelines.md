@@ -1,6 +1,6 @@
 # Authorization error message guidelines
 
-Provide a clear explanaition of error and how to resolve it.
+Provide a clear explanation of the error and how to resolve it.
 
 ## Bad (exposes technical details)
 
@@ -18,15 +18,15 @@ Provide a clear explanaition of error and how to resolve it.
 
 ### Explanation
 
-* [Understanding authorization and capture](../explanation/understanding-authorization-capture.md) - Deepen your conceptual knowledge.
+* [Understanding authorization and capture](../explanation/understanding-authorization-capture.md): Explains the two-step payment process, authorization holds, and decline types.
 
 ### How to guides
 
-* [Process refunds](../how-to-guides/payment-process-refunds.md) - Handle refunds when needed.
+* [Processing a refund](../how-to-guides/processing-a-refund.md): How to process a refund.
 
 ### Reference
 
-* [Decline codes reference](../reference/decline-codes.md) - Look up specific decline codes.
+* [Payment decline codes reference](../reference/decline-codes.md): Complete reference of all authorization decline codes with hard/soft classification.
 
 ---
 

@@ -6,8 +6,8 @@ Use these steps to identify and resolve API errors in your integration.
 
 Before you start, make sure you:
 
-* Have an integrated payment system
-* Understand HTTP status codes
+* Have an integrated payment system.
+* Understand HTTP status codes.
 
 ## Steps
 

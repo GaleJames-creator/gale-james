@@ -13,10 +13,10 @@ This tutorial shows you how to integrate payment processing into an application 
 
 ## Prerequisites
 
-* Have a Payment account
-* Understand REST APIs and JSON
-* Have a development environment with command-line access
-* Have a cURL or HTTP client
+* Have a Payment account.
+* Understand REST APIs and JSON.
+* Have a development environment with command-line access.
+* Have a cURL or HTTP client.
 
 **Estimated time to complete:** 15 minutes
 
@@ -115,7 +115,7 @@ curl https://sandbox-api.payment.com/v1/payments \
 
 ## Step 4: Check the payment status
 
-When you receive the response to your Payments API request, verify the `status` field displays `succeeded`. If the request fails, see [Step 5: Handle a simple error](#step-5-handle-a-simple-error) for details.
+When you receive a response to your Payments API request, verify that the `status` field displays `succeeded`. If the request fails, see [Step 5: Handle a simple error](#step-5-handle-a-simple-error) for details.
 
 ### Successful response
 
@@ -159,7 +159,7 @@ Payments may fail for various reasons. The following describes how to respond to
 
 ### Declined card
 
-The following request example demonstrates using a declined card to verify your system handles failures and displays error messages to users.
+The following request example demonstrates how to use a declined card to verify that your system handles failures and displays error messages to users.
 
 ```bash
 curl https://sandbox-api.payment.com/v1/payments \
@@ -218,7 +218,7 @@ If you get an error, see [Manage API errors](../how-to-guides/manage-api-errors.
 
 Retrieve payment details using the payment ID.
 
-### Request example retrieving the payment details
+### Request example for retrieving the payment details
 
 ```bash
 curl https://sandbox-api.payment.com/v1/payments/pay_1234567890abcdef \
@@ -278,45 +278,45 @@ If the resource is unchanged, the server returns `304 Not Modified` with no resp
 
 You have completed the following steps:
 
-✅ Authenticated with your API<br>
-✅ Chose an environment<br>
-✅ Processed a test payment<br>
-✅ Checked the payment status<br>
-✅ Handled a simple error<br>
-✅ Retrieved the payment details  
+✅ Authenticated with your API.<br>
+✅ Chose an environment.<br>
+✅ Processed a test payment.<br>
+✅ Checked the payment status.<br>
+✅ Handled a simple error.<br>
+✅ Retrieved the payment details. 
 
 ### Next steps
 
 Ready for more? Check out the following how-to guides:
 
-* [Implement retry logic for failed payments](../how-to-guides/payment-retry-logic.md)
-* [Process a refund](../how-to-guides/payment-process-refunds.md)
-* [Retrieve an anonymous shopper's orders and product information](../how-to-guides/webhooks-anonymous-shopper.md)
-* [Manage security for webhook data transmission](../how-to-guides/webhooks-data-transmission.md)
-* [Manage webhooks using the Admin UI](../how-to-guides/webhooks-Admin-UI.md)
+* [Implementing retry logic for failed payments](../how-to-guides/implementing-retry-logic.md)
+* [Process a refund](../how-to-guides/processing-a-refund.md)
+* [Retrieving anonymous customer information](../how-to-guides/retrieving-anonymous-customer-information.md)
+* [Managing security for webhook data transmission](../how-to-guides/managing-security-webhook-data-transmission.md)
+* [Managing webhooks using the Admin UI](../how-to-guides/managing-webhooks-using-Admin-UI.md)
 
 ### Going to production
 
 To process live payments, complete the following steps:
 
-1. **Complete your account verification** in the Dashboard
-2. **Switch to live API keys** (prefix: `sk_live_`)
-3. **Update your base URL** to `https://api.payment.com/v1`
-4. **Review security practices** - Ensure keys are stored securely
-5. **Set up monitoring** - Track payment success rates and errors
-6. **[Configure webhooks](./webhook-creating-your-first.md)** for production URLs
-7. **Test with small amounts** before processing larger transactions
+1. **Complete your account verification** in the Dashboard.
+2. **Switch to live API keys** (prefix: `sk_live_`).
+3. **Update your base URL** to `https://api.payment.com/v1`.
+4. **Review security practices** - Ensure keys are stored securely.
+5. **Set up monitoring** - Track payment success rates and errors.
+6. **[Configure webhooks](./webhook-creating-your-first.md)** for production URLs.
+7. **Test with small amounts** before processing larger transactions.
 
 ### Key concepts checklist
 
-* [ ] Verify API keys are stored securely in environment variables
-* [ ] Use the sandbox environment for testing
-* [ ] Handle errors using the correct HTTP status codes
-* [ ] Set up idempotency for payment requests
-* [ ] Keep an eye on rate limit headers
-* [ ] Check webhook signatures
-* [ ] Log payment IDs so you can reconcile later
-* [ ] Try different test cards to check both successful and declined payments
+* [ ] Verify API keys are stored securely in environment variables.
+* [ ] Use the sandbox environment for testing.
+* [ ] Handle errors using the correct HTTP status codes.
+* [ ] Set up idempotency for payment requests.
+* [ ] Keep an eye on rate limit headers.
+* [ ] Check webhook signatures.
+* [ ] Log payment IDs for later reconciliation.
+* [ ] Try different test cards to check both successful and declined payments.
 
 ---
 

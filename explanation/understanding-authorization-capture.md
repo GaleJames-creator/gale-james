@@ -66,7 +66,7 @@ Authorization and capture occur simultaneously, so the customer pays right away.
 
 First, authorization happens. Capture occurs later—sometimes days or weeks after.
 
-#### When to use delayed capture used
+#### When to use delayed capture
 
 * Physical goods that need shipping
 * Made-to-order products
@@ -99,7 +99,7 @@ A hard decline is permanent. Trying the same payment method again won’t work.
 
 A soft decline is temporary. You can try the same payment method again later.
 
-#### Common csoft decline auses
+#### Common soft decline causes
 
 * Insufficient funds at this moment.
 * Daily spending limit reached.
@@ -148,17 +148,17 @@ Now that you understand the concepts:
 
 ### Explanation
 
-* [Understand authorization failures](./understanding-authorization-failures) - Practical tips an tricks for boosting authorization rates.
+* [Understand authorization failures](./understanding-authorization-failures): Practical tips and tricks for boosting authorization rates.
 
 ### How-to guides
 
-* [Handling authorization failures](../how-to-guides/handling-authorization-failures.md) - Implement retry logic for soft declines.
-* [Processing a refund](../how-to-guides/processing-a-refund.md) - Handle refunds when needed.
+* [Handling authorization failures](../how-to-guides/handling-authorization-failures.md): Implement retry logic for soft declines.
+* [Processing a refund](../how-to-guides/processing-a-refund.md): Handle refunds when needed.
 
 ### Reference
 
-* [Authorization error message guidelines](../reference/authorization-error-message-guidelines.md) - Look up specific decline code meanings.
-* [Payment decline codes](../reference/decline-codes.md) - Look up specific decline code meanings.
+* [Authorization error message guidelines](../reference/authorization-error-message-guidelines.md): Look up specific decline code meanings.
+* [Payment decline codes](../reference/decline-codes.md): Look up specific decline code meanings.
 
 ---
 
