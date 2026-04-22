@@ -20,13 +20,13 @@ Retry a payment only if you receive one of the following error codes:
 
 **Do not retry if you receive these errors:**
   
-* `400`: Invalid request. Fix the request instead and notify the customer about the issue.
+* `400`: Invalid request. Fix the payment request instead and notify the customer about the issue.
 * `401`: Authentication error. Check your API key and inform the customer about the unsuccessful authentication attempt.
 * `402`: Card declined. Customer action required; surface this error to the customer so they can resolve it directly with their bank or card provider.
 
 ## Step 2: Implement exponential backoff for retries
 
-Automatically retry a failed payment using exponential backoff. This approach helps avoid overloading the API and effectively handles temporary issues.
+Automatically retry a failed payment request using exponential backoff. This approach helps avoid overloading the API and effectively handles temporary issues.
 
 Adding random jitter prevents multiple clients from retrying simultaneously, which would overwhelm the API.
 
@@ -70,7 +70,7 @@ def create_payment_with_retry(payment_data, api_key, max_retries=3):
 
 ## Step 3: Add idempotency to prevent duplicate charges
 
-Always use the same `idempotency_key` for each retry of the same payment. This prevents duplicate charges if the request is processed multiple times.
+Always use the same `idempotency_key` for each retry of the same payment. This prevents duplicate charges if the payment request is processed multiple times.
 
 ```python
 headers={
@@ -100,7 +100,7 @@ logging.info(f"Payment retry attempt {attempt + 1}/{max_retries}")
 
 ### Explanation
 
-* [Authorization vs. capture: understanding the difference](../explanation/payment-authorization-vs-capture.md)
+* [Understanding payment authorization and capture](../explanation/understanding-authorization-capture.md)
 
 ### How-to guides
 
