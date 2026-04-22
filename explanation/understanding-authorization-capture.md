@@ -148,7 +148,7 @@ Now that you understand the concepts:
 
 ### Explanation
 
-* [Understand authorization failures](./understanding-authorization-failures): Practical tips and tricks for boosting authorization rates.
+* [Understanding authorization failures](./understanding-authorization-failures.md): Learn why authorization failures occur and how to prevent them.
 
 ### How-to guides
 

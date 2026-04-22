@@ -50,7 +50,7 @@ This section contains explanations of background, context, and the reasoning beh
 
 * [API error codes](./explanation/api-error-codes.md): How to identify, troubleshoot, and resolve common API error codes.
 * [Understanding payment authorization and capture](./explanation/understanding-authorization-capture.md): Explains the two-step payment process, authorization holds, and decline types.
-* [Understanding payment authorization failures](./explanation/understanding-authorization-failures): Boost successful payment authorizations and avoid authorization failures.
+* [Understanding authorization failures](./understanding-authorization-failures.md): Learn why authorization failures occur and how to prevent them.
 * [Understanding webhooks](./explanation/understanding-webhooks.md): Covers the key webhook concepts, how they work, and when to use them.
 
 ### Reference (information-oriented)
