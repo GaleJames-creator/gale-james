@@ -78,6 +78,7 @@ headers={
     "Idempotency-Key": payment_data.get("idempotency_key", "")
 }
 ```
+
 > **Note**: Load the api_key from an environmental variable:
 
 ```python
