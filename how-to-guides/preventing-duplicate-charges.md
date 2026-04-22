@@ -14,7 +14,6 @@ Before you start, make sure you:
 
 > **Note**: Replace `{YOUR_API_KEY}` with your API key. Never hardcode API keys in your code. Also note, the card number `4242424242424242` only works in sandbox environments.
 
-
 Add an `Idempotency-Key` header with a unique value. UUIDs (Universally Unique Identifiers) are the recommended standard for idempotency keys.
 
 ```bash
