@@ -6,18 +6,21 @@ Use these steps to add idempotency keys to your payment requests and prevent dup
 
 Before you start, make sure you:
 
-- Have an integrated payment system.
-- Are familiar with APIs.
-- Understand HTTP status codes.
+* Have an integrated payment system.
+* Are familiar with APIs.
+* Understand HTTP status codes.
 
 ## How to use idempotency keys
 
-Add an `Idempotency-Key` header with a unique value, such as a UUID:
+> **Note**: Replace `{YOUR_API_KEY}` with your API key. Never hardcode API keys in your code. Also note, the card number `4242424242424242` only works in sandbox environments.
+
+
+Add an `Idempotency-Key` header with a unique value. UUIDs (Universally Unique Identifiers) are the recommended standard for idempotency keys.
 
 ```bash
 curl https://sandbox-api.payment.com/v1/payments \
   -X POST \
-  -H "Authorization: Bearer sk_test_1234567890abcdef" \
+  -H "Authorization: Bearer {YOUR_API_KEY}" \
   -H "Content-Type: application/json" \
   -H "Idempotency-Key: a1b2c3d4-e5f6-7890-abcd-ef1234567890" \
   -d '{
@@ -59,12 +62,6 @@ async function createPayment(paymentData) {
   return response.json();
 }
 ```
-
-## Next steps
-
-### Reference
-
-- [Preventing duplicate charges with idempotency keys](../reference/payment-idempotency-keys.md)
 
 ---
 
