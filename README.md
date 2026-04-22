@@ -37,7 +37,6 @@ This section provides step-by-step guides to help users complete specific tasks.
 
 * [Handling authorization failures](./how-to-guides/handling-authorization-failures.md): How to handle authorization failures for soft declines and handle hard decline notifications.
 * [Implementing retry logic for failed payments](./how-to-guides/implementing-retry-logic.md): How to implement automatic retries for failed payments.
-* [Managing API errors](./how-to-guides/managing-api-errors.md): How to identify, troubleshoot, and resolve common API error codes.
 * [Managing API rate limits](./how-to-guides/managing-api-rate-limits.md): How to avoid rate limits.
 * [Managing security for webhook data transmission](./how-to-guides/managing-security-webhook-data-transmission.md): How to protect webhook data.
 * [Managing webhooks using the Admin UI](./how-to-guides/managing-webhooks-using-Admin-UI.md): How to create, edit, enable, disable, or delete webhooks, and manage secrets.
@@ -49,6 +48,7 @@ This section provides step-by-step guides to help users complete specific tasks.
 
 This section contains explanations of background, context, and the reasoning behind technical decisions. It covers the “why” behind the systems and tools documented in this portfolio.
 
+* [API error codes](./explanation/api-error-codes.md): How to identify, troubleshoot, and resolve common API error codes.
 * [Understanding payment authorization and capture](./explanation/understanding-authorization-capture.md): Explains the two-step payment process, authorization holds, and decline types.
 * [Understanding payment authorization failures](./explanation/understanding-authorization-failures): Boost successful payment authorizations and avoid authorization failures.
 * [Webhooks](./explanation/webhooks.md): Covers the key webhook concepts, how they work, and when to use them.
@@ -58,7 +58,7 @@ This section contains explanations of background, context, and the reasoning beh
 This section contains technical, factual descriptions of a product (e.g., an API or configuration options). They are intended for quick lookup that is independent of the user's tasks.
 
 * [API reference guide](./reference/api-reference-guide.md): Covers three API endpoints: retrieve available payment options, update payment options, and create an order refund.
-* [Authorization error message guidelines](./reference/authorization-error-message-guidelines.md):
+* [Authorization error message guidelines](./reference/authorization-error-message-guidelines.md): Provide a clear explanation of the error and how to resolve it.
 * [Payment decline codes](./reference/decline-codes.md): Complete reference of all authorization decline codes with hard/soft classification.
 * [Payment API rate limits](./reference/payment-api-rate-limits.md): Covers rate limit tiers and headers, and handling rate limits.
 * [Preventing duplicate charges with idempotency keys](./reference/payment-idempotency-keys.md): Covers how idempotency keys work and why they are essential for preventing accidental duplicate charges.

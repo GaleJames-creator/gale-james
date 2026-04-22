@@ -14,7 +14,6 @@ Use how-to guides when you need task-focused instructions and already understand
 
 * [Handling authorization failures](./handling-authorization-failures.md): How to handle authorization failures for soft declines and handle hard decline notifications.
 * [Implementing retry logic for failed payments](./implementing-retry-logic.md): How to implement automatic retries for failed payments.
-* [Managing API errors](./managing-api-errors.md): How to identify, troubleshoot, and resolve common API error codes.
 * [Managing API rate limits](./managing-api-rate-limits.md): How to avoid rate limits.
 * [Managing security for webhook data transmission](./managing-security-webhook-data-transmission.md): How to protect webhook data.
 * [Managing webhooks using the Admin UI](./managing-webhooks-using-Admin-UI.md): How to create, edit, enable, disable, or delete webhooks, and manage secrets.

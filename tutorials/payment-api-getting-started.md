@@ -199,20 +199,7 @@ A payment failure due to a declined card returns an HTTP `402` error. The follow
 }
 ```
 
-### Common error types
-
-During payment processing, you may encounter the following common errors:
-
-| HTTP Status | Error Type | Description | Action |
-|-------------|-----------|-------------|---------|
-| `400` | `invalid_request_error` | Invalid parameters | Check your request format |
-| `401` | `authentication_error` | Invalid API key | Verify your API key |
-| `402` | `payment_error` | Payment failed | Display error to customer |
-| `404` | `invalid_request_error` | Resource not found | Check the ID in your request |
-| `429` | `rate_limit_error` | Too many requests | Implement retry logic with backoff |
-| `500` | `api_error` | Server error | Retry the request |
-
-If you get an error, see [Manage API errors](../how-to-guides/manage-api-errors.md) for instructions.
+During payment processing, you may encounter error codes. For a complete list of error codes, see [API error codes](../explanation/api-error-codes.md).
 
 ## Step 6: Retrieve the payment details
 
