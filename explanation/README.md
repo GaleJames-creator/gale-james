@@ -8,13 +8,14 @@ Explanations focus on providing background, context, and conceptual understandin
 
 ## When to use explanations
 
-Use an explanation when you're curious about why things work the way they do, and want deeper background knowledge to make sense of the how-to guides, tutorials, or reference materials.
+Use an explanation when you need to understand why things work the way they do, and want deeper background knowledge to make sense of the how-to guides, tutorials, or reference materials.
 
 ## Available explanations
 
+* [API error codes](./api-error-codes.md): Explains common API error codes.
 * [Understanding payment authorization and capture](./understanding-authorization-capture.md): Explains the two-step payment process, authorization holds, and decline types.
 * [Understanding payment authorization failures](./understanding-authorization-failures): Boost successful payment authorizations and avoid authorization failures.
-* [Webhooks](./webhooks.md): Covers the key webhook concepts, how they work, and when to use them.
+* [Understanding webhooks](./understanding-webhooks.md): Covers the key webhook concepts, how they work, and when to use them.
 
 ---
 
