@@ -48,7 +48,6 @@ This section provides step-by-step guides to help users complete specific tasks.
 
 This section contains explanations of background, context, and the reasoning behind technical decisions. It covers the “why” behind the systems and tools documented in this portfolio.
 
-* [API error codes](./explanation/api-error-codes.md): How to identify, troubleshoot, and resolve common API error codes.
 * [Understanding payment authorization and capture](./explanation/understanding-authorization-capture.md): Explains the two-step payment process, authorization holds, and decline types.
 * [Understanding authorization failures](./understanding-authorization-failures.md): Learn why authorization failures occur and how to prevent them.
 * [Understanding webhooks](./explanation/understanding-webhooks.md): Covers the key webhook concepts, how they work, and when to use them.
@@ -57,6 +56,7 @@ This section contains explanations of background, context, and the reasoning beh
 
 This section contains technical, factual descriptions of a product (e.g., an API or configuration options). They are intended for quick lookup that is independent of the user's tasks.
 
+* [API error codes](./reference/api-error-codes.md): Reference for common API error codes and resolution paths.
 * [API reference guide](./reference/api-reference-guide.md): Covers three API endpoints: retrieve available payment options, update payment options, and create an order refund.
 * [Authorization error message guidelines](./reference/authorization-error-message-guidelines.md): Provide a clear explanation of the error and how to resolve it.
 * [Payment decline codes](./reference/decline-codes.md): Complete reference of all authorization decline codes with hard/soft classification.

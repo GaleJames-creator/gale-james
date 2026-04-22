@@ -12,7 +12,6 @@ Use an explanation when you need to understand why things work the way they do, 
 
 ## Available explanations
 
-* [API error codes](./api-error-codes.md): Explains common API error codes.
 * [Understanding payment authorization and capture](./understanding-authorization-capture.md): Explains the two-step payment process, authorization holds, and decline types.
 * [Understanding authorization failures](./understanding-authorization-failures.md): Learn why authorization failures occur and how to prevent them.
 * [Understanding webhooks](./understanding-webhooks.md): Covers the key webhook concepts, how they work, and when to use them.

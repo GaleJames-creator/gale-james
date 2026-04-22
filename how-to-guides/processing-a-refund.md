@@ -2,7 +2,7 @@
 
 This guide shows you, step by step, how to issue a full or partial refund using the refunds API endpoint. Use this guide when you need to return funds to a customer, either in full or in part.
 
-> **Note**: Refunds may take several days to appear on the customer’s statement.
+> **Note**: Refunds may take 3-5 business days to appear on the customer’s statement.
 
 ## Prerequisites
 
@@ -10,7 +10,7 @@ This guide shows you, step by step, how to issue a full or partial refund using 
 
 - You know the `payment_id` of the transaction to refund.
 
-## Step 1: Send a refund
+## Step 1: Create a refund request
 
 Use the refunds endpoint to send a full or partial refund. You must include the transaction's `payment_id` and a refund `reason` in the request body. Accepted values are:
 
@@ -24,10 +24,12 @@ Use the refunds endpoint to send a full or partial refund. You must include the 
 
 To refund the entire payment, use this `curl` command:
 
+> **Note**: Replace `{YOUR_API_KEY}` with your API key. Never hardcode API keys in your code. The sandbox URL `sandbox-api.com` is for testing only — replace with your production URL for live transactions.
+
 ```bash
 curl https://sandbox-api.com/v1/refunds \
   -X POST \
-  -H "Authorization: Bearer sk_test_1234567890abcdef" \
+  -H "Authorization: Bearer {YOUR_API_KEY}" \
   -H "Content-Type: application/json" \
   -d '{
     "payment_id": "pay_1234567890abcdef",
@@ -42,7 +44,7 @@ To refund part of a payment, specify the `amount` (in cents) in your request:
 ```bash
 curl https://sandbox-api.com/v1/refunds \
   -X POST \
-  -H "Authorization: Bearer sk_test_1234567890abcdef" \
+  -H "Authorization: Bearer {YOUR_API_KEY}" \
   -H "Content-Type: application/json" \
   -d '{
     "payment_id": "pay_1234567890abcdef",
@@ -62,7 +64,7 @@ A successful refund returns a response like this:
 {
   "id": "ref_1234567890abcdef",
   "object": "refund",
-  "amount": 2999,
+  "amount": 1000,
   "currency": "usd",
   "payment_id": "pay_1234567890abcdef",
   "status": "pending",
@@ -73,6 +75,13 @@ A successful refund returns a response like this:
 ```
 
 A successful response returns a `200 OK` status code.
+
+## Next steps
+
+### Reference
+
+* [API error codes](../reference/api-error-codes.md): Quick reference table of common API error codes and resolution paths.
+* [API reference guide](../reference/api-reference-guide.md): Covers three API endpoints: retrieve available payment options, update payment options, and create an order refund.
 
 ---
 
