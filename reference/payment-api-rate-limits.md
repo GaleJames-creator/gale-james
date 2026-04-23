@@ -1,6 +1,6 @@
 # Payment API rate limits
 
-Managing API rate limits involves monitoring and controlling how often your application makes requests to an API to avoid exceeding the API provider's quota, maintain API stability, and ensure fair usage.
+API rate limits control how many requests your app can send in a set time. Watch your usage and spread out requests so you don’t go over the limit. This keeps the API working well and fair for all users.
 
 ## Rate limit tiers
 
@@ -32,10 +32,16 @@ If you go over the rate limit, the API returns a `429 Too Many Requests` respons
   "error": {
     "type": "rate_limit_error",
     "code": "rate_limit_exceeded",
-    "message": "You have exceeded your rate limit. Please retry after 60 seconds."
+    "message": "You have exceeded your rate limit. Check the X-RateLimit-Reset header for when to retry."
   }
 }
 ```
+
+## Next steps
+
+### How-to guides
+
+* [Managing API rate limits](../how-to-guides/managing-api-rate-limits.md): How to implement retry logic and avoid rate limits.
 
 ---
 
