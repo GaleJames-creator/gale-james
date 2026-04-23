@@ -110,7 +110,7 @@ Returns `201` with the updated resource, or `204` if no content is returned.
 In the request body, include the following optional fields:
 
 | Parameter | Location | Type | Required | Description |
-| --------- | -------- | ---- | -------- | ----------- | 
+| --------- | -------- | ---- | -------- | ----------- |
 | `paymentOptionId` | path | string | Yes | The unique identifier for the payment option (e.g., `123456789`) |
 | `sourceId` | body (JSON) | string | No | The unique identifier for the payment source (e.g., `c25fcccc-6e57-4d93-bafb-a6765510a422`) |
 | `paymentOption.nickName` | body (JSON) | string | No | Name of payment option (e.g., `WFBank`) |
@@ -225,18 +225,16 @@ curl https://sandbox-api.com/v1/orders/12345/refunds \
 |-----------|----------|------|----------|-------------|
 | `orderId` | path | string | Yes | Unique identifier of the order |
 
-
 ### Refund request parameters
 
 In the request body, include the following required fields:
 
-| Required parameters | Description                                                                                                                 |
-|---------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| `type`              | The type of refund, such as `Order Level` or `Product Level` refund.                                                        |
-| `category`          | The enum for the category. Possible values: `PRODUCT_LEVEL_PRODUCT`,  `PRODUCT_LEVEL_SHIPPING`, `PRODUCT_LEVEL_FEE`,`PRODUCT_LEVEL_DUTIES_AND_TARIFFS`, `ORDER_LEVEL_PRODUCT`, `ORDER_LEVEL_SHIPPING`, `ORDER_LEVEL_FEE`, `ORDER_LEVEL_FULL`, `ORDER_LEVEL_TAX_EXEMPT`, `ORDER_LEVEL_DUTIES_AND_TARIFFS`   |
-| `reason`            | The enum for the reason. Possible values: `CUSTOMER_SATISFACTION_ISSUE`, `DAMAGED_PRODUCT`, `DELAYED_SHIPPING`, `FEE_CHARGED_INCORRECTLY`,`FEE_EXEMPT_CUSTOMER`, `FRAUD`, `MATCH_PROMOTIONAL_PRICE`, `MISSING_ITEMS_FROM_ORDER`, `NEVER_RECEIVED`, `ORDER_PROCESSING_ERROR`, `PHONE_ORDER_ERROR`, `PRODUCT_SHOULD_NOT_HAVE_FEE`, `TAX_EXEMPT`, `UNABLE_TO_SHIP_TO_COUNTRY`, `UNDELIVERABLE_ADDRESS`, `VENDOR_APPROVED_REFUND`                                |
-| `comments`          | Any comments for the refund (e.g., `The customer said the product was damaged.`).                                           |
-| `value`             | The value for the `refundAmount`.                                                                                           |
+| Required parameters | Description |
+| `type`              | The type of refund, such as `Order Level` or `Product Level` refund. |
+| `category`          | The enum for the category. Possible values: `PRODUCT_LEVEL_PRODUCT`,  `PRODUCT_LEVEL_SHIPPING`, `PRODUCT_LEVEL_FEE`,`PRODUCT_LEVEL_DUTIES_AND_TARIFFS`, `ORDER_LEVEL_PRODUCT`, `ORDER_LEVEL_SHIPPING`, `ORDER_LEVEL_FEE`, `ORDER_LEVEL_FULL`, `ORDER_LEVEL_TAX_EXEMPT`, `ORDER_LEVEL_DUTIES_AND_TARIFFS` |
+| `reason`            | The enum for the reason. Possible values: `CUSTOMER_SATISFACTION_ISSUE`, `DAMAGED_PRODUCT`, `DELAYED_SHIPPING`, `FEE_CHARGED_INCORRECTLY`,`FEE_EXEMPT_CUSTOMER`, `FRAUD`, `MATCH_PROMOTIONAL_PRICE`, `MISSING_ITEMS_FROM_ORDER`, `NEVER_RECEIVED`, `ORDER_PROCESSING_ERROR`, `PHONE_ORDER_ERROR`, `PRODUCT_SHOULD_NOT_HAVE_FEE`, `TAX_EXEMPT`, `UNABLE_TO_SHIP_TO_COUNTRY`, `UNDELIVERABLE_ADDRESS`, `VENDOR_APPROVED_REFUND` |
+| `comments`          | Any comments for the refund (e.g., `The customer said the product was damaged.`). |
+| `value`             | The value for the `refundAmount`. |
 
 ### 200 OK response for refunds
 
