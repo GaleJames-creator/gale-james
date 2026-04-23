@@ -19,7 +19,7 @@ GET /v1/shoppers/me/payment-options
 ### Get payment options request example
 
 ```bash
-curl -X GET "https://api.sandbox-api.com/v1/shoppers/me/payment-options" \
+curl -X GET "https://sandbox-api.com/v1/shoppers/me/payment-options" \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
   -H "Content-Type: application/json" 
 ```
@@ -29,14 +29,14 @@ curl -X GET "https://api.sandbox-api.com/v1/shoppers/me/payment-options" \
 ```json
 {
   "paymentOptions": {
-    "uri": "https://api.sandbox-api.com/v1/shoppers/me/payment-options",
+    "uri": "https://sandbox-api.com/v1/shoppers/me/payment-options",
     "paymentOption": [
       {
         "sourceId": "a231f38d-3a07-4a13-96ed-89693ba7d56c",
-        "uri": "https://api.sandbox-api.com/v1/shoppers/me/payment-options/740865108",
+        "uri": "https://sandbox-api.com/v1/shoppers/me/payment-options/740865108",
         "id": 15699113789,
         "nickName": "Default",
-        "isDefault": "true"
+        "isDefault": true
       }
     ]
   }
@@ -49,8 +49,10 @@ The parameter is invalid. Enter a valid parameter and try again.
 
 ```json
 {
-  "code": "invalid_parameter",
-  "description": "The parameter is invalid. Enter a valid parameter and try again."
+  "errors": {    
+    "code": "invalid-parameter",
+    "description": "The parameter is invalid. Enter a valid parameter and try again."
+  }
 }
 ```
 
@@ -60,8 +62,10 @@ The token is invalid. Enter a valid token and try again.
 
 ```json
 {
-  "code": "invalid_token",
-  "description": "The token is invalid. Enter a valid token and try again."
+  "errors": {  
+    "code": "invalid-token",
+    "description": "The token is invalid. Enter a valid token and try again."
+  }
 }
 ```
 
@@ -82,14 +86,14 @@ POST /v1/shoppers/me/payment-options/{paymentOptionId}
 ### Update payment option request example
 
 ```bash
-curl https://api.sandbox-api.com/v1/shoppers/me/payment-options/123456789 \
+curl https://sandbox-api.com/v1/shoppers/me/payment-options/123456789 \
   -X POST \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
     "paymentOption": {
       "nickName": "DRBank",
-      "isDefault": "true",
+      "isDefault": true,
       "sourceId": "c25fcccc-6e57-4d93-bafb-a6765510a422"
     },
     "shopper": {
@@ -99,26 +103,28 @@ curl https://api.sandbox-api.com/v1/shoppers/me/payment-options/123456789 \
 '
 ```
 
+Returns `201` with the updated resource, or `204` if no content is returned.
+
 ### Update payment option request parameters
 
 In the request body, include the following optional fields:
 
-| Parameter  Location | Type | Required | Description |
-| ------------------------------- | ------------- | --------- | --------- | -------------------------------------------------------------------------------------------- |
+| Parameter | Location | Type | Required | Description |
+| --------- | -------- | ---- | -------- | ----------- | 
 | `paymentOptionId` | path | string | Yes | The unique identifier for the payment option (e.g., `123456789`) |
 | `sourceId` | body (JSON) | string | No | The unique identifier for the payment source (e.g., `c25fcccc-6e57-4d93-bafb-a6765510a422`) |
 | `paymentOption.nickName` | body (JSON) | string | No | Name of payment option (e.g., `WFBank`) |
-| `paymentOption.isDefault` | body (JSON) | string | No | Determines if the payment option is the customer's default payment option (e.g., `true`) |
+| `paymentOption.isDefault` | body (JSON) | boolean | No | Determines if the payment option is the customer's default payment option (e.g., `true`) |
 | `shopper.ipAddress` | body (JSON) | string | No | Customer's IP address (e.g., `198.51.100.1`) |
 
 ### 201 Created response updating a payment option
 
 ```json
 {
-  "uri": "https://api.sandbox-api.com/v1/shoppers/me/payment-options/123456789",
+  "uri": "https://sandbox-api.com/v1/shoppers/me/payment-options/123456789",
   "id": 740865108,
   "nickName": "Default",
-  "isDefault": "true",
+  "isDefault": true,
   "type": "creditCard",
   "sourceId": "a231f38d-3a07-4a13-96ed-89693ba7d56c",
   "sourceClientSecret": "a231f38d-3a07-4a13-96ed-89693ba7d56c_f6d8c951-59c9-4ef3-ac45-9f33c77d2f46",
@@ -129,14 +135,14 @@ In the request body, include the following optional fields:
     "expirationMonth": "08",
     "fundingSource": "debit",
     "brand": "Visa",
-    "reusable": "true"
+    "reusable": true
   }
 }
 ```
 
 ### 204 No Content response for updating a payment option
 
-The server successfully processed the request, but has no content to return in the response body.
+The request worked, but the response shows nothing.
 
 ### 400 Bad Request response for updating a payment option
 
@@ -175,8 +181,10 @@ The `paymentSource` is not valid. Possible reasons are:
 
 ```json
 {
-  "code": "invalid-payment-source",
-  "description": "A PaymentSource with source ID {sourceId} is not valid for creating a billing option."
+  "errors": {
+    "code": "invalid-payment-source",
+    "description": "A PaymentSource with source ID {sourceId} is not valid for creating a billing option."
+  }
 }
 ```
 
@@ -213,6 +221,11 @@ curl https://sandbox-api.com/v1/orders/12345/refunds \
 '
 ```
 
+| Parameter | Location | Type | Required | Description |
+|-----------|----------|------|----------|-------------|
+| `orderId` | path | string | Yes | Unique identifier of the order |
+
+
 ### Refund request parameters
 
 In the request body, include the following required fields:
@@ -226,6 +239,8 @@ In the request body, include the following required fields:
 | `value`             | The value for the `refundAmount`.                                                                                           |
 
 ### 200 OK response for refunds
+
+> **Note**: The `refundAmount.currency` is returned from the original payment.
 
 ```json
 {
@@ -246,8 +261,10 @@ The parameter is invalid. Enter a valid parameter and try again.
 
 ```json
 {
-  "code": "invalid_parameter",
-  "description": "The parameter is invalid. Enter a valid parameter and try again."
+  "errors": {    
+    "code": "invalid-parameter",
+    "description": "The parameter is invalid. Enter a valid parameter and try again."
+  }
 }
 ```
 
@@ -255,12 +272,21 @@ The parameter is invalid. Enter a valid parameter and try again.
 
 The token is invalid. Provide the correct token and try again.
 
+```json
+{
+  "errors": {
+    "code": "forbidden",
+    "description": "The token is invalid. Provide the correct token and try again."
+  }
+}
+```
+
 ### 404 Not Found response for refunds
 
 The order ID or line item was not found, or the refund is invalid. The possible errors associated with this not-found response are:
 
 * `order-not-found`: The provided `orderId` was not found. Provide the correct `orderId` and try again.
-* `invalid-refund`: The `refundAmount`'s `value` or `currency` is invalid. Provide a valid `value` or `currency` for the `refundAmount`, and try again.
+* `invalid-refund`: The `refundAmount`'s `value` or `currency` is invalid. Provide a valid `value` or `currency` for `refundAmount`, and try again.
 
 ```json
 {
@@ -281,7 +307,7 @@ The refund type, category, reason, or refund amount is incorrect. The possible e
 * `invalid-refund-type`: The refund `type` is invalid. Provide a valid refund `type` and try again.
 * `invalid-refund-category`: The refund `category` is invalid. Provide a valid refund `category` and try again.
 * `invalid-refund-reason`: The refund `reason` is invalid. Provide a valid refund `reason` and try again.
-* `invalid-refund-amount`: The `refundAmount`'s `value` or `currency` is invalid. Provide a valid `value` or `currency` for the `refundAmount`, and try again.
+* `invalid-refund-amount`: The `refundAmount`'s `value` or `currency` is invalid. Provide a valid `value` or `currency` for `refundAmount`, and try again.
 
 ```json
 {
