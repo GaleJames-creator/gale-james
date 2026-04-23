@@ -161,7 +161,7 @@ def handle_hard_decline(customer, decline_code):
         )
 ```
 
-See the [Authorization error message guidelines](../reference/authorization-error-message-guidelines.md) to learn how to format a good error message.
+See the [API error message guidelines](../reference/api-error-message-guidelines.md) to learn how to format a good error message.
 
 ## Step 4: Track and monitor retry performance
 
@@ -393,7 +393,7 @@ response = payment_api.charge(amount=1000, ...)  # Don't do this on retry!
 
 ### Reference
 
-* [Authorization error message guidelines](../reference/authorization-error-message-guidelines.md) - Look up specific decline code meanings.
+* [API error message guidelines](../reference/api-error-message-guidelines.md) - Look up specific decline code meanings.
 * [Decline codes reference](../reference/decline-codes.md) - Look up specific decline codes.
 * [Preventing duplicate charges with idempotency keys](../reference/payment-idempotency-keys.md)
 

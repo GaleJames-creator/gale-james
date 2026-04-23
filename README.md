@@ -57,7 +57,7 @@ This section contains technical, factual descriptions of a product (e.g., an API
 
 * [API error codes](./reference/api-error-codes.md): Reference for common API error codes and resolution paths.
 * [API reference guide](./reference/api-reference-guide.md): Covers three API endpoints: retrieve available payment options, update payment options, and create an order refund.
-* [Authorization error message guidelines](./reference/authorization-error-message-guidelines.md): Provide a clear explanation of the error and how to resolve it.
+* [API error message guidelines](./reference/api-error-message-guidelines.md): Provide a clear explanation of the error and how to resolve it.
 * [Payment decline codes](./reference/decline-codes.md): Complete reference of all authorization decline codes with hard/soft classification.
 * [Payment API rate limits](./reference/payment-api-rate-limits.md): Covers rate limit tiers and headers, and handling rate limits.
 * [Preventing duplicate charges with idempotency keys](./reference/payment-idempotency-keys.md): Covers how idempotency keys work and why they are essential for preventing accidental duplicate charges.

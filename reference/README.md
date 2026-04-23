@@ -14,7 +14,7 @@ Use a reference when you want to find specific facts or details.
 
 * [API error codes](./api-error-codes.md): Quick reference table of common API error codes and resolution paths.
 * [API reference guide](./api-reference-guide.md): Covers three API endpoints: retrieve available payment options, update payment options, and create an order refund.
-* [Authorization error message guidelines](./authorization-error-message-guidelines):
+* [API error message guidelines](./api-error-message-guidelines):
 * [Payment decline codes](decline-codes.md): Complete reference of all authorization decline codes with hard/soft classification.
 * [Payment API rate limits](./payment-api-rate-limits.md): Covers rate limit tiers and headers, and handling rate limits.
 * [Preventing duplicate charges with idempotency keys](./payment-idempotency-keys.md): Covers how idempotency keys work and why they are essential for preventing accidental duplicate charges.
