@@ -42,7 +42,6 @@ This section provides step-by-step guides to help users complete specific tasks.
 * [Managing webhooks using the Admin UI](./how-to-guides/managing-webhooks-using-Admin-UI.md): How to create, edit, enable, disable, or delete webhooks, and manage secrets.
 * [Preventing duplicate charges with idempotency keys](./how-to-guides/preventing-duplicate-charges.md): How to use idempotency keys to prevent duplicate charges.
 * [Processing a refund](./how-to-guides/processing-a-refund.md): How to process a refund.
-* [Retrieving anonymous customer information](./how-to-guides/retrieving-anonymous-customer-information.md): How to retrieve an anonymous customer's order and product information.
 
 ### Explanation (understanding-oriented)
 

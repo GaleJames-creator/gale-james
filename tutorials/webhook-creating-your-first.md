@@ -147,7 +147,6 @@ You have completed the following steps:
 
 * [Managing security for webhook data transmission](../how-to-guides/managing-security-webhook-data-transmission.md): How to protect webhook data.
 * [Managing webhooks using the Admin UI](../how-to-guides/managing-webhooks-using-Admin-UI.md): How to create, edit, enable, disable, or delete webhooks, and manage secrets.
-* [Retrieving anonymous customer information](../how-to-guides/retrieving-anonymous-customer-information.md): How to retrieve an anonymous customer's order and product information.
 
 ---
 

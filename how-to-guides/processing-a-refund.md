@@ -6,9 +6,8 @@ This guide shows you, step by step, how to issue a full or partial refund using 
 
 ## Prerequisites
 
-- You have a valid API key.
-
-- You know the `payment_id` of the transaction to refund.
+* You have a valid API key.
+* You know the `payment_id` of the transaction to refund.
 
 ## Step 1: Create a refund request
 

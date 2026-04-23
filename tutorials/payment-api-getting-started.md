@@ -278,7 +278,6 @@ Ready for more? Check out the following how-to guides:
 
 * [Implementing retry logic for failed payments](../how-to-guides/implementing-retry-logic.md)
 * [Process a refund](../how-to-guides/processing-a-refund.md)
-* [Retrieving anonymous customer information](../how-to-guides/retrieving-anonymous-customer-information.md)
 * [Managing security for webhook data transmission](../how-to-guides/managing-security-webhook-data-transmission.md)
 * [Managing webhooks using the Admin UI](../how-to-guides/managing-webhooks-using-Admin-UI.md)
 
