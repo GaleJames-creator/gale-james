@@ -19,7 +19,7 @@ For implementation guidance, see [Handling authorization failures](../how-to-gui
 ## Decline codes table
 
 | Decline code | Customer-initiated | Merchant-initiated |
-|------------------------------|--------------------|--------------------|
+| ---------------------------- |- ------------------ | ------------------- |
 | `account_closed` | Hard | Hard |
 | `account_frozen` | Hard | Hard |
 | `authentication_required` | Soft | Soft |

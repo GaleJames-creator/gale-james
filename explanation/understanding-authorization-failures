@@ -9,7 +9,7 @@ See [When not to retry](#when-not-to-retry) for more information.
 For hard declines, stop immediately and take these actions instead:
 
 | Decline code | Action |
-|--------------|--------|
+| ------------ | ------ |
 | `account_closed` | Request new payment method from customer |
 | `card_expired` (customer-initiated) | Ask customer to provide updated card details |
 | `fraud` | Block transaction, investigate |
@@ -81,7 +81,7 @@ Optimize your retry strategy by tracking: Retry success rate, decline code types
 * [Processing a refund](../how-to-guides/processing-a-refund.md): Handle refunds when needed.
 
 ### Reference
-    
+
 * [Payment decline codes reference](../reference/payment-decline-codes.md): Look up specific decline codes.
 
 ---
