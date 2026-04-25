@@ -32,7 +32,7 @@ The event triggers a webhook and sends the event details to your chosen endpoint
 ### How-to guides
 
 * [Manage security for webhook data transmission](../how-to-guides/managing-security-webhook-data-transmission.md): How to protect webhook data.
-* [Preventing duplicate charges](../how-to-guides/preventing-duplicate-charges.md): How to use `Idempotency-Key`  to prevent duplicate charges.
+* [Preventing duplicate charges with the `Idempotency-Key`](./how-to-guides/preventing-duplicate-charges-with-the-idempotency-key.md): How to use `Idempotency-Key` to prevent duplicate charges.
 
 ## Reference
 

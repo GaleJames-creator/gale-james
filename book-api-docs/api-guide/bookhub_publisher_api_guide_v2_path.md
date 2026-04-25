@@ -2,15 +2,15 @@
 
 ## Document information
 
-| Property | Value |
-|----------|-------|
-| **Version** | 2.0 |
-| **Last Updated** | January 2, 2026 |
-| **API Base URL** | `https://api.bookhub.com/api` |
-| **v1 Endpoint** | `https://api.bookhub.com/api/v1` |
-| **v2 Endpoint** | `https://api.bookhub.com/api/v2` |
-| **Versioning Method** | URI Path-Based |
-| **Status** | Preview |
+| Property              | Value                            |
+|-----------------------|----------------------------------|
+| **Version**           | 2.0.                             |
+| **Last Updated**      | January 2, 2026                  |
+| **API Base URL**      | `https://api.bookhub.com/api`    |
+| **v1 Endpoint**       | `https://api.bookhub.com/api/v1` |
+| **v2 Endpoint**       | `https://api.bookhub.com/api/v2` |
+| **Versioning Method** | URI Path-Based                   |
+| **Status**            | Preview                          |
 
 ---
 
@@ -558,13 +558,13 @@ GET /v2/books
 
 #### Query parameters
 
-| Parameter | Type | Required | Default | Description |
-|-----------|------|----------|---------|-------------|
-| `page` | integer | No | 1 | Page number (minimum 1) |
-| `limit` | integer | No | 20 | Items per page (max 100) |
-| `status` | enum | No | All | Filter: `PENDING`, `ACTIVE`, `INACTIVE` |
-| `sort` | enum | No | createdDate | **v2 only accepts `createdDate`** |
-| `order` | enum | No | desc | Sort order: asc or desc |
+| Parameter | Type    | Required | Default     | Description                             |
+|-----------|---------|----------|-------------|-----------------------------------------|
+| `page`.   | integer | No       | 1           | Page number (minimum 1).                |
+| `limit`   | integer | No       | 20          | Items per page (max 100).               |
+| `status`  | enum    | No.      | All         | Filter: `PENDING`, `ACTIVE`, `INACTIVE` |
+| `sort`    | enum    | No       | createdDate | **v2 only accepts `createdDate`**.      |
+| `order`   | enum    | No       | desc        | Sort order: asc or desc                 |
 
 #### ✅ Valid get all books request examples
 
@@ -1259,8 +1259,8 @@ We value your feedback on v2 changes:
 
 ## Version history
 
-| Version | Date                                                                                           | Changes |
-|---------|------------------------------------------------------------------------------------------------|---------|
+| Version | Date            | Changes                                                                                |
+|---------|-----------------|----------------------------------------------------------------------------------------|
 | 2.0     | January 2, 2026 | Initial v2 release with path-based versioning, `hitCount` field, removed title sorting |
 
 ---

@@ -107,7 +107,7 @@ logging.info(f"Payment retry attempt {attempt + 1}/{max_retries}")
 
 ### How-to guides
 
-* [Preventing duplicate charges](./preventing-duplicate-charges.md): How to use the `Idempotency-Key` to prevent duplicate charges.
+* [Preventing duplicate charges with the `Idempotency-Key`](./how-to-guides/preventing-duplicate-charges-with-the-idempotency-key.md): How to use `Idempotency-Key` to prevent duplicate charges.
 
 ### Reference
 

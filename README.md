@@ -39,7 +39,7 @@ This section provides step-by-step guides to help users complete specific tasks.
 * [Managing API rate limits](./how-to-guides/managing-api-rate-limits.md): How to avoid rate limits.
 * [Managing security for webhook data transmission](./how-to-guides/managing-security-webhook-data-transmission.md): How to protect webhook data.
 * [Managing webhooks using the Admin UI](./how-to-guides/managing-webhooks-using-Admin-UI.md): How to create, edit, enable, disable, or delete webhooks, and manage secrets.
-* [Preventing duplicate charges](./how-to-guides/preventing-duplicate-charges.md): How to use `Idempotency-Key` to prevent duplicate charges.
+* [Preventing duplicate charges with the `Idempotency-Key`](./how-to-guides/preventing-duplicate-charges-with-the-idempotency-key.md): How to use `Idempotency-Key` to prevent duplicate charges.
 * [Processing a refund](./how-to-guides/processing-a-refund.md): How to process a refund.
 
 ### Explanation (understanding-oriented)
