@@ -14,7 +14,7 @@ Use an explanation when you need to understand why things work the way they do, 
 
 * [Understanding payment authorization and capture](./understanding-authorization-capture.md): Explains the two-step payment process, authorization holds, and decline types.
 * [Understanding authorization failures](./understanding-authorization-failures.md): Learn why authorization failures occur and how to prevent them.
-* [`Idempotency-Key`](../reference/Idempotency-Key): Covers the `Idempotency-Key` header format, requirements, expiration window, duplicate key behavior, and idempotency error codes.
+* [`Idempotency-Key`](../reference/Idempotency-Key.md: Covers the `Idempotency-Key` header format, requirements, expiration window, duplicate key behavior, and idempotency error codes.
 * [Understanding webhooks](./understanding-webhooks.md): Covers the key webhook concepts, how they work, and when to use them.
 
 ---

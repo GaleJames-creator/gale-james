@@ -393,7 +393,7 @@ response = payment_api.charge(amount=1000, ...)  # Don't do this on retry!
 
 ### Reference
 
-* [API error message guidelines](../reference/api-error-message-guidelines.md) - Look up specific decline code meanings.
+* [API error message guidelines](../reference/api-error-message-guidelines.md) - : Look up the meanings of specific API error messages.
 * [Payment decline codes reference](../reference/payment-decline-codes.md) - Look up specific decline codes.
 * [Preventing duplicate charges](./how-to-guides/preventing-duplicate-charges.md): How to use `Idempotency-Key` to prevent duplicate charges.
 

@@ -56,7 +56,7 @@ api_key = os.getenv("PAYMENT_API_KEY")
 
 ## Reference
 
-* [`Idempotency-Key`](../reference/Idempotency-Key): Covers essential idempotency information.
+* [`Idempotency-Key`](../reference/Idempotency-Key.md): Covers essential idempotency information.
 
 ---
 

@@ -36,7 +36,7 @@ The event triggers a webhook and sends the event details to your chosen endpoint
 
 ## Reference
 
-* [`Idempotency-Key`](../reference/idempotency-key): Covers the `Idempotency-Key`  header format, requirements, expiration window, duplicate key behavior, and idempotency error codes.
+* [`Idempotency-Key`](../reference/Idempotency-Key.md): Covers the `Idempotency-Key`  header format, requirements, expiration window, duplicate key behavior, and idempotency error codes.
 
 ---
 

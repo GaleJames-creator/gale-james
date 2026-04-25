@@ -26,7 +26,7 @@ Use an `Idempotency-Key` request in the following situations:
 
 ### Reference
 
-* [`Idempotency-Key`](../reference/Idempotency-Key): Covers the `Idempotency-Key` header format, requirements, expiration window, duplicate key behavior, and idempotency error codes.
+* [`Idempotency-Key`](../reference/Idempotency-Key.md): Covers the `Idempotency-Key` header format, requirements, expiration window, duplicate key behavior, and idempotency error codes.
 
 ---
 
