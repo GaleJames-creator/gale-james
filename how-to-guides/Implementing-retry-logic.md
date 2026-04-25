@@ -72,6 +72,8 @@ def create_payment_with_retry(payment_data, api_key, max_retries=3):
 
 Always use the same `idempotency_key` for each retry of the same payment. This prevents duplicate charges if the payment request is processed multiple times.
 
+> For a complete explanation of `Idempotency-Key` and how they work, see [Understanding the `Idempotency-Key`](../explanation/understanding-the-idempotency-key.md).
+
 ```python
 headers={
     "Authorization": f"Bearer {api_key}",  # Never log API keys.
@@ -100,15 +102,17 @@ logging.info(f"Payment retry attempt {attempt + 1}/{max_retries}")
 
 ### Explanation
 
-* [Understanding payment authorization and capture](../explanation/understanding-authorization-capture.md)
+* [Understanding the `Idempotency-Key`](../explanation/understanding-the-idempotency-key.md): Covers the idempotency concepts, how they work, and when to use them.
+* [Understanding payment authorization and capture](../explanation/understanding-authorization-capture.md): Explains the two-step payment process, authorization holds, and decline types.
 
 ### How-to guides
 
-* [Managing API errors](../how-to-guides/managing-api-errors.md)
+* [Preventing duplicate charges](./preventing-duplicate-charges.md): How to use the `Idempotency-Key` to prevent duplicate charges.
 
 ### Reference
 
-* [Preventing duplicate charges with idempotency keys](../reference/payment-idempotency-keys.md): Covers how idempotency keys work and why they are essential for preventing accidental duplicate charges.
+* [API error codes](./api-error-codes.md): Quick reference table of common API error codes and resolution paths.
+* [`Idempotency-Key`](../reference/Idempotency-Key): Covers the `Idempotency-Key` header format, requirements, expiration window, duplicate key behavior, and idempotency error codes.
 * [Payment API rate limits](../reference/payment-api-rate-limits.md): Covers rate limit tiers and headers, and handling rate limits.
 * [Payment decline codes](../reference/decline-codes.md): Complete reference of all authorization decline codes with hard/soft classification.
 

@@ -82,6 +82,10 @@ A successful response returns a `200 OK` status code.
 * [API error codes](../reference/api-error-codes.md): Quick reference table of common API error codes and resolution paths.
 * [API reference guide](../reference/api-reference-guide.md): Covers three API endpoints: retrieve available payment options, update payment options, and create an order refund.
 
+## Tutorials
+
+* [Getting started with payments API](../tutorials/payment-api-getting-started.md): How to authenticate, navigate test vs. production environments, and make your first payment call in 15 minutes.
+
 ---
 
 Last updated: April 2026

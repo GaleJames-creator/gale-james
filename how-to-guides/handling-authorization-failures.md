@@ -395,7 +395,7 @@ response = payment_api.charge(amount=1000, ...)  # Don't do this on retry!
 
 * [API error message guidelines](../reference/api-error-message-guidelines.md) - Look up specific decline code meanings.
 * [Decline codes reference](../reference/decline-codes.md) - Look up specific decline codes.
-* [Preventing duplicate charges with idempotency keys](../reference/payment-idempotency-keys.md)
+* [Preventing duplicate charges](./how-to-guides/preventing-duplicate-charges.md): How to use `Idempotency-Key` to prevent duplicate charges.
 
 ---
 

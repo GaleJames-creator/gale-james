@@ -7,7 +7,7 @@ This overview explains common API error codes and directs you to the appropriate
 Use the following table to identify your error code and find the appropriate resolution path.
 
 | HTTP Status | Error Type | Description | Action |
-|-------------|-----------|-------------|---------|
+| ----------- | --------- | ----------- | ------- |
 | `400` | `invalid_request_error` | Invalid parameters | Validate required fields, data types, and formatting, then resubmit. |
 | `401` | `authentication_error` | Invalid API key | Verify your API key. |
 | `402` | `payment_error` | Payment failed | Notify the customer that their payment failed and ask them to update their payment method. For a complete list of decline codes, see [Payment decline codes](./decline-codes.md). |

@@ -1,13 +1,13 @@
 # Payment API rate limits
 
-API rate limits control how many requests your app can send in a set time. Watch your usage and spread out requests so you don’t go over the limit. This keeps the API working well and fair for all users.
+API rate limits control how many requests your app can send within a given time period. Watch your usage and spread out requests so you don’t go over the limit. This keeps the API working well and fair for all users.
 
 ## Rate limit tiers
 
-| Tier | Requests per minute | Use case |
-|------|---------------------|----------|
-| Standard | 100 | Most applications |
-| Premium | 1,000 | High-volume merchants |
+| Tier     | Requests per minute | Use case              |
+| -------- | ------------------- | --------------------- |
+| Standard | 100                 | Most applications     |
+| Premium  | 1,000               | High-volume merchants |
 
 ## Rate limit headers
 
@@ -19,9 +19,9 @@ X-RateLimit-Remaining: 95
 X-RateLimit-Reset: 1699564860
 ```
 
-- `X-RateLimit-Limit`: Maximum requests allowed per minute.
-- `X-RateLimit-Remaining`: Requests remaining in current window.
-- `X-RateLimit-Reset`: Unix timestamp when the limit resets.
+* `X-RateLimit-Limit`: Maximum requests allowed per minute.
+* `X-RateLimit-Remaining`: Requests remaining in current window.
+* `X-RateLimit-Reset`: Unix timestamp when the limit resets.
 
 ## Handling rate limits
 

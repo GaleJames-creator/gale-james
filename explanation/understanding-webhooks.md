@@ -25,9 +25,18 @@ The event triggers a webhook and sends the event details to your chosen endpoint
 
 ## Next steps
 
+### Explanation
+
+* [Understanding the `Idempotency-Key`](../explanation/understanding-the-idempotency-key.md): Covers the idempotency concepts, how they work, and when to use them.
+
 ### How-to guides
 
 * [Manage security for webhook data transmission](../how-to-guides/managing-security-webhook-data-transmission.md): How to protect webhook data.
+* [Preventing duplicate charges](../how-to-guides/preventing-duplicate-charges.md): How to use `Idempotency-Key`  to prevent duplicate charges.
+
+## Reference
+
+* [`Idempotency-Key`](../reference/idempotency-key): Covers the `Idempotency-Key`  header format, requirements, expiration window, duplicate key behavior, and idempotency error codes.
 
 ---
 

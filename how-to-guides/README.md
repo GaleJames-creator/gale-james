@@ -17,7 +17,7 @@ Use how-to guides when you need task-focused instructions and already understand
 * [Managing API rate limits](./managing-api-rate-limits.md): How to avoid rate limits.
 * [Managing security for webhook data transmission](./managing-security-webhook-data-transmission.md): How to protect webhook data.
 * [Managing webhooks using the Admin UI](./managing-webhooks-using-Admin-UI.md): How to create, edit, enable, disable, or delete webhooks, and manage secrets.
-* [Preventing duplicate charges with idempotency keys](./preventing-duplicate-charges.md): How to use idempotency keys to prevent duplicate charges.
+* [Preventing duplicate charges](../how-to-guides/preventing-duplicate-charges.md): How to use `Idempotency-Key`  to prevent duplicate charges.
 * [Processing a refund](./processing-a-refund.md): How to process a refund.
 
 ---

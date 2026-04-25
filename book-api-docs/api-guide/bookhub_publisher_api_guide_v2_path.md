@@ -430,19 +430,19 @@ curl -X POST "https://api.bookhub.com/api/v2/books" \
 
 #### Field validation
 
-| Field | Type | Required | Constraints |
-|-------|------|----------|-------------|
-| `title` | string | Yes | Max 255 characters |
-| `author` | string | Yes | Max 255 characters |
-| `description` | string | Yes | Max 5000 characters |
-| `language` | string | Yes | ISO 639-1 format (e.g., en-US) |
-| `publisher` | string | Yes | Max 255 characters |
-| `publishedDate` | string (date) | Yes | YYYY-MM-DD format |
-| `isbn` | string | Yes | Valid ISBN-10 or ISBN-13 |
-| `price` | number | Yes | Minimum 0.01 |
-| `coverImages` | array | Yes | 1-5 valid URLs |
-| `genres` | array | Yes | 1-5 genre strings |
-| `bookFormat` | enum | Yes | Paperback, Hardcover, or eBook |
+| Field           | Type.         | Required | Constraints                    |
+|-----------------|---------------|----------|--------------------------------|
+| `title`         | string        | Yes      | Max 255 characters             |
+| `author`        | string        | Yes      | Max 255 characters             |
+| `description`   | string        | Yes      | Max 5000 characters            |
+| `language`      | string        | Yes      | ISO 639-1 format (e.g., en-US) |
+| `publisher`     | string        | Yes      | Max 255 characters             |
+| `publishedDate` | string (date) | Yes      | YYYY-MM-DD format              |
+| `isbn`          | string        | Yes      | Valid ISBN-10 or ISBN-13       |
+| `price`         | number        | Yes      | Minimum 0.01                   |
+| `coverImages`   | array         | Yes      | 1-5 valid URLs                 |
+| `genres`        | array         | Yes      | 1-5 genre strings              |
+| `bookFormat`    | enum          | Yes      | Paperback, Hardcover, or eBook |
 
 ---
 
@@ -1163,9 +1163,9 @@ def fetch_all_books(base_url, token):
     return all_books
 ```
 
-### 4. Use idempotency keys for create operations
+### 4. Use the `Idempotency-Key` for create operations
 
-Always use idempotency keys when creating books to prevent duplicates:
+Always use  the `Idempotency-Key` when creating books to prevent duplicates:
 
 ```python
 import uuid
@@ -1259,8 +1259,8 @@ We value your feedback on v2 changes:
 
 ## Version history
 
-| Version | Date | Changes |
-|---------|------|---------|
-| 2.0 | January 2, 2026 | Initial v2 release with path-based versioning, `hitCount` field, removed title sorting |
+| Version | Date                                                                                           | Changes |
+|---------|------------------------------------------------------------------------------------------------|---------|
+| 2.0     | January 2, 2026 | Initial v2 release with path-based versioning, `hitCount` field, removed title sorting |
 
 ---

@@ -1,0 +1,46 @@
+# `Idempotency-Key`
+
+This reference covers the `Idempotency-Key` header format, requirements, expiration window, duplicate key behavior, and idempotency error codes.
+
+## Header name and format
+
+The `Idempotency-Key: {uuid-v4}` is an HTTP header containing a randomly generated version 4 Universally Unique Identifier (UUID). The header ensures POST payment requests are processed only once. If another POST payment request uses the header again, you would see an error in the response. This ensures a customer isn’t charged twice.
+
+The key must conform to the UUID v4 standard (randomly generated). Avoid using sensitive information (like user emails) as seeds for the key. Use cryptographic randomness to prevent information leakage.
+
+## Requirements
+
+A new UUID v4 must be generated for every request that creates, updates, or deletes a payment.
+
+## Expiration window
+
+The server must temporarily store the keys (typically with 24-hour retention) to identify and ignore duplicate requests. Retry after the server has purged the key.
+
+## Duplicate key behavior
+
+The server will ignore any duplicate requests, and you'll see an error in the response.
+
+## Error types
+
+Use the following table to identify your error code and find the appropriate resolution path.
+
+| HTTP Status | Error Type | Description | Action |
+| ----------- | --------- | ----------- | ------- |
+| `409` | | Missing key | Provide the required header and try again. |
+| `409` | | Concurrent request | A request with this key is already running. |
+| `422` | | Payload mismatch | Reusing key with different parameters. |
+| `102`/`202` | | Processing delay | Request is accepeted but still being processed. |
+
+## Next steps
+
+### Explanation
+
+* [Understanding the `Idempotency-Key`](../explanation/understanding-the-idempotency-key.md): Covers the idempotency concepts, how they work, and when to use them.
+
+### How-to-guides
+
+* [Preventing duplicate charges](../how-to-guides/preventing-duplicate-charges.md): How to use `Idempotency-Key` to prevent duplicate charges.
+
+---
+
+Last updated: April 2026

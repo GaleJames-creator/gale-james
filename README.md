@@ -36,11 +36,10 @@ This section contains tutorial content that guides users step-by-step through an
 This section provides step-by-step guides to help users complete specific tasks. Use how-to guides when you need clear instructions to solve a problem or reach a goal.
 
 * [Handling authorization failures](./how-to-guides/handling-authorization-failures.md): How to handle authorization failures for soft declines and handle hard decline notifications.
-* [Implementing retry logic for failed payments](./how-to-guides/implementing-retry-logic.md): How to implement automatic retries for failed payments.
 * [Managing API rate limits](./how-to-guides/managing-api-rate-limits.md): How to avoid rate limits.
 * [Managing security for webhook data transmission](./how-to-guides/managing-security-webhook-data-transmission.md): How to protect webhook data.
 * [Managing webhooks using the Admin UI](./how-to-guides/managing-webhooks-using-Admin-UI.md): How to create, edit, enable, disable, or delete webhooks, and manage secrets.
-* [Preventing duplicate charges with idempotency keys](./how-to-guides/preventing-duplicate-charges.md): How to use idempotency keys to prevent duplicate charges.
+* [Preventing duplicate charges](./how-to-guides/preventing-duplicate-charges.md): How to use `Idempotency-Key` to prevent duplicate charges.
 * [Processing a refund](./how-to-guides/processing-a-refund.md): How to process a refund.
 
 ### Explanation (understanding-oriented)
@@ -49,6 +48,7 @@ This section contains explanations of background, context, and the reasoning beh
 
 * [Understanding payment authorization and capture](./explanation/understanding-authorization-capture.md): Explains the two-step payment process, authorization holds, and decline types.
 * [Understanding authorization failures](./understanding-authorization-failures.md): Learn why authorization failures occur and how to prevent them.
+* [Understanding the `Idempotency-Key`](./explanation/understanding-the-idempotency-key.md): Covers the idempotency concepts, how they work, and when to use them.
 * [Understanding webhooks](./explanation/understanding-webhooks.md): Covers the key webhook concepts, how they work, and when to use them.
 
 ### Reference (information-oriented)
@@ -57,10 +57,10 @@ This section contains technical, factual descriptions of a product (e.g., an API
 
 * [API error codes](./reference/api-error-codes.md): Reference for common API error codes and resolution paths.
 * [API reference guide](./reference/api-reference-guide.md): Covers three API endpoints: retrieve available payment options, update payment options, and create an order refund.
-* [API error message guidelines](./reference/api-error-message-guidelines.md): Provide a clear explanation of the error and how to resolve it.
+* [API error message guidelines](./reference/api-error-message-guidelines.md): : Look up specific decline code meanings.
+* [`Idempotency-Key`](./reference/idempotency-key): Covers the `Idempotency-Key` header format, requirements, expiration window, duplicate key behavior, and idempotency error codes.
 * [Payment decline codes](./reference/decline-codes.md): Complete reference of all authorization decline codes with hard/soft classification.
 * [Payment API rate limits](./reference/payment-api-rate-limits.md): Covers rate limit tiers and headers, and handling rate limits.
-* [Preventing duplicate charges with idempotency keys](./reference/payment-idempotency-keys.md): Covers how idempotency keys work and why they are essential for preventing accidental duplicate charges.
 * [Webhook definitions](./reference/webhook-definitions.md): Covers the terms and concepts you need to set up and manage webhooks.
 * [Subscription webhook examples](./reference/webhook-subscription-examples.md): Covers two subscription webhook examples: 201 Created webhook and full subscription payload.
 

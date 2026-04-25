@@ -1,6 +1,6 @@
-# Preventing duplicate charges with idempotency keys
+# Preventing duplicate charges with `Idempotency-Key`
 
-Use these steps to add idempotency keys to your payment requests and prevent duplicate charges.
+Duplicate charges frustrate customers and create support issues. The  `Idempotency-Key` ensures each payment is processed only once, even if the same request is sent multiple times due to network issues or retries. This guide explains how `Idempotency-Key` work, why they matter, and how to use them effectively in your payment system.
 
 ## Prerequisites
 
@@ -10,18 +10,43 @@ Before you start, make sure you:
 * Are familiar with APIs.
 * Understand HTTP status codes.
 
-## How to use idempotency keys
+## Step 1. Generate the `Idempotency-Key`
 
-> **Note**: Replace `{YOUR_API_KEY}` with your API key. Never hardcode API keys in your code. Also note, the card number `4242424242424242` only works in sandbox environments.
+Generate a UUID v4 value and store it in a Python variable. This value becomes your `Idempotency-Key` header value.
 
-Add an `Idempotency-Key` header with a unique value. UUIDs (Universally Unique Identifiers) are the recommended standard for idempotency keys.
+```python
+import uuid
+import requests
+
+idempotency_key = str(uuid.uuid4())
+
+response = requests.post(
+    "https://sandbox-api.payment.com/v1/payments",
+    headers={
+        "Authorization": f"Bearer {YOUR_API_KEY}",  # Never log API keys.
+        "Content-Type": "application/json",
+        # idempotency_key is your Python variable
+        # "Idempotency-Key" is the required HTTP header name
+        "Idempotency-Key": idempotency_key
+    },
+    json=payment_data
+)
+```
+
+Store the `idempotency_key` value — you'll reuse it in Step 3 for retries.
+
+## Step 2. Send the key with your request
+
+Add an `Idempotency-Key` header with the unique `idempotency_key` you got in step 1 when sending a POST request to create or refund a payment.
+
+> **Note**: Replace `{YOUR_API_KEY}` with your API key. Never hardcode API keys in your code. Also note, the card number `4242424242424242` only works in sandbox environments. The example charges $29.99 with the Payments API.
 
 ```bash
 curl https://sandbox-api.payment.com/v1/payments \
   -X POST \
   -H "Authorization: Bearer {YOUR_API_KEY}" \
   -H "Content-Type: application/json" \
-  -H "Idempotency-Key: a1b2c3d4-e5f6-7890-abcd-ef1234567890" \
+  -H "Idempotency-Key: {YOUR_IDEMPOTENCY_KEY}" \
   -d '{
     "amount": 2999,
     "currency": "usd",
@@ -40,27 +65,39 @@ curl https://sandbox-api.payment.com/v1/payments \
   }'
 ```
 
-### Create a payment with idempotency
+### Step 3. Reuse the same key on retries
 
-```javascript
-const { v4: uuidv4 } = require('uuid');
+To reuse the `idempotency_key`, store the key from step 1 and use it on retry.
 
-async function createPayment(paymentData) {
-  const idempotencyKey = uuidv4();
-  
-  const response = await fetch('https://sandbox-api.payment.com/v1/payments', {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${process.env.PAYMENT_API_KEY}`,
-      'Content-Type': 'application/json',
-      'Idempotency-Key': idempotencyKey
+```python
+# Store the key separately from the request body
+stored_idempotency_key = idempotency_key
+
+# On retry, reuse the stored key
+response = requests.post(
+    "https://sandbox-api.payment.com/v1/payments",
+    headers={
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json",
+        "Idempotency-Key": stored_idempotency_key
     },
-    body: JSON.stringify(paymentData)
-  });
-  
-  return response.json();
-}
+    json=payment_data
+)
 ```
+
+## Next steps
+
+### Explanation
+
+* [Understanding the `Idempotency-Key`](../explanation/understanding-the-idempotency-key.md): Covers the key webhook concepts, how they work, and when to use them.
+
+### Reference
+
+* [`Idempotency-Key`](../reference/Idempotency-Key): Covers the `Idempotency-Key`  header format, requirements, expiration window, duplicate key behavior, and idempotency error codes.
+
+## Tutorials
+
+* [Getting started with payments API](../tutorials/payment-api-getting-started.md): How to authenticate, navigate test vs. production environments, and make your first payment call in 15 minutes.
 
 ---
 

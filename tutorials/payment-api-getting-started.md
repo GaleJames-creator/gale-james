@@ -62,10 +62,10 @@ $env:PAYMENT_API_KEY="sk_test_1234567890abcdef"
 
 The Payments API provides two environments: sandbox (for development and testing) and production environment (for live payments).
 
-| Environment | Base URL | Purpose |
-|-------------|----------|---------|
-| **Sandbox** | `https://sandbox-api.payment.com/v1` | Testing and development |
-| **Production** | `https://api.payment.com/v1` | Live payment processing |
+| Environment    | Base URL                             | Purpose                                             |
+| -----------    | ------------------------------------ | --------------------------------------------------- |
+| **Sandbox**    | `https://sandbox-api.payment.com/v1` | Testing and development                             |
+| **Production** | `https://api.payment.com/v1`         | Live payment processing                             |
 
 > **Note**: This guide uses the sandbox environment and test API keys.
 
@@ -73,12 +73,12 @@ The Payments API provides two environments: sandbox (for development and testing
 
 The following table lists sample test card numbers, each demonstrating a different transaction behavior for testing in the sandbox environment.
 
-| Test Card           | Card Type  | Behavior |
-|---------------------|------------|----------|
-| 4242 4242 4242 4242 | Visa       | Payment succeeds |
-| 4000 0000 0000 0002 | Visa       | Card declined (generic) |
+| Test Card           | Card Type  | Behavior                           |
+|---------------------|------------|------------------------------------|
+| 4242 4242 4242 4242 | Visa       | Payment succeeds                   |
+| 4000 0000 0000 0002 | Visa       | Card declined (generic)            |
 | 4000 0000 0000 9995 | Visa       | Card declined (insufficient funds) |
-| 5555 5555 5555 4444 | Mastercard | Payment succeeds |
+| 5555 5555 5555 4444 | Mastercard | Payment succeeds                   |
 
 For test cards, use any future expiration date, a 3-digit CVC, and any ZIP code.
 
