@@ -11,15 +11,15 @@ Webhooks send a POST request to your URL when an event occurs, such as a payment
 
 Before getting started, ensure you have:
 
-* **A public, secure endpoint** where you want to receive webhook events that can process HTTPS POST requests from the service sending the webhook (e.g., GitHub, Stripe, etc.).
+* **A public, secure endpoint** where you want to receive webhook events that can process HTTPS POST requests from the payment endpoint sending the webhook (e.g., GitHub, Stripe, etc.).
   
-  > **Tip**: Use security measures such as secret tokens or signature verification to ensure requests are really from the expected service.
+  > **Tip**: Use security measures such as secret tokens or signature verification to ensure requests are really from the expected payment endpoint.
   
 * **A testing or staging environment** to validate your webhook endpoint before going live.
 
 ## Step 1: Register a webhook endpoint
 
-To receive real-time event notifications, register a webhook endpoint and provide a publicly accessible URL, such as `https://www.acme.com/webhooks/payment`. The service sends event data to this URL when an event occurs.
+To receive real-time event notifications, register a webhook endpoint and provide a publicly accessible URL, such as `https://example.com/webhooks/payment`. The payment endpoint sends event data to this URL when an event occurs.
 
 > **Note**: Use HTTPS to encrypt data in transit. Protect your endpoint with authentication to prevent unauthorized access.
 
@@ -60,7 +60,7 @@ curl https://sandbox-api.payment.com/v1/webhooks \
 }
 ```
 
-The `secret` is a unique key used to sign webhook payloads and verify that data comes from the Payment API. The signature is included in the `Payment-Signature` header. Store secrets securely, such as in environment variables or a secrets manager. Rotate secrets regularly and revoke old ones to keep your integration secure.
+The `secret` is a unique key used to sign webhook payloads and verify that data comes from the Payment endpoint. The signature is included in the `Payment-Signature` header. Store secrets securely, such as in environment variables or a secrets manager. Rotate secrets regularly and revoke old ones to keep your integration secure.
 
 ### Webhook payload
 
@@ -110,6 +110,8 @@ function verifyWebhookSignature(payload, signature, secret) {
 // In your webhook handler
 app.post('/webhooks/payment', (req, res) => {
   const signature = req.headers['payment-signature'];
+  // Use raw body string for signature verification, not parsed JSON
+  // Configure Express to preserve raw body: app.use(express.raw({type: 'application/json'}))
   const payload = JSON.stringify(req.body);
   
   if (!verifyWebhookSignature(payload, signature, process.env.WEBHOOK_SECRET)) {
