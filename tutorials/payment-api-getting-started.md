@@ -28,7 +28,7 @@ API keys authenticate your requests to Payment. You'll need different keys for t
 
 1. Sign in to the Payment Dashboard.
 2. Navigate to **Developers** → **API Keys**.
-3. You will find two types of API keys:
+3. You will see two types of API keys:
    * **Test keys** (prefix: `sk_test_`): Use these for development and testing purposes.
    * **Live keys** (prefix: `sk_live_`): Use these for production after all testing is complete.
 
