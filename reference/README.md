@@ -19,7 +19,7 @@ Use a reference when you want to find specific facts or details.
 * [Payment decline codes](./payment-decline-codes.md): Complete reference of all authorization decline codes with hard/soft classification.
 * [Payment API rate limits](./payment-api-rate-limits.md): Covers rate limit tiers and headers, and handling rate limits.
 * [Webhook definitions](./webhook-definitions.md): Covers the terms and concepts you need to set up and manage webhooks.
-* [Subscription webhook examples](./webhook-subscription-examples.md): Covers two subscription webhook examples: 201 Created webhook and full subscription payload.
+* [Subscription webhook examples](./subscription-webhook-examples.md): Covers two subscription webhook examples: 201 Created webhook and full subscription payload.
 
 ---
 

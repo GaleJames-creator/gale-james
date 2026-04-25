@@ -4,7 +4,7 @@ Webhooks let your system know right away when a customer starts, renews, or canc
 
 ## 201 Created webhook
 
-When you create a subscription, you'll get a webhook with a `201 Created` status, a unique ID, and subscription details. Use this for email notifications or Payment API integration.
+When you create a subscription, you'll get a webhook with a `201 Created` status, a unique ID, and subscription details. The `201 Created` webhook is a notification event.  Use this for email notifications or Payment API integration.
 
 ```json
 {
@@ -25,7 +25,9 @@ When you create a subscription, you'll get a webhook with a `201 Created` status
 
 ## Full subscription payload
 
-In the example below, the top-level ID (`id`) represents the subscription identifier. You can use the `id` parameter as the `subId` query parameter to list all orders associated with a subscription (e.g., `https://api.sandbox-api.com/v1/subscriptions/{subId}/orders`).
+The full subscription payload includes complete subscriber details and is sent when subscription data is needed for processing.
+
+In the example below, the top-level ID (`id`) represents the subscription identifier. You can use the `id` parameter as the query parameter to list all orders associated with a subscription (e.g., `https://api.sandbox-api.com/v1/subscriptions/{id}/orders`).
 
 ```json
 {
@@ -74,14 +76,13 @@ In the example below, the top-level ID (`id`) represents the subscription identi
                 "lastName" : "Smith",
                 "companyName" : "Acme",
                 "line1" : "123 Main St",
-                "city" : "Anytown",
+                "city" : "San Francisco",
+                "state" : "CA",                
                 "postalCode" : "12345",
                 "countrySubdivision" : "CA",
-                "country" : "US",
                 "countryName" : "United States",
                 "phoneNumber" : "555-253-1234",
                 "emailAddress" : "subs_05132021043802AM707CSJQU@acme.com",
-                "countyName" : "Minnetonka"
             },
             "paymentOption" : {
                 "nickName" : "VisaGJFV4P",
@@ -101,14 +102,13 @@ In the example below, the top-level ID (`id`) represents the subscription identi
                     "lastName" : "Smith",
                     "companyName" : "Acme",
                     "line1" : "123 Main St",
-                    "city" : "CA",
-                    "postalCode" : "55343",
-                    "countrySubdivision" : "MN",
-                    "country" : "CA",
+                    "city" : "San Francisco",
+                    "state" : "CA",
+                    "postalCode" : "12345",
+                    "countrySubdivision" : "CA",
                     "countryName" : "United States",
                     "phoneNumber" : "555-253-1234",
                     "emailAddress" : "subs_05132021043802AM707CSJQU@acme.com",
-                    "countyName" : "Minnetonka"
                 }
             },
             "addOns" : [ {
