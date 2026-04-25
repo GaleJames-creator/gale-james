@@ -79,7 +79,7 @@ A successful response returns a `200 OK` status code.
 
 ### Reference
 
-* [API error codes](../reference/api-error-codes.md): Quick reference table of common API error codes and resolution paths.
+* [Payment API error codes](../reference/payment-api-error-codes.md): Quick reference table of common API error codes and resolution paths.
 * [API reference guide](../reference/api-reference-guide.md): Covers three API endpoints: retrieve available payment options, update payment options, and create an order refund.
 
 ## Tutorials

@@ -7,7 +7,7 @@ This guide explains how to implement retry logic for soft declines and handle ha
 Before you start, make sure you:
 
 * Understand the difference between hard and soft declines (see [Understanding authorization and capture](../explanation/understanding-authorization-capture.md)).
-* Have access to the [decline codes reference](../reference/decline-codes.md).
+* Have access to the [Payment decline codes](../reference/payment-decline-codes.md).
 * Can identify transaction types (customer-initiated vs merchant-initiated).
 
 ## Step 1: Detect the decline type
@@ -394,7 +394,7 @@ response = payment_api.charge(amount=1000, ...)  # Don't do this on retry!
 ### Reference
 
 * [API error message guidelines](../reference/api-error-message-guidelines.md) - Look up specific decline code meanings.
-* [Decline codes reference](../reference/decline-codes.md) - Look up specific decline codes.
+* [Payment decline codes reference](../reference/payment-decline-codes.md) - Look up specific decline codes.
 * [Preventing duplicate charges](./how-to-guides/preventing-duplicate-charges.md): How to use `Idempotency-Key` to prevent duplicate charges.
 
 ---

@@ -82,7 +82,7 @@ Optimize your retry strategy by tracking: Retry success rate, decline code types
 
 ### Reference
     
-* [Decline codes reference](../reference/decline-codes.md): Look up specific decline codes.
+* [Payment decline codes reference](../reference/payment-decline-codes.md): Look up specific decline codes.
 
 ---
 

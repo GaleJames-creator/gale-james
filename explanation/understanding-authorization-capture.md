@@ -158,7 +158,7 @@ Now that you understand the concepts:
 ### Reference
 
 * [API error message guidelines](../reference/api-error-message-guidelines.md): Look up specific decline code meanings.
-* [Payment decline codes](../reference/decline-codes.md): Look up specific decline code meanings.
+* [Payment decline codes](../reference/payment-decline-codes.md): Look up specific decline code meanings.
 
 ---
 

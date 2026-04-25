@@ -111,10 +111,10 @@ logging.info(f"Payment retry attempt {attempt + 1}/{max_retries}")
 
 ### Reference
 
-* [API error codes](./api-error-codes.md): Quick reference table of common API error codes and resolution paths.
+* [Payment API error codes](../reference/payment-api-error-codes.md): Quick reference table of common API error codes and resolution paths.
 * [`Idempotency-Key`](../reference/Idempotency-Key): Covers the `Idempotency-Key` header format, requirements, expiration window, duplicate key behavior, and idempotency error codes.
 * [Payment API rate limits](../reference/payment-api-rate-limits.md): Covers rate limit tiers and headers, and handling rate limits.
-* [Payment decline codes](../reference/decline-codes.md): Complete reference of all authorization decline codes with hard/soft classification.
+* [Payment decline codes](../reference/payment-decline-codes.md: Complete reference of all authorization decline codes with hard/soft classification.
 
 ---
 

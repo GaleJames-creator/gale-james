@@ -1,6 +1,6 @@
 # Payment decline codes
 
-This reference lists all payment authorization decline codes and indicates whether each represents a hard or a soft decline for each transaction type. For HTTP-level API errors, see [API error codes](./api-error-codes.md).
+This reference lists all payment authorization decline codes and indicates whether each represents a hard or a soft decline for each transaction type. For HTTP-level API errors, see [Payment API error codes](./payment-api-error-codes.md).
 
 ## How to use this reference
 
@@ -345,7 +345,7 @@ For implementation guidance, see [Handling authorization failures](../how-to-gui
 
 ### Reference
 
-* [API error codes](./api-error-codes.md) How to identify, troubleshoot, and resolve common API error codes.
+* [Payment API error codes](./payment-api-error-codes.md) How to identify, troubleshoot, and resolve common API error codes.
 
 ---
 

@@ -55,11 +55,11 @@ This section contains explanations of background, context, and the reasoning beh
 
 This section contains technical, factual descriptions of a product (e.g., an API or configuration options). They are intended for quick lookup that is independent of the user's tasks.
 
-* [API error codes](./reference/api-error-codes.md): Reference for common API error codes and resolution paths.
+* [Payment API error codes](./reference/payment-api-error-codes.md): Reference for common API error codes and resolution paths.
 * [API reference guide](./reference/api-reference-guide.md): Covers three API endpoints: retrieve available payment options, update payment options, and create an order refund.
 * [API error message guidelines](./reference/api-error-message-guidelines.md): : Look up specific decline code meanings.
 * [`Idempotency-Key`](./reference/idempotency-key): Covers the `Idempotency-Key` header format, requirements, expiration window, duplicate key behavior, and idempotency error codes.
-* [Payment decline codes](./reference/decline-codes.md): Complete reference of all authorization decline codes with hard/soft classification.
+* [Payment decline codes](./reference/payment-decline-codes.md): Complete reference of all authorization decline codes with hard/soft classification.
 * [Payment API rate limits](./reference/payment-api-rate-limits.md): Covers rate limit tiers and headers, and handling rate limits.
 * [Webhook definitions](./reference/webhook-definitions.md): Covers the terms and concepts you need to set up and manage webhooks.
 * [Subscription webhook examples](./reference/webhook-subscription-examples.md): Covers two subscription webhook examples: 201 Created webhook and full subscription payload.

@@ -31,9 +31,9 @@ Make API error messages clear and actionable so users understand the problem and
 
 ### Reference
 
-* [API error codes](./api-error-codes.md): Reference for common API error codes and resolution paths.
+* [Payment API error codes](./payment-api-error-codes.md): Reference for common API error codes and resolution paths.
 * [API reference guide](./api-reference-guide.md): Covers three API endpoints: retrieve available payment options, update payment options, and create an order refund.
-* [Payment decline codes](./decline-codes.md): Complete reference of all authorization decline codes with hard/soft classification.
+* [Payment decline codes](./payment-decline-codes.md): Complete reference of all authorization decline codes with hard/soft classification.
 
 ---
 

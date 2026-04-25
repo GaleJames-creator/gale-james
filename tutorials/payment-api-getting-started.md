@@ -199,7 +199,7 @@ A payment failure due to a declined card returns an HTTP `402` error. The follow
 }
 ```
 
-During payment processing, you may encounter error codes. For a complete list of error codes, see [API error codes](../reference/api-error-codes.md).
+During payment processing, you may encounter error codes. For a complete list of error codes, see [Payment API error codes](../reference/payment-api-error-codes.md).
 
 ## Step 6: Retrieve the payment details
 
