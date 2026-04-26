@@ -65,9 +65,9 @@ The most significant addition in v2 is the `hitCount` field on individual book r
 The `hitCount` field tracks how many times a specific book's detail page has been accessed via the API. This metric helps publishers:
 
 - **Gauge interest** in specific titles
-- **Identify trending books** before they become bestsellers
-- **Measure marketing effectiveness** by tracking views after campaigns
-- **Make data-driven decisions** about inventory and pricing
+- **Identify trending books** before they become bestsellers.
+- **Measure marketing effectiveness** by post-campaign views.
+- **Make data-driven decisions** about inventory and pricing.
 
 #### How it works
 
@@ -92,11 +92,11 @@ GET /v2/books/{bookId}
 
 #### Important notes
 
-- `hitCount` is **read-only** and automatically incremented
-- The count increments each time the GET endpoint is accessed
-- Initial value for new books is `0`
-- The field is **only available in v2** (not in v1)
-- Count is per book and persists across the book's lifetime
+- `hitCount` is **read-only** and automatically incremented.
+- The count increments each time the GET endpoint is accessed.
+- The initial value for new books is `0`.
+- The field is **only available in v2** (not in v1).
+- The count is per book and persists throughout the book’s lifetime.
 
 ---
 
@@ -112,7 +112,7 @@ BookHub removed title sorting due to:
 
 - **Performance concerns**: Text-based sorting on large datasets is computationally expensive
 - **Internationalization complexity**: Different languages have different sorting rules
-- **Case sensitivity issues**: Determining proper sort order with mixed case is ambiguous
+- **Case sensitivity issues**: Determining the proper sort order with mixed case is ambiguous
 - **Limited usage**: Analytics showed less than 3% of requests used title sorting
 - **Better alternatives**: Date-based sorting provides a more stable, performant option
 
@@ -185,7 +185,7 @@ https://api.bookhub.com/api/v1/books
 https://api.bookhub.com/api/v2/books
 ```
 
-#### Step 2: Handle `hitCount` field
+#### Step 2: Handle the `hitCount` field
 
 If you're retrieving individual books, your code will now receive the `hitCount` field.
 
@@ -294,7 +294,7 @@ curl -X GET https://api.bookhub.com/api/v2/books?sort=createdDate&order=desc \
 curl -X PATCH https://api.bookhub.com/api/v2/books/{bookId}/finalize \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{"notes": "Ready for publication"}'
+  -d '{"notes": "Ready for publication."}'
 ```
 
 ---
@@ -314,12 +314,12 @@ https://api.bookhub.com/api/{version}/books
 - **v1**: `https://api.bookhub.com/api/v1/books` (Legacy)
 - **v2**: `https://api.bookhub.com/api/v2/books` (Current)
 
-#### Why different from header-based?
+#### Why is it different from header-based?
 
-Some API implementations use header-based versioning (via `api-version` header). Path-based versioning was chosen for v2 because:
+Some API implementations use header-based versioning (via the `api-version` header). Path-based versioning was chosen for v2 because:
 
 - **Simplicity**: Version is in the URL, no need to remember custom headers
-- **Testability**: Easy to test in browser, curl, Postman
+- **Testability**: Easy to test in browser, curl, and Postman
 - **Caching**: Standard HTTP caching works naturally
 - **Documentation**: Clearer for developers to understand
 
@@ -327,7 +327,7 @@ Some API implementations use header-based versioning (via `api-version` header).
 
 - **v1**: Supported until December 31, 2026
 - **v2**: Current version, recommended for all new integrations
-- **Deprecation notice**: 12 months advance notice before any version is deprecated
+- **Deprecation notice**: 12 months' advance notice before any version is deprecated
 
 ---
 
@@ -342,7 +342,7 @@ All API requests require authentication using a JWT (JSON Web Token) bearer toke
 Obtain your JWT credentials by contacting:
 
 - Email: `api-support@bookhub.com`
-- Include your publisher account information
+- Include your publisher account information.
 
 #### Using the token
 
@@ -361,9 +361,9 @@ curl -X GET https://api.bookhub.com/api/v2/books \
 
 #### Token expiration
 
-- Tokens are valid for 24 hours
-- Refresh tokens before expiration
-- 401 Unauthorized response indicates expired token
+- Tokens are valid for 24 hours.
+- Refresh tokens before expiration.
+- 401 Unauthorized response indicates expired token.
 
 ---
 
@@ -467,6 +467,8 @@ curl -X GET "https://api.bookhub.com/api/v2/books/{bookId}" \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" 
 ```
 
+> **Note**: Replace `{bookId}` with the actual book ID returned in the `Create book` response (e.g., `abc123`).
+
 #### Get single book response (200 OK)
 
 ```json
@@ -513,7 +515,7 @@ The `hitCount` field is **new in v2** and provides basic analytics:
 - **Trending analysis**: Identify which books are getting the most attention
   
    ```python
-   # Get top 10 most-viewed books
+   # Get the top 10 most-viewed books
    all_books = fetch_all_books()
    trending = sorted(all_books, key=lambda x: x['hitCount'], reverse=True)[:10]
    ```
@@ -548,7 +550,7 @@ Cache-Control: max-age=3600, must-revalidate
 
 Retrieves a paginated list of books.
 
-> **Note**: Title sorting is not supported. Only `createdDate` sorting is available for the `sort` parameter.
+> **Note**: Title sorting is not supported. Only the `createdDate` sorting is available for the `sort` parameter.
 
 #### Get all books endpoint
 
@@ -710,6 +712,8 @@ curl https://api.bookhub.com/api/v2/books/{bookId}/finalize \
 '
 ```
 
+> **Note**: Replace `{bookId}` with the actual book ID returned in the `Create book` response (e.g., `abc123`).
+
 #### Finalize book request parameters
 
 | Parameter | Location | Type   | Required | Description                              |
@@ -733,10 +737,10 @@ curl https://api.bookhub.com/api/v2/books/{bookId}/finalize \
 
 #### Business rules
 
-- Only books with `PENDING` status can be finalized
-- Finalization is **idempotent** (calling it multiple times has the same effect)
-- Book becomes immediately available to customers after finalization
-- Cannot revert from `ACTIVE` to `PENDING` via API (contact support)
+- Only books with `PENDING` status can be finalized.
+- Finalization is **idempotent** (calling it multiple times has the same effect).
+- The book becomes available to customers immediately upon finalization.
+- Cannot revert from `ACTIVE` to `PENDING` via API (contact support).
 
 #### Finalize book error response (400 Bad Request)
 
@@ -784,7 +788,7 @@ Standard book object used across all endpoints.
 
 ### BookWithAnalytics schema (v2 only)
 
-Extends BaseBook with analytics field.
+Extends BaseBook with and analytics field.
 
 ```json
 {
@@ -882,7 +886,7 @@ if create_response.status_code == 201:
     finalize_response = requests.patch(
         f"{BASE_URL}/books/{book_id}/finalize",
         headers=headers,
-        json={"notes": "Ready for publication"}
+        json={"notes": "Ready for publication."}
     )
     
     if finalize_response.status_code == 200:
@@ -976,7 +980,7 @@ public class BookHubV2Client {
     public static void main(String[] args) throws Exception {
         HttpClient client = HttpClient.newHttpClient();
         
-        // Build request with only valid v2 sort parameter
+        // Build request with only a valid v2 sort parameter
         String url = BASE_URL + "/books?sort=createdDate&order=desc&limit=50";
         
         HttpRequest request = HttpRequest.newBuilder()
@@ -1041,6 +1045,11 @@ function getBookDetails($book_id, $base_url, $headers) {
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     
     $response = curl_exec($ch);
+    if ($response === false) {
+        $error = curl_error($ch);
+        curl_close($ch);
+        return null;
+    }
     $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
     
@@ -1056,6 +1065,10 @@ function getAllBooks($base_url, $headers, $status = 'ACTIVE') {
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     
     $response = curl_exec($ch);
+    if ($response === false) {
+        curl_close($ch);
+        return [];
+    }
     curl_close($ch);
     
     return json_decode($response, true)['data']['books'];
@@ -1104,9 +1117,9 @@ The `hitCount` field is useful for trend analysis but should not be used for rea
 
 ❌ **Avoid:**
 
-- Making instant inventory decisions based on single view count
-- Using as the sole metric for success
-- Treating it as perfectly accurate (may have slight delays in updates)
+- Making instant inventory decisions based on a single view count.
+- Using it as the sole metric for success.
+- Treating it as perfectly accurate (may have slight delays in updates).
 
 ### 2. Migrate away from title sorting properly
 
@@ -1245,7 +1258,7 @@ def check_rate_limits(response):
 Need help migrating from v1 to v2? Contact our integration team:
 
 - **Email**: `integrations@bookhub.com`
-- **Include**: Current usage patterns, timeline, specific concerns
+- **Include**: Current usage patterns, timeline, specific concerns.
 
 ### Feedback
 
@@ -1264,3 +1277,5 @@ We value your feedback on v2 changes:
 | 2.0     | January 2, 2026 | Initial v2 release with path-based versioning, `hitCount` field, removed title sorting |
 
 ---
+
+Last updated:  April 2026

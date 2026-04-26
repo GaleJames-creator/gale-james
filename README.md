@@ -47,7 +47,7 @@ This section provides step-by-step guides to help users complete specific tasks.
 This section contains explanations of background, context, and the reasoning behind technical decisions. It covers the “why” behind the systems and tools documented in this portfolio.
 
 * [Understanding payment authorization and capture](./explanation/understanding-authorization-capture.md): Explains the two-step payment process, authorization holds, and decline types.
-* [Understanding authorization failures](./understanding-authorization-failures.md): Learn why authorization failures occur and how to prevent them.
+* [Understanding authorization failures](./explanation/understanding-authorization-failures): Learn why authorization failures occur and how to prevent them.
 * [Understanding the `Idempotency-Key`](./explanation/understanding-the-idempotency-key.md): Covers the idempotency concepts, how they work, and when to use them.
 * [Understanding webhooks](./explanation/understanding-webhooks.md): Covers the key webhook concepts, how they work, and when to use them.
 
@@ -57,7 +57,7 @@ This section contains technical, factual descriptions of a product (e.g., an API
 
 * [Payment API error codes](./reference/payment-api-error-codes.md): Reference for common API error codes and resolution paths.
 * [API reference guide](./reference/api-reference-guide.md): Covers three API endpoints: retrieve available payment options, update payment options, and create an order refund.
-* [API error message guidelines](./reference/api-error-message-guidelines.md): : Look up the meanings of specific API error messages.
+* [API error message guidelines](./reference/api-error-message-guidelines.md): Look up the meanings of specific API error messages.
 * [`Idempotency-Key`](./reference/Idempotency-Key.md): Covers the `Idempotency-Key` header format, requirements, expiration window, duplicate key behavior, and idempotency error codes.
 * [Payment decline codes](./reference/payment-decline-codes.md): Complete reference of all authorization decline codes with hard/soft classification.
 * [Payment API rate limits](./reference/payment-api-rate-limits.md): Covers rate limit tiers and headers, and handling rate limits.

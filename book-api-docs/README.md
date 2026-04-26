@@ -179,7 +179,7 @@ I used the following tools and technologies:
 
 ## Project background
 
-I created this project while completing LinkedIn Learning's "Planning a Versioned RESTful API with Claude" course and I significantly extended the content using professional documentation practices.
+I created this project while completing LinkedIn Learning's "Planning a Versioned RESTful API with Claude" course, and I significantly extended the content using professional documentation practices.
 
 Course deliverables: API guide and OpenAPI specification
 
@@ -210,3 +210,5 @@ The course provided the technical foundation in API documentation and effective 
 ---
 
 [← Back to main portfolio](../README.md)
+
+Last updated:  April 2026

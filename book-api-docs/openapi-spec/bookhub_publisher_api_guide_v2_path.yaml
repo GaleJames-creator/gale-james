@@ -211,7 +211,8 @@ components:
           type: string
           enum: [PENDING, ACTIVE, INACTIVE]
           default: PENDING
-          description: Current publication status
+          description: Current publication status. Always set to PENDING on creation.
+          readOnly: true
         coverImages:
           type: array
           items:

@@ -1,5 +1,7 @@
 # BookHub Publisher API guide - Encoding fixes summary
 
+> **Portfolio note**: This document records encoding and compatibility decisions made during the BookHub Publisher API documentation project. It demonstrates documentation process thinking and cross-platform compatibility considerations.
+
 ## Document version
 
 - **File**: `bookhub_publisher_api_guide_v2.md`
@@ -16,7 +18,7 @@
 This update replaces all Unicode symbols that could display incorrectly across different platforms with ASCII-safe alternatives:
 
 | Symbol | Display Issue | Replacement | Count | Usage |
-|--------|---------------|-------------|-------|-------|
+| ------ | ------------- | ----------- | ------ | ----- |
 | ✅ | âœ... | `YES` | 173 | Feature availability, validation checks |
 | ❌ | âŒ | `NO` | 34 | Missing features, rejected values |
 | ⚠️ | âš ï¸ | `WARNING` | 16 | Caution notes, preview disclaimers |
@@ -78,7 +80,7 @@ This update replaces all Unicode symbols that could display incorrectly across d
 
 - **Before**: `Width × Height in pixels` (× = multiplication sign)
 - **After**: `Width x Height in pixels` (x = letter x)
-- **Location**: Line 2628 in cover image specifications table
+- **Location**: Line 2628 in the cover image specifications table
 - **Rationale**: The × symbol could display as "Ã" in some systems. Using "x" is universally recognized and compatible.
 
 ---
@@ -116,9 +118,9 @@ This update replaces all Unicode symbols that could display incorrectly across d
 - **Changed**: All symbols to ASCII equivalents
 - **Example**:
 
-  - `- YES Available for testing`
-  - `- WARNING Features may change`
-  - `- NO No SLA guarantees`
+  - `- YES: Available for testing.`
+  - `- WARNING: Features may change.`
+  - `- NO: No SLA guarantees.`
 
 ### Migration impact summary (lines 4108-4126)
 
@@ -139,17 +141,17 @@ This update replaces all Unicode symbols that could display incorrectly across d
 
 ### Accessibility
 
-- Screen readers can properly announce "YES" and "NO"
-- Clear text alternatives for visual indicators
-- No reliance on emoji support
-- Works in terminal/command-line environments
+- Screen readers can properly announce "YES" and "NO."
+- Clear text alternatives for visual indicators.
+- No reliance on emoji support.
+- Works in terminal/command-line environments.
 
 ### Clarity
 
-- "YES" and "NO" are unambiguous
-- "RED/YELLOW/GREEN" clearly indicate change severity
-- Legend provides immediate context
-- No confusion from missing/broken symbols
+- "YES" and "NO" are unambiguous.
+- "RED/YELLOW/GREEN" clearly indicates the severity of the change.
+- Legend provides immediate context.
+- No confusion from missing/broken symbols.
 
 ### Professional appearance
 
@@ -163,7 +165,7 @@ This update replaces all Unicode symbols that could display incorrectly across d
 ## Summary statistics
 
 | Metric | Value |
-|--------|-------|
+| ------ | ----- |
 | **Total fixes** | 258 replacements + 1 section reformat |
 | **Symbols replaced** | 9 unique Unicode characters |
 | **Sections improved** | 8 major sections |
@@ -176,19 +178,19 @@ This update replaces all Unicode symbols that could display incorrectly across d
 
 ## Validation checklist
 
-- [x] All Unicode emojis replaced with ASCII equivalents
-- [x] All box-drawing characters removed from Lifecycle Stages
-- [x] Legend added for RED/YELLOW/GREEN indicators
-- [x] Dimensions format uses standard "x" character
-- [x] Copyright symbols replaced with (c)
-- [x] All arrow symbols replaced with ->
-- [x] Warning symbols replaced with WARNING
-- [x] File encoding remains UTF-8
-- [x] Content integrity maintained
-- [x] Tables properly formatted
-- [x] Code examples unchanged
-- [x] All links functional
-- [x] Document version updated
+- [x] All Unicode emojis replaced with ASCII equivalents.
+- [x] All box-drawing characters removed from Lifecycle Stages.
+- [x] Legend added for RED/YELLOW/GREEN indicators.
+- [x] Dimensions format uses the standard "x" character.
+- [x] Copyright symbols replaced with (c).
+- [x] All arrow symbols replaced with ->.
+- [x] Warning symbols replaced with WARNING.
+- [x] File encoding remains UTF-8.
+- [x] Content integrity maintained.
+- [x] Tables properly formatted.
+- [x] Code examples unchanged.
+- [x] All links functional.
+- [x] Document version updated.
 
 ---
 
@@ -242,3 +244,7 @@ This update replaces all Unicode symbols that could display incorrectly across d
 **Encoding fixes version**: 1.0  
 **Completed**: December 31, 2024  
 **All files are ready for distribution**
+
+---
+
+Last updated:  April 2026

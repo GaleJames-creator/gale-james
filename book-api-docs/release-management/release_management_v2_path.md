@@ -3,7 +3,7 @@
 ## Document information
 
 | Property | Value |
-|----------|-------|
+| -------- | ----- |
 | **Release version** | 2.0 |
 | **Release date** | January 2, 2026 |
 | **Release type** | Major version (breaking changes) |
@@ -351,7 +351,7 @@ def check_deprecation_warnings(response):
 #### Migration timeline
 
 | Phase | Date | Action | Status |
-|-------|------|--------|--------|
+| ----- | ---- | ------ | ------ |
 | **Announcement** | December 15, 2025 | v2 preview announced | Complete |
 | **Preview release** | January 2, 2026 | v2 available for testing | Current |
 | **Testing period** | January - March 2026 | Publishers test v2 | In Progress |
@@ -376,7 +376,7 @@ grep -r "api\.bookhub\.com/api/v1" .
 
 - [ ] Identify all API v1 calls in the codebase.
 - [ ] Document usage of title sorting.
-- [ ] Review `hitCount` field integration needs.
+- [ ] Review the `hitCount` field integration needs.
 - [ ] Estimate migration effort.
 
 ##### Phase 2: Testing (week 2-3)
@@ -1004,7 +1004,7 @@ python validate_migration.py your_api_token_here
 ### Detailed schedule
 
 | Date | Milestone | Action required | Support available |
-|------|-----------|-----------------|-------------------|
+| ---- | --------- | --------------- | ----------------- |
 | **Dec 15, 2025** | v2 Announcement | Review release notes | Documentation published |
 | **Jan 2, 2026** | v2 Preview Launch | Begin testing v2 | Sandbox environment open |
 | **Jan 15, 2026** | Migration Workshop | Attend workshop (optional) | Live Q&A sessions |
@@ -1414,7 +1414,7 @@ Contact `api-migration@bookhub.com` to schedule a post-rollback review.
 ### Glossary
 
 | Term | Definition |
-|------|------------|
+| ---- | ---------- |
 | **Breaking change** | API change that requires client code modifications |
 | **Deprecation** | Marking a feature as obsolete before removal |
 | **Path-based versioning** | Including version number in URL path (/v1, /v2) |
@@ -1424,7 +1424,7 @@ Contact `api-migration@bookhub.com` to schedule a post-rollback review.
 ### API version comparison
 
 | Feature | v1 | v2 |
-|---------|----|----|
+| ------- | -- | -- |
 | URL pattern | `/v1/books` | `/v2/books` |
 | Title sorting | YES | NO |
 | Date sorting | YES | YES |
@@ -1476,3 +1476,7 @@ Contact `api-migration@bookhub.com` to schedule a post-rollback review.
 ---
 
 End of release management document
+
+---
+
+Last updated:  April 2026

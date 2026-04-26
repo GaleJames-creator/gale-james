@@ -3,7 +3,7 @@
 ## Document information
 
 | Property | Value |
-|----------|-------|
+| -------- | ----- |
 | **Decision Date** | January 2, 2026 |
 | **Project** | BookHub Publisher API v2 |
 | **Author** | Gale James |
@@ -205,8 +205,8 @@ The winner is path-based versioning. In this instance, path-based versioning pro
        Every feature needs version tracking:
 
        ```markdown
-       | Feature          | 2024-12-30 | 2025-03-15-preview | 2025-03-15 |
-       |------------------|------------|--------------------|-----------  |
+       | Feature          | 2024-12-30 | 2025-03-15-preview | 2025-03-15  |
+       | ---------------- | ---------- | ------------------ | ----------- |
        | Hit count        | NO         | YES                | YES         |
        | ISBN hyphens     | Optional   | Required           | Required    |
        | Title sorting    | YES        | NO                 | NO          |
@@ -321,7 +321,7 @@ The winner is path-based versioning.
 3. Remove title sorting logic.
 4. Add cover image validation.
 
-##### Risk**
+##### Risk
 
 Users might forget step #1 (adding the header) and wonder why their code still works with old behavior.
 
@@ -336,7 +336,7 @@ Users might forget step #1 (adding the header) and wonder why their code still w
 3. Remove title sorting logic.
 4. Add cover image validation.
 
-##### Advantage**
+##### Advantage
 
 Step #1 is obvious and hard to miss. If you forget to update the URL, you're clearly still on v1.
 
@@ -414,7 +414,7 @@ The winner is path-based versioning.
 #### Major API providers
 
 | Company | Versioning Approach | Example |
-|---------|---------------------|---------|
+| ------- | ------------------- | ------- |
 | **GitHub** | Path-based | `/api/v3/repos` |
 | **Stripe** | Header-based | `Stripe-Version: 2023-10-16` |
 | **Twilio** | Path-based | `/v1/Messages` |
@@ -479,7 +479,7 @@ https://api.bookhub.com/api/v2/books  ← Current version
 ### Rationale summary
 
 | Criterion | Path-Based | Header-Based | Weight | Winner |
-|-----------|------------|--------------|--------|--------|
+| --------- | ---------- | ------------ | ------ | ------ |
 | Documentation clarity | ✅ Excellent | ❌ Poor | Critical | Path |
 | Maintainability | ✅ Excellent | ❌ Poor | Critical | Path |
 | User experience | ✅ Excellent | ❌ Poor | Critical | Path |
@@ -489,7 +489,7 @@ https://api.bookhub.com/api/v2/books  ← Current version
 | Industry alignment | ✅ Excellent | ⚠️ Acceptable | Important | Path |
 | Tooling support | ✅ Excellent | ⚠️ Acceptable | Important | Path |
 
-**Score**: Path-based versioning wins 7/8 criteria
+**Winner**: Path-based versioning wins 7/8 criteria
 
 ---
 
@@ -647,3 +647,7 @@ And, most importantly, it makes our documentation clear and our users successful
 **Author:** Gale James  
 **Date:** February 24, 2026  
 **Status:** Final Decision
+
+---
+
+Last updated:  April 2026
