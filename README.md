@@ -19,6 +19,16 @@ A complete documentation set for a RESTful publishing platform API, including Op
 * [Versioning strategy](./book-api-docs/architecture/versioning-rationale.md): This document explains the rationale for API versioning in BookHub Publisher API v2. After evaluating header-based (e.g., api-version: 2024-12-30) and path-based (e.g., /v2/books) approaches, I chose path-based versioning, which diverged from the course instructor's recommendation; the rationale document explains why.
 * [Release management](./book-api-docs/release-management/release_management_v2_path.md): This document highlights the major changes, migration strategy, support resources, and key dates. This summary covers the focus on analytics, performance improvements, breaking changes, and what publishers and developers should do to migrate successfully to v2.
 
+### BookHub Publisher API — Mintlify documentation site
+
+A complete Diátaxis-structured documentation suite built on Mintlify, demonstrating platform configuration, OpenAPI 3.0.3 spec authoring, and AI-ready documentation features.
+
+**[View live site →](https://galejames.mintlify.app)**
+
+* Quickstart guide, 7 how-to guides, 4 conceptual guides, 8 reference docs
+* OpenAPI 3.0.3 specification with interactive endpoint playground
+* Configured contextual "Open in Claude" button, Git-based timestamps, and automated navigation
+* Python-based doc-quality-evaluator (Anthropic API) used throughout development to score documentation against structured criteria
 ---
 
 ## 📖 Documentation by type (Diátaxis framework)
@@ -94,7 +104,7 @@ I led API documentation for Digital River’s Commerce-as-a-Service platform, do
 
 ## 🛠 Technical skills
 
-* **Documentation platforms**: GitBook, ReadMe, MadCap Flare, Swagger/OpenAPI Editors
+* **Documentation platforms**: Mintlify, GitBook, ReadMe, MadCap Flare, Swagger/OpenAPI Editors
 * **GitHub actions**: Automated link checking and Markdown linting
 * **API specifications**: OpenAPI 3.0, REST API documentation, Postman
 * **Markup languages**: Markdown, YAML, JSON, XML, DITA
@@ -111,4 +121,4 @@ I led API documentation for Digital River’s Commerce-as-a-Service platform, do
 **Email:** [Available on LinkedIn]
 
 ---
-Last updated:  April 2026
+Last updated:  June 2026
