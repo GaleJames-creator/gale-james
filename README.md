@@ -19,6 +19,28 @@ A complete documentation set for a RESTful publishing platform API, including Op
 * [Versioning strategy](./book-api-docs/architecture/versioning-rationale.md): This document explains the rationale for API versioning in BookHub Publisher API v2. After evaluating header-based (e.g., api-version: 2024-12-30) and path-based (e.g., /v2/books) approaches, I chose path-based versioning, which diverged from the course instructor's recommendation; the rationale document explains why.
 * [Release management](./book-api-docs/release-management/release_management_v2_path.md): This document highlights the major changes, migration strategy, support resources, and key dates. This summary covers the focus on analytics, performance improvements, breaking changes, and what publishers and developers should do to migrate successfully to v2.
 
+### BookHub Publisher API — Mintlify documentation site
+
+A complete Diátaxis-structured documentation suite built on Mintlify, demonstrating platform configuration, OpenAPI 3.0.3 spec authoring, and AI-ready documentation features.
+
+**[View live site →](https://galejames.mintlify.app)**
+
+* Quickstart guide, 6 how-to guides, 2 conceptual guides, 8 reference docs
+* OpenAPI 3.0.3 specification powering an interactive "Try it" playground, backed by a containerized mock server (Prism on Render) so every endpoint is executable from the browser
+* Configured contextual "Open in Claude" button, Git-based timestamps, and automated navigation
+* Python-based doc-quality-evaluator with RAG enhancement (ChromaDB + Anthropic API) used throughout development to score documentation against structured criteria, using docType-based classification to apply the right ones
+
+### Documentation quality evaluator (RAG-enhanced)
+
+An AI-powered documentation quality evaluator built with Python and the Anthropic API. Evaluates Markdown and MDX docs against five criteria and returns structured JSON feedback. A RAG-enhanced version retrieves relevant documentation standards from a local ChromaDB vector store, classifies each doc by Diátaxis type to ground the right criteria, and injects them as grounding context, producing more specific, standards-grounded feedback than prompt-only evaluation.
+
+**[View project →](https://github.com/GaleJames-creator/doc-quality-evaluator)**
+
+* `evaluate.py` — baseline evaluator using a structured system prompt
+* `evaluate_rag.py` — RAG-enhanced version using ChromaDB and ONNX MiniLM embeddings for semantic retrieval
+* `build_index.py` — indexes a knowledge base of documentation standards into the vector store
+* Applied iteratively to improve documentation published in the Mintlify portfolio
+
 ---
 
 ## 📖 Documentation by type (Diátaxis framework)
@@ -44,10 +66,10 @@ This section provides step-by-step guides to help users complete specific tasks.
 
 ### Explanation (understanding-oriented)
 
-This section contains explanations of background, context, and the reasoning behind technical decisions. It covers the “why” behind the systems and tools documented in this portfolio.
+This section contains explanations of background, context, and the reasoning behind technical decisions. It covers the "why" behind the systems and tools documented in this portfolio.
 
 * [Understanding payment authorization and capture](./explanation/understanding-authorization-capture.md): Explains the two-step payment process, authorization holds, and decline types.
-* [Understanding authorization failures](./explanation/understanding-authorization-failures): Learn why authorization failures occur and how to prevent them.
+* [Understanding authorization failures](./explanation/understanding-authorization-failures.md): Learn why authorization failures occur and how to prevent them.
 * [Understanding the `Idempotency-Key`](./explanation/understanding-the-idempotency-key.md): Covers the idempotency concepts, how they work, and when to use them.
 * [Understanding webhooks](./explanation/understanding-webhooks.md): Covers the key webhook concepts, how they work, and when to use them.
 
@@ -74,19 +96,19 @@ This section contains technical, factual descriptions of a product (e.g., an API
 
 ## 💼 Professional experience highlights
 
-### Digital River - Senior Technical Writer → Manager, Technical Writer (2016-2025)
+### Digital River - Senior Technical Writer → Manager, Technical Writing (2016-2025)
 
-I led API documentation for Digital River’s Commerce-as-a-Service platform, documenting 73+ REST API endpoints.
+I led API documentation for Digital River's Commerce-as-a-Service platform, documenting 73+ REST API endpoints.
 
 #### Key contributions
 
 * Developed comprehensive API reference documentation for Commerce APIs.
 * Created integration guides for electronic funds transfer systems.
-* Initiated and led a two-phase documentation platform migration: first from Drupal to ReadMe to address a disorganized legacy content structure, then from ReadMe to GitBook after identifying that ReadMe couldn’t support our JSON file requirements.
+* Initiated and led a two-phase documentation platform migration: first from Drupal to ReadMe to address a disorganized legacy content structure, then from ReadMe to GitBook after identifying that ReadMe couldn't support our JSON file requirements.
 * Evaluated alternative docs-as-code platforms against our content requirements and made the final GitBook recommendation.
 * Established documentation standards and created style guides.
 * Implemented docs-as-code workflows using Git for version control.
-* Increased developer portal usage, according to Google Analytics, to 2,500–3,000 daily users by improving content architecture and discoverability, and reducing time to integrate.
+* Increased developer portal usage, according to Google Analytics, from 300 to 3,000 daily users by improving content architecture and discoverability, and reducing time to integrate.
 
 **Repository:** [DigitalRiver/GitBook](https://github.com/DigitalRiver/GitBook) *(accessible company repository, proprietary content)*
 
@@ -94,14 +116,15 @@ I led API documentation for Digital River’s Commerce-as-a-Service platform, do
 
 ## 🛠 Technical skills
 
-* **Documentation platforms**: GitBook, ReadMe, MadCap Flare, Swagger/OpenAPI Editors
+* **Documentation platforms**: Mintlify, GitBook, ReadMe, MadCap Flare, Swagger/OpenAPI Editors
 * **GitHub actions**: Automated link checking and Markdown linting
-* **API specifications**: OpenAPI 3.0, REST API documentation, Postman
-* **Markup languages**: Markdown, YAML, JSON, XML, DITA
+* **API specifications**: OpenAPI 3.0, REST API documentation, Postman, interactive API playgrounds
+* **Markup languages**: Markdown, MDX, YAML, JSON, XML, DITA
 * **Version control**: Git, GitHub, GitHub Actions, SVN
 * **Programming languages**: JavaScript, Python (for code examples and documentation)
 * **Documentation frameworks**: Diátaxis, docs-as-code
-* **AI tools**: Claude, Gemini, and GitHub Copilot. Used AI in my workflow for editorial control, prompt iteration, and review.
+* **AI tools**: Claude, Gemini, and GitHub Copilot. Used AI in my workflow for editorial control, prompt iteration, and review. Built RAG pipelines using ChromaDB and ONNX embeddings for standards-grounded document evaluation.
+* **Infrastructure & deployment**: Docker containerization, cloud deployment (Render), API mock servers (Prism)
 
 ---
 
@@ -111,4 +134,4 @@ I led API documentation for Digital River’s Commerce-as-a-Service platform, do
 **Email:** [Available on LinkedIn]
 
 ---
-Last updated:  April 2026
+Last updated: July 2026
