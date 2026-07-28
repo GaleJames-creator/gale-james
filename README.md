@@ -32,13 +32,14 @@ A complete Diátaxis-structured documentation suite built on Mintlify, demonstra
 
 ### Documentation quality evaluator (RAG-enhanced)
 
-An AI-powered documentation quality evaluator built with Python and the Anthropic API. Evaluates Markdown and MDX docs against five criteria and returns structured JSON feedback. A RAG-enhanced version retrieves relevant documentation standards from a local ChromaDB vector store, classifies each doc by Diátaxis type to ground the right criteria, and injects them as grounding context, producing more specific, standards-grounded feedback than prompt-only evaluation.
+An AI-powered documentation quality evaluator built with Python and the Anthropic API. Evaluates Markdown and MDX docs against five criteria and returns structured JSON feedback. A RAG-enhanced version retrieves relevant documentation standards from a local ChromaDB vector store, classifies each doc by Diátaxis type to ground the right criteria, and injects them as grounding context, producing more specific, standards-grounded feedback than prompt-only evaluation. The evaluator runs as a GitHub Actions gate that scores changed docs on every pull request, posts per-criterion feedback as a PR comment, and blocks merges below a configurable quality threshold.
 
 **[View project →](https://github.com/GaleJames-creator/doc-quality-evaluator)**
 
 * `evaluate.py` — baseline evaluator using a structured system prompt
 * `evaluate_rag.py` — RAG-enhanced version using ChromaDB and ONNX MiniLM embeddings for semantic retrieval
 * `build_index.py` — indexes a knowledge base of documentation standards into the vector store
+* `ci/evaluate_changed.py` + GitHub Actions workflow — CI gate that scores changed docs on each pull request, comments the results, and fails the check below a quality threshold
 * Applied iteratively to improve documentation published in the Mintlify portfolio
 
 ---
@@ -117,7 +118,7 @@ I led API documentation for Digital River's Commerce-as-a-Service platform, docu
 ## 🛠 Technical skills
 
 * **Documentation platforms**: Mintlify, GitBook, ReadMe, MadCap Flare, Swagger/OpenAPI Editors
-* **GitHub actions**: Automated link checking and Markdown linting
+* **GitHub actions**: Automated link checking, Markdown linting, and a RAG-based documentation quality gate
 * **API specifications**: OpenAPI 3.0, REST API documentation, Postman, interactive API playgrounds
 * **Markup languages**: Markdown, MDX, YAML, JSON, XML, DITA
 * **Version control**: Git, GitHub, GitHub Actions, SVN
