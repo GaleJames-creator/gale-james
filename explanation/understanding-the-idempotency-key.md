@@ -22,7 +22,7 @@ Use an `Idempotency-Key` request in the following situations:
 
 ### How-to-guides
 
-* [Preventing duplicate charges with the `Idempotency-Key`](./how-to-guides/preventing-duplicate-charges-with-the-idempotency-key.md): How to use `Idempotency-Key` to prevent duplicate charges.
+* [Preventing duplicate charges with the `Idempotency-Key`](../how-to-guides/preventing-duplicate-charges-with-the-idempotency-key.md): How to use `Idempotency-Key` to prevent duplicate charges.
 
 ### Reference
 
@@ -30,4 +30,4 @@ Use an `Idempotency-Key` request in the following situations:
 
 ---
 
-Last updated: April 2026
+Last updated: July 2026

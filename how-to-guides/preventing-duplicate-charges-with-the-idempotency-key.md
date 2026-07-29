@@ -1,12 +1,12 @@
 # Preventing duplicate charges with the `Idempotency-Key`
 
-Duplicate charges frustrate customers and create support issues. The `Idempotency-Key`ensures each payment is processed only once, even if the same request is sent multiple times due to network issues or retries. This guide explains how the `Idempotency-Key` works, why it matters, and how to use it effectively in your payment system.
+Duplicate charges frustrate customers and create support issues. The `Idempotency-Key` ensures each payment is processed only once, even if the same request is sent multiple times due to network issues or retries. This guide explains how the `Idempotency-Key` works, why it matters, and how to use it effectively in your payment system.
 
-> For a complete explanation of the `Idempotency-Key` and how it wors, see [Understanding the `Idempotency-Key`](../explanation/understanding-the-idempotency-key.md).
+> For a complete explanation of the `Idempotency-Key` and how it works, see [Understanding the `Idempotency-Key`](../explanation/understanding-the-idempotency-key.md).
 
 ## Step 1. Generate the `Idempotency-Key`
 
-Always use the `Idempotency-Key` when creating, updateing, or deleting a payment.
+Always use the `Idempotency-Key` when creating, updating, or deleting a payment.
 
 ```python
 import uuid
@@ -34,14 +34,7 @@ headers={
 }
 ```
 
-> **Note**: Load the api_key from an environmental variable:
-
-```python
-import os
-api_key = os.getenv("PAYMENT_API_KEY")
-```
-
-> **Note**: Load the api_key from an environmental variable:
+> **Note**: Load the api_key from an environment variable:
 
 ```python
 import os
@@ -60,4 +53,4 @@ api_key = os.getenv("PAYMENT_API_KEY")
 
 ---
 
-Last updated: April 2026
+Last updated: July 2026

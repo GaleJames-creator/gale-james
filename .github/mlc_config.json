@@ -4,7 +4,8 @@
     { "pattern": "^http://127\\.0\\.0\\.1" },
     { "pattern": "^https?://(www\\.)?linkedin\\.com" },
     { "pattern": "^https?://([a-z]+\\.)?bookhub\\.com" },
-    { "pattern": "^https?://github\\.com/bookhub" }
+    { "pattern": "^https?://github\\.com/bookhub" },
+    { "pattern": "^https://www\\.linkedin\\.com" }
   ],
   "timeout": "20s",
   "retryOn429": true,

@@ -12,7 +12,7 @@ Before you start, make sure you:
 
 ## Step 1: Detect the decline type
 
-Not all authorization failures should be retried. Retry a soft decline, but do not retry a hard decline. Always check the decline type before implementing retry logic. See [When not to retry](../explanation/understanding-authorization-failures#when-not-to-retry) for more information.
+Not all authorization failures should be retried. Retry a soft decline, but do not retry a hard decline. Always check the decline type before implementing retry logic. See [When not to retry](../explanation/understanding-authorization-failures.md#when-not-to-retry) for more information.
 
 ### Decision tree: Should you retry?
 
@@ -48,7 +48,7 @@ else:
 
 For soft declines, which are temporary issues, follow these retry limits to prevent overwhelming the payment system and annoying customers:
 
-See [Retry limits](../explanation/understanding-authorization-failures#retry-limits) for additional information.
+See [Retry limits](../explanation/understanding-authorization-failures.md#retry-limits) for additional information.
 
 ### Implementation example
 
@@ -112,7 +112,7 @@ class AuthorizationRetryManager:
         return next_retry
 ```
 
-See [Avoid predictable retry patterns](../explanation/understanding-authorization-failures#avoid-predictable-retry-patterns) for additional information.
+See [Avoid predictable retry patterns](../explanation/understanding-authorization-failures.md#avoid-predictable-retry-patterns) for additional information.
 
 ## Step 3: Handle hard declines
 
@@ -243,7 +243,7 @@ def attempt_authorization_with_retry(subscription_id, payment_method, attempt_nu
         raise
 ```
 
-See [Metric to track](../explanation/understanding-authorization-failures#metrics-to-track) for additional information.
+See [Metric to track](../explanation/understanding-authorization-failures.md#metrics-to-track) for additional information.
 
 ## Complete implementation example
 
@@ -385,18 +385,18 @@ response = payment_api.charge(amount=1000, ...)  # Don't do this on retry!
 ### Explanation
 
 * [Understanding payment authorization and capture](../explanation/understanding-authorization-capture.md): Explains the two-step payment process, authorization holds, and decline types.
-* [Understanding payment authorization failures](../explanation/understanding-authorization-failures): Explains the two-step payment process, authorization holds, and decline types.
+* [Understanding payment authorization failures](../explanation/understanding-authorization-failures.md): Explains the two-step payment process, authorization holds, and decline types.
 
 ### How-to guides
 
 * [Processing a refund](./processing-a-refund.md) - Handle refunds when needed.
+* [Preventing duplicate charges](./preventing-duplicate-charges-with-the-idempotency-key.md) - How to use `Idempotency-Key` to prevent duplicate charges.
 
 ### Reference
 
 * [API error message guidelines](../reference/api-error-message-guidelines.md) - : Look up the meanings of specific API error messages.
 * [Payment decline codes reference](../reference/payment-decline-codes.md) - Look up specific decline codes.
-* [Preventing duplicate charges](./how-to-guides/preventing-duplicate-charges.md): How to use `Idempotency-Key` to prevent duplicate charges.
 
 ---
 
-Last updated: April 2026
+Last updated: July 2026

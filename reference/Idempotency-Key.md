@@ -44,8 +44,8 @@ Use the following table to identify your error code and find the appropriate res
 
 ### How-to-guides
 
-* [Preventing duplicate charges with the `Idempotency-Key`](./how-to-guides/preventing-duplicate-charges-with-the-idempotency-key.md): How to use `Idempotency-Key` to prevent duplicate charges.
+* [Preventing duplicate charges with the `Idempotency-Key`](../how-to-guides/preventing-duplicate-charges-with-the-idempotency-key.md): How to use `Idempotency-Key` to prevent duplicate charges.
 
 ---
 
-Last updated: April 2026
+Last updated: July 2026

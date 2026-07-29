@@ -31,8 +31,6 @@ Automatically retry a failed payment request using exponential backoff. This app
 Adding random jitter prevents multiple clients from retrying simultaneously, which would overwhelm the API.
 
 The following example retries the payment up to three times. Wait at least 1, 2, or 4 seconds before retrying. If you get a `200` response, the payment succeeded. For errors `429`, `500`, `502`, `503`, `504`, or a timeout, wait 1, 2, or 4 seconds before retrying. For other errors, including `400`, `401`, and `402`, stop and raise an exception.
-
-### Python function with retry logic example
   
 ```python
 import time
@@ -72,7 +70,7 @@ def create_payment_with_retry(payment_data, api_key, max_retries=3):
 
 Always use the same `idempotency_key` for each retry of the same payment. This prevents duplicate charges if the payment request is processed multiple times.
 
-> For a complete explanation of `Idempotency-Key` and how they work, see [Understanding the `Idempotency-Key`](../explanation/understanding-the-idempotency-key.md).
+> For a complete explanation of `Idempotency-Key` and how it work, see [Understanding the `Idempotency-Key`](../explanation/understanding-the-idempotency-key.md).
 
 ```python
 headers={
@@ -81,7 +79,7 @@ headers={
 }
 ```
 
-> **Note**: Load the api_key from an environmental variable:
+> **Note**: Load the api_key from an environment variable:
 
 ```python
 import os
@@ -107,14 +105,14 @@ logging.info(f"Payment retry attempt {attempt + 1}/{max_retries}")
 
 ### How-to guides
 
-* [Preventing duplicate charges with the `Idempotency-Key`](./how-to-guides/preventing-duplicate-charges-with-the-idempotency-key.md): How to use `Idempotency-Key` to prevent duplicate charges.
+* [Preventing duplicate charges with the `Idempotency-Key`](./preventing-duplicate-charges-with-the-idempotency-key.md): How to use `Idempotency-Key` to prevent duplicate charges.
 
 ### Reference
 
 * [Payment API error codes](../reference/payment-api-error-codes.md): Quick reference table of common API error codes and resolution paths.
-* [`Idempotency-Key`](../reference/Idempotency-Key.md: Covers the `Idempotency-Key` header format, requirements, expiration window, duplicate key behavior, and idempotency error codes.
+* [`Idempotency-Key`](../reference/Idempotency-Key.md): Covers the `Idempotency-Key` header format, requirements, expiration window, duplicate key behavior, and idempotency error codes.
 * [Payment API rate limits](../reference/payment-api-rate-limits.md): Covers rate limit tiers and headers, and handling rate limits.
-* [Payment decline codes](../reference/payment-decline-codes.md: Complete reference of all authorization decline codes with hard/soft classification.
+* [Payment decline codes](../reference/payment-decline-codes.md): Complete reference of all authorization decline codes with hard/soft classification.
 
 ---
 
