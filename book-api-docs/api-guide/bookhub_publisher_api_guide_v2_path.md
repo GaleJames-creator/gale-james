@@ -4,7 +4,7 @@
 
 | Property              | Value                            |
 |-----------------------|----------------------------------|
-| **Version**           | 2.0.                             |
+| **Version**           | 2.0                              |
 | **Last Updated**      | January 2, 2026                  |
 | **API Base URL**      | `https://api.bookhub.com/api`    |
 | **v1 Endpoint**       | `https://api.bookhub.com/api/v1` |
@@ -62,7 +62,7 @@ The most significant addition in v2 is the `hitCount` field on individual book r
 
 #### What is `hitCount`?
 
-The `hitCount` field tracks how many times a specific book's detail page has been accessed via the API. This metric helps publishers:
+The `hitCount` field tracks how many times a specific book's detail page has been accessed via the API. Each successful GET increments `hitCount` and returns the updated value, so a book's first retrieval returns `hitCount`: 1. This metric helps publishers:
 
 - **Gauge interest** in specific titles
 - **Identify trending books** before they become bestsellers.
@@ -282,7 +282,7 @@ curl -X POST https://api.bookhub.com/api/v2/books \
     "bookFormat": "Hardcover"
   }'
 
-# 2. Get the book to see hitCount (starts at 0)
+# 2. Get the book to see hitCount (this retrieval is counted, so hitCount is 1)
 curl -X GET https://api.bookhub.com/api/v2/books/{bookId} \
   -H "Authorization: Bearer YOUR_JWT_TOKEN"
 
@@ -430,7 +430,7 @@ curl -X POST "https://api.bookhub.com/api/v2/books" \
 
 #### Field validation
 
-| Field           | Type.         | Required | Constraints                    |
+| Field           | Type          | Required | Constraints                    |
 |-----------------|---------------|----------|--------------------------------|
 | `title`         | string        | Yes      | Max 255 characters             |
 | `author`        | string        | Yes      | Max 255 characters             |
@@ -562,9 +562,9 @@ GET /v2/books
 
 | Parameter | Type    | Required | Default     | Description                             |
 |-----------|---------|----------|-------------|-----------------------------------------|
-| `page`.   | integer | No       | 1           | Page number (minimum 1).                |
+| `page`    | integer | No       | 1           | Page number (minimum 1).                |
 | `limit`   | integer | No       | 20          | Items per page (max 100).               |
-| `status`  | enum    | No.      | All         | Filter: `PENDING`, `ACTIVE`, `INACTIVE` |
+| `status`  | enum    | No       | All         | Filter: `PENDING`, `ACTIVE`, `INACTIVE` |
 | `sort`    | enum    | No       | createdDate | **v2 only accepts `createdDate`**.      |
 | `order`   | enum    | No       | desc        | Sort order: asc or desc                 |
 
@@ -1278,4 +1278,4 @@ We value your feedback on v2 changes:
 
 ---
 
-Last updated:  April 2026
+Last updated:  August 2026

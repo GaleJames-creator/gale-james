@@ -1,1 +1,4 @@
 .DS_Store
+
+# Scratch directory for generated drafts and working files
+/outputs/

@@ -2,6 +2,8 @@
 
 Production-ready API documentation suite demonstrating enterprise technical writing, strategic decision-making, and systematic quality assurance.
 
+> **Note**: These are the original deliverables from the Planning a Versioned RESTful API with Claude course; see the [Mintlify site](https://galejames.mintlify.app) for the evolved, Diátaxis-structured version.
+
 Key Deliverables:
 
 * Complete developer guides
@@ -211,4 +213,4 @@ The course provided the technical foundation in API documentation and effective 
 
 [← Back to main portfolio](../README.md)
 
-Last updated:  April 2026
+Last updated:  July 2026

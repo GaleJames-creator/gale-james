@@ -19,7 +19,7 @@ A complete documentation set for a RESTful publishing platform API, including Op
 * [Versioning strategy](./book-api-docs/architecture/versioning-rationale.md): This document explains the rationale for API versioning in BookHub Publisher API v2. After evaluating header-based (e.g., api-version: 2024-12-30) and path-based (e.g., /v2/books) approaches, I chose path-based versioning, which diverged from the course instructor's recommendation; the rationale document explains why.
 * [Release management](./book-api-docs/release-management/release_management_v2_path.md): This document highlights the major changes, migration strategy, support resources, and key dates. This summary covers the focus on analytics, performance improvements, breaking changes, and what publishers and developers should do to migrate successfully to v2.
 
-### BookHub Publisher API — Mintlify documentation site
+### BookHub Publisher API—Mintlify documentation site
 
 A complete Diátaxis-structured documentation suite built on Mintlify, demonstrating platform configuration, OpenAPI 3.0.3 spec authoring, and AI-ready documentation features.
 
@@ -32,14 +32,17 @@ A complete Diátaxis-structured documentation suite built on Mintlify, demonstra
 
 ### Documentation quality evaluator (RAG-enhanced)
 
-An AI-powered documentation quality evaluator built with Python and the Anthropic API. Evaluates Markdown and MDX docs against five criteria and returns structured JSON feedback. A RAG-enhanced version retrieves relevant documentation standards from a local ChromaDB vector store, classifies each doc by Diátaxis type to ground the right criteria, and injects them as grounding context, producing more specific, standards-grounded feedback than prompt-only evaluation. The evaluator runs as a GitHub Actions gate that scores changed docs on every pull request, posts per-criterion feedback as a PR comment, and blocks merges below a configurable quality threshold.
+An AI-powered documentation quality evaluator built with Python and the Anthropic API. It scores Markdown, MDX, and OpenAPI specifications against five criteria and returns structured feedback. The RAG-enhanced evaluator retrieves relevant documentation standards from a local ChromaDB vector store and classifies each document by Diátaxis type, so the criteria applied match the document's purpose and the feedback cites the standard behind it. It runs three ways: a single-file command line tool, a batch runner that scores a folder and gates scripts on a quality threshold, and a GitHub Actions check that scores changed documentation on every pull request, comments per-criterion feedback, and blocks merges below the threshold.
 
 **[View project →](https://github.com/GaleJames-creator/doc-quality-evaluator)**
 
-* `evaluate.py` — baseline evaluator using a structured system prompt
-* `evaluate_rag.py` — RAG-enhanced version using ChromaDB and ONNX MiniLM embeddings for semantic retrieval
-* `build_index.py` — indexes a knowledge base of documentation standards into the vector store
-* `ci/evaluate_changed.py` + GitHub Actions workflow — CI gate that scores changed docs on each pull request, comments the results, and fails the check below a quality threshold
+* `evaluate.py`&mdash;baseline evaluator using a structured system prompt
+* `evaluate_rag.py`&mdash;RAG-enhanced version using ChromaDB and ONNX MiniLM embeddings for semantic retrieval
+* `evaluate_batch.py`&mdash;batch runner that scores a folder in one run, previews the file set before spending API credits, and exits non-zero below a threshold
+* `build_index.py`&mdash;indexes a knowledge base of documentation standards into the vector store
+* `ci/evaluate_changed.py` + GitHub Actions workflow&mdash;CI gate that scores changed docs on each pull request, comments the results, and fails the check below a quality threshold
+* `tools/check_docs.py` + docs-lint workflow&mdash;proofreading and link checks that run without the model, catching what a spell checker cannot: repeated words, sentences missing a leading capital, broken links and anchors
+* [Documentation set](https://github.com/GaleJames-creator/doc-quality-evaluator/tree/main/docs)&mdash;guides and reference organized by Diátaxis type, with saved evaluator output published as samples
 * Applied iteratively to improve documentation published in the Mintlify portfolio
 
 ---
@@ -50,48 +53,48 @@ An AI-powered documentation quality evaluator built with Python and the Anthropi
 
 This section contains tutorial content that guides users step-by-step through an experience aimed at beginners to build skills and familiarity.
 
-* [Making your first API call with Postman](https://app.guidde.com/share/playbooks/j2GEH6v4pUaJ2vo8ErNt9c?origin=hPx2XmP4HZbFEVrCFFzGjtJsDSB2) *(video, 1:41)*: How to make a simple API call using Postman.
-* [Getting started with payments API](./tutorials/payment-api-getting-started.md): How to authenticate, navigate test vs. production environments, and make your first payment call in 15 minutes.
-* [Creating a webhook](./tutorials/webhook-creating-your-first.md): How to create, secure, and test webhook notifications.
+* [Making your first API call with Postman](https://app.guidde.com/share/playbooks/j2GEH6v4pUaJ2vo8ErNt9c?origin=hPx2XmP4HZbFEVrCFFzGjtJsDSB2) *(video, 1:41)*&mdash;Make a simple API call using Postman.
+* [Getting started with payments API](./tutorials/payment-api-getting-started.md)&mdash;Learn how to authenticate, navigate test vs. production environments, and make your first payment call in 15 minutes.
+* [Creating a webhook](./tutorials/webhook-creating-your-first.md)&mdash;Create, secure, and test webhook notifications.
 
 ### How-to guides (task-oriented)
 
 This section provides step-by-step guides to help users complete specific tasks. Use how-to guides when you need clear instructions to solve a problem or reach a goal.
 
-* [Handling authorization failures](./how-to-guides/handling-authorization-failures.md): How to handle authorization failures for soft declines and handle hard decline notifications.
+* [Handling authorization failures](./how-to-guides/handling-authorization-failures.md)&mdash;Handle authorization failures for soft declines and handle hard decline notifications.
 * [Managing API rate limits](./how-to-guides/managing-api-rate-limits.md): How to avoid rate limits.
-* [Managing security for webhook data transmission](./how-to-guides/managing-security-webhook-data-transmission.md): How to protect webhook data.
-* [Managing webhooks using the Admin UI](./how-to-guides/managing-webhooks-using-Admin-UI.md): How to create, edit, enable, disable, or delete webhooks, and manage secrets.
-* [Preventing duplicate charges with the `Idempotency-Key`](./how-to-guides/preventing-duplicate-charges-with-the-idempotency-key.md): How to use `Idempotency-Key` to prevent duplicate charges.
-* [Processing a refund](./how-to-guides/processing-a-refund.md): How to process a refund.
+* [Managing security for webhook data transmission](./how-to-guides/managing-security-webhook-data-transmission.md)&mdash;How to protect webhook data.
+* [Managing webhooks using the Admin UI](./how-to-guides/managing-webhooks-using-Admin-UI.md)&mdash;How to create, edit, enable, disable, or delete webhooks, and manage secrets.
+* [Preventing duplicate charges with the `Idempotency-Key`](./how-to-guides/preventing-duplicate-charges-with-the-idempotency-key.md)&mdash;How to use `Idempotency-Key` to prevent duplicate charges.
+* [Processing a refund](./how-to-guides/processing-a-refund.md)&mdash;How to process a refund.
 
 ### Explanation (understanding-oriented)
 
 This section contains explanations of background, context, and the reasoning behind technical decisions. It covers the "why" behind the systems and tools documented in this portfolio.
 
-* [Understanding payment authorization and capture](./explanation/understanding-authorization-capture.md): Explains the two-step payment process, authorization holds, and decline types.
-* [Understanding authorization failures](./explanation/understanding-authorization-failures.md): Learn why authorization failures occur and how to prevent them.
-* [Understanding the `Idempotency-Key`](./explanation/understanding-the-idempotency-key.md): Covers the idempotency concepts, how they work, and when to use them.
-* [Understanding webhooks](./explanation/understanding-webhooks.md): Covers the key webhook concepts, how they work, and when to use them.
+* [Understanding payment authorization and capture](./explanation/understanding-authorization-capture.md)&mdash;Explains the two-step payment process, authorization holds, and decline types.
+* [Understanding authorization failures](./explanation/understanding-authorization-failures.md)&mdash;Learn why authorization failures occur and how to prevent them.
+* [Understanding the `Idempotency-Key`](./explanation/understanding-the-idempotency-key.md)&mdash;Covers the idempotency concepts, how they work, and when to use them.
+* [Understanding webhooks](./explanation/understanding-webhooks.md)&mdash;Covers the key webhook concepts, how they work, and when to use them.
 
 ### Reference (information-oriented)
 
 This section contains technical, factual descriptions of a product (e.g., an API or configuration options). They are intended for quick lookup that is independent of the user's tasks.
 
-* [Payment API error codes](./reference/payment-api-error-codes.md): Reference for common API error codes and resolution paths.
-* [API reference guide](./reference/api-reference-guide.md): Covers three API endpoints: retrieve available payment options, update payment options, and create an order refund.
-* [API error message guidelines](./reference/api-error-message-guidelines.md): Look up the meanings of specific API error messages.
-* [`Idempotency-Key`](./reference/Idempotency-Key.md): Covers the `Idempotency-Key` header format, requirements, expiration window, duplicate key behavior, and idempotency error codes.
-* [Payment decline codes](./reference/payment-decline-codes.md): Complete reference of all authorization decline codes with hard/soft classification.
-* [Payment API rate limits](./reference/payment-api-rate-limits.md): Covers rate limit tiers and headers, and handling rate limits.
-* [Webhook definitions](./reference/webhook-definitions.md): Covers the terms and concepts you need to set up and manage webhooks.
-* [Subscription webhook examples](./reference/subscription-webhook-examples.md): Covers two subscription webhook examples: 201 Created webhook and full subscription payload.
+* [Payment API error codes](./reference/payment-api-error-codes.md)&mdash;Reference for common API error codes and resolution paths.
+* [API reference guide](./reference/api-reference-guide.md)&mdash;Covers three API endpoints: retrieve available payment options, update payment options, and create an order refund.
+* [API error message guidelines](./reference/api-error-message-guidelines.md)&mdash;Look up the meanings of specific API error messages.
+* [`Idempotency-Key`](./reference/Idempotency-Key.md)&mdash;Covers the `Idempotency-Key` header format, requirements, expiration window, duplicate key behavior, and idempotency error codes.
+* [Payment decline codes](./reference/payment-decline-codes.md)&mdash;Complete reference of all authorization decline codes with hard/soft classification.
+* [Payment API rate limits](./reference/payment-api-rate-limits.md)&mdash;Covers rate limit tiers and headers, and handling rate limits.
+* [Webhook definitions](./reference/webhook-definitions.md)&mdash;Covers the terms and concepts you need to set up and manage webhooks.
+* [Subscription webhook examples](./reference/subscription-webhook-examples.md)&mdash;Covers two subscription webhook examples: 201 Created webhook and full subscription payload.
 
 ---
 
 ## 🌐 Digital River documentation
 
-* [Commerce API documentation](https://docs.digitalriver.com/commerce-api): Authored and maintained the developer-facing Commerce API documentation, including 73+ REST API endpoints. Digital River wound down operations in 2025; the linked documentation reflects work completed during active operations.
+* [Commerce API documentation](https://docs.digitalriver.com/commerce-api)&mdash;Authored and maintained the developer-facing Commerce API documentation, including 73+ REST API endpoints. Digital River wound down operations in 2025; the linked documentation reflects work completed during active operations.
 
 ---
 
@@ -135,4 +138,4 @@ I led API documentation for Digital River's Commerce-as-a-Service platform, docu
 **Email:** [Available on LinkedIn]
 
 ---
-Last updated: July 2026
+Last updated: August 2026

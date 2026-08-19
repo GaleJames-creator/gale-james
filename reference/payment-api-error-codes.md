@@ -20,11 +20,11 @@ Use the following table to identify your error code and find the appropriate res
 
 Based on your situation, refer to the appropriate guide:
 
-* **Authorization failures** — [Handling authorization failures](../how-to-guides/handling-authorization-failures.md)
-* **Retry logic** — [Implementing retry logic for failed payments](../how-to-guides/implementing-retry-logic.md)
-* **Rate limits** — [Managing API rate limits](../how-to-guides/managing-api-rate-limits.md)
-* **Paymend decline codes - [Payment decline codes](./payment-decline-codes.md)
+* **Authorization failures**&mdash;[Handling authorization failures](../how-to-guides/handling-authorization-failures.md)
+* **Retry logic**&mdash;[Implementing retry logic for failed payments](../how-to-guides/implementing-retry-logic.md)
+* **Rate limits**&mdash;[Managing API rate limits](../how-to-guides/managing-api-rate-limits.md)
+* **Paymend decline codes**&mdash;[Payment decline codes](./payment-decline-codes.md)
 
 ---
 
-Last updated: April 2026
+Last updated: August 2026

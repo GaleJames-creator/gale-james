@@ -54,9 +54,9 @@ async function makeRequestWithRetry(url, options, maxRetries = 3) {
 
 Monitor these headers in each API response:
 
-* `X-RateLimit-Remaining` — requests remaining in current window
-* `X-RateLimit-Reset` — timestamp when the limit resets
-* `Retry-After` — seconds to wait after a 429 response
+* `X-RateLimit-Remaining`&mdash;requests remaining in current window
+* `X-RateLimit-Reset`&mdash;timestamp when the limit resets
+* `Retry-After`&mdash;seconds to wait after a 429 response
 
 ## Next steps
 
@@ -66,4 +66,4 @@ Monitor these headers in each API response:
 
 ---
 
-Last updated: April 2026
+Last updated: August 2026

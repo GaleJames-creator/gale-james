@@ -1,6 +1,6 @@
 # BookHub Publisher API guide - Encoding fixes summary
 
-> **Portfolio note**: This document records encoding and compatibility decisions made during the BookHub Publisher API documentation project. It demonstrates documentation process thinking and cross-platform compatibility considerations.
+> **Portfolio note**: This document records encoding and compatibility decisions made during the BookHub Publisher API documentation project for internal process/QA. It demonstrates documentation process thinking and cross-platform compatibility considerations.
 
 ## Document version
 

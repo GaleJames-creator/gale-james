@@ -64,7 +64,7 @@ Authorization and capture occur simultaneously, so the customer pays right away.
 
 ### Delayed capture
 
-First, authorization happens. Capture occurs later—sometimes days or weeks after.
+First, authorization happens. Capture occurs later&ndash;sometimes days or weeks after.
 
 #### When to use delayed capture
 
@@ -162,4 +162,4 @@ Now that you understand the concepts:
 
 ---
 
-Last updated:  April 2026
+Last updated:  August 2026

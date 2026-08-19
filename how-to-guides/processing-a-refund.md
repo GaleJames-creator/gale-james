@@ -23,7 +23,7 @@ Use the refunds endpoint to send a full or partial refund. You must include the 
 
 To refund the entire payment, use this `curl` command:
 
-> **Note**: Replace `{YOUR_API_KEY}` with your API key. Never hardcode API keys in your code. The sandbox URL `sandbox-api.com` is for testing only — replace with your production URL for live transactions.
+> **Note**: Replace `{YOUR_API_KEY}` with your API key. Never hardcode API keys in your code. The sandbox URL `sandbox-api.com` is for testing only&mdash;replace with your production URL for live transactions.
 
 ```bash
 curl https://sandbox-api.com/v1/refunds \
@@ -88,4 +88,4 @@ A successful response returns a `200 OK` status code.
 
 ---
 
-Last updated: April 2026
+Last updated: August 2026
